@@ -1,0 +1,92 @@
+@misc{R,
+    title = {R: A Language and Environment for Statistical Computing},
+    author = {{R Core Team}},
+    organization = {R Foundation for Statistical Computing},
+    address = {Wien, Österreich},
+    year = {2014},
+    type = {\bibcomputersoftware},
+    url = {http://www.R-project.org/}
+}
+
+@misc{RStudio,
+    title = {RStudio: Integrated Development Environment for R},
+    author = {{RStudio Team}},
+    organization = {RStudio, Inc.},
+    address = {Boston, MA},
+    year = {2012},
+    type = {\bibcomputersoftware},
+    url = {http://www.rstudio.com/}
+  }
+
+
+@misc{readxl,
+    title = {readxl: Read Excel Files ({Version} 0.1.0)},
+    author = {Hadley Wickham},
+    year = {2015},
+    type = {\bibcomputersoftware},
+    url = {http://CRAN.R-project.org/package=readxl}
+  }
+
+
+@misc{dplyr,
+    title = {dplyr: A Grammar of Data Manipulation ({Version} 0.3.0.2)},
+    author = {Hadley Wickham and Romain Francois},
+    year = {2014},
+    type = {\bibcomputersoftware},
+    url = {http://CRAN.R-project.org/package=dplyr}
+    }
+    
+@misc{R.matlab,
+    title = {R.matlab: Read and write of MAT files together with R-to-MATLAB
+connectivity ({Version} 3.1.1)},
+    author = {Henrik Bengtsson},
+    year = {2014},
+    type = {\bibcomputersoftware},
+    url = {http://CRAN.R-project.org/package=R.matlab}
+  }
+  
+@misc{semPlot,
+    title = {semPlot: Path diagrams and visual analysis of various SEM packages'
+output ({Version} 1.0.1)},
+    author = {Sacha Epskamp},
+    year = {2014},
+    type = {\bibcomputersoftware},
+    url = {http://CRAN.R-project.org/package=semPlot}
+  }
+  
+@Article{lavaan,
+    title = {{lavaan}: An {R} Package for Structural Equation Modeling},
+    author = {Yves Rosseel},
+    journal = {Journal of Statistical Software},
+    year = {2012},
+    volume = {48},
+    number = {2},
+    pages = {1-36},
+    DOI = {10.18637/jss.v048.i02}
+  }
+  
+@misc{psych,
+    title = {psych: Procedures for Psychological, Psychometric, and Personality Research
+    ({Version} 1.5.8)},
+    author = {William Revelle},
+    organization = {Northwestern University},
+    year = {2015},
+    type = {\bibcomputersoftware},
+    url = {http://CRAN.R-project.org/package=psych},
+  }
+  
+@misc{rprime,
+    title = {rprime: Functions for Working with 'Eprime' Text Files ({Version} 0.1.0)},
+    author = {Tristan Mahr},
+    year = {2015},
+    type = {\bibcomputersoftware},
+    url = {http://CRAN.R-project.org/package=rprime},
+  }
+  
+@misc{tikzDevice,
+    title = {tikzDevice: R Graphics Output in LaTeX Format ({Version} 0.10-1)},
+    author = {Charlie Sharpsteen and Cameron Bracken},
+    year = {2016},
+    type = {\bibcomputersoftware},
+    url = {http://CRAN.R-project.org/package=tikzDevice},
+  }
