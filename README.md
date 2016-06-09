@@ -1,3 +1,3 @@
 **README**
 
-In this repository, all files  of my PhD project are accessible.
+To reproduce my thesis, download repository and compile .tex file.
