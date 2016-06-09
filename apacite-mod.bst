@@ -1,4 +1,5 @@
-%%
+%% Modified apacite file
+
 %% This is file `apacite.bst',
 %% generated with the docstrip utility.
 %%
