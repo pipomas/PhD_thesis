@@ -5,7 +5,7 @@
 % Basic document settings -----------------------------------------------------------
 \documentclass[11pt, twoside, a4paper]{book}		% option draft for no images and overfull hbox markers
 \linespread{1.3}\selectfont							% use one and a half line spaces
-\renewcommand{\familydefault}{\sfdefault}			% sets file in sans serif
+%\renewcommand{\familydefault}{\sfdefault}			% sets file in sans serif
 %\setlength{\marginparwidth}{0pt}					% removes margin notes area O_o
 %\setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}	% https://en.wikibooks.org/wiki/LaTeX/Page_Layout#Widows_and_orphans
 \AtBeginDocument{\setlength{\parindent}{2em}}		% parindent 2 em units for new paragraph
@@ -972,9 +972,9 @@ Das \gls{srmr} ist ein Mass dafür, wie hoch die durchschnittlichen Korrelations
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+% =================================================================
+% R E S U L T S
+% =================================================================
 \chapter{Resultate \label{cha:Resultate}}
 
 \section{Lage-, Streuungs- und Zusammenhangsmasse \label{sec:DeskriptiveAnalyse}}
@@ -7247,9 +7247,9 @@ Hier folgt noch:
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+% =================================================================
+% D I S C U S S I O N
+% =================================================================
 \chapter{Diskussion \label{cha:Diskussion}}
 %\ac{MLS}
 \begin{itemize}
@@ -7257,10 +7257,9 @@ Hier folgt noch:
 	\item Anderes Resultat, weil nicht Projektor eingesetzt?
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+% =================================================================
+% G L O S S A R Y   &   A C R O N Y M S
+% =================================================================
 \printglossaries	% put this where you want your list of entries to appear 
 % Important:
 % 1. compile document with PdfLaTeX
@@ -7268,13 +7267,16 @@ Hier folgt noch:
 % 3. compile document with pdfLateX
 % 4. -> glossaries should appear in pdf
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Print bibliography ------------------------------------------------
+% =================================================================
+% R E F E R E N C E S 
+% =================================================================
 \renewcommand\bibname{Literatur}				% rename bibliography
 \bibliography{../references/PhilippLibrary}		% provide .bib file
 \addcontentsline{toc}{chapter}{Literatur}		% for a toc entry
 
+% =================================================================
+% A P P E N D I X   A
+% =================================================================
 \appendix
 % not sure if this code works -----------
 \setcounter{figure}{0}
@@ -7282,6 +7284,7 @@ Hier folgt noch:
 % works --------------------------
 \setcounter{table}{0}
 \renewcommand{\thetable}{A\arabic{table}}
+
 
 \chapter{Anhang \label{cha:AAnhang}}
 Dieser Anhang beschreibt die Vorgehensweise bei der Datenaufbereitung, welche zum Ausschluss von \glspl{vp} geführt hat (vgl. Abschnitt \ref{sec:Stichprobe}). Am Ende des Anhangs fasst Tabelle \ref{tab:Datenbereinigung} die Datenbereinigung zusammen.
@@ -7349,6 +7352,10 @@ Bei den Subtests \gls{bd}, \gls{kw}, \gls{oe}, \gls{RZ}, \gls{tg}, \gls{uw} und 
 }
 \end{table}
 
+
+% =================================================================
+% A P P E N D I X   B
+% =================================================================
 \chapter{Anhang \label{cha:BAnhang}}
 
 Dieser Anhang beschreibt die (vgl. Abschnitt \ref{sec:Stichprobe}). Am Ende des Anhangs  \ref{tab:Datenbereinigung}.
