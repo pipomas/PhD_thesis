@@ -1,9 +1,11 @@
 % !TeX spellcheck = de_DE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Präambel --------------------------------------------------------------------------
+% ===================================================================================
+% P R E A M B E L 
+% ===================================================================================
 % Basic document settings -----------------------------------------------------------
 \documentclass[11pt, twoside, a4paper]{book}		% option draft for no images and overfull hbox markers
 \linespread{1.3}\selectfont							% use one and a half line spaces
+\renewcommand{\familydefault}{\sfdefault}			% sets file in sans serif
 %\setlength{\marginparwidth}{0pt}					% removes margin notes area O_o
 %\setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}	% https://en.wikibooks.org/wiki/LaTeX/Page_Layout#Widows_and_orphans
 \AtBeginDocument{\setlength{\parindent}{2em}}		% parindent 2 em units for new paragraph
@@ -21,7 +23,6 @@
 \usepackage[ngerman]{babel}							% set document language to new german
 \usepackage[german=swiss]{csquotes}					% enquote{} makes quoting in swiss german easy
 \usepackage{pdflscape}								% https://en.wikibooks.org/wiki/LaTeX/Page_Layout#cite_ref-4
-
 \usepackage{longtable}								% a multi-page environment for tabular
 \usepackage{listings}								% for R code snippets
 \usepackage{graphicx}								% needed for graphics
@@ -35,26 +36,20 @@
 
 % Mathpackages ---------------------------------------------------------------------
 \usepackage{mathtools}								% handy tools for mathematical typesetting
-\usepackage{amsmath}
-\usepackage{amsfonts}								% for certain mathematical fonts
-\usepackage{amssymb}								% for certain mathematical symbols
+\usepackage{amsmath}								% miscellaneous enhancements for mathematical formulas
+\usepackage{amsfonts}								% - for certain mathematical fonts
+\usepackage{amssymb}								% - for certain mathematical symbols
 \usepackage{fixltx2e} 								% needed when \( and \) are used in section titles
 \usepackage{array}    								% für >{}, d.h. fügt den Inhalt vor jeder Zelle ein. oder >{$}c{$}< 
 \usepackage[Euler]{upgreek}							% for non-italic greek letters
 
-
-
-% Setup for acronym package ------------------------------------------------------
-%\usepackage[printonlyused]{acronym}				% use acronym package if 'glossaries' is not in effect
-
-% Setup for fancyhdr package --------------------------------------------------------------------------------------
-\usepackage{fancyhdr}								%  
+% Setup for fancyhdr package -------------------------------------------------------
+\usepackage{fancyhdr}								% customize the page layout of  LaTeX documents
 \pagestyle{fancy}									% select pagestyle
 %\renewcommand{\sectionmark}[1]{\markright{\thesection}}	% renew the sectionmark command
-%\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}		% <- works as single line
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}			% <- works as single line
 \renewcommand{\chaptermark}[1]{\markboth{\small\textsc{#1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\small\textsc{#1}}{}}
-
 \fancyhf{}  										% delete current header and footer
 \fancyhead[LE,RO]{\thepage}							% ...
 \fancyhead[LO]{\normalfont\nouppercase{\rightmark}}	% ... tiefer als leftmark
@@ -69,9 +64,7 @@
    \fancyhead{}										% get rid of headers on plain pages
    \renewcommand{\headrulewidth}{0pt}				% and the line
 }
-
 \usepackage{emptypage}								% removes headers from plain pages
-
 
 
 % Check this style, found on http://tex.stackexchange.com/questions/132469/showcase-of-nice-looking-headers
@@ -104,13 +97,14 @@
 %   \renewcommand{\headrulewidth}{0pt} % and the line
 %}
 
-% setup for tables---------------------------------------------------------
-\usepackage{rotating}
-\usepackage{threeparttable}
-\usepackage{adjustbox}
-\usepackage{multirow}
+% setup for tables--------------------------------------------------------------
+\usepackage{rotating}								% performs most sorts of rotation floating figures and tables
+\usepackage{threeparttable}							% this package facilitates tables with titles (captions) and notes.
+\usepackage{adjustbox}								% this package allows to adjust general (LA)TEX material
+\usepackage{multirow}								% for \multirow command in tabular environment
 
-% Make landscape mode rotate properly in a twosided book -------------------------------
+% Make landscape mode rotate properly in a twosided book -----------------------
+% see http://stackoverflow.com/questions/4982219/how-to-make-landscape-mode-rotate-properly-in-a-twoside-book/5320962
 \makeatletter	
 \global\let\orig@begin@landscape=\landscape%
 \global\let\orig@end@landscape=\endlandscape%
@@ -155,40 +149,30 @@
 }
 \makeatother
 
-% Setup for figures -----------------------------------------------------------------------------------
-\usepackage{tikz}
-\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
-\tikzstyle{every picture}+=[font=\sffamily]				% use sans serif font for tikz pictures -> http://tex.stackexchange.com/questions/4887/pgf-tikz-and-sans-serif-fonts
-\usepackage{subfig}										% for subfigures. Loads caption package internally. 
-\usepackage[singlelinecheck = off,labelsep = period]{caption} 		% -> caption is aligned with table
+% Setup for figures ------------------------------------------------------------
+\usepackage{tikz}					% load package
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri} % load options
+\tikzstyle{every picture}+=[font=\sffamily]			% use sans serif font for tikz pictures -> http://tex.stackexchange.com/questions/4887/pgf-tikz-and-sans-serif-fonts
+\usepackage{subfig}																		% for subfigures. Loads caption package internally. 
+\usepackage[singlelinecheck = off,labelsep = period]{caption} 							% -> caption is aligned with table
 \captionsetup[subfigure]{labelformat=simple, labelsep = period, listofformat=subsimple} % (a) -> a.
-\captionsetup[figure]{labelfont=it, labelsep = period}	% italic labelfont in figures
-\captionsetup[table]{labelsep = none}
+\captionsetup[figure]{labelfont=it, labelsep = period}									% italic labelfont in figures
+\captionsetup[table]{labelsep = none}													% no . after table label
 \usepackage[leftcaption]{sidecap}	% for side caption: outercaption, innercaption, leftcaption, rightcaption
 \usepackage[section]{placeins}		% http://tex.stackexchange.com/questions/35125/how-to-use-the-placement-options-t-h-with-figures
-\usepackage{float}					% see package documentation
+\usepackage{float}					% for better floating of floats
 
-% Setup for figures and tables ------------------------------------------------------------------------
+% Setup for figures and tables -------------------------------------------------
 \usepackage{chngcntr}							% package for avoiding the counter reset per chapter when using figs and tbls
 \counterwithout{figure}{chapter}				% -> does it for figures
 \counterwithout{table}{chapter}					% -> does it for tables
-%\numberwithin{equation}{section}				% equations starten bei 1.1 1.2, 2.1 2.2 etc
-%\numberwithin{figure}{section} 				% das glieche bei figure
-
-
+%\numberwithin{equation}{section}				% equations start with 1.1 1.2, 2.1 2.2 etc.
+%\numberwithin{figure}{section} 				% the same with figures
 \usepackage{siunitx}							% for decimal aligned columns in tables
+\setlength{\abovecaptionskip}{3pt plus 3pt minus 2pt}	% modifiy vertical space between figure and caption
+\setcounter{lofdepth}{2}			% include minicaptions in LOF (list of figures)
 
-\setlength{\abovecaptionskip}{3pt plus 3pt minus 2pt} 
-
-
-\setcounter{lofdepth}{2}			% include minicaptions
-
-
-
-
-
-
-% Removes "Chapter X" string ---------------------------------------------------------
+% Removes "Chapter X" string in chapters ---------------------------------------
 \makeatletter
 \def\@makechapterhead#1{%
   \vspace*{50\p@}%
@@ -199,21 +183,16 @@
   }}
 \makeatother
 
-% Define command "myindenpar" for a paragraph ----------------------------------------
-%\newenvironment{myindentpar}[1]%
-% {\begin{list}{}%
-%         {\setlength{\leftmargin}{#1}}%
-%         \item[]%
-% }
-% {\end{list}}
-
-% Setup for bibliography with the 'apacite' package ---------------------------------------------------
-\usepackage[tocbib, natbibapa, nosectionbib]{apacite}	% define options
-\bibliographystyle{apacite-mod}								% for style 'Author, N. (Year). Title, ...'
+% Setup for bibliography with the 'apacite' package ----------------------------
+\usepackage[tocbib, natbibapa, nosectionbib]{apacite}	% enable options
+\bibliographystyle{apacite-mod}							% see http://tex.stackexchange.com/questions/304217/reference-list-suppressing-dots-after-company-names-apacite
 \usepackage{doi}										% turns doi's into hyperlinks
 \renewcommand\doiprefix{\ignorespaces}					% removes white space in front of doi
 \AtBeginDocument{\urlstyle{APACsame}}					% removes monospaced font in url's
-\AtBeginDocument{\renewcommand{\BRetrievedFrom}{Verfügbar unter\ }} % removes  "Zugriff auf"
+\AtBeginDocument{\renewcommand{\BRetrievedFrom}{Verfügbar unter\ }} % replaces  "Zugriff auf" with "Verfügbar unter
+
+% Allow URL breaks after all letters
+\AtBeginDocument{\renewcommand{\UrlBreaks}{\do\/\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z}}
 
 
 % Correction in bilbiography: Removal of whitespace between volume and issue (APA vs DGPs) ------------
@@ -237,9 +216,9 @@
 %}																									---
 %\makeatother																						---
 
-% Setup for hyperref -----------------------------------------------------------------
-\usepackage{hyperref}
-\hypersetup{colorlinks,
+% Setup for hyperref -----------------------------------------------------------
+\usepackage{hyperref}		% load package
+\hypersetup{colorlinks,		% define options
 			citecolor=blue,
 			filecolor=black,
 			linkcolor=black,
@@ -247,17 +226,14 @@
 			pdfauthor={Philipp Thomas},
 %			pdfsubject={Dissertation},
 			pdftitle={Dissertation},
-			pdfkeywords={LaTeX, R, Intelligence, Spatial Suppression}
+			pdfkeywords={psychometric intelligence, spatial suppression, mental speed, hick task, R, LaTeX}
 			}
-\AtBeginDocument{\renewcommand{\UrlBreaks}{\do\/\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z}}
 
 % Setup for glossaries (must be placed AFTER the hyperref setup) ---------------------------
 \usepackage[xindy, toc, automake, acronym, shortcuts]{glossaries}		% load options (what is 'xindy' for?)
 \makeglossary							% to generate the glossary
 
 % Glossary entries --------------------------------------------------------
-%\newacronym{ssa}{}{Spatial-Suppression-Ansatz}
-%\newglossaryentry{ssa}	{name = {Spatial-Suppression-Ansatz}, description={test}}
 \newglossaryentry{ssans}
 {	name=Spatial-Suppression-Ansatz,
 	description={is}}
@@ -316,20 +292,16 @@
 %	description=}
 
 \newacronym[
-plural=Vpn,
-longplural={Versuchspersonen},
-\glsshortpluralkey=Vpn,	
-]
-{vp}{Vp}{Versuchsperson}
-
+	plural=Vpn,
+	longplural={Versuchspersonen},
+%	\glsshortpluralkey=Vpn,	
+	]
+	{vp}{Vp}{Versuchsperson}
 
 \newacronym[
 	plural=RZn,
 	longplural={Reaktionszeiten}]
 	{rz}{RZ}{Reaktionszeit}
-	
-%\newacronym{rzn}{RZn}{Reaktionszeiten}
-
 
 \newacronym{bist}{BIS-Test}{Berliner Intelligenzstruktur-Test}
 \newacronym{bism}{BIS}{Berliner Intelligenzstrukturmodell}
@@ -361,9 +333,9 @@ longplural={Versuchspersonen},
 \newacronym{rmsea}	{RMSEA}			{Root Mean Square Error of Approximation}
 \newacronym{srmr}	{SRMR}			{Standardized Root Mean Square Residual}
 
-\newacronym{m}		{\textit{M}}				{Mittelwert}
-\newacronym{sd}		{\textit{SD}}			{Standardabweichung}
-\newacronym{sds}	{\textit{SDs}}			{Standardabweichungen}
+\newacronym{m}		{\textit{M}}	{Mittelwert}
+\newacronym{sd}		{\textit{SD}}	{Standardabweichung}
+\newacronym{sds}	{\textit{SDs}}	{Standardabweichungen}
 
 \newacronym{epq-rk}	{EPQ-RK}		{Eysenck Personality Questionnaire}
 \newacronym{dii}	{DII}			{Dickman Impulsivity Inventory}
@@ -372,27 +344,36 @@ longplural={Versuchspersonen},
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%% B E G I N   D O C U M E N T %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-%\renewcommand{\familydefault}{\sfdefault}		% <- what does this do o_O ?
+
+
+
+
+% ==========================================================================================
+% ==========================================================================================
+% ==========================================================================================
+%
+% B E G I N   D O C U M E N T 
+%
+% ==========================================================================================
+% ==========================================================================================
+% ==========================================================================================
+
 \begin{document}
 \layout								% prints layout page at the beginning of the document
 \frontmatter						% triggers roman numerals 
-%\maketitle							% not needed when creating a custom title page
 
+
+% =================================================================
+% T I T L E   P A G E
+% =================================================================
 
 % Declare new goemetry for the title page only --------------------
-%\newgeometry{margin=1in}
 \newgeometry{top=2in,bottom=2in,right=1.5in,left=1.5in}
-%------------------------------------------------------------------
-\begin{titlepage}
 
+\begin{titlepage}
 	
 	\vspace*{2cm}
 	
@@ -426,14 +407,11 @@ longplural={Versuchspersonen},
 \end{titlepage}
 % Ends the declared geometry for the titlepage
 \restoregeometry
-%------------------------------------------------------------------
 
 
-
-
-
-
-
+% =================================================================
+% S U M M A R Y
+% =================================================================
 \chapter*{Zusammenfassung \label{cha:Zusammenfassung}}
 \addcontentsline{toc}{chapter}{Zusammenfassung}
 \noindent
@@ -444,7 +422,7 @@ DGP Richtlinien weisen auf folgende Punkte hin:
 	\item \textit{Objektivität}
 	\item \textit{Kürze}
 	\item \textit{Verständlichkeit}
-	\item Trotz Kürze sollte über die zu prüfenden psychologischen H	ypothesen, die Methode, die Ergebnisse
+	\item Trotz Kürze sollte über die zu prüfenden psychologischen Hypothesen, die Methode, die Ergebnisse
 		  und die Interpretation informiert werden
 \end{itemize}
 
@@ -458,7 +436,9 @@ DGP Richtlinien weisen auf folgende Punkte hin:
 \end{itemize}
 \pagebreak
 
-% Insert the toc ---------------------------------------------------
+% =================================================================
+% T A B L E   O F   C O N T E N T S
+% =================================================================
 \renewcommand{\contentsname}{Inhalte}			% define name of toc
 \setcounter{tocdepth}{3}						% set toc depth
 \tableofcontents								% insert toc
@@ -474,20 +454,11 @@ DGP Richtlinien weisen auf folgende Punkte hin:
 \listoftables 									% insert lot
 \addcontentsline{toc}{chapter}{Tabellen}		% add lot to toc
 
-% Insert the acronyms ----------------------------------------------
-%\chapter*{Abkürzungen \label{cha:Abkürzungen}}
-%\addcontentsline{toc}{chapter}{Abkürzungen} 	% add acr to toc
-%%\begin{acronym}
-%%\acro{MLS}{Microwave Limb Sounder}
-%%\acro{HiRDLS}{High-Resolution Dynamics Limb Sounder}
-%%\acro{TES}{Tropospheric Emission Sounder}
-%%\end{acronym}
-%
-%\pagebreak
 
 
-
-
+% =================================================================
+% P R E F A C E 
+% =================================================================
 \chapter*{Vorwort \label{cha:Vorwort}}
 \addcontentsline{toc}{chapter}{Vorwort}
 Diese Arbeit ist das Produkt meiner dreijährigen Forschungstätigkeit. Danken möchte ich 
@@ -521,7 +492,9 @@ Philipp Thomas\\
 \clubpenalty=300		% avoid single lines (values 0-1000)
 
 
-
+% =================================================================
+% I N T R O D U C T I O N
+% =================================================================
 \chapter{Einleitung \label{cha:Einleitung}}
 
 \section{Intelligenz \label{sec:Intelligenz}}
@@ -561,6 +534,10 @@ Der \gls{ssans} zur Erklärung individueller Intelligenzunterschiede ist neu und
 
 \end{enumerate}
 
+
+% =================================================================
+% M E T H O D S
+% =================================================================
 \chapter{Methodik \label{cha:Methodik}}
 
 \section{Stichprobe \label{sec:Stichprobe}}
@@ -578,7 +555,6 @@ Für die Teilname an der Untersuchung erhielten Berner Studierende des Fachs Psy
 
 
 \section{Die \gls{ssauf} \label{sec:}}
-
 
 Als Grundlage für die Aufgabe diente der \href{http://www.bcs.rochester.edu/people/duje/SuppressionCode.zip}{Programmcode} von \citet{Melnick2013}.
 
