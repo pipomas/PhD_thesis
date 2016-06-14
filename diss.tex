@@ -979,58 +979,23 @@ Das \gls{srmr} ist ein Mass dafür, wie hoch die durchschnittlichen Korrelations
 % =================================================================
 \chapter{Resultate \label{cha:Resultate}}
 
-\section{Lage-, Streuungs- und Zusammenhangsmasse \label{sec:DeskriptiveAnalyse}}
+\section{Deskriptive Statistik \label{sec:DeskriptiveAnalyse}}
 
 \subsection{\gls{ssauf} \label{subsec:SSres}}
 
-Deskriptiven Angaben zur Aufgabe sind in Tabelle \ref{tab:SSdescriptives} zu finden. Die Schwellenschätzungen der vier Bedingungen waren nicht normalverteilt (alle $p\textnormal{s}<.01$), weshalb alle Analysen der \gls{ssauf} mit nonparametrischen Tests durchgeführt wurden. Um zu prüfen, ob sich die 
+Die Schwellenschätzungen aller \glspl{vp} der \gls{ssauf} sind in Abbildung \ref{fig:SSscatter} zu sehen. Die dazugehörigen deskriptiven Angaben sind in Tabelle \ref{tab:SSdescriptives} abgetragen. 
+Um für die Analyse der \gls{ssauf} auf manifester Ebene adäquate Auswertungsverfahren zu bestimmen, wurden die vier Bedingungen auf Normalverteilung getestet. 
+Shapiro-Wilk-Tests haben ergeben, dass die Schwellenschätzungen der vier Bedingungen nicht normalverteilt waren (alle $p\textnormal{s}<.01$, siehe Tabelle \ref{tab:SSdescriptives}). 
+Als Konsequenz wurden die für die Analyse auf manifester Ebene vorgesehenen parametrische Verfahren (einfaktorielle Varianzanalyse mit Messwiederholung und Produkt-Moment-Korrelationen) durch die entsprechenden verteilungsfreien Varianten (Friedman-Test und Spearmans Rangkorrelationen) ersetzt.
 
-Post-hoc-Tests \citep{Galili2010} 
-(Wilcoxon-Nemenyi-McDonald-Thompson)
-\citep[siehe Seite 295 in][]{Hollander1999} wurden mit Co
+Um zu prüfen, ob die Mustergrösse einen signifikanten Einfluss auf die Wahrnehmungsleistung der \glspl{vp} ausübte, wurde ein Friedman-Test durchgeführt. Der Globaltest wies darauf hin, dass sich die Bedingungen signifikant voneinander unterschieden, $\upchi^2(3)=343.88$, $p<.001$. Die im Anschluss an den Friedman-Test gerechnete Post-hoc-Tests \citep{Galili2010, Hollander2014} haben gezeigt, dass sich von den (durch die vier Bedingungen ergebenen) sechs Einzelvergleichen nur die \(1.8^{\circ}\)- und \(3.6^{\circ}\)-Bedingung nicht signifikant voneinander unterschieden ($p=.12$). Die restlichen fünf Einzelvergleiche waren mit $p<.001$ alle statistisch signifikant.
+Mit Ausnahme des Wahrnehmungsleistungsunterschieds zwischen der \(1.8^{\circ}\)- und der \(3.6^{\circ}\)-Bedingung verschlechterte sich die Wahrnehmungsleistung der \glspl{vp} also mit zunehmender Mustergrösse signifikant.
 
-Die Schwellenschätzungen aller \glspl{vp} sind in Abbildung \ref{fig:SSscatter} zu sehen. 
+Spearmans Rangkorrelationen ($r_{s}$) zwischen den vier Bedingungen der \gls{ssauf} wiesen ausnahmslos auf starke Zusammenhänge hin. Relativ betrachtet bestand der tiefste Zusammenhang zwischen der \(1.8^{\circ}\)- und der \(7.2^{\circ}\)-Bedingung ($r_{s}~=~.54$, $p~<~.001$) und der höchste Zusammenhang zwischen der \(5.4^{\circ}\)- und der \(7.2^{\circ}\)-Bedingung ($r_{s}~=~.88$, $p~<~.001$). Tabelle \ref{tab:shzmanifest} gibt einen Überblick über alle Interkorrelationen der vier Bedingungen in der \gls{ssauf}.
 
-\begin{table}[htbp]
-	%\flushleft
-	\centering
-	\captionsetup{labelsep = none}
-	\caption[Deskriptive Angaben zur ]{\newline  \textit{Deskriptive Angaben zur Schwellenbestimmung der \gls{ssauf} in Millisekunden (Mittelwert, Standardabweichung, Minimum, Maximum) und Kennwerte zur Verteilung der Daten} \vspace{.2cm}}
-	\label{tab:SSdescriptives}
-	%	\resizebox{\columnwidth}{!}{%	
-	\begin{threeparttable}
-		
-		\begin{tabular}{
-				c
-				S[table-format = 2.0]
-				S[table-format = 3.0]
-				S[table-format = 2.0]
-				S[table-format = 3.0]
-				S[table-format = 1.2]
-				S[table-format = 1.2]
-				S[table-format = <0.3, add-integer-zero=false]
-			}
-			\hline
-			Bedingung 		&	\textit{M}	&	\textit{SD}	&	{Min}	&	Max 	&	\textnormal{Schräge}	&	\textnormal{Kurtosis}  &{S-W \textit{p}-Wert}\\
-			\hline
-			\(1.8^{\circ}\)	&	85			&	27			&	31		&	161		&	0.46					&	-0.14					& 		.01	\\
-			\(3.6^{\circ}\)	&	94			&	33			&	37		&	282		&	1.73					&	6.75					& 		<.001	\\
-			\(5.4^{\circ}\)	&	116			&	52			&	45		&	422		&	2.84					&	11.39					& 		<.001	\\
-			\(7.2^{\circ}\)	&	149			&	85			&	61		&	705		&	3.23					&	14.01					& 		<.001	\\
-			\hline
-		\end{tabular}%
-		%}
-		\begin{tablenotes}[flushleft]
-			\footnotesize				% font size
-			\setlength\labelsep{0pt}	% no indent on second line
-			\item \textit{Anmerkungen.} Min~=~Minimum, Max~=~Maximum, S-W~=~Shapiro-Wilk-Test.
-		\end{tablenotes}%
-	\end{threeparttable}%
-	%}
-\end{table}
+\vspace{.2cm}
 
-
-\begin{figure}[htbp]
+\begin{figure}[b]
 	\centering
 	\resizebox{\textwidth}{!}{
 
@@ -2755,66 +2720,106 @@ Die Schwellenschätzungen aller \glspl{vp} sind in Abbildung \ref{fig:SSscatter}
 \end{scope}
 \end{tikzpicture}
 
-
-
-
 %
 }
-	\caption[Spatial-Suppression-Streudiagramm]{Streudiagramme der vier Mustergrössen der \gls{ssauf}. Die horizontale Linie kennzeichnet jeweils den Mittelwert der Schwellenschätzungen innerhalb einer Bedingung. Vp = Versuchsperson.}
+	\caption[Spatial-Suppression-Streudiagramm]{Streudiagramme der Schwellenschätzungen in der \gls{ssauf}. Die horizontale Linie kennzeichnet jeweils den Mittelwert der Schwellenschätzungen innerhalb einer Bedingung (vgl. Tabelle \ref{tab:SSdescriptives}). Vp = Versuchsperson.}
 	\label{fig:SSscatter}
 \end{figure}
 
-
-
-
-
-
-
-
-\begin{table}[htbp]
+\begin{table}[t]
 	%\flushleft
 	\centering
 	\captionsetup{labelsep = none}
-	\caption[Korrelationeeeeeen]{\newline  \textit{Spearmans Rangkorrelationen der vier Bedingungen der \gls{ssauf}} \vspace{.2cm}}
-	\label{tab:SScorr}
+	\caption[Deskriptive Angaben zur Schwellenbestimmung in der \gls{ssauf}]{\newline  \textit{Deskriptive Angaben zur Schwellenbestimmung der \gls{ssauf} in Millisekunden (Mittelwert, Standardabweichung, Minimum, Maximum) und Kennwerte zur Verteilung der Daten} \vspace{.2cm}}
+	\label{tab:SSdescriptives}
 	%	\resizebox{\columnwidth}{!}{%	
 	\begin{threeparttable}
-		\sisetup{table-space-text-post = $^{***}$}
+		
 		\begin{tabular}{
-				p{.5cm}
 				c
-				S[table-format = 0.2, add-integer-zero=false]
-				S[table-format = 0.2, add-integer-zero=false]
-				S[table-format = 0.2, add-integer-zero=false]
-				>{\centering\arraybackslash}p{1.2cm}
-				}
+				S[table-format = 2.0]
+				S[table-format = 3.0]
+				S[table-format = 2.0]
+				S[table-format = 3.0]
+				S[table-format = 1.2]
+				S[table-format = 1.2]
+				S[table-format = <0.3, add-integer-zero=false]
+			}
 			\hline
-							&	{Bedingung}		&	{1}							&	{2}							&	{3}							&	 4	\\
+			Bedingung 		&	\textit{M}	&	\textit{SD}	&	{Min}	&	Max 	&	\textnormal{Schräge}	&	\textnormal{Kurtosis}  &{S-W \textit{p}-Wert}\\
 			\hline
-			
-			1				&	\(1.8^{\circ}\)	&								&								&								&	 \\
-			2				&	\(3.6^{\circ}\)	&	.84{$^{***}$}	&								&								&	 \\
-			3				&	\(5.4^{\circ}\)	&	.72{$^{***}$}	&	.86{$^{***}$}	&								&	 \\
-			4				&	\(7.2^{\circ}\)	&	.54{$^{***}$}	&	.75{$^{***}$}	&	.88{$^{***}$}	&	 \\
+			\(1.8^{\circ}\)	&	85			&	27			&	31		&	161		&	0.46					&	-0.14					& 		.01	\\
+			\(3.6^{\circ}\)	&	94			&	33			&	37		&	282		&	1.73					&	6.75					& 		<.001	\\
+			\(5.4^{\circ}\)	&	116			&	52			&	45		&	422		&	2.84					&	11.39					& 		<.001	\\
+			\(7.2^{\circ}\)	&	149			&	85			&	61		&	705		&	3.23					&	14.01					& 		<.001	\\
 			\hline
 		\end{tabular}%
 		%}
-		
-		
-					\begin{tablenotes}[flushleft]
-						\footnotesize				% font size
-						\setlength\labelsep{0pt}	% no indent on second line
-						\item \textit{Anmerkung.} {$^{***}$}$p<.001$ (zweiseitig).
-					\end{tablenotes}%
+		\begin{tablenotes}[flushleft]
+			\footnotesize				% font size
+			\setlength\labelsep{0pt}	% no indent on second line
+			\item \textit{Anmerkungen.} Min~=~Minimum, Max~=~Maximum, S-W~=~Shapiro-Wilk-Test.
+		\end{tablenotes}%
 	\end{threeparttable}%
 	%}
 \end{table}
 
 
-\clearpage
+
+
+
+
+
+%\begin{table}[htbp]
+%	%\flushleft
+%	\centering
+%	\captionsetup{labelsep = none}
+%	\caption[Korrelationeeeeeen]{\newline  \textit{Spearmans Rangkorrelationen der vier Bedingungen der \gls{ssauf}} \vspace{.2cm}}
+%	\label{tab:SScorr}
+%	%	\resizebox{\columnwidth}{!}{%	
+%	\begin{threeparttable}
+%		\sisetup{table-space-text-post = $^{***}$}
+%		\begin{tabular}{
+%				p{.5cm}
+%				c
+%				S[table-format = 0.2, add-integer-zero=false]
+%				S[table-format = 0.2, add-integer-zero=false]
+%				S[table-format = 0.2, add-integer-zero=false]
+%				>{\centering\arraybackslash}p{1.2cm}
+%				}
+%			\hline
+%							&	{Bedingung}		&	{1}							&	{2}							&	{3}							&	 4	\\
+%			\hline
+%			
+%			1				&	\(1.8^{\circ}\)	&								&								&								&	 \\
+%			2				&	\(3.6^{\circ}\)	&	.84{$^{***}$}	&								&								&	 \\
+%			3				&	\(5.4^{\circ}\)	&	.72{$^{***}$}	&	.86{$^{***}$}	&								&	 \\
+%			4				&	\(7.2^{\circ}\)	&	.54{$^{***}$}	&	.75{$^{***}$}	&	.88{$^{***}$}	&	 \\
+%			\hline
+%		\end{tabular}%
+%		%}
+%		
+%		
+%					\begin{tablenotes}[flushleft]
+%						\footnotesize				% font size
+%						\setlength\labelsep{0pt}	% no indent on second line
+%						\item \textit{Anmerkung.} {$^{***}$}$p<.001$ (zweiseitig).
+%					\end{tablenotes}%
+%	\end{threeparttable}%
+%	%}
+%\end{table}
+
+
+
 \subsection{\gls{ha}}
 
-Die mittleren \glspl{rz} sind in Abbildung \ref{fig:Hickscatter} zu sehen. Deskriptive Angaben zur Aufgabe sind in Tabelle \ref{tab:Hickdescriptives} zu finden und die Zusammenhänge zwischen den Bedingungen sind in Tabelle \ref{tab:Hickcorr} abgetragen.
+Die \glspl{rz} aller \glspl{vp} der \gls{ha} sind in Abbildung \ref{fig:Hickscatter} zu sehen. Die dazugehörigen deskriptiven Angaben sind in Tabelle \ref{tab:Hickdescriptives} abgetragen.
+
+
+Wie bei der Analyse der \gls{ssauf} mussten als erstes die datengerechten Auswertungsverfahren bestimmen werden. Dafür wurden die \glspl{rz} der vier Bedingungen mit Shapiro-Wilk-Tests auf Normalverteilung getestet. Die Tests wiesen darauf hin, dass die Verteilungen nicht einer Normalverteilung entsprachen (alle $p\textnormal{s}<.001$, siehe Tabelle \ref{tab:Hickdescriptives}). Infolgedessen wurden wie bei der Analyse der \gls{ssauf} verteilungsfreie Auswertungsverfahren eingesetzt.
+
+
+
 
 \begin{figure}[htbp]
 	\centering
@@ -4551,13 +4556,11 @@ Die mittleren \glspl{rz} sind in Abbildung \ref{fig:Hickscatter} zu sehen. Deskr
 \end{figure}
 
 
-
-
-\begin{table}[htbp]
+\begin{table}[b]
 	%\flushleft
 	\centering
 	\captionsetup{labelsep = none}
-	\caption[Deskriptive Angaben zur ]{\newline  \textit{Deskriptive Angaben zur \gls{ha} und Kennwerte zur Verteilung der Daten} \vspace{.2cm}}
+	\caption[Deskriptive Angaben zu den Reaktionszeiten in der \gls{ha}]{\newline \textit{Deskriptive Angaben zu den Reaktionszeiten der \gls{ha} in Millisekunden (Mittelwert, Standardabweichung, Minimum, Maximum) und Kennwerte zur Verteilung der Daten} \vspace{.2cm}}
 	\label{tab:Hickdescriptives}
 	%	\resizebox{\columnwidth}{!}{%	
 	\begin{threeparttable}
@@ -4570,22 +4573,22 @@ Die mittleren \glspl{rz} sind in Abbildung \ref{fig:Hickscatter} zu sehen. Deskr
 				S[table-format = 3.0, add-integer-zero=false]
 				S[table-format = 0.2, add-integer-zero=false]
 				S[table-format = 1.2, add-integer-zero=false]
-				S[table-format = 1.2, add-integer-zero=false]
+				S[table-format = <0.3, add-integer-zero=false]
 				}
 			\hline
 			Bedingung	& 	{\textit{M}}&{\textit{SD}}	&	{Min}	&	{Max} 	&	{\textnormal{Schräge}}	&	{\textnormal{Kurtosis}} &	{S-W \textit{p}-Wert}\\
 			\hline
-			0-bit		&	240			&	29			&	188		&	394		&	1.58					&	4.96					& 	.008			\\
-			1-bit		&	296			&	32			&	234		&	416		&	0.93					&	1.31					& 	.001			\\
-			2-bit		&	377			&	54			&	280		&	590		&	0.87					&	0.99					& 	.001			\\
-			2.58-bit	&	438			&	67			&	315		&	650		&	0.82					&	0.39					& 	.001			\\
+			0-bit		&	240			&	29			&	188		&	394		&	1.58					&	4.96					& 	<.001			\\
+			1-bit		&	296			&	32			&	234		&	416		&	0.93					&	1.31					& 	<.001			\\
+			2-bit		&	377			&	54			&	280		&	590		&	0.87					&	0.99					& 	<.001			\\
+			2.58-bit	&	438			&	67			&	315		&	650		&	0.82					&	0.39					& 	<.001			\\
 			\hline
 		\end{tabular}%
 		%}
 		\begin{tablenotes}[flushleft]
 			\footnotesize				% font size
 			\setlength\labelsep{0pt}	% no indent on second line
-			\item \textit{Anmerkungen.} Min~=~Minimum, Max~=Maximum.
+			\item \textit{Anmerkungen.} Min~=~Minimum, Max~=Maximum, S-W~=~Shapiro-Wilk-Test.
 		\end{tablenotes}%
 	\end{threeparttable}%
 	%}
@@ -4595,43 +4598,43 @@ Die mittleren \glspl{rz} sind in Abbildung \ref{fig:Hickscatter} zu sehen. Deskr
 
 
 
-\begin{table}[htbp]
-	%\flushleft
-	\centering
-	\captionsetup{labelsep = none}
-	\caption[Korrelationen Hick]{\newline  \textit{Spearmans Rangkorrelationen der vier Bedingungen der \gls{ha}} \vspace{.2cm}}
-	\label{tab:Hickcorr}
-	%	\resizebox{\columnwidth}{!}{%	
-	\begin{threeparttable}
-		\sisetup{table-space-text-post = $^{***}$}
-		\begin{tabular}{
-				p{.5cm}
-				c
-				S[table-format = 0.2, add-integer-zero=false]
-				S[table-format = 0.2, add-integer-zero=false]
-				S[table-format = 0.2, add-integer-zero=false]
-				>{\centering\arraybackslash}p{1.2cm}
-			}
-			\hline
-			&	{Bedingung}		&	{1}	&	{2}	&	{3}		&	 4	\\
-			\hline
-			
-			1	&	0-bit		&								&								&								&	 \\
-			2	&	1-bit		&	.72{$^{***}$}	&								&								&	 \\
-			3	&	2-bit		&	.52{$^{***}$}	&	.72{$^{***}$}	&								&	 \\
-			4	&	2.58-bit	&	.41{$^{***}$}	&	.64{$^{***}$}	&	.81{$^{***}$}	&	 \\
-			\hline
-			
-		\end{tabular}%
-		%}
-		\begin{tablenotes}[flushleft]
-			\footnotesize				% font size
-			\setlength\labelsep{0pt}	% no indent on second line
-			\item \textit{Anmerkung.} {$^{***}$}$p<.001$ (zweiseitig).
-		\end{tablenotes}%
-	\end{threeparttable}%
-	%}
-\end{table}
+%\begin{table}[htbp]
+%	%\flushleft
+%	\centering
+%	\captionsetup{labelsep = none}
+%	\caption[Korrelationen Hick]{\newline  \textit{Spearmans Rangkorrelationen der vier Bedingungen der \gls{ha}} \vspace{.2cm}}
+%	\label{tab:Hickcorr}
+%	%	\resizebox{\columnwidth}{!}{%	
+%	\begin{threeparttable}
+%		\sisetup{table-space-text-post = $^{***}$}
+%		\begin{tabular}{
+%				p{.5cm}
+%				c
+%				S[table-format = 0.2, add-integer-zero=false]
+%				S[table-format = 0.2, add-integer-zero=false]
+%				S[table-format = 0.2, add-integer-zero=false]
+%				>{\centering\arraybackslash}p{1.2cm}
+%			}
+%			\hline
+%			&	{Bedingung}		&	{1}	&	{2}	&	{3}		&	 4	\\
+%			\hline
+%			
+%			1	&	0-bit		&								&								&								&	 \\
+%			2	&	1-bit		&	.72{$^{***}$}	&								&								&	 \\
+%			3	&	2-bit		&	.52{$^{***}$}	&	.72{$^{***}$}	&								&	 \\
+%			4	&	2.58-bit	&	.41{$^{***}$}	&	.64{$^{***}$}	&	.81{$^{***}$}	&	 \\
+%			\hline
+%			
+%		\end{tabular}%
+%		%}
+%		\begin{tablenotes}[flushleft]
+%			\footnotesize				% font size
+%			\setlength\labelsep{0pt}	% no indent on second line
+%			\item \textit{Anmerkung.} {$^{***}$}$p<.001$ (zweiseitig).
+%		\end{tablenotes}%
+%	\end{threeparttable}%
+%	%}
+%\end{table}
 
 \clearpage
 \subsection{\gls{bist}}
@@ -4691,6 +4694,68 @@ Die mittleren \glspl{rz} sind in Abbildung \ref{fig:Hickscatter} zu sehen. Deskr
 		\end{tablenotes}%
 	\end{threeparttable}%
 	%}
+\end{table}
+
+\subsection{Im Zusammenspiel?}
+
+\begin{table}[htbp]
+	%	\flushleft
+	\centering
+	\captionsetup{labelsep = none}
+	\caption[Korrelationen all]{\newline  \textit{Spearmans Rangkorrelationen zwischen den Bedingungen der \gls{ssauf}, der \gls{ha} und dem \textit{z}-Wert des \gls{bist}} \vspace{.2cm}}
+	\label{tab:shzmanifest}
+	%	\resizebox{1.5\columnwidth}{!}{%	
+	\begin{threeparttable}
+		\sisetup{table-space-text-post = $^{***}$}
+		\begin{tabular}{
+				p{.1cm}
+				c
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				p{.001cm}
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				p{.001cm}
+				S[table-format = 0.2, add-integer-zero=false]
+				>{\centering\arraybackslash}p{1.2cm}
+			}
+			\hline
+			
+			
+			&	& 	\multicolumn{4}{c}{\gls{ssauf}}	&	&	\multicolumn{4}{c}{\gls{ha}}	&	&	\multicolumn{1}{c}{\gls{bist}}	\\
+			
+			\cline{3-6}
+			\cline{8-11}
+			\cline{13-13}
+			
+			&	{Bedingung}			&	{1}				&	{2}				&	{3}				&	 {4}	&& {5}	& {6}	& {7}	& {8}	&& {9}\\
+			\hline
+			1	&	\(1.8^{\circ}\)	&		&		&		&		&		&		&		&		&		&		&\\
+			2	&	\(3.6^{\circ}\)	&	.84{$^{***}$}	&		&		&		&		&		&		&		&		&		&\\
+			3	&	\(5.4^{\circ}\)	&	.72{$^{***}$}	&	.86{$^{***}$}	&		&		&		&		&		&		&		&		&\\
+			4	&	\(7.2^{\circ}\)	&	.54{$^{***}$}	&	.75{$^{***}$}	&	.88{$^{***}$}	&		&		&		&		&		&		&		&\\
+			\rule{0pt}{4ex}%  EXTRA vertical height
+			5	&	0-bit			&	.13				&	.20{$^{**}$}	&	.17{$^{*}$}	&	.13		&&		&&&&&\\
+			6	&	1-bit			&	.04				&	.06				&	.04			&	.01		&&.72{$^{***}$}	&	&	&	&	&		\\
+			7	&	2-bit			&	.11				&	.11				&	.07			&	.04		&&.52{$^{***}$}	&	.72{$^{***}$}	&	&	&	&		\\
+			8	&	2.58-bit		&	.07				&	.05				&	.02			&	-.01	&&.41{$^{***}$}	&	.64{$^{***}$}	&	.81{$^{***}$}	&	&	&		\\
+			\rule{0pt}{4ex}%  EXTRA vertical height
+			9	&	\textit{z}-Wert	&	-.14			&	-.13			&	-.09		&	-.06	&&	-.15{$^{*}$}	&	-.32{$^{***}$}	&	-.32{$^{***}$}	&	-.31{$^{***}$}	&				&		\\
+			\hline
+			
+		\end{tabular}%
+		%}
+		\begin{tablenotes}[flushleft]
+			\footnotesize				% font size
+			\setlength\labelsep{0pt}	% no indent on second line
+			\item {$^{*}$}$p<.05$, {$^{**}$}$p<.01$, {$^{***}$}$p<.001$ (zweiseitig).
+		\end{tablenotes}%
+	\end{threeparttable}%
+	%	}
 \end{table}
 
 
@@ -6439,65 +6504,7 @@ In einem ersten Schritt wurden die vier Bedingungen der \gls{ssauf}, die vier Be
 Die vier Bedingungen der \gls{ha} hingegen korrelierten alle signifikant mit dem \textit{z}-Wert (siehe Tabelle \ref{tab:shzmanifest}).
 
 
-\begin{table}[htbp]
-%	\flushleft
-	\centering
-	\captionsetup{labelsep = none}
-	\caption[Korrelationen all]{\newline  \textit{Spearmans Rangkorrelationen zwischen den Bedingungen der \gls{ssauf}, der \gls{ha} und dem \textit{z}-Wert des \gls{bist}} \vspace{.2cm}}
-	\label{tab:shzmanifest}
-%	\resizebox{1.5\columnwidth}{!}{%	
-	\begin{threeparttable}
-		\sisetup{table-space-text-post = $^{***}$}
-		\begin{tabular}{
-				p{.1cm}
-				c
-				S[table-format = 0.2, add-integer-zero=false]
-				S[table-format = 0.2, add-integer-zero=false]
-				S[table-format = 0.2, add-integer-zero=false]
-				S[table-format = 0.2, add-integer-zero=false]
-				p{.001cm}
-				S[table-format = 0.2, add-integer-zero=false]
-				S[table-format = 0.2, add-integer-zero=false]
-				S[table-format = 0.2, add-integer-zero=false]
-				S[table-format = 0.2, add-integer-zero=false]
-				p{.001cm}
-				S[table-format = 0.2, add-integer-zero=false]
-				>{\centering\arraybackslash}p{1.2cm}
-			}
-			\hline
-			
-			
-		&	& 	\multicolumn{4}{c}{\gls{ssauf}}	&	&	\multicolumn{4}{c}{\gls{ha}}	&	&	\multicolumn{1}{c}{\gls{bist}}	\\
-		
-		\cline{3-6}
-		\cline{8-11}
-		\cline{13-13}
-			
-				&	{Bedingung}			&	{1}				&	{2}				&	{3}				&	 {4}	&& {5}	& {6}	& {7}	& {8}	&& {9}\\
-			\hline
-	1	&	\(1.8^{\circ}\)	&		&		&		&		&		&		&		&		&		&		&\\
-	2	&	\(3.6^{\circ}\)	&	.84{$^{***}$}	&		&		&		&		&		&		&		&		&		&\\
-	3	&	\(5.4^{\circ}\)	&	.72{$^{***}$}	&	.86{$^{***}$}	&		&		&		&		&		&		&		&		&\\
-	4	&	\(7.2^{\circ}\)	&	.54{$^{***}$}	&	.75{$^{***}$}	&	.88{$^{***}$}	&		&		&		&		&		&		&		&\\
-	\rule{0pt}{4ex}%  EXTRA vertical height
-	5	&	0-bit			&	.13				&	.20{$^{**}$}	&	.17{$^{*}$}	&	.13		&&		&&&&&\\
-	6	&	1-bit			&	.04				&	.06				&	.04			&	.01		&&.72{$^{***}$}	&	&	&	&	&		\\
-	7	&	2-bit			&	.11				&	.11				&	.07			&	.04		&&.52{$^{***}$}	&	.72{$^{***}$}	&	&	&	&		\\
-	8	&	2.58-bit		&	.07				&	.05				&	.02			&	-.01	&&.41{$^{***}$}	&	.64{$^{***}$}	&	.81{$^{***}$}	&	&	&		\\
-	\rule{0pt}{4ex}%  EXTRA vertical height
-	9	&	\textit{z}-Wert	&	-.14			&	-.13			&	-.09		&	-.06	&&	-.15{$^{*}$}	&	-.32{$^{***}$}	&	-.32{$^{***}$}	&	-.31{$^{***}$}	&				&		\\
-	\hline
-	
-	\end{tabular}%
-		%}
-		\begin{tablenotes}[flushleft]
-			\footnotesize				% font size
-			\setlength\labelsep{0pt}	% no indent on second line
-			\item \textit{Anmerkungen.} {$^{*}$}$p<.05$, {$^{**}$}$p<.01$, {$^{***}$}$p<.001$ (zweiseitig).
-		\end{tablenotes}%
-	\end{threeparttable}%
-%	}
-\end{table}
+
 
 In einem zweiten Schritt wurden die vier \glspl{rz} der \gls{ha} mit einer linearen Regression der Form \(y=a+bx\) vorhergesagt (siehe Abbildung \ref{fig:linmodel}). Deskriptive Angaben zu den daraus resultierenden Parametern $a$, dem Achsenabschnitt, und $b$, der Steigung, sind in Tabelle \ref{tab:InterSlope} zu finden. Über alle \glspl{vp} gemittelt betrug $R^2=.96$, wobei im Gegensatz zur regressionsanalytischen Analyse der \gls{ssauf} (siehe Abschnitt \ref{sec:2Fragestellung}) geringere individuelle Variabilität (\gls{sd} $=.04$, Min = .732, Max = .999) bestand.
 \begin{figure}[b]
