@@ -722,7 +722,7 @@ Die Stimuli wurden mit E-Prime\textsuperscript{\textregistered} \citep{eprime} p
 
 
 
-\subsection{Versuchsablauf \label{sub:}}
+\subsection{Versuchsablauf \label{subsec:HVersuchsablauf}}
 
 
 In der $0$-Bit-Bedingung bearbeiteten die \glspl{vp} $32$ Durchgänge. Jeder Durchgang startete nach $1100$ ms mit der Präsentation eines Rechtecks. Nach einer variablen Zeitdauer, \gls{soa} genannt, welche $1000$, $1333$, $1666$ oder $2000$ ms betrug, wurde der imperative Reiz, ein \enquote{+}, eingeblendet. Die \glspl{vp} wurden angewiesen, mit dem Zeigefinger ihrer dominanten Hand so rasch als möglich auf die vorgesehene Antworttaste zu drücken. Bei einer Antwortabgabe nach Einblenden des imperativen Reizes folgte ein Ton. Bei einer Antwortabgabe vor Einblenden des imperativen Reizes folgte kein Ton. In beiden Fällen führte eine Antwortabgabe zur Ausblendung der Stimuli und zum Start des nächsten Durchganges.
@@ -977,11 +977,12 @@ Das \gls{srmr} ist ein Mass dafür, wie hoch die durchschnittlichen Korrelations
 
 \subsection{\gls{ssauf} \label{subsec:SSres}}
 
+
 Die Schwellenschätzungen aller \glspl{vp} sind in Abbildung \ref{fig:SSscatter} zu sehen. Die dazugehörigen deskriptiven Angaben sind in Tabelle \ref{tab:SSdescriptives} abgetragen. 
-Um für die Analyse adäquate Auswertungsverfahren zu bestimmen, wurden die vier Bedingungen der \gls{ssauf} auf Normalverteilung geprüft. Die Bedingungen waren mit positiven Schiefen linkssteil und mit negativen und positiven Kurtosen flacher respektive steiler als die Normalverteilung und damit als moderat bis stark von der Normalverteilung abweichend zu bezeichnen \citep{Finney2006,Curran1996}. Auch Shapiro-Wilk-Tests\footnote{Liberalere Tests wie der Anderson-Darling- oder der Lilliefors-Test  kamen zum gleichen Ergebnis wie der vergleichsweise konservative Shapiro-Wilk-Test. Siehe \citet{Razali2011} für die Teststärken der verwendeten Tests.} haben ergeben, dass die Schwellenschätzungen der vier Bedingungen nicht normalverteilt waren (alle $p\textnormal{s}\leq.01$). 
+Um für die Analyse adäquate Auswertungsverfahren zu bestimmen, wurden die vier Bedingungen der \gls{ssauf} auf Normalverteilung geprüft. Die Bedingungen waren mit positiven Schiefen linkssteil und mit negativen und positiven Kurtosen flacher respektive spitzer als die Normalverteilung und damit als moderat bis stark von der Normalverteilung abweichend zu bezeichnen \citep{Finney2006}. Auch Shapiro-Wilk-Tests\footnote{Liberalere Tests wie der Anderson-Darling- oder der Lilliefors-Test  kamen zum gleichen Ergebnis wie der vergleichsweise konservative Shapiro-Wilk-Test. Siehe \citet{Razali2011} für die Teststärken der verwendeten Tests.} haben ergeben, dass die Schwellenschätzungen der vier Bedingungen nicht normalverteilt waren (alle $p\textnormal{s}\leq.01$). 
 Als Konsequenz wurden die für die Analyse auf manifester Ebene vorgesehenen parametrische Verfahren (einfaktorielle Varianzanalyse mit Messwiederholung und Produkt-Moment-Korrelationen) durch die entsprechenden verteilungsfreien Varianten (Friedman-Test und Spearmans Rangkorrelationen) ersetzt.
 
-Zuerst wurde geprüft, ob die Mustergrösse einen signifikanten Einfluss auf die Wahrnehmungsleistung der \glspl{vp} ausübte. Dafür wurde ein Friedman-Test durchgeführt. Der Globaltest hat darauf hingedeutet, dass sich die Bedingungen signifikant voneinander unterschieden, $\upchi^2(3)=343.88$, $p<.001$. 
+Zuerst wurde geprüft, ob die Mustergrösse einen signifikanten Einfluss auf die Wahrnehmungsleistung der \glspl{vp} ausübte. Dafür wurde ein Friedman-Test durchgeführt. Der Globaltest hat darauf hingedeutet, dass die mittleren Schwellenschätzungen in den vier Bedingungen nicht identisch waren, $\upchi^2(3)=343.88$, $p<.001$. 
 Um zu erfahren, welche Bedingungen sich voneinander unterschieden, wurden Post-hoc-Tests \citep{Galili2010, Hollander2014} gerechnet. Diese haben ergeben, dass sich von den (durch die vier Bedingungen bestimmten) sechs Einzelvergleichen nur die \(1.8^{\circ}\)- und \(3.6^{\circ}\)-Bedingung nicht signifikant voneinander unterschieden ($p=.12$). Die restlichen fünf Einzelvergleiche waren mit $p<.001$ alle statistisch signifikant.
 Mit Ausnahme des Wahrnehmungsleistungsunterschieds zwischen der \(1.8^{\circ}\)- und der \(3.6^{\circ}\)-Bedingung verschlechterte sich die Wahrnehmungsleistung der \glspl{vp} also mit zunehmender Mustergrösse signifikant.
 
@@ -2715,12 +2716,6 @@ Mit Ausnahme des Wahrnehmungsleistungsunterschieds zwischen der \(1.8^{\circ}\)-
 	\label{fig:SSscatter}
 \end{figure}
 
-Spearmans Rangkorrelationen ($r_{s}$) zwischen den vier Bedingungen der \gls{ssauf} wiesen ausnahmslos auf starke Zusammenhänge hin. Relativ betrachtet bestand der tiefste Zusammenhang zwischen der \(1.8^{\circ}\)- und der \(7.2^{\circ}\)-Bedingung ($r_{s}~=~.54$, $p~<~.001$) und der höchste Zusammenhang zwischen der \(5.4^{\circ}\)- und der \(7.2^{\circ}\)-Bedingung ($r_{s}~=~.88$, $p~<~.001$). Alle Korrelationen zwischen den vier Bedingungen der \gls{ssauf} sind in Tabelle \ref{tab:shzmanifest} zu finden.
-
-
-
-
-
 \begin{table}[t]
 	%\flushleft
 	\centering
@@ -2758,6 +2753,14 @@ Spearmans Rangkorrelationen ($r_{s}$) zwischen den vier Bedingungen der \gls{ssa
 	\end{threeparttable}%
 	%}
 \end{table}
+
+Spearmans Rangkorrelationen ($r_{s}$) zwischen den vier Bedingungen der \gls{ssauf} wiesen ausnahmslos auf starke Zusammenhänge hin (siehe Tabelle \ref{tab:shzmanifest}).
+
+
+
+
+
+
 
 
 
@@ -2808,15 +2811,16 @@ Spearmans Rangkorrelationen ($r_{s}$) zwischen den vier Bedingungen der \gls{ssa
 
 \subsection{\gls{ha}}
 
-Die \glspl{rz} aller \glspl{vp} der \gls{ha} sind in Abbildung \ref{fig:Hickscatter} zu sehen. Die dazugehörigen deskriptiven Angaben sind in Tabelle \ref{tab:Hickdescriptives} abgetragen.
+Die mittleren \glspl{rz} aller \glspl{vp} sind in Abbildung \ref{fig:Hickscatter} zu sehen. Die dazugehörigen deskriptiven Angaben sind in Tabelle \ref{tab:Hickdescriptives} abgetragen.
+Wie bei der Analyse der \gls{ssauf} mussten als erstes die adäquaten Auswertungsverfahren bestimmen werden. 
+Die positiven Schiefen und Kurtosen der vier Bedingungen deuteten im Vergleich mit der Normalverteilung auf links\-steile respektive spitze Verteilungen hin und wichen damit moderat von der Normalverteilung ab \citep{Finney2006}. Bestätigt wurden die Abweichungen durch hochsignifikante Shapiro-Wilk-Tests\footnote{Liberalere Tests \citep[Anderson-Darling- und der Lilliefors-Tests,][]{Razali2011} kamen ebenfalls zum Ergebnis, dass die Bedingungen nicht normalverteilt waren.} (alle $p\textnormal{s}<.001$, siehe Tabelle \ref{tab:Hickdescriptives}).
+Die für die Analyse auf manifester Ebene vorgesehenen parametrische Verfahren (einfaktorielle Varianzanalyse mit Messwiederholung und Produkt-Moment-Korrelationen) wurden deshalb durch ihre entsprechenden verteilungsfreien Varianten (Friedman-Test und Spearmans Rangkorrelationen) ersetzt.
 
+Um zu testen, ob die \gls{rz} der \glspl{vp} von der Anzahl Antwortalternativen abhing, wurde ein Friedman-Test durchgeführt. Der Globaltest war mit $\upchi^2(3)=516.12$, $p<.001$, hochsignifikant und deutete darauf hin, dass die mittleren \glspl{rz} in den vier Bedingungen nicht identisch waren. Post-hoc-Tests \citep{Galili2010, Hollander2014} haben ergeben, dass sich alle Bedingungen signifikant voneinander unterschieden (alle $p\textnormal{s}<.001$). Die mittleren \glspl{rz} der \glspl{vp} erhöhten sich also über die Bedingungen hinweg signifikant.
 
-Wie bei der Analyse der \gls{ssauf} mussten als erstes die datengerechten Auswertungsverfahren bestimmen werden. Dafür wurden die \glspl{rz} der vier Bedingungen mit Shapiro-Wilk-Tests auf Normalverteilung getestet. Die Tests wiesen darauf hin, dass die Verteilungen nicht einer Normalverteilung entsprachen (alle $p\textnormal{s}<.001$, siehe Tabelle \ref{tab:Hickdescriptives}). Infolgedessen wurden wie bei der Analyse der \gls{ssauf} verteilungsfreie Auswertungsverfahren eingesetzt.
+Spearmans Rangkorrelationen zwischen den vier Bedingungen der \gls{ha} deuteten auf mittlere bis hohe Zusammenhänge hin (siehe Tabelle \ref{tab:shzmanifest}).
 
-
-
-
-\begin{figure}[htbp]
+\begin{figure}[t]
 	\centering
 	\resizebox{\textwidth}{!}{
 		
@@ -4546,12 +4550,12 @@ Wie bei der Analyse der \gls{ssauf} mussten als erstes die datengerechten Auswer
 		
 		%
 	}
-	\caption[Hick-Aufgabe-Streudiagramm]{Streudiagramme der vier Bedingungen der \gls{ha}. Die horizontale Linie kennzeichnet jeweils den Mittelwert der Reaktionszeiten innerhalb einer Bedingung. Vp = Versuchsperson.}
+	\caption[Hick-Aufgabe-Streudiagramm]{Streudiagramme der vier Bedingungen der \gls{ha}. Die horizontale Linie kennzeichnet jeweils den Mittelwert innerhalb einer Bedingung. Siehe Abschnitt \ref{subsec:HVersuchsablauf} für eine Beschreibung der Datenaufbereitung. Vp = Versuchsperson.}
 	\label{fig:Hickscatter}
 \end{figure}
 
 
-\begin{table}[b]
+\begin{table}[t]
 	%\flushleft
 	\centering
 	\captionsetup{labelsep = none}
@@ -4571,12 +4575,12 @@ Wie bei der Analyse der \gls{ssauf} mussten als erstes die datengerechten Auswer
 				S[table-format = <0.3, add-integer-zero=false]
 				}
 			\hline
-			Bedingung	& 	{\textit{M}}&{\textit{SD}}	&	{Min}	&	{Max} 	&	{\textnormal{Schräge}}	&	{\textnormal{Kurtosis}} &	{S-W \textit{p}-Wert}\\
+			Bedingung	& 	{\textit{M}}&{\textit{SD}}	&	{Min}	&	{Max} 	&	{\textnormal{Schiefe}}	&	{\textnormal{Kurtosis}} &	{S-W \textit{p}-Wert}\\
 			\hline
 			0-bit		&	240			&	29			&	188		&	394		&	1.58					&	4.96					& 	<.001			\\
 			1-bit		&	296			&	32			&	234		&	416		&	0.93					&	1.31					& 	<.001			\\
 			2-bit		&	377			&	54			&	280		&	590		&	0.87					&	0.99					& 	<.001			\\
-			2.58-bit	&	438			&	67			&	315		&	650		&	0.82					&	0.39					& 	<.001			\\
+			2.58-bit	&	438			&	68			&	315		&	650		&	0.82					&	0.39					& 	<.001			\\
 			\hline
 		\end{tabular}%
 		%}
@@ -4631,15 +4635,17 @@ Wie bei der Analyse der \gls{ssauf} mussten als erstes die datengerechten Auswer
 %	%}
 %\end{table}
 
-\clearpage
+
 \subsection{\gls{bist}}
+
+
 
 
 \begin{table}[htbp]
 	%\flushleft
 	\centering
 	\captionsetup{labelsep = none}
-	\caption[Deskriptive Angaben zur ]{\newline  \textit{Deskriptive Angaben zum \gls{bist} und Kennwerte zur Verteilung der Daten} \vspace{.2cm}}
+	\caption[Deskriptive Angaben zur ]{\newline  \textit{Deskriptive Angaben zur Anzahl richtig gelöster Items im \gls{bist} (Mittelwert, Standardabweichung, Minimum, Maximum) und Kennwerte zur Verteilung der Daten} \vspace{.2cm}}
 	\label{tab:BISdescriptives}
 	%	\resizebox{\columnwidth}{!}{%	
 	\begin{threeparttable}
@@ -4652,32 +4658,30 @@ Wie bei der Analyse der \gls{ssauf} mussten als erstes die datengerechten Auswer
 				S[table-format = 2.0]
 				S[table-format = 1.2]
 				S[table-format = 1.2]
-%				S[table-format = < 0.3, add-integer-zero=false]
+				S[table-format = < 0.3, add-integer-zero=false]
 				}
 			\hline
-			& 	\multicolumn{4}{c}{in Rohwerten}	&		&				\\
-			
-			\cline{2-5}
-			Subtest &  {\textit{M}}	& {\textit{SD}}	&	{Min}	&	{Max} 	& \textnormal{Schräge}	& \textnormal{Kurtosis}\\% & {S-W  \textit{p}-Wert}\\
+
+			Subtest &  {\textit{M}}	& {\textit{SD}}	&	{Min}	&	{Max} 	& \textnormal{Schiefe}	& \textnormal{Kurtosis} & {S-W  \textit{p}-Wert}\\
 			\hline
-			OG		&	15.30		&	4.83		&	3		&	27		&	-0.34				&	-0.06	\\%				& 		.033			\\
-			ZN		&	3.87		&	2.45		&	0		&	9		&	0.49				&	-0.84	\\%				& 		<.001			\\
-			AN		&	3.23		&	1.63		&	0		&	7		&	0.08				&	-0.41	\\%			& 		<.001			\\
-			XG		&	19.39		&	6.48		&	1		&	36		&	0.14				&	0.12	\\%				& 		.055			\\
-			WA		&	3.24		&	1.86		&	0		&	7		&	0.10				&	-0.70	\\%				& 		<.001			\\
-			ZP		&	5.95		&	2.29		&	1		&	12		&	0.28				&	-0.13	\\%				& 		.003			\\
-			TM		&	9.28		&	3.61		&	1		&	16		&	-0.04				&	-0.82	\\%				& 		.002			\\
-			BD		&	50.99		&	10.78		&	2		&	78		&	-1.46				&	5.81	\\%				& 		<.001			\\
-			SC		&	3.15		&	1.97		&	0		&	7		&	0.07				&	-1.02	\\%				& 		<.001			\\
-			ST		&	8.57		&	3.68		&	0		&	18		&	-0.03				&	-0.34	\\%				& 		.132			\\
-			CH		&	2.77		&	1.65		&	0		&	6		&	-0.01				&	-0.79	\\%				& 		<.001			\\
-			TG		&	11.71		&	3.21		&	1		&	20		&	-0.66				&	0.99	\\%				& 		<.001			\\
-			RZ		&	10.80		&	4.03		&	1		&	20		&	-0.19				&	-0.50	\\%				& 		.058			\\
-			WM		&	7.14		&	2.89		&	2		&	17		&	0.79				&	0.86	\\%				& 		<.001			\\
-			KW		&	23.31		&	6.48		&	2		&	37		&	-0.24				&	0.12	\\%				& 		.042			\\
-			ZZ		&	6.40		&	2.95		&	1		&	14		&	0.33				&	-0.34	\\%				& 		.002			\\
-			OE		&	34.34		&	5.95		&	9		&	47		&	-0.46				&	1.06	\\%				& 		.007			\\
-			WE		&	18.24		&	6.08		&	1		&	31		&	-0.24				&	-0.35	\\%				& 		.136			\\
+			OG		&	15.30		&	4.83		&	3		&	27		&	-0.34				&	-0.06					& 		.033			\\
+			ZN		&	3.87		&	2.45		&	0		&	9		&	0.49				&	-0.84				& 		<.001			\\
+			AN		&	3.23		&	1.63		&	0		&	7		&	0.08				&	-0.41				& 		<.001			\\
+			XG		&	19.39		&	6.48		&	1		&	36		&	0.14				&	0.12					& 		.055			\\
+			WA		&	3.24		&	1.86		&	0		&	7		&	0.10				&	-0.70					& 		<.001			\\
+			ZP		&	5.95		&	2.29		&	1		&	12		&	0.28				&	-0.13				& 		.003			\\
+			TM		&	9.28		&	3.61		&	1		&	16		&	-0.04				&	-0.82					& 		.002			\\
+			BD		&	50.99		&	10.78		&	2		&	78		&	-1.46				&	5.81					& 		<.001			\\
+			SC		&	3.15		&	1.97		&	0		&	7		&	0.07				&	-1.02					& 		<.001			\\
+			ST		&	8.57		&	3.68		&	0		&	18		&	-0.03				&	-0.34					& 		.132			\\
+			CH		&	2.77		&	1.65		&	0		&	6		&	-0.01				&	-0.79					& 		<.001			\\
+			TG		&	11.71		&	3.21		&	1		&	20		&	-0.66				&	0.99					& 		<.001			\\
+			RZ		&	10.80		&	4.03		&	1		&	20		&	-0.19				&	-0.50					& 		.058			\\
+			WM		&	7.14		&	2.89		&	2		&	17		&	0.79				&	0.86					& 		<.001			\\
+			KW		&	23.31		&	6.48		&	2		&	37		&	-0.24				&	0.12					& 		.042			\\
+			ZZ		&	6.40		&	2.95		&	1		&	14		&	0.33				&	-0.34					& 		.002			\\
+			OE		&	34.34		&	5.95		&	9		&	47		&	-0.46				&	1.06					& 		.007			\\
+			WE		&	18.24		&	6.08		&	1		&	31		&	-0.24				&	-0.35					& 		.136			\\
 			
 			\hline
 		\end{tabular}%
@@ -4685,7 +4689,7 @@ Wie bei der Analyse der \gls{ssauf} mussten als erstes die datengerechten Auswer
 		\begin{tablenotes}[flushleft]
 			\footnotesize				% font size
 			\setlength\labelsep{0pt}	% no indent on second line
-			\item \textit{Anmerkungen.} Siehe Tabelle \ref{tab:BIS} für eine Beschreibung der Subtests. Min~=~Minimum, Max~=~Maximum.
+			\item \textit{Anmerkungen.} Siehe Tabelle \ref{tab:BIS} für eine Beschreibung der Subtests. Min~=~Minimum, Max~=~Maximum, S-W~=~Shapiro-Wilk-Test.
 		\end{tablenotes}%
 	\end{threeparttable}%
 	%}
@@ -4747,7 +4751,7 @@ Wie bei der Analyse der \gls{ssauf} mussten als erstes die datengerechten Auswer
 		\begin{tablenotes}[flushleft]
 			\footnotesize				% font size
 			\setlength\labelsep{0pt}	% no indent on second line
-			\item {$^{*}$}$p<.05$, {$^{**}$}$p<.01$, {$^{***}$}$p<.001$ (zweiseitig).
+			\item {$^{*}$}$p<.05$. {$^{**}$}$p<.01$. {$^{***}$}$p<.001$ (zweiseitig).
 		\end{tablenotes}%
 	\end{threeparttable}%
 	%	}
@@ -6311,7 +6315,7 @@ Weiter ist die Quantifizierung der Wahrnehmungsleistungsverschlechterung durch d
 			& 	\multicolumn{4}{c}{in Millisekunden}	&		&				\\
 			
 			\cline{2-5}
-			Parameter	& 	{\textit{M}}	&{\textit{SD}}	&	{Min}	&	{Max} 	&	{\textnormal{Schräge}}	&	{\textnormal{Kurtosis}}\\% &S-W \textit{p}-Wert\\
+			Parameter	& 	{\textit{M}}	&{\textit{SD}}	&	{Min}	&	{Max} 	&	{\textnormal{Schiefe}}	&	{\textnormal{Kurtosis}}\\% &S-W \textit{p}-Wert\\
 			\hline
 			\textit{a}	&		70			&	28			&	5		&	195		&	1.00					&	1.96	\\%				& 		$.008$			\\
 			\textit{b}	&		.102		&	.081		&	-.080	&	.650	&	2.20					&	10.98	\\%				& 		$<.001$			\\
@@ -6474,8 +6478,9 @@ Das Modell bildete die empirischen Daten gut ab [$\upchi^2(14)=14.03$, $p=.45$, 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{../jpg/ssflg}
-	\caption[CFA Platzhalter Test]{Modell 9: Latenter Zusammenhang zwischen dem \gls{flm} der \gls{ssauf} und dem \gls{gfaktor} aus dem \gls{bist}. Eingezeichnet sind die standardisierten Koeffizienten. $^{*}~p~<~.05$, $^{**}~p~<~.01$, $^{***}~p~<~.001$.
-		
+	\caption[CFA Platzhalter Test]{Modell 9: Latenter Zusammenhang zwischen dem \gls{flm} der \gls{ssauf} und dem \gls{gfaktor} aus dem \gls{bist}. Eingezeichnet sind die standardisierten Koeffizienten.\\
+	$^{*}~p~<~.05$. $^{**}~p~<~.01$. $^{***}~p~<~.001$.
+	
 	}
 	\label{fig:ssflg}
 \end{figure} 
@@ -7072,7 +7077,7 @@ In einem zweiten Schritt wurden die vier \glspl{rz} der \gls{ha} mit einer linea
 			& 	\multicolumn{4}{c}{in Millisekunden}	&		&				\\
 			
 			\cline{2-5}
-			Parameter	& 	{\textit{M}}	&{\textit{SD}}	&	{Min}	&	{Max} 	&	{\textnormal{Schräge}}	&	{\textnormal{Kurtosis}}\\% &S-W \textit{p}-Wert\\
+			Parameter	& 	{\textit{M}}	&{\textit{SD}}	&	{Min}	&	{Max} 	&	{\textnormal{Schiefe}}	&	{\textnormal{Kurtosis}}\\% &S-W \textit{p}-Wert\\
 			\hline
 			\textit{a}	&		237			&	28			&	177		&	350		&	1.13					&	2.64	\\%				& 		$.008$			\\
 			\textit{b}	&		67			&	80			&	28		&	121		&	0.53					&	-0.18	\\%				& 		$<.001$			\\
@@ -7144,7 +7149,8 @@ Für die letzte Analyse auf manifester Ebene wurden die regressionsanalytisch he
 		\begin{tablenotes}[flushleft]
 			\footnotesize				% font size
 			\setlength\labelsep{0pt}	% no indent on second line
-			\item \textit{Anmerkungen.} \textit{a}~=~Asymptote bei der \gls{ssauf}, Achsenabschnitt bei der \gls{ha}. \textit{b}~=~Steigung. {$^{*}$}$p<.05$, {$^{**}$}$p<.01$, {$^{***}$}$p<.001$ (zweiseitig).
+			\item \textit{Anmerkungen.} \textit{a}~=~Asymptote bei der \gls{ssauf}, Achsenabschnitt bei der \gls{ha}. \textit{b}~=~Steigung. \\
+			$^{*}~p~<~.05$. $^{**}~p~<~.01$. $^{***}~p~<~.001$ (zweiseitig).
 		\end{tablenotes}%
 	\end{threeparttable}%
 	%	}
