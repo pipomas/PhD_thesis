@@ -4,4 +4,4 @@
 - Methods section is completed
 - Results section is in progress.
 
-To reproduce my thesis, download ZIP of this repository (upper right corner) and compile .tex file.
+To reproduce pdf, download ZIP of this repository (upper right corner) and compile .tex file.
