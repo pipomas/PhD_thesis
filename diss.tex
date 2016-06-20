@@ -979,14 +979,14 @@ Das \gls{srmr} ist ein Mass dafür, wie hoch die durchschnittlichen Korrelations
 
 
 Die Schwellenschätzungen aller \glspl{vp} sind in Abbildung \ref{fig:SSscatter} zu sehen. Die dazugehörigen deskriptiven Angaben sind in Tabelle \ref{tab:SSdescriptives} abgetragen. 
-Um für die Analyse adäquate Auswertungsverfahren zu bestimmen, wurden die vier Bedingungen der \gls{ssauf} auf Normalverteilung geprüft. Die Bedingungen waren mit positiven Schiefen linkssteil und mit negativen und positiven Kurtosen flacher respektive spitzer als die Normalverteilung und damit als moderat bis stark von der Normalverteilung abweichend zu bezeichnen \citep{Finney2006}. Auch Shapiro-Wilk-Tests\footnote{Liberalere Tests wie der Anderson-Darling- oder der Lilliefors-Test  kamen zum gleichen Ergebnis wie der vergleichsweise konservative Shapiro-Wilk-Test. Siehe \citet{Razali2011} für die Teststärken der verwendeten Tests.} haben ergeben, dass die Schwellenschätzungen der vier Bedingungen nicht normalverteilt waren (alle $p\textnormal{s}\leq.01$). 
+Um für die Analyse adäquate Auswertungsverfahren zu bestimmen, wurden die vier Bedingungen der \gls{ssauf} auf Normalverteilung geprüft. Die Bedingungen waren mit positiven Schiefen linkssteil und mit negativen und positiven Kurtosen flacher respektive spitzer als die Normalverteilung und damit als moderat bis stark von der Normalverteilung abweichend zu bezeichnen \citep{Finney2006}. Auch Shapiro-Wilk-Tests\footnote{Liberalere Tests wie der Anderson-Darling- oder der Lilliefors-Test  kamen zum gleichen Ergebnis wie der vergleichsweise konservative Shapiro-Wilk-Test. In den folgenden Abschnitten werden nur noch die Ergebnisse von Shapiro-Wilk-Tests berichtet. Wenn es nicht vermerkt wird, kamen liberalere Tests jeweils zum gleichen Ergebnis.  Siehe \citet{Razali2011} für die Teststärken der verwendeten Tests.} haben ergeben, dass die Schwellenschätzungen der vier Bedingungen nicht normalverteilt waren (alle $p\textnormal{s}\leq.01$). 
 Als Konsequenz wurden die für die Analyse auf manifester Ebene vorgesehenen parametrische Verfahren (einfaktorielle Varianzanalyse mit Messwiederholung und Produkt-Moment-Korrelationen) durch die entsprechenden verteilungsfreien Varianten (Friedman-Test und Spearmans Rangkorrelationen) ersetzt.
 
 Zuerst wurde geprüft, ob die Mustergrösse einen signifikanten Einfluss auf die Wahrnehmungsleistung der \glspl{vp} ausübte. Dafür wurde ein Friedman-Test durchgeführt. Der Globaltest hat darauf hingedeutet, dass die mittleren Schwellenschätzungen in den vier Bedingungen nicht identisch waren, $\upchi^2(3)=343.88$, $p<.001$. 
 Um zu erfahren, welche Bedingungen sich voneinander unterschieden, wurden Post-hoc-Tests \citep{Galili2010, Hollander2014} gerechnet. Diese haben ergeben, dass sich von den (durch die vier Bedingungen bestimmten) sechs Einzelvergleichen nur die \(1.8^{\circ}\)- und \(3.6^{\circ}\)-Bedingung nicht signifikant voneinander unterschieden ($p=.12$). Die restlichen fünf Einzelvergleiche waren mit $p<.001$ alle statistisch signifikant.
 Mit Ausnahme des Wahrnehmungsleistungsunterschieds zwischen der \(1.8^{\circ}\)- und der \(3.6^{\circ}\)-Bedingung verschlechterte sich die Wahrnehmungsleistung der \glspl{vp} also mit zunehmender Mustergrösse signifikant.
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 	\centering
 	\resizebox{\textwidth}{!}{
 		
@@ -2716,7 +2716,7 @@ Mit Ausnahme des Wahrnehmungsleistungsunterschieds zwischen der \(1.8^{\circ}\)-
 	\label{fig:SSscatter}
 \end{figure}
 
-\begin{table}[t]
+\begin{table}[htbp]
 	%\flushleft
 	\centering
 	\captionsetup{labelsep = none}
@@ -2764,56 +2764,11 @@ Spearmans Rangkorrelationen ($r_{s}$) zwischen den vier Bedingungen der \gls{ssa
 
 
 
-
-
-
-
-%\begin{table}[htbp]
-%	%\flushleft
-%	\centering
-%	\captionsetup{labelsep = none}
-%	\caption[Korrelationeeeeeen]{\newline  \textit{Spearmans Rangkorrelationen der vier Bedingungen der \gls{ssauf}} \vspace{.2cm}}
-%	\label{tab:SScorr}
-%	%	\resizebox{\columnwidth}{!}{%	
-%	\begin{threeparttable}
-%		\sisetup{table-space-text-post = $^{***}$}
-%		\begin{tabular}{
-%				p{.5cm}
-%				c
-%				S[table-format = 0.2, add-integer-zero=false]
-%				S[table-format = 0.2, add-integer-zero=false]
-%				S[table-format = 0.2, add-integer-zero=false]
-%				>{\centering\arraybackslash}p{1.2cm}
-%				}
-%			\hline
-%							&	{Bedingung}		&	{1}							&	{2}							&	{3}							&	 4	\\
-%			\hline
-%			
-%			1				&	\(1.8^{\circ}\)	&								&								&								&	 \\
-%			2				&	\(3.6^{\circ}\)	&	.84{$^{***}$}	&								&								&	 \\
-%			3				&	\(5.4^{\circ}\)	&	.72{$^{***}$}	&	.86{$^{***}$}	&								&	 \\
-%			4				&	\(7.2^{\circ}\)	&	.54{$^{***}$}	&	.75{$^{***}$}	&	.88{$^{***}$}	&	 \\
-%			\hline
-%		\end{tabular}%
-%		%}
-%		
-%		
-%					\begin{tablenotes}[flushleft]
-%						\footnotesize				% font size
-%						\setlength\labelsep{0pt}	% no indent on second line
-%						\item \textit{Anmerkung.} {$^{***}$}$p<.001$ (zweiseitig).
-%					\end{tablenotes}%
-%	\end{threeparttable}%
-%	%}
-%\end{table}
-
-
-
 \subsection{\gls{ha}}
 
 Die mittleren \glspl{rz} aller \glspl{vp} sind in Abbildung \ref{fig:Hickscatter} zu sehen. Die dazugehörigen deskriptiven Angaben sind in Tabelle \ref{tab:Hickdescriptives} abgetragen.
 Wie bei der Analyse der \gls{ssauf} mussten als erstes die adäquaten Auswertungsverfahren bestimmen werden. 
-Die positiven Schiefen und Kurtosen der vier Bedingungen deuteten im Vergleich mit der Normalverteilung auf links\-steile respektive spitze Verteilungen hin und wichen damit moderat von der Normalverteilung ab \citep{Finney2006}. Bestätigt wurden die Abweichungen durch hochsignifikante Shapiro-Wilk-Tests\footnote{Liberalere Tests \citep[Anderson-Darling- und der Lilliefors-Tests,][]{Razali2011} kamen ebenfalls zum Ergebnis, dass die Bedingungen nicht normalverteilt waren.} (alle $p\textnormal{s}<.001$, siehe Tabelle \ref{tab:Hickdescriptives}).
+Die positiven Schiefen und Kurtosen der vier Bedingungen deuteten im Vergleich mit der Normalverteilung auf links\-steile respektive spitze Verteilungen hin und wichen damit moderat von der Normalverteilung ab \citep{Finney2006}. Bestätigt wurden die Abweichungen durch hochsignifikante Shapiro-Wilk-Tests (alle $p\textnormal{s}<.001$, siehe Tabelle \ref{tab:Hickdescriptives}).
 Die für die Analyse auf manifester Ebene vorgesehenen parametrische Verfahren (einfaktorielle Varianzanalyse mit Messwiederholung und Produkt-Moment-Korrelationen) wurden deshalb durch ihre entsprechenden verteilungsfreien Varianten (Friedman-Test und Spearmans Rangkorrelationen) ersetzt.
 
 Um zu testen, ob die \gls{rz} der \glspl{vp} von der Anzahl Antwortalternativen abhing, wurde ein Friedman-Test durchgeführt. Der Globaltest war mit $\upchi^2(3)=516.12$, $p<.001$, hochsignifikant und deutete darauf hin, dass die mittleren \glspl{rz} in den vier Bedingungen nicht identisch waren. Post-hoc-Tests \citep{Galili2010, Hollander2014} haben ergeben, dass sich alle Bedingungen signifikant voneinander unterschieden (alle $p\textnormal{s}<.001$). Die mittleren \glspl{rz} der \glspl{vp} erhöhten sich also über die Bedingungen hinweg signifikant.
@@ -4638,10 +4593,15 @@ Spearmans Rangkorrelationen zwischen den vier Bedingungen der \gls{ha} deuteten 
 
 \subsection{\gls{bist}}
 
-Deskriptive Angaben zu den 18 eingesetzten Subtests des \gls{bist} sind in Tabelle \ref{tab:BISdescriptives} zu finden.
+Deskriptive Angaben zu den 18 eingesetzten Subtests des \gls{bist} sind in Tabelle \ref{tab:BISdescriptives} zu finden. Die negativen und positiven Schiefen respektive Kurtosen wiesen wie die Shapiro-Wilk-Tests bei vielen Subtests darauf hin, dass die Daten moderat von der Normalverteilung abwichen \citep{Finney2006}. 
+Aus diesem Grund wurden die Zusammenhänge zwischen den Subtests mit Spearmans Rangkorrelationskoeffizienten bestimmt. Wie aufgrund der Modellannahmen im \gls{bist} zu erwarten war, liessen sich zwischen der Mehrheit der Subtests substanzielle Zusammenhänge beobachten (siehe Tabelle \ref{tab:subtestsCorr}). 
 
 
-\begin{table}[b]
+
+
+\begin{table}[htbp]
+	
+	
 	%\flushleft
 	\centering
 	\captionsetup{labelsep = none}
@@ -4695,7 +4655,80 @@ Deskriptive Angaben zu den 18 eingesetzten Subtests des \gls{bist} sind in Tabel
 	%}
 \end{table}
 
-\subsection{Im Zusammenspiel?}
+
+
+
+\begin{sidewaystable}
+	
+	
+	\begin{adjustbox}{width=1\textwidth,totalheight=1\textheight,keepaspectratio}
+		
+		\begin{threeparttable}
+			\captionsetup{labelsep = none}
+			\caption[Zusammenhänge zwischen den Subtests]{\newline  \textit{Spearmans Rangkorrelationen zwischen den Subtests des \gls{bist}} \vspace{.2cm}}
+			\label{tab:subtestsCorr}
+
+		\sisetup{table-space-text-post = $^{***}$}
+		\begin{tabular}{
+				c
+				c
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = 0.2, add-integer-zero=false]
+				>{\centering\arraybackslash}p{1.2cm}
+			}
+			\hline
+			&	{Subtest}	&	{1}	&	{2}	&	{3}	&	{4}	&	{5}	&	{6}	&	{7}	&	{8}	&	{9}	&	{10}&	{11}&	{12}&	{13}&	{14}&	{15}&	{16}&	{17}&	{18}	\\
+			\hline
+			
+1	&	OG	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
+2	&	ZN	&	.26{$^{***}$}	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
+3	&	AN	&	.26{$^{***}$}	&	.42{$^{***}$}	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
+4	&	XG	&	.21{$^{**}$}	&	.56{$^{***}$}	&	.35{$^{***}$}	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
+5	&	WA	&	.31{$^{***}$}	&	.40{$^{***}$}	&	.48{$^{***}$}	&	.36{$^{***}$}	&	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
+6	&	ZP	&	.27{$^{***}$}	&	.15{$^{*}$}		&	.15{$^{*}$}		&	.29{$^{***}$}	&	.18{$^{*}$}		&	&	&	&	&	&	&	&	&	&	&	&	&	\\
+7	&	TM	&	.30{$^{***}$}	&	.26{$^{***}$}	&	.42{$^{***}$}	&	.38{$^{***}$}	&	.48{$^{***}$}	&	.25{$^{***}$}	&	&	&	&	&	&	&	&	&	&	&	&	\\
+8	&	BD	&	.18{$^{*}$}		&	.08				&	.16{$^{*}$}		&	.19{$^{*}$}		&	.03				&	.08				&	.10	&	&	&	&	&	&	&	&	&	&	&	\\
+9	&	SC	&	.16{$^{*}$}		&	.51{$^{***}$}	&	.35{$^{***}$}	&	.47{$^{***}$}	&	.23{$^{**}$}	&	.17{$^{*}$}		&	.33{$^{***}$}	&	.25{$^{***}$}	&	&	&	&&&	&&	&&\\
+10	&	ST	&	.34{$^{***}$}	&	.16	{$^{*}$}	&	.22{$^{***}$}	&	.29{$^{***}$}	&	.32{$^{***}$}	&	.22{$^{***}$}	&	.38{$^{***}$}	&	-.04			&	.22{$^{**}$}	&		&&&&&&&&\\
+11	&	CH	&	.34{$^{***}$}	&	.48{$^{***}$}	&	.52{$^{***}$}	&	.31{$^{***}$}	&	.50{$^{***}$}	&	.14				&	.30				&	.12				&	.31{$^{***}$}	&	.14	&	&	&&&	&&&	\\
+12	&	TG	&	.33{$^{***}$}	&	.36{$^{***}$}	&	.30{$^{***}$}	&	.48{$^{***}$}	&	.46{$^{***}$}	&	.19{$^{*}$}		&	.47{$^{***}$}	&	.18{$^{*}$}		&	.26{$^{***}$}&	.36{$^{***}$}	&	.23{$^{**}$}	&	&&	&	&&&	\\
+13	&	RZ	&	.32{$^{***}$}	&	.52{$^{***}$}	&	.42{$^{***}$}	&	.55{$^{***}$}	&	.44{$^{***}$}	&	.29{$^{***}$}	&	.45{$^{***}$}	&	.13				&	.44{$^{***}$}&	.34{$^{***}$}	&	.38{$^{***}$}	&	.41{$^{***}$}&&&&&&	\\
+14	&	WM	&	.40{$^{***}$}	&	.11				&	.24{$^{***}$}	&	.17{$^{*}$}		&	.21{$^{**}$}	&	.26{$^{***}$}	&	.35{$^{***}$}	&	.13				&	.13			&	.45{$^{***}$}	&	.18{$^{*}$}		&	.18{$^{*}$}&	.15{$^{*}$}	&&&&&	\\
+15	&	KW	&	.26{$^{***}$}	&	.24{$^{***}$}	&	.28{$^{***}$}	&	.39{$^{***}$}	&	.40{$^{***}$}	&	.24{$^{***}$}	&	.54{$^{***}$}	&	.19{$^{*}$}		&	.26{$^{***}$}&	.49{$^{***}$}	&	.21{$^{**}$}	&	.60{$^{***}$}	&	.35{$^{***}$}	&	.34{$^{***}$}	&&&&	\\
+16	&	ZZ	&	.31{$^{***}$}	&	.02				&	.02				&	.20{$^{**}$}	&	.00				&	.34{$^{***}$}	&	.10				&	.11				&	.04			&	.28{$^{***}$}	&	.05				&	.05				&	.08				&	.38{$^{***}$}	&	.10	&&&	\\
+17	&	OE	&	.06				&	-.01			&	-.01			&	.07				&	-.05			&	.05				&	.12				&	.46{$^{***}$}	&	.15{$^{*}$}&	-.01			&	-.13			&	.15{$^{*}$}		&	.13					&	.04	&	.13		& -.05&&	\\
+18	&	WE	&	.42{$^{***}$}	&	.28{$^{***}$}	&	.26{$^{***}$}	&	.19{$^{*}$}		&	.29{$^{***}$}	&	.25{$^{***}$}	&	.07				&	.04				&	.06			&	.21{$^{**}$}	&	.25{$^{***}$}	&	.20{$^{**}$}	&	.33{$^{***}$}	&.19{$^{*}$}&	.23{$^{**}$}&.18{$^{*}$}&-.12&\\
+			\hline			
+		\end{tabular}
+		
+		\begin{tablenotes}[flushleft]
+			\footnotesize				% font size
+			\setlength\labelsep{0pt}	% no indent on second line
+			\item \textit{Anmerkungen.} Siehe Tabelle \ref{tab:BIS} für eine Beschreibung der Subtests.
+			\item {$^{*}$}$p<.05$. {$^{**}$}$p<.01$. {$^{***}$}$p<.001$ (zweiseitig).			
+		\end{tablenotes}
+		
+	\end{threeparttable}
+\end{adjustbox}
+
+\end{sidewaystable}
+
+
 
 \begin{table}[htbp]
 	%	\flushleft
@@ -4757,6 +4790,69 @@ Deskriptive Angaben zu den 18 eingesetzten Subtests des \gls{bist} sind in Tabel
 	%	}
 \end{table}
 
+%\begin{table}[htbp]
+%	%	\flushleft
+%	\centering
+%	\captionsetup{labelsep = none}
+%	\caption[Korrelationen all]{\newline  \textit{Spearmans Rangkorrelationen zwischen den Bedingungen der \gls{ssauf}, dem \gls{si}, der \gls{ha}, dem \textit{z}-Wert und dem \gls{gfaktor} des \gls{bist}} \vspace{.2cm}}
+%	\label{tab:shzmanifestee}
+%	%	\resizebox{1.5\columnwidth}{!}{%	
+%	\begin{threeparttable}
+%		\sisetup{table-space-text-post = $^{***}$}
+%		\begin{tabular}{
+%				p{.1cm}
+%				c
+%				S[table-format = 0.2, add-integer-zero=false]
+%				S[table-format = 0.2, add-integer-zero=false]
+%				S[table-format = 0.2, add-integer-zero=false]
+%				S[table-format = 0.2, add-integer-zero=false]
+%				S[table-format = 0.2, add-integer-zero=false]
+%				p{.001cm}
+%				S[table-format = 0.2, add-integer-zero=false]
+%				S[table-format = 0.2, add-integer-zero=false]
+%				S[table-format = 0.2, add-integer-zero=false]
+%				S[table-format = 0.2, add-integer-zero=false]
+%				p{.001cm}
+%				S[table-format = 0.2, add-integer-zero=false]
+%				S[table-format = 0.2, add-integer-zero=false]
+%				>{\centering\arraybackslash}p{1.2cm}
+%			}
+%			\hline
+%			
+%			
+%			&	& 	\multicolumn{5}{c}{\gls{ssauf}}	&	&	\multicolumn{4}{c}{\gls{ha}}	&	&	\multicolumn{2}{c}{\gls{bist}}	\\
+%			
+%			\cline{3-7}
+%			\cline{9-12}
+%			\cline{14-15}
+%			
+%			&	{Bedingung}			&	{1}				&	{2}				&	{3}				&	 {4}	& {5}& 	& {6}	& {7}	& {8}	&{9}&&{10}&{11} \\
+%			\hline
+%			1	&	\(1.8^{\circ}\)	&		&		&		&		&		&		&		&		&		&		&\\
+%			2	&	\(3.6^{\circ}\)	&	.84{$^{***}$}	&		&		&		&		&		&		&		&		&		&\\
+%			3	&	\(5.4^{\circ}\)	&	.72{$^{***}$}	&	.86{$^{***}$}	&		&		&		&		&		&		&		&		&\\
+%			4	&	\(7.2^{\circ}\)	&	.54{$^{***}$}	&	.75{$^{***}$}	&	.88{$^{***}$}	&		&		&		&		&		&		&		&\\
+%			5	&	SI 				&	-.34{$^{***}$}	&	.02				&	.25{$^{***}$}	&	.52{$^{***}$}	& & & & & & & \\
+%			\rule{0pt}{4ex}%  EXTRA vertical height
+%			6	&	0-bit			&	.13				&	.20{$^{**}$}	&	.17{$^{*}$}	&	.13		&.02&&		&&&&&\\
+%			7	&	1-bit			&	.04				&	.06				&	.04			&	.01		&-.04&&.72{$^{***}$}	&	&	&	&	&		\\
+%			8	&	2-bit			&	.11				&	.11				&	.07			&	.04		&-.08&&.52{$^{***}$}	&	.72{$^{***}$}	&	&	&	&		\\
+%			9	&	2.58-bit		&	.07				&	.05				&	.02			&	-.01	&-.09&&.41{$^{***}$}	&	.64{$^{***}$}	&	.81{$^{***}$}	&	&	&		\\
+%			\rule{0pt}{4ex}%  EXTRA vertical height
+%			10	&	\textit{z}-Wert	&	-.14			&	-.13			&	-.09		&	-.06	&.04&&	-.15{$^{*}$}	&	-.32{$^{***}$}	&	-.32{$^{***}$}	&	-.31{$^{***}$}	&				&		\\
+%			11	&	\gls{gfaktor}	&	-.14			&	-.13			&	-.09		&	-.06	&&	-.15{$^{*}$}	&	-.32{$^{***}$}	&	-.32{$^{***}$}	&	-.31{$^{***}$}	&				&		\\
+%			\hline
+%			
+%		\end{tabular}%
+%		%}
+%		\begin{tablenotes}[flushleft]
+%			\footnotesize				% font size
+%			\setlength\labelsep{0pt}	% no indent on second line
+%			\item {$^{*}$}$p<.05$. {$^{**}$}$p<.01$. {$^{***}$}$p<.001$ (zweiseitig).
+%		\end{tablenotes}%
+%	\end{threeparttable}%
+%	%	}
+%\end{table}
 
 \clearpage
 \section{1. Fragestellung}
