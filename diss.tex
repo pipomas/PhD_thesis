@@ -998,10 +998,8 @@ Als Konsequenz wurden die für die Analyse auf manifester Ebene vorgesehenen par
 	\caption[Spatial-Suppression-Streudiagramm]{Streudiagramme der Schwellenschätzungen in der \gls{ssauf}. Die horizontale Linie kennzeichnet jeweils den Mittelwert innerhalb einer Bedingung (vgl. Tabelle \ref{tab:SSdescriptives}). Siehe Anhang \ref{cha:AAnhang} für eine Beschreibung der Ausreisserkontrolle. Vp = Versuchsperson.}
 	\label{fig:SSscatter}
 \end{figure}
-\clearpage
-Zuerst wurde geprüft, ob die Mustergrösse einen signifikanten Einfluss auf die Wahrnehmungsleistung der \glspl{vp} ausübte. Dafür wurde ein Friedman-Test durchgeführt. Der Globaltest hat gezeigt, dass die mittleren Schwellenschätzungen in den vier Bedingungen nicht identisch waren, $\upchi^2(3)=345.26$, $p<.001$. 
-Um zu erfahren, welche Bedingungen sich voneinander unterschieden, wurden Post-hoc-Tests \citep{Galili2010, Hollander2014} gerechnet. Diese haben ergeben, dass sich von den (durch die vier Bedingungen bestimmten) sechs Einzelvergleichen nur die \(1.8^{\circ}\)- und \(3.6^{\circ}\)-Bedingung nicht signifikant voneinander unterschieden ($p=.09$). Die restlichen fünf Einzelvergleiche waren mit $p<.001$ alle statistisch signifikant.
-Mit Ausnahme des Wahrnehmungsleistungsunterschieds zwischen der \(1.8^{\circ}\)- und der \(3.6^{\circ}\)-Bedingung verschlechterte sich die Wahrnehmungsleistung der \glspl{vp} also mit zunehmender Mustergrösse signifikant.
+
+
 
 \begin{table}[htbp]
 	%\flushleft
@@ -1041,18 +1039,25 @@ Mit Ausnahme des Wahrnehmungsleistungsunterschieds zwischen der \(1.8^{\circ}\)-
 	%}
 \end{table}
 
-Spearmans Rangkorrelationen ($r_{s}$) zwischen den vier Bedingungen der \gls{ssauf} deuteten ausnahmslos auf starke Zusammenhänge hin (siehe Tabelle \ref{tab:shzmanifest}).
-
-Der \gls{si} wies einen Mittelwert $\pm$ Standardabweichung von $0.221\,\pm\,0.160$ (Minimum $= -0.185$, Maximum $= 0.886$) auf. Die positive Schiefe (0.911) und Kurtosis (1.801) deutete im Vergleich mit der Normalverteilung auf eine linkssteile, spitze Verteilung hin. Ein Shapiro-Wilk-Test zeigte dann mit $p<.001$ auch an, dass der \gls{si} nicht normalverteilt war (siehe Abbildung \ref{fig:SIhist}).
-
+Zuerst wurde geprüft, ob die Mustergrösse einen signifikanten Einfluss auf die Wahrnehmungsleistung der \glspl{vp} ausübte. Dafür wurde ein Friedman-Test durchgeführt. Der Globaltest hat gezeigt, dass die mittleren Schwellenschätzungen in den vier Bedingungen nicht identisch waren, $\upchi^2(3)=345.26$, $p<.001$. 
+Um zu erfahren, welche Bedingungen sich voneinander unterschieden, wurden Post-hoc-Tests \citep{Galili2010, Hollander2014} gerechnet. Diese haben ergeben, dass sich von den (durch die vier Bedingungen bestimmten) sechs Einzelvergleichen nur die \(1.8^{\circ}\)- und \(3.6^{\circ}\)-Bedingung nicht signifikant voneinander unterschieden ($p=.09$). Die restlichen fünf Einzelvergleiche waren mit $p<.001$ alle statistisch signifikant.
+Mit Ausnahme des Wahrnehmungsleistungsunterschieds zwischen der \(1.8^{\circ}\)- und der \(3.6^{\circ}\)-Bedingung verschlechterte sich die Wahrnehmungsleistung der \glspl{vp} also mit zunehmender Mustergrösse signifikant.
 
 \begin{figure}[htb]
 	\centering
 	\resizebox{1\textwidth}{!}{% or alternatively .919 
-	\input{tikzDevice/suppression_index_histogram.tex}}
+		\input{tikzDevice/suppression_index_histogram.tex}}
 	\caption[Suppression-Index Histogramm]{Häufigkeitsverteilung des \gls{si}, gebildet als Differenz zwischen der $\log_{10}$-Schwellenschätzung für die Mustergrösse \(7.2^{\circ}\) und der $\log_{10}$-Schwellenschätzung für die Mustergrösse \(1.8^{\circ}\).}
 	\label{fig:SIhist}
 \end{figure}
+
+
+Spearmans Rangkorrelationen ($r_{s}$) zwischen den vier Bedingungen der \gls{ssauf} deuteten ausnahmslos auf starke Zusammenhänge hin (siehe Tabelle \ref{tab:correlations_manifest}).
+
+Der \gls{si} wies einen Mittelwert $\pm$ Standardabweichung von $0.221\,\pm\,0.160$ (Minimum $= -0.185$, Maximum $= 0.886$) auf. Die positive Schiefe (0.911) und Kurtosis (1.801) deutete im Vergleich mit der Normalverteilung auf eine linkssteile, spitze Verteilung hin. Ein Shapiro-Wilk-Test zeigte dann mit $p<.001$ auch an, dass der \gls{si} nicht normalverteilt war (siehe Abbildung \ref{fig:SIhist}).
+
+
+
 
 
 
@@ -1075,16 +1080,15 @@ Die für die Analyse auf manifester Ebene vorgesehenen parametrische Verfahren (
 	\label{fig:Hickscatter}
 \end{figure}
 
-Um zu testen, ob die mittlere \gls{rz} der \glspl{vp} von der Anzahl Antwortalternativen abhing, wurde ein Friedman-Test durchgeführt. Der Globaltest war mit $\upchi^2(3)=516.12$, $p<.001$, hochsignifikant und wies darauf hin, dass die mittlere \gls{rz} der \glspl{vp} in den vier Bedingungen nicht identisch war. Welche Bedingungen sich voneinander unterschieden, wurde mit Post-hoc-Tests \citep{Galili2010, Hollander2014} geprüft. Diese haben gezeigt, dass sich alle Bedingungen signifikant voneinander unterschieden (alle $p\textnormal{s}<.001$). Die mittlere \gls{rz} der \glspl{vp} erhöhte sich also über die Bedingungen hinweg signifikant.
+Um zu testen, ob die mittlere \gls{rz} der \glspl{vp} von der Anzahl Antwortalternativen abhing, wurde ein Friedman-Test durchgeführt. Der Globaltest war mit $\upchi^2(3)=516.12$, $p<.001$, hochsignifikant und belegte, dass die mittlere \gls{rz} der \glspl{vp} in den vier Bedingungen nicht identisch war. Welche Bedingungen sich voneinander unterschieden, wurde mit Post-hoc-Tests \citep{Galili2010, Hollander2014} geprüft. Diese haben gezeigt, dass sich alle Bedingungen signifikant voneinander unterschieden (alle $p\textnormal{s}<.001$). Die mittlere \gls{rz} der \glspl{vp} erhöhte sich also über die Bedingungen hinweg signifikant.
 
 
 
-Spearmans Rangkorrelationen zwischen den vier Bedingungen der \gls{ha} deuteten auf mittlere bis hohe Zusammenhänge hin (siehe Tabelle \ref{tab:shzmanifest}).
+Spearmans Rangkorrelationen zwischen den vier Bedingungen der \gls{ha} deuteten auf mittlere bis hohe Zusammenhänge hin (siehe Tabelle \ref{tab:correlations_manifest}).
 
 
 
-
-\begin{table}[htbp]
+\begin{table}[t]
 	%\flushleft
 	\centering
 	\captionsetup{labelsep = none}
@@ -1167,10 +1171,12 @@ Spearmans Rangkorrelationen zwischen den vier Bedingungen der \gls{ha} deuteten 
 
 \subsection{\gls{bist}}
 
-Deskriptive Angaben zu den 18 eingesetzten Subtests des \gls{bist} sind in Tabelle \ref{tab:BISdescriptives} zu finden. 
+Deskriptive Angaben zu den Subtests des \gls{bist} sind in Tabelle \ref{tab:BISdescriptives} zu finden. 
+Die negativen und positiven Schiefen respektive Kurtoses wiesen wie die Shapiro-Wilk-Tests bei 14 der 18 Subtests darauf hin, dass die Daten von der Normalverteilung abwichen. 
+Aus diesem Grund wurden die Zusammenhänge zwischen den Subtests mit Spearmans Rangkorrelationskoeffizienten bestimmt. Wie aufgrund der Modellannahmen des \gls{bist} zu erwarten war, liessen sich zwischen der Mehrheit der Subtests substanzielle, positive Zusammenhänge beobachten (siehe Tabelle \ref{tab:subtestsCorr}). 
 
-Die negativen und positiven Schiefen respektive Kurtoses wiesen wie die Shapiro-Wilk-Tests bei vielen Subtests darauf hin, dass die Daten von der Normalverteilung abwichen. 
-Aus diesem Grund wurden die Zusammenhänge zwischen den Subtests mit Spearmans Rangkorrelationskoeffizienten bestimmt. Wie aufgrund der Modellannahmen im \gls{bist} zu erwarten war, liessen sich zwischen der Mehrheit der Subtests substanzielle, positive Zusammenhänge beobachten (siehe Tabelle \ref{tab:subtestsCorr}). 
+Der \gls{zwert} des \gls{bist}, gebildet als Mittel aller $18$ \textit{z}-standardisierter Subtests, hatte ein Mittelwert $\pm$ Standardabweichung von $0.02\,\pm\,0.53$ (Minimum $= -1.6$, Maximum $= 1.4$). Die Verteilung des \gls{zwert}s hatte eine negative Schiefe ($-0.02$) und eine positive Kurtosis ($0.16$), wich damit aber wie ein Shapiro-Wilk-Test zeigte nicht signifikant von der Normalverteilung ab ($p=.82$).
+
 
 
 \begin{table}[htbp]
@@ -1293,7 +1299,7 @@ Aus diesem Grund wurden die Zusammenhänge zwischen den Subtests mit Spearmans R
 		\begin{tablenotes}[flushleft]
 			\footnotesize				% font size
 			\setlength\labelsep{0pt}	% no indent on second line
-			\item \textit{Anmerkungen.} Siehe Tabelle \ref{tab:BIS} für eine Beschreibung der Subtests.
+			\item \textit{Anmerkung.} Siehe Tabelle \ref{tab:BIS} für eine Beschreibung der Subtests.
 			\item {$^{*}$}$p<.05$. {$^{**}$}$p<.01$. {$^{***}$}$p<.001$ (zweiseitig).			
 		\end{tablenotes}
 		
@@ -1305,7 +1311,10 @@ Aus diesem Grund wurden die Zusammenhänge zwischen den Subtests mit Spearmans R
 \clearpage
 \subsection{Zusammenhangsmasse}
 
--> hier Korrelationstabelle
+
+
+
+-> hier Korrelationstabelle (siehe Tabelle \ref{tab:correlations_manifest})
 
 Ausganglage für Fragestellung
 korrelationen als basis für fragestellungen
@@ -1380,12 +1389,12 @@ oberhalb pearson? unterhalb spearman? wenn nicht dann in Anhang!
 	\centering
 	\captionsetup{labelsep = none}
 	\caption[Korrelationen all]{\newline  \textit{Spearmans Rangkorrelationen zwischen den Bedingungen der \gls{ssauf}, dem \gls{si}, der \gls{ha}, dem \textit{z}-Wert und dem \gls{gfaktor} des \gls{bist}} \vspace{.2cm}}
-	\label{tab:shzmanifestee}
+	\label{tab:correlations_manifest}
 	%	\resizebox{1.5\columnwidth}{!}{%	
 	\begin{threeparttable}
 		\sisetup{table-space-text-post = $^{***}$}
 		\begin{tabular}{
-				p{.1cm}
+				c
 				c
 				S[table-format = 0.2, add-integer-zero=false]
 				S[table-format = 0.2, add-integer-zero=false]
@@ -1411,21 +1420,21 @@ oberhalb pearson? unterhalb spearman? wenn nicht dann in Anhang!
 			\cline{9-12}
 			\cline{14-15}
 			
-			&	{Bedingung}			&	{1}				&	{2}				&	{3}				&	 {4}	& {5}& 	& {6}	& {7}	& {8}	&{9}&&{10}&{11} \\
+			&	{Mass}			&	{1}				&	{2}				&	{3}				&	 {4}	& {5}& 	& {6}	& {7}	& {8}	&{9}&&{10}&{11} \\
 			\hline
 			1	&	\(1.8^{\circ}\)	&		&		&		&		&		&		&		&		&		&		&\\
 			2	&	\(3.6^{\circ}\)	&	.84{$^{***}$}	&		&		&		&		&		&		&		&		&		&\\
-			3	&	\(5.4^{\circ}\)	&	.72{$^{***}$}	&	.86{$^{***}$}	&		&		&		&		&		&		&		&		&\\
-			4	&	\(7.2^{\circ}\)	&	.54{$^{***}$}	&	.75{$^{***}$}	&	.88{$^{***}$}	&		&		&		&		&		&		&		&\\
-			5	&	SI 				&	-.34{$^{***}$}	&	.02				&	.25{$^{***}$}	&	.52{$^{***}$}	& & & & & & & \\
+			3	&	\(5.4^{\circ}\)	&	.73{$^{***}$}	&	.86{$^{***}$}	&		&		&		&		&		&		&		&		&\\
+			4	&	\(7.2^{\circ}\)	&	.55{$^{***}$}	&	.76{$^{***}$}	&	.88{$^{***}$}	&		&		&		&		&		&		&		&\\
+			5	&	SI 				&	-.33{$^{***}$}	&	.03				&	.26{$^{***}$}	&	.53{$^{***}$}	& & & & & & & \\
 			\rule{0pt}{4ex}%  EXTRA vertical height
-			6	&	0-bit			&	.13				&	.20{$^{**}$}	&	.17{$^{*}$}	&	.13		&.02&&		&&&&&\\
-			7	&	1-bit			&	.04				&	.06				&	.04			&	.01		&-.04&&.72{$^{***}$}	&	&	&	&	&		\\
-			8	&	2-bit			&	.11				&	.11				&	.07			&	.04		&-.08&&.52{$^{***}$}	&	.72{$^{***}$}	&	&	&	&		\\
-			9	&	2.58-bit		&	.07				&	.05				&	.02			&	-.01	&-.09&&.41{$^{***}$}	&	.64{$^{***}$}	&	.81{$^{***}$}	&	&	&		\\
+			6	&	0-bit			&	.12				&	.19{$^{*}$}	&	.16{$^{*}$}	&	.12		&.01&	&		&&&&&\\
+			7	&	1-bit			&	.03				&	.06				&	.03			&	.00		&-.05&	&.72{$^{***}$}	&	&	&	&	&		\\
+			8	&	2-bit			&	.11				&	.11				&	.07			&	.04		&-.08&	&.52{$^{***}$}	&	.71{$^{***}$}	&	&	&	&		\\
+			9	&	2.58-bit		&	.07				&	.05				&	.02			&	-.01	&-.09&	&.40{$^{***}$}	&	.63{$^{***}$}	&	.81{$^{***}$}	&	&	&		\\
 			\rule{0pt}{4ex}%  EXTRA vertical height
-			10	&	\textit{z}-Wert	&	-.14			&	-.13			&	-.09		&	-.06	&.04&&	-.15{$^{*}$}	&	-.32{$^{***}$}	&	-.32{$^{***}$}	&	-.31{$^{***}$}	&				&		\\
-			11	&	\gls{gfaktor}	&	-.14			&	-.13			&	-.09		&	-.06	&&	-.15{$^{*}$}	&	-.32{$^{***}$}	&	-.32{$^{***}$}	&	-.31{$^{***}$}	&				&		\\
+			10	&	\textit{z}-Wert	&	-.14			&	-.12			&	-.09		&	-.06	&.04&	&	-.15{$^{*}$}	&	-.32{$^{***}$}	&	-.31{$^{***}$}	&	-.31{$^{***}$}	&				&		\\
+			11	&	\gls{gfaktor}	&	-.18{$^{*}$}	&	-.18{$^{*}$}	&	-.14		&	-.11	&.03&	&	-.15{$^{*}$}	&	-.29{$^{***}$}	&	-.29{$^{***}$}	&	-.28{$^{***}$}	&				&	.97{$^{***}$}	\\
 			\hline
 			
 		\end{tabular}%
