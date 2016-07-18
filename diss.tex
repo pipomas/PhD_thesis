@@ -923,6 +923,7 @@ Nach der letzten Aufgabe wurden die \glspl{vp} vollständig über das Ziel der U
 Alle Berechnungen wurden in R \citep{R} durchgeführt, dessen Basisfunktionen mit den Paketen
 coin \citep{coin},
 dplyr \citep{dplyr},
+ez \citep{ez},
 lavaan \citep{lavaan}, 
 multcomp \citep{multcomp},
 nlstools \citep{nlstools},
@@ -931,12 +932,14 @@ pbapply \citep{pbapply},
 ppcor \citep{ppcor},
 psych \citep{psych},
 readxl \citep{readxl},
+reshape2 \citep{reshape2},
 rprime \citep{rprime},
 R.matlab \citep{R.matlab} und
 semPlot \citep{semPlot} 
 ergänzt wurden. Als Editor diente RStudio \citep{RStudio}.
 
 Die Fragestellungen 3, 4 und 5 (siehe Seite \pageref{text:Fragestellung3}) werden mittels \gls{kfa} beantwortet. Die Güte einer \gls{kfa} kann anhand einer Vielzahl von unterschiedlichen Kennwerten beurteilt werden, weshalb hier die für diese Arbeit wichtigen Kennwerte kurz vorgestellt werden.
+
 
 
 
@@ -977,23 +980,36 @@ Das \gls{srmr} ist ein Mass dafür, wie hoch die durchschnittlichen Korrelations
 % =================================================================
 \chapter{Resultate \label{cha:Resultate}}
 
-\section{Deskriptive Statistik \label{sec:DeskriptiveAnalyse}}
+\section{Deskriptive Statistik \label{sec:Deskriptive_Statistik}}
 
 \subsection{\gls{ssauf} \label{subsec:SSres}}
 
 
 Die Schwellenschätzungen aller \glspl{vp} sind in Abbildung \ref{fig:SSscatter} zu sehen. Die dazugehörigen deskriptiven Angaben sind in Tabelle \ref{tab:SSdescriptives} abgetragen. 
 
+Zuerst wurde geprüft, ob die Mustergrösse einen signifikanten Einfluss auf die Wahrnehmungsleistung der \glspl{vp} ausübte. Dafür wurde eine einfaktorielle Varianzanalyse mit Messwiederholung\footnote{Die Abweichung der Daten von der Normalverteilung erforderten eigentlich verteilungsfreien Analyseverfahren. Da die Ergebnisse dieser nonparametrischen Analyseverfahren aber nicht bedeutend von den hier berichteten parametrischen Verfahren abwichen, werden hier die die Resultate der traditionellen (parametrischen) Verfahren berichtet. Siehe Anhang \ref{cha:BAnhang} für die Ergebnisse der nonparametrischen Verfahren.}
+gerechnet. 
+
+Der Globaltest hat ergeben, dass die mittleren Schwellenschätzungen in den vier Bedingungen nicht identisch waren,
+
+Mauchly-Test hat ergeben, dass Sphärizität nicht gegeben war, $\upchi^2(5)=211.42$, $p<.001$.
+
+Die Freiheitsgrade des $F$-Tests wurden deshalb mit der Greenhouse-Geisser Methode korrigiert $\hat{\varepsilon}=.55.$
+
+$F(1.66, 292.39)=275.26$, $p<.001$. Das generalisierte  $\eta_{G}^2=.50$ \citep{Olejnik2003} \citep{Bakeman2005}.
+
+
+
 Um für die Analyse adäquate Auswertungsverfahren zu bestimmen, wurden die vier Bedingungen der \gls{ssauf} auf Normalverteilung geprüft. 
 Die \(1.8^{\circ}\)-Bedingung war mit einer negativen Schiefe und positiven Kurtosis rechtssteil respektive spitzer als die Normalverteilung. Um zu testen, ob die Bedingung signifikant von der Normalverteilung abwich, wurde ein 
-Shapiro-Wilk-Test\footnote{Liberalere Tests wie der Anderson-Darling- oder der Lilliefors-Test  kamen zum gleichen Ergebnis wie der vergleichsweise konservative Shapiro-Wilk-Test. Im Folgenden werden nur noch die Ergebnisse von Shapiro-Wilk-Tests berichtet. Wenn nicht ausdrücklich vermerkt, kamen liberalere Tests weitgehend zum gleichen Ergebnis. Siehe \citet{Razali2011} für die Teststärken der verwendeten Tests.} 
+Shapiro-Wilk-Test
 eingesetzt.
 Dieser kam zum Schluss, dass diese Abweichung von der Normalverteilung nicht grösser war, als durch den Stichprobenfehler zu erwarten ist ($p=.39$). 
 Die \(3.6^{\circ}\)-, \(5.4^{\circ}\)- und \(7.2^{\circ}\)-Bedingungen waren mit positiven Schiefen und positiven Kurtoses linkssteil respektive spitzer als die Normalverteilung.  
 Shapiro-Wilk-Tests haben gezeigt, dass diese Abweichungen überzufällig gross waren (alle $p\textnormal{s}\leq.05$).
 Als Konsequenz wurden die für die Analyse auf manifester Ebene vorgesehenen parametrische Verfahren (einfaktorielle Varianzanalyse mit Messwiederholung und Produkt-Moment-Korrelationen) durch die entsprechenden verteilungsfreien Varianten (Friedman-Test und Spearmans Rangkorrelationen) ersetzt.
 
-
+\ref{cha:BAnhang}
 sinhaftigkeit daran erkennen,dass median und mittelwerte voneinander abweichen.
 
 
@@ -3658,11 +3674,99 @@ Bei den Subtests \gls{bd}, \gls{kw}, \gls{oe}, \gls{RZ}, \gls{tg}, \gls{uw} und 
 % =================================================================
 \chapter{Anhang \label{cha:BAnhang}}
 
-Dieser Anhang beschreibt die (vgl. Abschnitt \ref{sec:Stichprobe}). Am Ende des Anhangs  \ref{tab:Datenbereinigung}.
+Dieser Anhang gibt die nicht parametrischen Verfahren wieder (vgl. Abschnitt \ref{sec:Deskriptive_Statistik}).
+
+\section{\gls{ssauf}}
 
 
+Dafür wurde ein Friedman-Test durchgeführt. Der Globaltest hat gezeigt, dass die mittleren Schwellenschätzungen in den vier Bedingungen nicht identisch waren, $\upchi^2(3)=345.26$, $p<.001$. 
+Um zu erfahren, welche Bedingungen sich voneinander unterschieden, wurden Post-hoc-Tests \citep{Galili2010, Hollander2014} gerechnet. Diese haben ergeben, dass sich von den (durch die vier Bedingungen bestimmten) sechs Einzelvergleichen nur die \(1.8^{\circ}\)- und \(3.6^{\circ}\)-Bedingung nicht signifikant voneinander unterschieden ($p=.09$). Die restlichen fünf Einzelvergleiche waren mit $p<.001$ alle statistisch signifikant.
+Mit Ausnahme des Wahrnehmungsleistungsunterschieds zwischen der \(1.8^{\circ}\)- und der \(3.6^{\circ}\)-Bedingung verschlechterte sich die Wahrnehmungsleistung der \glspl{vp} also mit zunehmender Mustergrösse signifikant.
 
-\end{document}  
+\section{\gls{ha}}
+
+Um zu testen, ob die mittlere \gls{rz} der \glspl{vp} von der Anzahl Antwortalternativen abhing, wurde ein Friedman-Test durchgeführt. Der Globaltest war mit $\upchi^2(3)=516.12$, $p<.001$, hochsignifikant und belegte, dass die mittlere \gls{rz} der \glspl{vp} in den vier Bedingungen nicht identisch war. Welche Bedingungen sich voneinander unterschieden, wurde mit Post-hoc-Tests \citep{Galili2010, Hollander2014} geprüft. Diese haben gezeigt, dass sich alle Bedingungen signifikant voneinander unterschieden (alle $p\textnormal{s}<.001$). Die mittlere \gls{rz} der \glspl{vp} erhöhte sich also über die Bedingungen hinweg signifikant.
+
+\section{Zusammenhangsmasse}
+
+Bevor ausgewählte Zusammenhänge zwischen den Aufgaben in den folgenden Abschnitten mit den Fragestellungen abgearbeitet werden, ist der Vollständigkeit halber in Tabelle \ref{tab:correlations_manifest} eine umfassende Korrelationsmatrix abgebildet. 
+
+Abgesehen von den bereits erwähnten Zusammenhängen innerhalb der Bedingungen der \gls{ssauf} respektive der \gls{ha} und den noch zu besprechenden Zusammenhängen ist an dieser Stelle gesondert auf Folgendes hinzuweisen.
+Der \gls{si} wies eine negative Korrelation mit der \(1.8^{\circ}\)-Be\-ding\-ung auf ($r_{s}=-.33$, $p<.001$) und korrelierte positiv mit der \(7.2^{\circ}\)-Bedingung ($r_{s}=.53$, $p<.001$). 
+Diese Zusammenhänge können als Hinweis dafür gesehen werden, dass der \gls{si} als Differenz zwischen der $\log_{10}$-Schwel\-len\-schätz\-ung für die Mustergrösse \(7.2^{\circ}\) und der $\log_{10}$-Schwel\-len\-schätz\-ung für die Mustergrösse \(1.8^{\circ}\) korrekt gebildet wurde.
+Weiter korrelierte einzig die 0-bit-Bedingung der \gls{ha} signifikant mit der \(3.6^{\circ}\)- und der \(5.4^{\circ}\)-Bedingung der \gls{ssauf}  ($r_{s}=.19$ respektive $r_{s}=.16$, beide $p\textnormal{s}<.05$), während alle restlichen Zusammenhänge zwischen den beiden Aufgaben so gering ausfielen, dass sie die gewählte Irrtumswahrscheinlichkeit von weniger als $5\,\%$ nicht erreichten.
+Und als letztes sei noch erwähnt, dass die Bedingungen der \gls{ha} alle erwartungsgemäss  signifikant negativ mit dem \gls{zwert} des \gls{bist} korrelierten \citep[$r_{s}=-.15$ bis $-.32$, alle $p\textnormal{s}<.05$; vgl. ][]{Sheppard2008}, während die Bedingungen der \gls{ssauf} hingegen alle nicht signifikant mit dem \gls{zwert} zusammenhingen ($r_{s}=.04$ bis $-.14$, alle $p\textnormal{s}>.05$).
+
+
+\begin{sidewaystable}
+	
+	\begin{adjustbox}{width=.80\textwidth, keepaspectratio}
+		
+		\begin{threeparttable}
+			\centering
+			\captionsetup{labelsep = none}
+			\caption[Korrelationen zwischen den Aufgaben]{\newline  \textit{Spearmans Rangkorrelationen zwischen den Bedingungen der \gls{ssauf}, dem \gls{si}, den Bedingungen der \gls{ha}, dem \textit{z}-Wert und dem \gls{gfaktor} des \gls{bist}} \vspace{.2cm}}
+			\label{tab:correlations_manifest}
+			\sisetup{table-space-text-post = $^{***}$}
+			\begin{tabular}{
+					c
+					c
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					p{.001cm}
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					p{.001cm}
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					>{\centering\arraybackslash}p{1.2cm}
+				}
+				\hline
+				
+				
+				&	& 	\multicolumn{5}{c}{\gls{ssauf}}	&	&	\multicolumn{4}{c}{\gls{ha}}	&	&	\multicolumn{2}{c}{\gls{bist}}	\\
+				
+				\cline{3-7}
+				\cline{9-12}
+				\cline{14-15}
+				
+				&	{Mass}			&	{1}				&	{2}				&	{3}				&	 {4}	& {5}& 	& {6}	& {7}	& {8}	&{9}&&{10}&{11} \\
+				\hline
+				1	&	\(1.8^{\circ}\)	&		&		&		&		&		&		&		&		&		&		&\\
+				2	&	\(3.6^{\circ}\)	&	.84{$^{***}$}	&		&		&		&		&		&		&		&		&		&\\
+				3	&	\(5.4^{\circ}\)	&	.73{$^{***}$}	&	.86{$^{***}$}	&		&		&		&		&		&		&		&		&\\
+				4	&	\(7.2^{\circ}\)	&	.55{$^{***}$}	&	.76{$^{***}$}	&	.88{$^{***}$}	&		&		&		&		&		&		&		&\\
+				5	&	SI 				&	-.33{$^{***}$}	&	.03				&	.26{$^{***}$}	&	.53{$^{***}$}	& & & & & & & \\
+				\rule{0pt}{4ex}%  EXTRA vertical height
+				6	&	0-bit			&	.12				&	.19{$^{**}$}	&	.16{$^{*}$}	&	.12		&.01&	&		&&&&&\\
+				7	&	1-bit			&	.03				&	.06				&	.03			&	.00		&-.05&	&.72{$^{***}$}	&	&	&	&	&		\\
+				8	&	2-bit			&	.11				&	.11				&	.07			&	.04		&-.08&	&.52{$^{***}$}	&	.71{$^{***}$}	&	&	&	&		\\
+				9	&	2.58-bit		&	.07				&	.05				&	.02			&	-.01	&-.09&	&.40{$^{***}$}	&	.63{$^{***}$}	&	.81{$^{***}$}	&	&	&		\\
+				\rule{0pt}{4ex}%  EXTRA vertical height
+				10	&	\textit{z}-Wert	&	-.14			&	-.12			&	-.09		&	-.06	&.04&	&	-.15{$^{*}$}	&	-.32{$^{***}$}	&	-.31{$^{***}$}	&	-.31{$^{***}$}	&				&		\\
+				11	&	\gls{gfaktor}	&	-.18{$^{*}$}	&	-.18{$^{*}$}	&	-.14		&	-.11	&.03&	&	-.15{$^{*}$}	&	-.29{$^{***}$}	&	-.29{$^{***}$}	&	-.28{$^{***}$}	&				&	.97{$^{***}$}	\\
+				\hline
+				
+			\end{tabular}%
+			%}
+			\begin{tablenotes}[flushleft]
+				\footnotesize				% font size
+				\setlength\labelsep{0pt}	% no indent on second line
+				\item \textit{Anmerkungen}. SI = \gls{si}. \gls{zwert} = Mittelwert aus allen 18 \textit{z}-standardisierten Subtests.
+				\item {$^{*}$}$p<.05$. {$^{**}$}$p<.01$. {$^{***}$}$p<.001$ (zweiseitig).
+			\end{tablenotes}
+			
+		\end{threeparttable}%
+	\end{adjustbox}
+	
+\end{sidewaystable}
+
+\end{document}
 
 
 
