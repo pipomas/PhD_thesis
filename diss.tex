@@ -924,8 +924,10 @@ Alle Berechnungen wurden in R \citep{R} durchgeführt, dessen Basisfunktionen mi
 coin \citep{coin},
 dplyr \citep{dplyr},
 ez \citep{ez},
-lavaan \citep{lavaan}, 
+lavaan \citep{lavaan},
+lsr \citep{lsr},
 multcomp \citep{multcomp},
+nlme \citep{nlme},
 nlstools \citep{nlstools},
 nortest \citep{nortest},
 pbapply \citep{pbapply},
@@ -939,6 +941,7 @@ semPlot \citep{semPlot}
 ergänzt wurden. Als Editor diente RStudio \citep{RStudio}.
 
 Die Fragestellungen 3, 4 und 5 (siehe Seite \pageref{text:Fragestellung3}) werden mittels \gls{kfa} beantwortet. Die Güte einer \gls{kfa} kann anhand einer Vielzahl von unterschiedlichen Kennwerten beurteilt werden, weshalb hier die für diese Arbeit wichtigen Kennwerte kurz vorgestellt werden.
+
 
 
 
@@ -975,6 +978,7 @@ Das \gls{srmr} ist ein Mass dafür, wie hoch die durchschnittlichen Korrelations
 
 
 
+
 % =================================================================
 % R E S U L T S
 % =================================================================
@@ -987,30 +991,8 @@ Das \gls{srmr} ist ein Mass dafür, wie hoch die durchschnittlichen Korrelations
 
 Die Schwellenschätzungen aller \glspl{vp} sind in Abbildung \ref{fig:SSscatter} zu sehen. Die dazugehörigen deskriptiven Angaben sind in Tabelle \ref{tab:SSdescriptives} abgetragen. 
 
-Zuerst wurde geprüft, ob die Mustergrösse einen signifikanten Einfluss auf die Wahrnehmungsleistung der \glspl{vp} ausübte. Dafür wurde eine einfaktorielle Varianzanalyse mit Messwiederholung\footnote{Die Abweichung der Daten von der Normalverteilung erforderten eigentlich verteilungsfreien Analyseverfahren. Da die Ergebnisse dieser nonparametrischen Analyseverfahren aber nicht bedeutend von den hier berichteten parametrischen Verfahren abwichen, werden hier die die Resultate der traditionellen (parametrischen) Verfahren berichtet. Siehe Anhang \ref{cha:BAnhang} für die Ergebnisse der nonparametrischen Verfahren.}
-gerechnet. 
-
-Der Globaltest hat ergeben, dass die mittleren Schwellenschätzungen in den vier Bedingungen nicht identisch waren,
-
-Mauchly-Test hat ergeben, dass Sphärizität nicht gegeben war, $\upchi^2(5)=211.42$, $p<.001$.
-
-Die Freiheitsgrade des $F$-Tests wurden deshalb mit der Greenhouse-Geisser Methode korrigiert $\hat{\varepsilon}=.55.$
-
-$F(1.66, 292.39)=275.26$, $p<.001$. Das generalisierte  $\eta_{G}^2=.50$ \citep{Olejnik2003} \citep{Bakeman2005}.
 
 
-
-Um für die Analyse adäquate Auswertungsverfahren zu bestimmen, wurden die vier Bedingungen der \gls{ssauf} auf Normalverteilung geprüft. 
-Die \(1.8^{\circ}\)-Bedingung war mit einer negativen Schiefe und positiven Kurtosis rechtssteil respektive spitzer als die Normalverteilung. Um zu testen, ob die Bedingung signifikant von der Normalverteilung abwich, wurde ein 
-Shapiro-Wilk-Test
-eingesetzt.
-Dieser kam zum Schluss, dass diese Abweichung von der Normalverteilung nicht grösser war, als durch den Stichprobenfehler zu erwarten ist ($p=.39$). 
-Die \(3.6^{\circ}\)-, \(5.4^{\circ}\)- und \(7.2^{\circ}\)-Bedingungen waren mit positiven Schiefen und positiven Kurtoses linkssteil respektive spitzer als die Normalverteilung.  
-Shapiro-Wilk-Tests haben gezeigt, dass diese Abweichungen überzufällig gross waren (alle $p\textnormal{s}\leq.05$).
-Als Konsequenz wurden die für die Analyse auf manifester Ebene vorgesehenen parametrische Verfahren (einfaktorielle Varianzanalyse mit Messwiederholung und Produkt-Moment-Korrelationen) durch die entsprechenden verteilungsfreien Varianten (Friedman-Test und Spearmans Rangkorrelationen) ersetzt.
-
-\ref{cha:BAnhang}
-sinhaftigkeit daran erkennen,dass median und mittelwerte voneinander abweichen.
 
 
 
@@ -1025,9 +1007,8 @@ sinhaftigkeit daran erkennen,dass median und mittelwerte voneinander abweichen.
 
 
 \begin{table}[htbp]
-	%\flushleft
 	\centering
-	\captionsetup{labelsep = none}
+%	\captionsetup{font = small}
 	\caption[Deskriptive Angaben zur Schwellenbestimmung in der \gls{ssauf}]{\newline  \textit{Deskriptive Angaben zu den Schwellenschätzungen der \gls{ssauf} in Millisekunden (Mittelwert, Standardabweichung, Minimum, Maximum) und Kennwerte zur Verteilung der Daten} \vspace{.2cm}}
 	\label{tab:SSdescriptives}
 	%	\resizebox{\columnwidth}{!}{%	
@@ -1062,12 +1043,68 @@ sinhaftigkeit daran erkennen,dass median und mittelwerte voneinander abweichen.
 	%}
 \end{table}
 
-Zuerst wurde geprüft, ob die Mustergrösse einen signifikanten Einfluss auf die Wahrnehmungsleistung der \glspl{vp} ausübte. Dafür wurde ein Friedman-Test durchgeführt. Der Globaltest hat gezeigt, dass die mittleren Schwellenschätzungen in den vier Bedingungen nicht identisch waren, $\upchi^2(3)=345.26$, $p<.001$. 
-Um zu erfahren, welche Bedingungen sich voneinander unterschieden, wurden Post-hoc-Tests \citep{Galili2010, Hollander2014} gerechnet. Diese haben ergeben, dass sich von den (durch die vier Bedingungen bestimmten) sechs Einzelvergleichen nur die \(1.8^{\circ}\)- und \(3.6^{\circ}\)-Bedingung nicht signifikant voneinander unterschieden ($p=.09$). Die restlichen fünf Einzelvergleiche waren mit $p<.001$ alle statistisch signifikant.
-Mit Ausnahme des Wahrnehmungsleistungsunterschieds zwischen der \(1.8^{\circ}\)- und der \(3.6^{\circ}\)-Bedingung verschlechterte sich die Wahrnehmungsleistung der \glspl{vp} also mit zunehmender Mustergrösse signifikant.
 
-\begin{figure}[htb]
+
+Als erstes wurde geprüft, ob sich die vier Bedingungen in ihrem Mittelwert unterschieden. 
+Dafür wurde eine einfaktorielle Varianzanalyse mit Messwiederholung\footnote{Die Abweichung der Daten von der Normalverteilung erforderten eigentlich verteilungsfreien Analyseverfahren. Da die Ergebnisse dieser nonparametrischen Analyseverfahren aber nicht bedeutend von den mit parametrischen Verfahren ermittelten Ergebnissen abwichen, werden im Folgenden die Ergebnisse der traditionellen (parametrischen) Verfahren berichtet. Siehe Anhang \ref{cha:BAnhang} für die Analyse der Aufgaben mittels nonparametrischer Verfahren.}
+gerechnet. Sphärizität war gemäss einem Mauchly-Test nicht gegeben [$\upchi^2(5)=202.12$, $p<.001$], weshalb die Freiheitsgrade des \textit{F}-Tests mit der Greenhouse-Geisser Methode korrigiert wurden ($\hat{\varepsilon}=.55$). Der Globaltest der einfaktoriellen Varianzanalyse mit Messwiederholung hat angezeigt, dass sich die Mittelwerte der vier Bedingungen signifikant voneinander unterschieden [$F(1.65,\,290.40)=275.26$, $p<.001$, $\eta_{G}^2=.27$]. Der Effekt der Mustergrösse auf die Wahrnehmungsleistung konnte gemäss generalisiertem $\eta_{G}^2$ \citep{Olejnik2003} als gross bezeichnet werden \citep{Bakeman2005}. Um zu erfahren, welche der Bedingungen sich voneinander unterschieden, wurden Tukey Post-hoc-Tests berechnet. Diese haben ergeben, dass sich alle vier Bedingungen signifikant voneinander unterschieden (alle \textit{p}s $<.001$). Die Wahrnehmungsleistung der \glspl{vp} verschlechterte sich also mit zunehmender Mustergrösse signifikant. Die Effektstärken für die Mittelwertsunterschiede (siehe Tabelle \ref{tab:effect_sizes_spatial_suppression}) lagen dabei im mittleren bis hohen Bereich \citep[][S. 40]{Cohen1988}.
+
+
+
+
+\begin{table}[htbp]
 	\centering
+	\setlength{\tabcolsep}{10pt}
+	\captionsetup{labelsep = none}
+	\caption[Effektstärken zwischen den Bed SS]{\newline \textit{Effektstärken (Cohens \textit{d}) der Mittelwertunterschiede in der \gls{ssauf}} \vspace{.2cm}}
+	\label{tab:effect_sizes_spatial_suppression}
+	\sisetup{table-number-alignment = center}
+	\begin{threeparttable}
+		\begin{tabular}{
+				c
+				c
+				S[table-format = 1.2]
+				S[table-format = 1.2]
+				S[table-format = 1.2]
+				c
+				>{\centering\arraybackslash}p{1.2cm}
+			}
+			\hline
+			
+			&	{Bedingung}			&	{1}		&	{2}		&	{3}		&	 {4}	\\
+			\hline
+			1	&	\(1.8^{\circ}\)	&			&			&			&			\\
+			2	&	\(3.6^{\circ}\)	&	0.28	&			&			&			\\
+			3	&	\(5.4^{\circ}\)	&	0.82	&	0.56	&			&			\\
+			4	&	\(7.2^{\circ}\)	&	1.35	&	1.10	&	0.57	&	\hphantom{1.00}		\\
+
+			\hline
+			
+		\end{tabular}%
+		%}
+		\begin{tablenotes}[flushleft]
+			\footnotesize				% font size
+			\setlength\labelsep{0pt}	% no indent on second line
+			\item \textit{Anmerkung}. Alle Mittelwertsunterschiede waren statistisch signifikant ($p<.001$).
+		\end{tablenotes}
+		
+	\end{threeparttable}
+\end{table}
+
+
+
+
+
+Produkt-Moment-Korrelationen zwischen den vier Bedingungen der \gls{ssauf} deuteten ausnahmslos auf starke Zusammenhänge hin (siehe Tabelle \ref{trololol}).
+
+Der \gls{si} wies einen Mittelwert $\pm$ Standardabweichung von $0.222\,\pm\,0.160$ auf (Minimum $= -0.185$, Maximum $= 0.886$). 
+Die Verteilung des \gls{si} (siehe Abbildung \ref{fig:SIhist}) hatte eine Schiefe von $0.91$ und eine Kurtosis von $1.80$ auf, welche ein Shapiro-Wilk-Test als eine signifikante Abweichung von der Normalverteilung erkannte ($p<.001$).
+
+
+
+\begin{figure}[htbp]
+	\centering
+%	\captionsetup{font = small}
 	\resizebox{1\textwidth}{!}{% or alternatively .919 
 		\input{tikzDevice/suppression_index_histogram.tex}}
 	\caption[Suppression-Index Histogramm]{Häufigkeitsverteilung des \gls{si}, gebildet als Differenz zwischen der $\log_{10}$-Schwellenschätzung für die Mustergrösse \(7.2^{\circ}\) und der $\log_{10}$-Schwellenschätzung für die Mustergrösse \(1.8^{\circ}\).}
@@ -1075,20 +1112,13 @@ Mit Ausnahme des Wahrnehmungsleistungsunterschieds zwischen der \(1.8^{\circ}\)-
 \end{figure}
 
 
-Spearmans Rangkorrelationen zwischen den vier Bedingungen der \gls{ssauf} deuteten ausnahmslos auf starke Zusammenhänge hin (siehe Tabelle \ref{tab:correlations_manifest}).
-
-Der \gls{si} wies einen Mittelwert $\pm$ Standardabweichung von $0.222\,\pm\,0.160$ (Minimum $= -0.185$, Maximum $= 0.886$) auf. Die positive Schiefe ($0.91$) und Kurtosis ($1.80$) deutete im Vergleich mit der Normalverteilung auf eine linkssteile, spitze Verteilung hin. Ein Shapiro-Wilk-Test zeigte dann mit $p<.001$ auch an, dass der \gls{si} nicht normalverteilt war (siehe Abbildung \ref{fig:SIhist}).
-
-
-
-
-
 
 
 
 
 \subsection{\gls{ha}}
-
+\ldots
+\clearpage
 Die mittleren \glspl{rz} aller \glspl{vp} sind in Abbildung \ref{fig:Hickscatter} zu sehen. Die dazugehörigen deskriptiven Angaben sind in Tabelle \ref{tab:hick_descriptives} abgetragen.
 
 Wie bei der Analyse der \gls{ssauf} mussten als erstes die adäquaten Auswertungsverfahren bestimmen werden. 
@@ -1438,7 +1468,7 @@ Und als letztes sei noch erwähnt, dass die Bedingungen der \gls{ha} alle erwart
 				S[table-format = 0.2, add-integer-zero=false]
 				p{.001cm}
 				S[table-format = 0.2, add-integer-zero=false]
-				S[table-format = 0.2, add-integer-zero=false]
+				c
 				>{\centering\arraybackslash}p{1.2cm}
 			}
 			\hline
@@ -1464,7 +1494,7 @@ Und als letztes sei noch erwähnt, dass die Bedingungen der \gls{ha} alle erwart
 			9	&	2.58-bit		&	.07				&	.05				&	.02			&	-.01	&-.09&	&.40{$^{***}$}	&	.63{$^{***}$}	&	.81{$^{***}$}	&	&	&		\\
 			\rule{0pt}{4ex}%  EXTRA vertical height
 			10	&	\textit{z}-Wert	&	-.14			&	-.12			&	-.09		&	-.06	&.04&	&	-.15{$^{*}$}	&	-.32{$^{***}$}	&	-.31{$^{***}$}	&	-.31{$^{***}$}	&				&		\\
-			11	&	\gls{gfaktor}	&	-.18{$^{*}$}	&	-.18{$^{*}$}	&	-.14		&	-.11	&.03&	&	-.15{$^{*}$}	&	-.29{$^{***}$}	&	-.29{$^{***}$}	&	-.28{$^{***}$}	&				&	.97{$^{***}$}	\\
+			11	&	\gls{gfaktor}	&	-.18{$^{*}$}	&	-.18{$^{*}$}	&	-.14		&	-.11	&.03&	&	-.15{$^{*}$}	&	-.29{$^{***}$}	&	-.29{$^{***}$}	&	-.28{$^{***}$}	&				&	.97{$^{***}$}	& \hphantom{1.00}\\
 			\hline
 			
 		\end{tabular}%
@@ -1516,6 +1546,8 @@ Die Asymptote und die Steigung korrelierten stark negativ miteinander ($r_{s}~=~
 Aufgrund dieses hohen Zusammenhangs zwischen dem \gls{si} und der Steigung  war es dann gepaart mit der aus der Beantwortung der ersten Fragestellung gewonnenen Erkenntnis auch nicht erstaunlich, dass der von  \citeauthor{Melnick2013} berichtete Zusammenhang von $r~=~.68$ ($p~<~.001$) zwischen ihrer berechneten Steigung (Studie 1: $b~=~0.116$ und Studie 2: $b~=~0.139$) und IQ-Punkten nicht aufgetreten ist: Die Steigung ($b~=~0.102$) korrelierte nicht substanziell mit dem \textit{z}-Wert aus dem \gls{bist} ($r_{s}~=~.04$, $p~=~.57$). 
 Auch die Asymptote ($a~=~70$) korrelierte nur auf Zufallsniveau mit dem \textit{z}-Wert aus dem \gls{bist} ($r_{s}~=~-.13$, $p~=~.09$). Das individuelle Niveau, auf dem die Steigung ihren Ursprung hat, scheint somit mit psychometrischer Intelligenz nicht in Verbindung zu stehen.
 Weiter ist die Quantifizierung der Wahrnehmungsleistungsverschlechterung durch den \gls{si} (als Differenzmass) nicht mit Nachteilen verbunden. Der \gls{si} lieferte gewissermassen dieselbe Information wie die Steigung der exponentiellen Regression. 
+
+WTF macht die Figure do no im .tex doc? ab in ordner demit!
 
 
 \begin{figure}[htbp]
