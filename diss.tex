@@ -923,9 +923,9 @@ Nach der letzten Aufgabe wurden die \glspl{vp} vollständig über das Ziel der U
 Alle Berechnungen wurden in R \citep{R} durchgeführt, dessen Basisfunktionen mit den Paketen
 coin \citep{coin},
 dplyr \citep{dplyr},
+effsize \citep{effsize},
 ez \citep{ez},
 lavaan \citep{lavaan},
-lsr \citep{lsr},
 multcomp \citep{multcomp},
 nlme \citep{nlme},
 nlstools \citep{nlstools},
@@ -988,10 +988,8 @@ Das \gls{srmr} ist ein Mass dafür, wie hoch die durchschnittlichen Korrelations
 
 \subsection{\gls{ssauf} \label{subsec:SSres}}
 
-
-Die Schwellenschätzungen aller \glspl{vp} sind in Abbildung \ref{fig:SSscatter} zu sehen. Die dazugehörigen deskriptiven Angaben sind in Tabelle \ref{tab:SSdescriptives} abgetragen. 
-
-
+Deskriptiven Angaben zur Aufgabe sind in Tabelle \ref{tab:SSdescriptives} abgetragen. 
+Die Schwellenschätzungen aller \glspl{vp} sind in Abbildung \ref{fig:SSscatter} zu sehen.
 
 
 
@@ -1047,7 +1045,9 @@ Die Schwellenschätzungen aller \glspl{vp} sind in Abbildung \ref{fig:SSscatter}
 
 Als erstes wurde geprüft, ob sich die vier Bedingungen in ihrem Mittelwert unterschieden. 
 Dafür wurde eine einfaktorielle Varianzanalyse mit Messwiederholung\footnote{Die Abweichung der Daten von der Normalverteilung erforderten eigentlich verteilungsfreien Analyseverfahren. Da die Ergebnisse dieser nonparametrischen Analyseverfahren aber nicht bedeutend von den mit parametrischen Verfahren ermittelten Ergebnissen abwichen, werden im Folgenden die Ergebnisse der traditionellen (parametrischen) Verfahren berichtet. Siehe Anhang \ref{cha:BAnhang} für die Analyse der Aufgaben mittels nonparametrischer Verfahren.}
-gerechnet. Sphärizität war gemäss einem Mauchly-Test nicht gegeben [$\upchi^2(5)=202.12$, $p<.001$], weshalb die Freiheitsgrade des \textit{F}-Tests mit der Greenhouse-Geisser Methode korrigiert wurden ($\hat{\varepsilon}=.55$). Der Globaltest der einfaktoriellen Varianzanalyse mit Messwiederholung hat angezeigt, dass sich die Mittelwerte der vier Bedingungen signifikant voneinander unterschieden [$F(1.65,\,290.40)=275.26$, $p<.001$, $\eta_{G}^2=.27$]. Der Effekt der Mustergrösse auf die Wahrnehmungsleistung konnte gemäss generalisiertem $\eta_{G}^2$ \citep{Olejnik2003} als gross bezeichnet werden \citep{Bakeman2005}. Um zu erfahren, welche der Bedingungen sich voneinander unterschieden, wurden Tukey Post-hoc-Tests berechnet. Diese haben ergeben, dass sich alle vier Bedingungen signifikant voneinander unterschieden (alle \textit{p}s $<.001$). Die Wahrnehmungsleistung der \glspl{vp} verschlechterte sich also mit zunehmender Mustergrösse signifikant. Die Effektstärken für die Mittelwertsunterschiede (siehe Tabelle \ref{tab:effect_sizes_spatial_suppression}) lagen dabei im mittleren bis hohen Bereich \citep[][S. 40]{Cohen1988}.
+gerechnet. Sphärizität war gemäss einem Mauchly-Test nicht gegeben [$\upchi^2(5)=202.12$, $p<.001$], weshalb die Freiheitsgrade des \textit{F}-Tests mit der Greenhouse-Geisser Methode korrigiert wurden ($\hat{\varepsilon}=.55$). Der Globaltest der einfaktoriellen Varianzanalyse mit Messwiederholung hat angezeigt, dass sich die Mittelwerte der vier Bedingungen signifikant voneinander unterschieden [$F(1.65,\,290.40)=275.26$, $p<.001$, $\eta_{G}^2=.27$]. Der Effekt der Mustergrösse auf die Wahrnehmungsleistung konnte gemäss generalisiertem $\eta_{G}^2$ \citep{Olejnik2003} als gross bezeichnet werden \citep{Bakeman2005}. Um zu erfahren, welche der Bedingungen sich voneinander unterschieden, wurden Tukey Post-hoc-Tests berechnet. Diese haben ergeben, dass sich alle vier Bedingungen signifikant voneinander unterschieden (alle \textit{p}s $<.001$). Die Wahrnehmungsleistung der \glspl{vp} verschlechterte sich also mit zunehmender Mustergrösse signifikant.
+Die Effektstärken für die Mittelwertsunterschiede wurde mit Cohens \textit{d} für abhängige Stichproben \citep{Morris2002} bestimmt. 
+Dabei hat sich ergeben, dass die Effektstärken im mittleren bis hohen Bereich \citep[][S. 40]{Cohen1988} lagen (siehe Tabelle \ref{tab:effect_sizes_spatial_suppression}). 
 
 
 
@@ -1056,12 +1056,11 @@ gerechnet. Sphärizität war gemäss einem Mauchly-Test nicht gegeben [$\upchi^2
 	\centering
 	\setlength{\tabcolsep}{10pt}
 	\captionsetup{labelsep = none}
-	\caption[Effektstärken zwischen den Bed SS]{\newline \textit{Effektstärken (Cohens \textit{d}) der Mittelwertunterschiede in der \gls{ssauf}} \vspace{.2cm}}
+	\caption[Effektstärken zwischen den Bed SS]{\newline \textit{Effektstärken (Cohens \textit{d} für abhängige Stichproben) der Mittelwertunterschiede in der \gls{ssauf}} \vspace{.2cm}}
 	\label{tab:effect_sizes_spatial_suppression}
 	\sisetup{table-number-alignment = center}
 	\begin{threeparttable}
 		\begin{tabular}{
-				c
 				c
 				S[table-format = 1.2]
 				S[table-format = 1.2]
@@ -1071,12 +1070,12 @@ gerechnet. Sphärizität war gemäss einem Mauchly-Test nicht gegeben [$\upchi^2
 			}
 			\hline
 			
-			&	{Bedingung}			&	{1}		&	{2}		&	{3}		&	 {4}	\\
+			{Bedingung}		&	\(1.8^{\circ}\)		&	\(3.6^{\circ}\)		&	\(5.4^{\circ}\)		\\
 			\hline
-			1	&	\(1.8^{\circ}\)	&			&			&			&			\\
-			2	&	\(3.6^{\circ}\)	&	0.28	&			&			&			\\
-			3	&	\(5.4^{\circ}\)	&	0.82	&	0.56	&			&			\\
-			4	&	\(7.2^{\circ}\)	&	1.35	&	1.10	&	0.57	&	\hphantom{1.00}		\\
+			\(1.8^{\circ}\)	&						&						&						\\
+			\(3.6^{\circ}\)	&	0.51				&						&						\\
+			\(5.4^{\circ}\)	&	1.12				&	1.07				&						\\
+			\(7.2^{\circ}\)	&	1.39				&	1.42				&	1.08					\\
 
 			\hline
 			
@@ -1095,10 +1094,11 @@ gerechnet. Sphärizität war gemäss einem Mauchly-Test nicht gegeben [$\upchi^2
 
 
 
-Produkt-Moment-Korrelationen zwischen den vier Bedingungen der \gls{ssauf} deuteten ausnahmslos auf starke Zusammenhänge hin (siehe Tabelle \ref{trololol}).
+Produkt-Moment-Korrelationen zwischen den vier Bedingungen der \gls{ssauf} sind in Tabelle \ref{trololol} abgetragen. Sie deuteten ausnahmslos auf stark positive Zusammenhänge zwischen den Bedingungen hin.
+\clearpage
 
 Der \gls{si} wies einen Mittelwert $\pm$ Standardabweichung von $0.222\,\pm\,0.160$ auf (Minimum $= -0.185$, Maximum $= 0.886$). 
-Die Verteilung des \gls{si} (siehe Abbildung \ref{fig:SIhist}) hatte eine Schiefe von $0.91$ und eine Kurtosis von $1.80$ auf, welche ein Shapiro-Wilk-Test als eine signifikante Abweichung von der Normalverteilung erkannte ($p<.001$).
+Die Verteilung des \gls{si} (siehe Abbildung \ref{fig:SIhist}) hatte eine Schiefe von $0.91$ und eine Kurtosis von $1.80$, welche ein Shapiro-Wilk-Test als eine signifikante Abweichung von der Normalverteilung erkannte ($p<.001$).
 
 
 
@@ -1106,8 +1106,8 @@ Die Verteilung des \gls{si} (siehe Abbildung \ref{fig:SIhist}) hatte eine Schief
 	\centering
 %	\captionsetup{font = small}
 	\resizebox{1\textwidth}{!}{% or alternatively .919 
-		\input{tikzDevice/suppression_index_histogram.tex}}
-	\caption[Suppression-Index Histogramm]{Häufigkeitsverteilung des \gls{si}, gebildet als Differenz zwischen der $\log_{10}$-Schwellenschätzung für die Mustergrösse \(7.2^{\circ}\) und der $\log_{10}$-Schwellenschätzung für die Mustergrösse \(1.8^{\circ}\).}
+		\input{tikzDevice/suppression_index_distribution.tex}}
+	\caption[Suppression-Index Histogramm]{Häufigkeitsverteilung des \gls{si}, gebildet als Differenz zwischen der $\log_{10}$-Schwellenschätzung für die Mustergrösse \(7.2^{\circ}\) und der $\log_{10}$-Schwellenschätzung für die Mustergrösse \(1.8^{\circ}\). Die durchgezogene Linie bildet die Dichtefunktion der Verteilung ab.}
 	\label{fig:SIhist}
 \end{figure}
 
@@ -1298,7 +1298,7 @@ Der \gls{zwert} des \gls{bist}, gebildet als Mittel aller $18$ \textit{z}-standa
 		
 		\begin{threeparttable}
 			\captionsetup{labelsep = none}
-			\caption[Zusammenhänge zwischen den Subtests]{\newline  \textit{Spearmans Rangkorrelationen zwischen den Subtests des \gls{bist}} \vspace{.2cm}}
+			\caption[Zusammenhänge zwischen den Subtests]{\newline  \textit{Produkt-Moment-Korrelationen zwischen den Subtests des \gls{bist}} \vspace{.2cm}}
 			\label{tab:subtestsCorr}
 
 		\sisetup{table-space-text-post = $^{*ab}$  }
@@ -1325,27 +1325,27 @@ Der \gls{zwert} des \gls{bist}, gebildet als Mittel aller $18$ \textit{z}-standa
 				>{\centering\arraybackslash}p{1.2cm}
 			}
 			\hline
-			&	{Subtest}	&	{1}	&	{2}	&	{3}	&	{4}	&	{5}	&	{6}	&	{7}	&	{8}	&	{9}	&	{10}&	{11}&	{12}&	{13}&	{14}&	{15}&	{16}&	{17}&	{18}	\\
+			&	{Subtest}	&	{1}	&	{2}	&	{3}	&	{4}	&	{5}	&	{6}	&	{7}	&	{8}	&	{9}	&	{10}&	{11}&	{12}&	{13}&	{14}&	{15}&	{16}&	{17}	\\
 			\hline
 			
-1	&	OG	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
-2	&	ZN	&	.25{$^{***}$}	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
-3	&	AN	&	.26{$^{***}$}	&	.42{$^{***}$}	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
-4	&	XG	&	.21{$^{**}$}	&	.55{$^{***}$}	&	.35{$^{***}$}	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
-5	&	WA	&	.31{$^{***}$}	&	.41{$^{***}$}	&	.47{$^{***}$}	&	.34{$^{***}$}	&	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
-6	&	ZP	&	.27{$^{***}$}	&	.15{$^a$}		&	.15{$^{*}$}	&	.30{$^{***}$}	&	.17{$^{*}$}		&	&	&	&	&	&	&	&	&	&	&	&	&	\\
-7	&	TM	&	.29{$^{***}$}	&	.26{$^{***}$}	&	.41{$^{***}$}	&	.36{$^{***}$}	&	.48{$^{***}$}	&	.24{$^{**}$}	&	&	&	&	&	&	&	&	&	&	&	&	\\
-8	&	BD	&	.19{$^{*}$}		&	.08				&	.17{$^{*}$}		&	.19{$^{*}$}		&	.02				&	.08				&	.10	&	&	&	&	&	&	&	&	&	&	&	\\
-9	&	SC	&	.16{$^{*}$}		&	.51{$^{***}$}	&	.35{$^{***}$}	&	.48{$^{***}$}	&	.22{$^{**}$}	&	.17{$^{*}$}		&	.32{$^{***}$}	&	.25{$^{***}$}	&	&	&	&&&	&&	&&\\
-10	&	ST	&	.34{$^{***}$}	&	.15	{$^{*}$}	&	.23{$^{**}$}	&	.30{$^{***}$}	&	.31{$^{***}$}	&	.22{$^{**}$}	&	.37{$^{***}$}	&	-.03			&	.22{$^{**}$}	&		&&&&&&&&\\
-11	&	CH	&	.33{$^{***}$}	&	.49{$^{***}$}	&	.51{$^{***}$}	&	.29{$^{***}$}	&	.50{$^{***}$}	&	.14				&	.30				&	.12				&	.31{$^{***}$}	&	.13	&	&	&&&	&&&	\\
-12	&	TG	&	.33{$^{***}$}	&	.36{$^{***}$}	&	.30{$^{***}$}	&	.48{$^{***}$}	&	.45{$^{***}$}	&	.19{$^{*}$}		&	.47{$^{***}$}	&	.18{$^{*}$}		&	.26{$^{***}$}&	.36{$^{***}$}	&	.23{$^{**}$}	&	&&	&	&&&	\\
-13	&	RZ	&	.32{$^{***}$}	&	.52{$^{***}$}	&	.42{$^{***}$}	&	.55{$^{***}$}	&	.44{$^{***}$}	&	.29{$^{***}$}	&	.45{$^{***}$}	&	.13				&	.44{$^{***}$}&	.34{$^{***}$}	&	.37{$^{***}$}	&	.41{$^{***}$}&&&&&&	\\
-14	&	WM	&	.41{$^{***}$}	&	.10				&	.24{$^{**}$}	&	.18{$^{*}$}		&	.20{$^{**}$}	&	.26{$^{***}$}	&	.34{$^{***}$}	&	.13				&	.13			&	.45{$^{***}$}	&	.16{$^{*}$}		&	.18{$^{*}$}		&	.15{$^{*}$}	&&&&&	\\
-15	&	KW	&	.26{$^{***}$}	&	.24{$^{***}$}	&	.28{$^{***}$}	&	.39{$^{***}$}	&	.39{$^{***}$}	&	.24{$^{**}$}	&	.54{$^{***}$}	&	.19{$^{*}$}		&	.26{$^{***}$}&	.49{$^{***}$}	&	.21{$^{**}$}	&	.60{$^{***}$}	&	.35{$^{***}$}	&	.34{$^{***}$}	&&&&	\\
-16	&	ZZ	&	.31{$^{***}$}	&	.02				&	.03				&	.20{$^{**}$}	&	.00				&	.34{$^{***}$}	&	.09				&	.11				&	.04			&	.28{$^{***}$}	&	.05				&	.05				&	.08				&	.38{$^{***}$}	&	.10	&&&	\\
-17	&	OE	&	.06				&	-.01			&	-.01			&	.07				&	-.05			&	.04				&	.12				&	.46{$^{***}$}	&	.15{$^{*}$}&	-.01			&	-.13			&	.15{$^{*}$}		&	.13					&	.03	&	.13		& -.05&&	\\
-18	&	WE	&	.42{$^{***}$}	&	.27{$^{***}$}	&	.26{$^{***}$}	&	.19{$^{*}$}		&	.29{$^{***}$}	&	.25{$^{***}$}	&	.06				&	.04				&	.14			&	.21{$^{**}$}	&	.25{$^{**}$}	&	.20{$^{**}$}	&	.33{$^{***}$}	&.19{$^{*}$}&	.23{$^{**}$}&.18{$^{*}$}&-.12&\\
+1	&	OG	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
+2	&	ZN	&	.27{$^{***}$}	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
+3	&	AN	&	.31{$^{***}$}	&	.42{$^{***}$}	&	&	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
+4	&	XG	&	.21{$^{**}$}	&	.56{$^{***}$}	&	.32{$^{***}$}	&	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
+5	&	WA	&	.34{$^{***}$}	&	.41{$^{***}$}	&	.49{$^{***}$}	&	.34{$^{***}$}	&	&	&	&	&	&	&	&	&	&	&	&	&	\\
+6	&	ZP	&	.22{$^{**}$}	&	.17{$^{*}$}		&	.13				&	.31{$^{***}$}	&	.17{$^{*}$}		&	&	&	&	&	&	&	&	&	&	&	&	\\
+7	&	TM	&	.30{$^{***}$}	&	.26{$^{***}$}	&	.44{$^{***}$}	&	.33{$^{***}$}	&	.51{$^{***}$}	&	.22{$^{**}$}	&	&	&	&	&	&	&	&	&	&	&	\\
+8	&	BD	&	.07				&	.08				&	.05				&	.11				&	-.01			&	.04				&	.03	&	&	&	&	&	&	&	&	&	&	\\
+9	&	SC	&	.14				&	.52{$^{***}$}	&	.35{$^{***}$}	&	.47{$^{***}$}	&	.23{$^{**}$}	&	.17{$^{*}$}		&	.32{$^{***}$}	&	.20{$^{**}$}	&	&	&&&	&&	&&\\
+10	&	ST	&	.38{$^{***}$}	&	.19	{$^{*}$}	&	.24{$^{**}$}	&	.31{$^{***}$}	&	.32{$^{***}$}	&	.24{$^{**}$}	&	.39{$^{***}$}	&	-.01			&	.22{$^{**}$}	&		&&&&&&\\
+11	&	CH	&	.36{$^{***}$}	&	.51{$^{***}$}	&	.52{$^{***}$}	&	.31{$^{***}$}	&	.52{$^{***}$}	&	.13				&	.33{$^{***}$}	&	.07				&	.31{$^{***}$}&	.17{$^{*}$}	&	&&&	&&&	\\
+12	&	TG	&	.32{$^{***}$}	&	.33{$^{***}$}	&	.27{$^{***}$}	&	.43{$^{***}$}	&	.43{$^{***}$}	&	.16{$^{*}$}		&	.43{$^{***}$}	&	.11				&	.28{$^{***}$}&	.38{$^{***}$}	&	.22{$^{**}$}	&&	&	&&&	\\
+13	&	RZ	&	.30{$^{***}$}	&	.53{$^{***}$}	&	.41{$^{***}$}	&	.55{$^{***}$}	&	.43{$^{***}$}	&	.27{$^{***}$}	&	.42{$^{***}$}	&	.08				&	.44{$^{***}$}&	.34{$^{***}$}	&	.38{$^{***}$}&	.33{$^{***}$}&&&&&	\\
+14	&	WM	&	.40{$^{***}$}	&	.12				&	.29{$^{***}$}	&	.17{$^{*}$}		&	.26{$^{**}$}	&	.27{$^{***}$}	&	.39{$^{***}$}	&	.08				&	.10			&	.40{$^{***}$}	&	.18{$^{*}$}	&	.18{$^{*}$}		&	.13				&&&&	\\
+15	&	KW	&	.26{$^{***}$}	&	.23{$^{**}$}	&	.28{$^{***}$}	&	.35{$^{***}$}	&	.40{$^{***}$}	&	.23{$^{**}$}	&	.56{$^{***}$}	&	.14				&	.29{$^{***}$}&	.52{$^{***}$}	&	.21{$^{**}$}&	.54{$^{***}$}	&	.36{$^{***}$}	&	.32{$^{***}$}	&&&	\\
+16	&	ZZ	&	.29{$^{***}$}	&	.05				&	.04				&	.21{$^{**}$}	&	.01				&	.37{$^{***}$}	&	.10				&	.09				&	.05			&	.30{$^{***}$}&	.07				&	.08				&	.09				&	.39{$^{***}$}	&	.13				&					&	\\
+17	&	OE	&	.09				&	.04				&	.03				&	.08				&	.01				&	.03				&	.13				&	.34{$^{***}$}	&	.16{$^{*}$}&	.03			&	-.06			&	.15{$^{*}$}		&	.15{$^{*}$}		&	.02				&	.16{$^{*}$}		& -.03				&	\\
+18	&	WE	&	.39{$^{***}$}	&	.31{$^{***}$}	&	.27{$^{***}$}	&	.22{$^{**}$}		&	.28{$^{***}$}	&	.28{$^{***}$}	&	.09			&	-.02			&	.16{$^{*}$}	&	.23{$^{**}$}&	.27{$^{***}$}	&	.20{$^{**}$}	&	.34{$^{***}$}	&	.16{$^{*}$}		&	.22{$^{**}$}	&.19{$^{*}$}		&	-.10\\
 			\hline			
 		\end{tabular}
 		
@@ -1353,7 +1353,6 @@ Der \gls{zwert} des \gls{bist}, gebildet als Mittel aller $18$ \textit{z}-standa
 			\footnotesize				% font size
 			\setlength\labelsep{0pt}	% no indent on second line
 			\item \textit{Anmerkung.} Siehe Tabelle \ref{tab:BIS} für eine Beschreibung der Subtests.
-			\item {$^a$}Der exakte Zusammenhang betrug $r_{s}=.147$, $p=.051$. Alle restlichen in der Tabelle mit $r_{s}=.15$ bezeichneten Korrelationskoeffizienten wiesen \textit{p}-Werte $<.05$ auf.
 			\item {$^{*}$}$p<.05$. {$^{**}$}$p<.01$. {$^{***}$}$p<.001$ (zweiseitig).
 		\end{tablenotes}
 		
@@ -3718,6 +3717,80 @@ Mit Ausnahme des Wahrnehmungsleistungsunterschieds zwischen der \(1.8^{\circ}\)-
 \section{\gls{ha}}
 
 Um zu testen, ob die mittlere \gls{rz} der \glspl{vp} von der Anzahl Antwortalternativen abhing, wurde ein Friedman-Test durchgeführt. Der Globaltest war mit $\upchi^2(3)=516.12$, $p<.001$, hochsignifikant und belegte, dass die mittlere \gls{rz} der \glspl{vp} in den vier Bedingungen nicht identisch war. Welche Bedingungen sich voneinander unterschieden, wurde mit Post-hoc-Tests \citep{Galili2010, Hollander2014} geprüft. Diese haben gezeigt, dass sich alle Bedingungen signifikant voneinander unterschieden (alle $p\textnormal{s}<.001$). Die mittlere \gls{rz} der \glspl{vp} erhöhte sich also über die Bedingungen hinweg signifikant.
+
+\section{\gls{bist}}
+
+\begin{sidewaystable}
+	
+	
+	\begin{adjustbox}{width=1\textwidth,totalheight=1\textheight,keepaspectratio}
+		
+		\begin{threeparttable}
+			\captionsetup{labelsep = none}
+			\caption[Zusammenhänge zwischen den Subtests]{\newline  \textit{Spearmans Rangkorrelationen zwischen den Subtests des \gls{bist}} \vspace{.2cm}}
+			\label{tab:subtestsCorr}
+			
+			\sisetup{table-space-text-post = $^{*ab}$  }
+			\begin{tabular}{
+					c
+					c
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+					>{\centering\arraybackslash}p{1.2cm}
+				}
+				\hline
+				&	{Subtest}&	{1}	&	{2}	&	{3}	&	{4}	&	{5}	&	{6}	&	{7}	&	{8}	&	{9}	&	{10}&	{11}&	{12}&	{13}&	{14}&	{15}&	{16}&	{17}&	{18}	\\
+				\hline
+				
+1	&	OG	&					&	.02				&	.05			&.00	&.04	&-.05	&.01	&-.12	&-.02	&.04	&.03	&-.01	&-.02	&.00	&.01	&-.02	&.04	&-.03	\\
+2	&	ZN	&	.25{$^{***}$}	&					&	.00			&.01	&.00	&.02	&.00	&.00	&.01	&.04	&.02	&-.03	&.01	&.01	&.00	&.03	&.06	&.04	\\
+3	&	AN	&	.26{$^{***}$}	&	.42{$^{***}$}	&				&-.03	&.02	&-.02	&.03	&-.12	&-.01	&.01	&.01	&-.03	&-.01	&.05	&.00	&.01	&.05	&.02	\\
+4	&	XG	&	.21{$^{**}$}	&	.55{$^{***}$}	&	.35{$^{***}$}	&	&.01	&.01	&-.04	&-.08	&.00	&.01	&.02	&-.05	&.00	&.00	&-.03	&.01	&.01	&.03	\\
+5	&	WA	&	.31{$^{***}$}	&	.41{$^{***}$}	&	.47{$^{***}$}	&	.34{$^{***}$}	&&-.01	&.03	&-.03	&.01	&.01	&.01	&-.02	&-.01	&.06	&.01	&.01	&.05&.00\\
+6	&	ZP	&	.27{$^{***}$}	&	.15{$^a$}		&	.15{$^{*}$}	&	.30{$^{***}$}	&	.17{$^{*}$}		&	&	-.03&-.04	&.00	&.02	&-.01	&-.03	&-.02	&.01	&.00	&.03	&-.02	&.02	\\
+7	&	TM	&	.29{$^{***}$}	&	.26{$^{***}$}	&	.41{$^{***}$}	&	.36{$^{***}$}	&	.48{$^{***}$}	&	.24{$^{**}$}	&	&-.07	&.00	&.02	&.02	&-.04	&-.03	&.05	&.02	&.01	&.01	&.02	\\
+8	&	BD	&	.19{$^{*}$}		&	.08				&	.17{$^{*}$}		&	.19{$^{*}$}		&	.02				&	.08				&	.10	&	&-.05	&.02	&-.05	&-.07	&-.05	&-.05	&-.04	&-.02	&-.12	&-.06	\\
+9	&	SC	&	.16{$^{*}$}		&	.51{$^{***}$}	&	.35{$^{***}$}	&	.48{$^{***}$}	&	.22{$^{**}$}	&	.17{$^{*}$}		&	.32{$^{***}$}	&	.25{$^{***}$}	&	&.01	&.01	&.01&.00&-.03	&.02&.01	&.01&.01\\
+10	&	ST	&	.34{$^{***}$}	&	.15	{$^{*}$}	&	.23{$^{**}$}	&	.30{$^{***}$}	&	.31{$^{***}$}	&	.22{$^{**}$}	&	.37{$^{***}$}	&	-.03			&	.22{$^{**}$}	&		&.04&.02&.00&-.05&.03&.02&.04&.03\\
+11	&	CH	&	.33{$^{***}$}	&	.49{$^{***}$}	&	.51{$^{***}$}	&	.29{$^{***}$}	&	.50{$^{***}$}	&	.14				&	.30				&	.12				&	.31{$^{***}$}	&	.13	&	&-.01&.01&.01&.00&.02&.07&.02	\\
+12	&	TG	&	.33{$^{***}$}	&	.36{$^{***}$}	&	.30{$^{***}$}	&	.48{$^{***}$}	&	.45{$^{***}$}	&	.19{$^{*}$}		&	.47{$^{***}$}	&	.18{$^{*}$}		&	.26{$^{***}$}&	.36{$^{***}$}	&	.23{$^{**}$}	&	&-.08&.00&-.05&.02&.00&.00	\\
+13	&	RZ	&	.32{$^{***}$}	&	.52{$^{***}$}	&	.42{$^{***}$}	&	.55{$^{***}$}	&	.44{$^{***}$}	&	.29{$^{***}$}	&	.45{$^{***}$}	&	.13				&	.44{$^{***}$}&	.34{$^{***}$}	&	.37{$^{***}$}	&	.41{$^{***}$}&&-.03&.01&.01&.02&.01	\\
+14	&	WM	&	.41{$^{***}$}	&	.10				&	.24{$^{**}$}	&	.18{$^{*}$}		&	.20{$^{**}$}	&	.26{$^{***}$}	&	.34{$^{***}$}	&	.13				&	.13			&	.45{$^{***}$}	&	.16{$^{*}$}		&	.18{$^{*}$}		&	.15{$^{*}$}	&&-.01&.01&-.02&-.03	\\
+15	&	KW	&	.26{$^{***}$}	&	.24{$^{***}$}	&	.28{$^{***}$}	&	.39{$^{***}$}	&	.39{$^{***}$}	&	.24{$^{**}$}	&	.54{$^{***}$}	&	.19{$^{*}$}		&	.26{$^{***}$}&	.49{$^{***}$}	&	.21{$^{**}$}	&	.60{$^{***}$}	&	.35{$^{***}$}	&	.34{$^{***}$}	&&.03&.04&-.01	\\
+16	&	ZZ	&	.31{$^{***}$}	&	.02				&	.03				&	.20{$^{**}$}	&	.00				&	.34{$^{***}$}	&	.09				&	.11				&	.04			&	.28{$^{***}$}	&	.05				&	.05				&	.08				&	.38{$^{***}$}	&	.10	&&.02&.01	\\
+17	&	OE	&	.06				&	-.01			&	-.01			&	.07				&	-.05			&	.04				&	.12				&	.46{$^{***}$}	&	.15{$^{*}$}&	-.01			&	-.13			&	.15{$^{*}$}		&	.13					&	.03	&	.13		& -.05&&.02	\\
+18	&	WE	&	.42{$^{***}$}	&	.27{$^{***}$}	&	.26{$^{***}$}	&	.19{$^{*}$}		&	.29{$^{***}$}	&	.25{$^{***}$}	&	.06				&	.04				&	.14			&	.21{$^{**}$}	&	.25{$^{**}$}	&	.20{$^{**}$}	&	.33{$^{***}$}	&.19{$^{*}$}&	.23{$^{**}$}&.18{$^{*}$}&-.12&\\
+\hline			
+			\end{tabular}
+			
+			\begin{tablenotes}[flushleft]
+				\footnotesize				% font size
+				\setlength\labelsep{0pt}	% no indent on second line
+				\item \textit{Anmerkung.} Siehe Tabelle \ref{tab:BIS} für eine Beschreibung der Subtests.
+				\item {$^a$}Der exakte Zusammenhang betrug $r_{s}=.147$, $p=.051$. Alle restlichen in der Tabelle mit $r_{s}=.15$ bezeichneten Korrelationskoeffizienten wiesen \textit{p}-Werte $<.05$ auf.
+				\item {$^{*}$}$p<.05$. {$^{**}$}$p<.01$. {$^{***}$}$p<.001$ (zweiseitig).
+			\end{tablenotes}
+			
+		\end{threeparttable}
+	\end{adjustbox}
+	
+\end{sidewaystable}
 
 \section{Zusammenhangsmasse}
 
