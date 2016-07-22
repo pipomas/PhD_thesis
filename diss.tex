@@ -187,6 +187,7 @@
 
 % Setup for bibliography with the 'apacite' package ----------------------------
 \usepackage[tocbib, natbibapa, nosectionbib]{apacite}	% enable options
+\newcommand\citepos[1]{\citeauthor{#1}s\ (\citeyear{#1})} % see http://tex.stackexchange.com/questions/137511/how-to-put-a-s-after-citing-author
 \bibliographystyle{apacite-mod}							% see http://tex.stackexchange.com/questions/304217/reference-list-suppressing-dots-after-company-names-apacite
 \usepackage{doi}										% turns doi's into hyperlinks
 \renewcommand\doiprefix{\ignorespaces}					% removes white space in front of doi
@@ -988,15 +989,15 @@ Das \gls{srmr} ist ein Mass dafür, wie hoch die durchschnittlichen Korrelations
 
 \subsection{\gls{ssauf} \label{subsec:SSres}}
 
-Deskriptiven Angaben zur Aufgabe sind in Tabelle \ref{tab:SS_descriptives} abgetragen. 
-Die Schwellenschätzungen aller \glspl{vp} sind in Abbildung \ref{fig:SS_scatterplot} zu sehen.
+Deskriptiven Angaben zur Aufgabe sind in Tabelle \ref{tab:spatial_suppression_descriptives} abgetragen. 
+Die Schwellenschätzungen aller \glspl{vp} sind in Abbildung \ref{fig:spatial_suppression_scatterplot} zu sehen.
 
 
 \begin{table}[htbp]
 	\centering
 %	\captionsetup{font = small}
 	\caption[Deskriptive Angaben zur Schwellenbestimmung in der \gls{ssauf}]{\newline  \textit{Deskriptive Angaben zu den Schwellenschätzungen der \gls{ssauf} in Millisekunden (Mittelwert, Standardabweichung, Minimum, Maximum) und Kennwerte zur Verteilung der Daten} \vspace{.2cm}}
-	\label{tab:SS_descriptives}
+	\label{tab:spatial_suppression_descriptives}
 	%	\resizebox{\columnwidth}{!}{%	
 	\begin{threeparttable}
 		
@@ -1033,14 +1034,14 @@ Die Schwellenschätzungen aller \glspl{vp} sind in Abbildung \ref{fig:SS_scatter
 	\centering
 	\resizebox{\textwidth}{!}{
 		\input{tikzDevice/spatial_suppression_scatterplot.tex}}
-	\caption[Spatial-Suppression-Streudiagramm]{Streudiagramme der Schwellenschätzungen in der \gls{ssauf}. Die horizontale Linie kennzeichnet jeweils den Mittelwert innerhalb einer Bedingung (vgl. Tabelle \ref{tab:SS_descriptives}). Siehe Anhang \ref{cha:AAnhang} für eine Beschreibung der Ausreisserkontrolle. Vp = Versuchsperson.}
-	\label{fig:SS_scatterplot}
+	\caption[Spatial-Suppression-Streudiagramm]{Streudiagramme der Schwellenschätzungen in der \gls{ssauf}. Die horizontale Linie kennzeichnet jeweils den Mittelwert innerhalb einer Bedingung (vgl. Tabelle \ref{tab:spatial_suppression_descriptives}). Siehe Anhang \ref{cha:AAnhang} für eine Beschreibung der Ausreisserkontrolle. Vp = Versuchsperson.}
+	\label{fig:spatial_suppression_scatterplot}
 \end{figure}
 
 
 
 Als erstes wurde geprüft, ob die Mustergrösse einen signifikanten Einfluss auf die Wahrnehmungsleistung ausübte.
-Dafür wurde eine einfaktorielle Varianzanalyse mit Messwiederholung\footnote{Die Abweichung der Daten von der Normalverteilung (siehe Kennwerte zur Verteilung in Tabelle \ref{tab:SS_descriptives}) erforderten eigentlich verteilungsfreien Analyseverfahren. Da die Ergebnisse dieser nonparametrischen Analyseverfahren aber nicht bedeutend von den mit parametrischen Verfahren ermittelten Ergebnissen abwichen, werden im Folgenden die Ergebnisse der traditionellen (parametrischen) Verfahren berichtet. Siehe Anhang \ref{cha:BAnhang} für die Analyse der Aufgaben mittels nonparametrischer Verfahren.}
+Dafür wurde eine einfaktorielle Varianzanalyse mit Messwiederholung\footnote{Die Abweichung der Daten von der Normalverteilung (siehe Kennwerte zur Verteilung in Tabelle \ref{tab:spatial_suppression_descriptives}) erforderten eigentlich verteilungsfreien Analyseverfahren. Da die Ergebnisse dieser nonparametrischen Analyseverfahren aber nicht bedeutend von den mit parametrischen Verfahren ermittelten Ergebnissen abwichen, werden im Folgenden die Ergebnisse der traditionellen (parametrischen) Verfahren berichtet. Siehe Anhang \ref{cha:BAnhang} für die Analyse der Aufgaben mittels nonparametrischer Verfahren.}
 gerechnet. Sphärizität war gemäss einem Mauchly-Test nicht gegeben [$\upchi^2(5)=202.12$, $p<.001$], weshalb die Freiheitsgrade des \textit{F}-Tests mit der Greenhouse-Geisser-Methode korrigiert wurden ($\hat{\varepsilon}=.55$). Der \textit{F}-Test hat ergeben, dass die Unterschiede zwischen den Bedingungsmittelwerten signifikant von 0 abwichen [$F(1.65,\,290.40)=275.26$, $p<.001$, $\eta_{G}^2=.27$]. Der Effekt der Mustergrösse auf die Wahrnehmungsleistung konnte dabei gemäss generalisiertem $\eta_{G}^2$ \citep{Olejnik2003} als gross bezeichnet werden \citep{Bakeman2005}.
 Um zu erfahren, ob sich alle oder nur bestimmte Mittelwertpaare signifikant voneinander unterschieden, wurden post hoc alle Mittelwerte miteinander verglichen.
 Tukey-Tests haben gezeigt, dass sich alle Mittelwertpaare signifikant voneinander unterschieden (alle \textit{p}s $<.001$).
@@ -1097,7 +1098,8 @@ Produkt-Moment-Korrelationen zwischen den vier Bedingungen der \gls{ssauf} sind 
 \clearpage
 
 Der \gls{si} wies einen Mittelwert $\pm$ Standardabweichung von $0.222\,\pm\,0.160$ auf (Minimum $= -0.185$, Maximum $= 0.886$). 
-Die Verteilung des \gls{si} (siehe Abbildung \ref{fig:SIhist}) hatte eine Schiefe von $0.91$ und eine Kurtosis von $1.80$, welche ein Shapiro-Wilk-Test als eine signifikante Abweichung von der Normalverteilung erkannte ($p<.001$).
+Die Verteilung des \gls{si} (siehe Abbildung \ref{fig:suppression_index_density}) hatte eine Schiefe von $0.91$ und eine Kurtosis von $1.80$ und wich damit gemäss einem Shapiro-Wilk-Test signifikant von der Normalverteilung ab ($p<.001$).
+
 
 
 
@@ -1106,8 +1108,8 @@ Die Verteilung des \gls{si} (siehe Abbildung \ref{fig:SIhist}) hatte eine Schief
 %	\captionsetup{font = small}
 	\resizebox{1\textwidth}{!}{% or alternatively .919 
 		\input{tikzDevice/suppression_index_density.tex}}
-	\caption[Suppression-Index Histogramm]{Häufigkeitsverteilung des \gls{si}, gebildet als Differenz zwischen der $\log_{10}$-Schwellenschätzung für die Mustergrösse \(7.2^{\circ}\) und der $\log_{10}$-Schwellenschätzung für die Mustergrösse \(1.8^{\circ}\). Die durchgezogene Linie bildet die Dichtefunktion der Verteilung ab.}
-	\label{fig:SIhist}
+	\caption[Dichtefunktion des \gls{si}]{Dichtefunktion des \gls{si}. Der \gls{si} wurde als Differenz zwischen der $\log_{10}$-Schwellenschätzung für die Mustergrösse \(7.2^{\circ}\) und der $\log_{10}$-Schwellenschätzung für die Mustergrösse \(1.8^{\circ}\) gebildet. Alle Datenpunkte sind auf der \textit{x}-Achse mit vertikalen Strichen markiert.}
+	\label{fig:suppression_index_density}
 \end{figure}
 
 
@@ -1229,20 +1231,21 @@ Produkt-Moment-Korrelationen zwischen den vier Bedingungen der \gls{ha} sind in 
 
 
 
+
 \subsection{\gls{bist}}
 
 Deskriptive Angaben zu den Subtests des \gls{bist} sind in Tabelle \ref{tab:BISdescriptives} zu finden.
-Wie aufgrund der Modellannahmen des \gls{bist} zu erwarten war, liessen sich zwischen der Mehrheit der Subtests substanzielle, positive Zusammenhänge beobachten (siehe Tabelle \ref{tab:product_correlations_BIS}). Diese Zusammenhänge bildeten die Voraussetzung für die Beantwortung der dritten, vierten und fünften Fragestellung, bei welchen aus den Aufgaben des \gls{bist} mit Hilfe von Faktoranalysen ein \gls{gfaktor} extrahiert wurde. 
+Wie aufgrund der Modellannahmen des \gls{bist} zu erwarten war, liessen sich zwischen der Mehrheit der Subtests substanzielle, positive Zusammenhänge beobachten (siehe Tabelle \ref{tab:product_correlations_BIS}). Diese Zusammenhänge bildeten die Voraussetzung für die Beantwortung der dritten, vierten und fünften Fragestellung, bei welchen aus den Aufgaben des \gls{bist} mit Hilfe von Faktoranalysen ein \gls{gfaktor} extrahiert wurde. \textcolor{red}{Ev LIT angeben positiv manifold?}
 
-Der \gls{zwert} des \gls{bist}, gebildet als Mittel aller $18$ \textit{z}-standardisierter Subtests, wies einen Mittelwert $\pm$ Standardabweichung von $0.02\,\pm\,0.53$ auf (Minimum $= -1.60$, Maximum $= 1.40$). Die Verteilung des \gls{zwert}s hatte eine negative Schiefe ($-0.02$) und eine positive Kurtosis ($0.16$), wich damit aber gemäss einem Shapiro-Wilk-Test  nicht signifikant von der Normalverteilung ab ($p=.82$).
+Der \gls{zwert} des \gls{bist}, gebildet als Mittelwert aller $18$ \textit{z}-standardisierter Subtests, wies einen Mittelwert $\pm$ Standardabweichung von $0.02\,\pm\,0.53$ auf (Minimum $= -1.60$, Maximum $= 1.40$). Die Verteilung der \gls{zwert}s (siehe Abbildung \ref{fig:zwert_density}) hatte eine negative Schiefe ($-0.02$) und eine positive Kurtosis ($0.16$), wich damit aber gemäss einem Shapiro-Wilk-Test  nicht signifikant von der Normalverteilung ab ($p=.82$).
 
 \begin{figure}[htbp]
 	\centering
 	%	\captionsetup{font = small}
 	\resizebox{1\textwidth}{!}{% or alternatively .919 
 		\input{tikzDevice/bis_density.tex}}
-	\caption[BIS Verteilung]{Häufigkeitsverteilung des \gls{zwert}, gebildet als Differenz zwischen der $\log_{10}$-Schwellenschätzung für die Mustergrösse \(7.2^{\circ}\) und der $\log_{10}$-Schwellenschätzung für die Mustergrösse \(1.8^{\circ}\). Die durchgezogene Linie bildet die Dichtefunktion der Verteilung ab.}
-	\label{fig:SIhist}
+	\caption[Dichtefunktion des \gls{bist} \gls{zwert}]{Dichtefunktion des \gls{bist} \gls{zwert}s. Der \gls{zwert} wurde als Mittelwert aller 18 \textit{z}-standardisierter Subtests gebildet. Alle Datenpunkte sind auf der \textit{x}-Achse mit vertikalen Strichen markiert.}
+	\label{fig:zwert_density}
 \end{figure}
 
 \begin{table}[htbp]
@@ -1380,17 +1383,17 @@ Der \gls{zwert} des \gls{bist}, gebildet als Mittel aller $18$ \textit{z}-standa
 
 
 
-\clearpage
+
 \subsection{Zusammenhänge zwischen den Aufgaben}
 
 Bevor ausgewählte Zusammenhänge zwischen den Aufgaben in den folgenden Abschnitten mit den Fragestellungen abgearbeitet werden, ist der Vollständigkeit halber in Tabelle \ref{tab:product_moment_correlations_manifest} eine umfassende Korrelationsmatrix abgebildet. 
 
-Abgesehen von den bereits erwähnten Zusammenhängen zwischen den Bedingungen der \gls{ssauf} respektive der \gls{ha} sei an dieser Stelle gesondert auf Folgendes hinzuweisen:
+Abgesehen von den bereits erwähnten Zusammenhängen zwischen den Bedingungen der \gls{ssauf}, der \gls{ha} respektive den Subtests des \gls{bist} ist an dieser Stelle gesondert auf Folgendes hinzuweisen:
 Der \gls{si} wies eine negative Korrelation mit der \(1.8^{\circ}\)-Be\-ding\-ung auf ($r=-.28$, $p<.001$) und korrelierte positiv mit der \(7.2^{\circ}\)-Bedingung ($r=.66$, $p<.001$). 
 Diese Zusammenhänge können als Hinweis dafür gesehen werden, dass der \gls{si} als Differenz zwischen der $\log_{10}$-Schwel\-len\-schätz\-ung für die Mustergrösse \(7.2^{\circ}\) und der $\log_{10}$-Schwel\-len\-schätz\-ung für die Mustergrösse \(1.8^{\circ}\) korrekt gebildet wurde.
 Weiter korrelierte einzig die 0-bit-Bedingung der \gls{ha} signifikant mit der \(1.8^{\circ}\)-, der \(3.6^{\circ}\)- und der \(5.4^{\circ}\)-Bedingung der \gls{ssauf}, während alle restlichen Zusammenhänge zwischen den Bedingungen der beiden Aufgaben so gering ausfielen, dass sie bei der gewählten Irrtumswahrscheinlichkeit von weniger als $5\,\%$ nicht von 0 unterschieden werden konnten.
 Die Bedingungen der \gls{ha} korrelierten erwartungsgemäss signifikant negativ mit psychometrischer Intelligenz \citep[$r=-.19$ bis $-.28$, alle $p\textnormal{s}<.05$; vgl. ][]{Sheppard2008}.
-Die Bedingungen der \gls{ssauf} korrelierten mit Ausnahme des Zusammenhangs zwischen der \(7.2^{\circ}\)-Bedingung und dem \gls{zwert} des \gls{bist} ($r=-.12$, $p=.10$) alle signifikant negativ mit psychometrischer Intelligenz ($r=-.15$ bis $-.19$, alle $p\textnormal{s}<.05$).
+Die Bedingungen der \gls{ssauf} korrelierten mit Ausnahme des Zusammenhangs zwischen der \(7.2^{\circ}\)-Bedingung und dem \gls{zwert} des \gls{bist} ($r=-.12$, $p=.10$) alle signifikant negativ mit psychometrischer Intelligenz ($r=-.16$ bis $-.19$, alle $p\textnormal{s}<.05$).
 
 
 
@@ -1445,7 +1448,7 @@ Die Bedingungen der \gls{ssauf} korrelierten mit Ausnahme des Zusammenhangs zwis
 9	&	2.58-bit		&	.14				&	.09				&	.12				&	.07				&	-.04		&	&.52{$^{***}$}	&	.66{$^{***}$}	&	.83{$^{***}$}	&	&	&		\\
 \rule{0pt}{4ex}%  EXTRA vertical height
 10	&	\textit{z}-Wert	&	-.16{$^{*}$}	&	-.17{$^{*}$}	&	-.16{$^{*}$}	&	-.12			&	.00			&	&-.19{$^{*}$}	&	-.27{$^{***}$}	&	-.28{$^{***}$}	&	-.28{$^{***}$}	&				&		\\
-11	&	\gls{gfaktor}	&	-.18{$^{*}$}	&	-.19{$^{*}$}	&	-.19{$^{*}$}	&	-.15{$^{*}$}	&	-.01		&	&-.19{$^{*}$}	&	-.25{$^{***}$}	&	-.27{$^{***}$}	&	-.27{$^{***}$}	&				&	.98{$^{***}$}	& \hphantom{.10000}			\\	
+11	&	\gls{gfaktor}	&	-.18{$^{*}$}	&	-.19{$^{*}$}	&	-.19{$^{*}$}	&	-.16{$^{*}$}	&	-.01		&	&-.20{$^{**}$}	&	-.28{$^{***}$}	&	-.28{$^{***}$}	&	-.27{$^{***}$}	&				&	.98{$^{***}$}	& \hphantom{.10000}			\\	
 			
 			\hline
 			
@@ -1454,7 +1457,7 @@ Die Bedingungen der \gls{ssauf} korrelierten mit Ausnahme des Zusammenhangs zwis
 		\begin{tablenotes}[flushleft]
 			\footnotesize				% font size
 			\setlength\labelsep{0pt}	% no indent on second line
-			\item \textit{Anmerkungen}. SI = \gls{si}. \gls{zwert} = Mittelwert aus allen 18 \textit{z}-standardisierten Subtests.
+			\item \textit{Anmerkungen}. SI = \gls{si}. \gls{zwert} = Mittelwert aller 18 \textit{z}-standardisierten Subtests.
 			\item {$^{*}$}$p<.05$. {$^{**}$}$p<.01$. {$^{***}$}$p<.001$ (zweiseitig).
 		\end{tablenotes}
 		
@@ -1472,9 +1475,12 @@ Die Bedingungen der \gls{ssauf} korrelierten mit Ausnahme des Zusammenhangs zwis
 
 Mit der ersten Fragestellung sollte geprüft werden, ob die von \citet{Melnick2013} berichteten Zusammenhänge zwischen der \gls{ssauf} und psychometrischer Intelligenz bestätigt werden können. 
 
-\citet{Melnick2013} berichteten über Zusammenhänge zwischen dem \gls{si} und IQ-Punkten von $r~=~.64$ ($p~=~.02$, Studie 1) und $r~=~.71$ ($p~<~.001$, Studie 2). Der Zusammenhang zwischen dem \gls{si} und dem \gls{zwert} aus dem \gls{bist} betrug in der vorliegenden Arbeit $r_{s}~=~.04$ ($p~=~.57$; siehe Abbildung~\ref{fig:si-z}). 
+Die von \citet{Melnick2013} berichteten Zusammenhänge zwischen dem \gls{si} und IQ-Punkten [Studie 1 ($N=12$): $r~=~.64$, $p~=~.02$ und Studie 2 ($N=53$): $r~=~.71$, $p~<~.001$] konnten in der vorliegenden Arbeit nicht bestätigt werden: Der Zusammenhang zwischen dem \gls{si} und dem \gls{zwert} aus dem \gls{bist} betrug $r~=~.00$ ($p~=~.98$; siehe Abbildung~\ref{fig:suppression_index_zscore_scatterplot}). 
 Um zu prüfen, ob dieser Zusammenhang signifikant tiefer ausfiel als bei \citet{Melnick2013}, wurden die Korrelationskoeffizienten in einen Fisher-\textit{Z}-Wert umgerechnet und  auf Unterschiedlichkeit geprüft \citep[][S. 54]{Cohen1983}. 
-Dabei hat sich ergeben, dass sich der in der vorliegenden Studie ermittelte Korrelationskoeffizient $r_{s}~=~.04$ signifikant von \citet{Melnick2013} berichteten $r~=~.64$ und $r~=~.71$ unterschied ($p=.04$ respektive $p<.001$).
+Dabei hat sich ergeben, dass sich der in der vorliegenden Studie ermittelte Korrelationskoeffizient $r~=~.00$ signifikant von den von \citet{Melnick2013} berichteten $r~=~.64$ und $r~=~.71$ unterschied ($p=.04$ respektive $p<.001$).
+
+
+
 
 
 
@@ -1482,8 +1488,8 @@ Dabei hat sich ergeben, dass sich der in der vorliegenden Studie ermittelte Korr
 	\centering
 	\resizebox{\textwidth}{!}{% or alternatively .919 
 		\input{tikzDevice/si_intelligence_scatterplot.tex}}
-	\caption[Spatial-Index-Intelligenz-Zusammenhang]{Zusammenhang ($r_{s}=.04$, $p=.57$) zwischen dem \gls{si} und dem \gls{zwert} aus dem \gls{bist}.}
-	\label{fig:si-z}
+	\caption[Spatial-Index-Intelligenz-Zusammenhang]{Zusammenhang  zwischen dem \gls{si} und dem \gls{zwert} aus dem \gls{bist} ($r=.00$, $p=.98$).}
+	\label{fig:suppression_index_zscore_scatterplot}
 \end{figure}
 
 
