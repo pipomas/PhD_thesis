@@ -34,7 +34,6 @@
 \usepackage{pifont}									% for "itemize" symbols
 \usepackage{color}									% \textcolor{color}{text} for coloring text
 
-
 % Mathpackages ---------------------------------------------------------------------
 \usepackage{mathtools}								% handy tools for mathematical typesetting
 \usepackage{amsmath}								% miscellaneous enhancements for mathematical formulas
@@ -167,7 +166,7 @@
 \usepackage{chngcntr}							% package for avoiding the counter reset per chapter when using figs and tbls
 \counterwithout{figure}{chapter}				% -> does it for figures
 \counterwithout{table}{chapter}					% -> does it for tables
-\counterwithout{footnote}{chapter}
+\counterwithout{footnote}{chapter}				% -> does it for tables
 %\numberwithin{equation}{section}				% equations start with 1.1 1.2, 2.1 2.2 etc.
 %\numberwithin{figure}{section} 				% the same with figures
 \usepackage{siunitx}							% for decimal aligned columns in tables
@@ -187,8 +186,8 @@
 
 % Setup for bibliography with the 'apacite' package ----------------------------
 \usepackage[tocbib, natbibapa, nosectionbib]{apacite}	% enable options
-\newcommand\citepos[1]{\citeauthor{#1}s\ (\citeyear{#1})} % see http://tex.stackexchange.com/questions/137511/how-to-put-a-s-after-citing-author
-\bibliographystyle{apacite-mod}							% see http://tex.stackexchange.com/questions/304217/reference-list-suppressing-dots-after-company-names-apacite
+%\newcommand\citepos[1]{\citeauthor{#1}s\ (\citeyear{#1})} % see http://tex.stackexchange.com/questions/137511/how-to-put-a-s-after-citing-author
+\bibliographystyle{apacite-mod}							% see apacite-mod in directory http://tex.stackexchange.com/questions/304217/reference-list-suppressing-dots-after-company-names-apacite
 \usepackage{doi}										% turns doi's into hyperlinks
 \renewcommand\doiprefix{\ignorespaces}					% removes white space in front of doi
 \AtBeginDocument{\urlstyle{APACsame}}					% removes monospaced font in url's
@@ -474,7 +473,7 @@ allen Menschen, die mich in der Zeit unterstützt haben und dazu beigetragen hab
 %und unterstützt haben.
 \citep{Upper1974} 
 
-Diese Arbeit ist online verfügbar unter \url{http://www.github.com/pipomas}.
+Diese Arbeit ist verfügbar unter \url{http://www.github.com/pipomas}.
 
 \vspace{6 mm}
 
@@ -483,12 +482,6 @@ Philipp Thomas\\
 \today
 \end{quote}
 
-
-%\begin{myindentpar}{2em}
-%\today,\\
-%Philipp Thomas\\
-%(\href{mailto:philipp.thomas@gmx.ch}{philipp.thomas@gmx.ch})
-%\end{myindentpar}
 
 
 \mainmatter
@@ -599,7 +592,7 @@ Bei einer korrekten Antwort wurde ein Ton abgegeben und die Darbietungszeit des 
 
 Als Erstes bearbeiteten die \glspl{vp} eine Übungsaufgabe. Dabei wurden die vier Mustergrössen allen \glspl{vp} je drei Mal  in einer pseudorandomisierten Abfolge präsentiert. Die Darbietungszeit aller Mustergrössen betrug zu Beginn der Aufgabe $80$~ms und wurde adaptiv angepasst. Die Übungsaufgabe dauerte etwa eine Minute und wurde nicht ausgewertet. Die $12$~Durchgänge der Übungsaufgabe dienten dazu, dass sich die \glspl{vp} mit der Art der Stimuluspräsentation, der Antworteingabe und dem Ton vertraut machen konnten. 
 
-Als Zweites folgte eine etwas längere Aufgabe. Die \glspl{vp} bearbeiteten drei Wiederholungen, die durch eine Pause von etwa $30$~Sekunden getrennt waren. Eine Wiederholung  bestand aus zwei Schwellenschätzungen pro Mustergrösse. Jede der vier Mustergrössen wurde innerhalb einer Schwellenschätzung sieben Mal präsentiert. Gesamthaft bearbeiteten die \glspl{vp} folglich $3 \times 2 \times 4 \times 7 = 168$ Durchgänge. Die Mustergrössen wurde allen \glspl{vp} in einer pseudorandomisierten Abfolge präsentiert. Die Darbietungszeit der Mustergrössen betrug zu Beginn der Aufgabe $30$~ms und wurde für jede Mustergrösse einzeln über den gesamten Verlauf der $42$~Durchgänge adaptiv angepasst. Die Aufgabe dauerte etwa $7$~Minuten und wurde nicht ausgewertet, weil sich bei einigen \glspl{vp} die Wahrnehmungsleistung während der ersten Durchgänge stark verbessern kann (Duje Tadin, persönliche Mitteilung, 19. August, 2014). Dieser Aufgabenblock diente dazu, diese Trainingseffekte der \glspl{vp} zuzulassen und ihre Leistung auf individuellem Niveau zu festigen. 
+Als Zweites folgte eine etwas längere Aufgabe. Die \glspl{vp} bearbeiteten drei Wiederholungen, die durch eine Pause von etwa $30$~Sekunden getrennt waren. Eine Wiederholung  bestand aus zwei Schwellenschätzungen pro Mustergrösse. Jede der vier Mustergrössen wurde innerhalb einer Schwellenschätzung sieben Mal präsentiert. Gesamthaft bearbeiteten die \glspl{vp} folglich $3 \times 2 \times 4 \times 7 = 168$ Durchgänge. Die Mustergrössen wurde allen \glspl{vp} in einer pseudorandomisierten Abfolge präsentiert. Die Darbietungszeit der Mustergrössen betrug zu Beginn der Aufgabe $30$~ms und wurde für jede Mustergrösse einzeln über den gesamten Verlauf der $42$~Durchgänge adaptiv angepasst. Die Aufgabe dauerte etwa $7$~Minuten und wurde nicht ausgewertet, weil sich bei einigen \glspl{vp} die Wahrnehmungsleistung während der ersten Durchgänge stark verbessern kann (D. Tadin, persönl. Mitteilung, 19.08.2014). Dieser Aufgabenblock diente dazu, diese Trainingseffekte der \glspl{vp} zuzulassen und ihre Leistung auf individuellem Niveau zu festigen. 
 
 Als Drittes bearbeiteten die \glspl{vp} die eigentliche Aufgabe. Die \glspl{vp} bearbeiteten drei Wiederholungen, die durch eine Pause von etwa $1$~Minute getrennt waren. Eine Wiederholung  bestand aus zwei Schwellenschätzungen pro Mustergrösse. Jede der vier Mustergrössen wurde innerhalb einer Schwellenschätzung $22$~Mal präsentiert. Gesamthaft bearbeiteten die \glspl{vp} somit $3 \times 2 \times 4 \times 22 = 528$ Durchgänge. Die Mustergrössen wurde allen \glspl{vp} in einer pseudorandomisierten Abfolge präsentiert. Die Darbietungszeit der Mustergrössen betrug bei Start der Aufgabe $30$~ms und wurde für jede Mustergrösse einzeln über den gesamten Verlauf der $132$~Durchgänge adaptiv angepasst. Daraus resultierten für jede \gls{vp} $\log_{10}$-Schwel\-len\-schätz\-ungen, bei welcher sie in $82\,\%$ der Fälle eine korrekte Antwort abgab respektive die Bewegungsrichtung der Muster richtig erkannt hat.
 Die Aufgabe dauerte etwa $25$~Minuten. 
@@ -937,6 +930,7 @@ dplyr \citep{dplyr},
 effsize \citep{effsize},
 ez \citep{ez},
 lavaan \citep{lavaan},
+lmSupport \citep{lmSupport},
 Metrics \citep{Metrics},
 multcomp \citep{multcomp},
 nlme \citep{nlme},
@@ -1404,7 +1398,7 @@ Der \gls{zwert} des \gls{bist}, gebildet als Mittelwert aller $18$ \textit{z}-st
 
 
 
-\subsection{Zusammenhänge zwischen den Aufgaben}
+\subsection{Zusammenhänge zwischen den Aufgaben \label{subsec:Zusammenhänge}}
 
 Bevor ausgewählte Zusammenhänge zwischen den Aufgaben in den folgenden Abschnitten mit den Fragestellungen abgearbeitet werden, ist der Vollständigkeit halber in Tabelle \ref{tab:product_moment_correlations_manifest} eine Korrelationsmatrix abgebildet. 
 
@@ -1984,18 +1978,27 @@ Mit der fünften Fragestellung sollte die Frage geklärt werden, ob die \gls{ssa
 
 \subsection{Analyse auf manifester Ebene}
 
-Analog zur zweiten Fragestellung
+\subsubsection{Die Vorhersage psychometrischer Intelligenz durch die Aufgabenbedingungen}
 
-\subsubsection{Bedingungsebene}
+Die korrelative Analyse in Abschnitt \ref{subsec:Zusammenhänge} hat gezeigt, dass alle vier Bedingungen der \gls{ha} und drei von vier Bedingungen der \gls{ssauf} mit dem \gls{zwert} des \gls{bist} zusammenhingen. Auch zwischen den Bedingungen der Aufgaben bestanden signifikante Zusammenhänge. 
+Um diese Abhängigkeiten bei der Vorhersage \gls{zwert}s des \gls{bist}s zu berücksichtigen, wurde die Bedingungen in Gruppen zusammengefasst und nacheinander blockweise in eine multiple Regressionsanalyse aufgenommen. Auf eine schrittweise Aufnahme in die Regressionsanalyse wurde bewusst verzichtet, weil sie zu Verzerrungen führt \citep[S. 68]{Harrell2015}.
+
+Ausgangslage für den entscheidenden Vergleich bildete Modell 10, in welchem der \gls{zwert} des \gls{bist}s alleinig mit den vier Bedingungen der \gls{ha} vorhergesagt wurde (siehe Tabelle \ref{tab:multiple_regression_all_conditions}). Die Regressionsanalyse hat ergeben, dass der \gls{zwert} mit diesen Prädiktoren signifikant vorhergesagt werden konnte [$F(4,\,172)=4.40$, $p=.002$]. Weil die Bedingungen untereinander stark korrelierten, waren die einzelnen Regressionskoeffizienten nicht signifikant \citep[S. 686]{Eid2013}. Gemeinsam erklärten die vier Bedingungen jedoch $9\,\%$ der Varianz im \gls{zwert}. 
+
+Modell 11 beinhaltete als Prädiktoren sowohl die Bedingungen der Hick- als auch der \gls{ssauf} (siehe Tabelle \ref{tab:multiple_regression_all_conditions}). Die Vorhersage des \gls{zwert}s mit diesem Modell war ebenfalls signifikant [$F(8,\,168)=2.71$, $p=.008$]. Auch in diesem Modell waren die einzelnen Prädiktoren aufgrund von Multikollinearität nicht signifikant. Gemeinsam erklärten die acht Bedingungen trotzdem $11\,\%$ der Varianz im \gls{zwert}.
+
+Um zu sehen, ob die Bedingungen der \gls{ssauf} einen inkrementellen Beitrag zur Aufklärung der Varianz im \gls{zwert} des \gls{bist} leisteten, wurde der Zuwachs an erklärter Varianz im \gls{zwert} zwischen Modell 10 und Modell 11 auf Signifikanz getestet. Die Analyse hat ergeben, dass $\Delta R^2=.02$ kein signifikanter Zuwachs an erklärter Varianz war [$F(4,\,168)=1.02$, $p=.40$] (siehe Tabelle \ref{tab:multiple_regression_all_conditions}).
 
 
-kein stepwise \citep[S. 68]{Harrell2015}
+
+%\citep[S. 686]{Eid2013}
+%kein stepwise \citep[S. 68]{Harrell2015}
 
 
 \begin{table}[htbp]
 	\centering
 	\captionsetup{labelsep = none}
-	\caption[Vorhersage ]{\newline  \textit{Multiple Regression zur Vorhersage des \gls{zwert}s des \gls{bist} durch die Bedingungen der \gls{ha} (Modell 10) und durch die Bedingungen der \gls{ha} und der \gls{ssauf} (Modell 11)} \vspace{.2cm}}
+	\caption[Vorhersage ]{\newline  \textit{Multiple Regression zur Vorhersage des \gls{zwert}s des \gls{bist} durch die Bedingungen der \gls{ha} (Modell 10) und durch die Bedingungen der Hick- und der \gls{ssauf} (Modell 11)} \vspace{.2cm}}
 	\label{tab:multiple_regression_all_conditions}
 	\newcommand{\rowgroup}[1]{\hspace{-1em}#1}
 	\newcommand\Tstrut{\rule{0pt}{2.1ex}}       % top strut http://tex.stackexchange.com/questions/65919/space-between-rows-in-a-table - not implemented!
@@ -2016,7 +2019,7 @@ kein stepwise \citep[S. 68]{Harrell2015}
 			}
 			\hline
 			
-			{Variable}	&	{$b$}	&	{\textit{SE}(\textit{b})}	&	{$\upbeta$}	&	{$p$}	&	 &{$F$}		&	 {$R^2$}	& {$\Delta F$} & {$\Delta R^2$}   \\
+			{Prädiktor}	&	{$b$}	&	{\textit{SE}(\textit{b})}	&	{$\upbeta$}	&	{$p$}	&	 &{$F$}		&	 {$R^2$}	& {$\Delta F$} & {$\Delta R^2$}   \\
 			
 			\hline
 			
@@ -2051,7 +2054,7 @@ kein stepwise \citep[S. 68]{Harrell2015}
 
 
 
-
+\clearpage
 \subsubsection{Aufgabenparameterebene}
 
 
