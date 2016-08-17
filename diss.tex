@@ -828,7 +828,7 @@ Alle eingesetzten Subtests, deren Beschreibung sowie Zuordnung zu den jeweiligen
 				\footnotesize				% font size
 				\setlength\labelsep{0pt}	% no indent on second line
 				\item \textit{Anmerkungen.} K~=~Verarbeitungskapazität; B~=~Bearbeitungsgeschwindigkeit; M~=~Merkfähigkeit; V~=~verbal; N~=~numerisch; F~=~figural--bildhaft.\\
-				* Der Subtest UW wurde als Aufwärmaufgabe verwendet und floss nicht in die Auswertung mit ein.
+				{$^*$}Der Subtest UW wurde als Aufwärmaufgabe verwendet und floss nicht in die Auswertung mit ein.
 			\end{tablenotes}
 		\end{threeparttable}
 	\end{adjustbox}
@@ -1578,7 +1578,7 @@ Für jede \gls{vp} wurden die vier Schwellenschätzungen mit einer  exponentiell
 \end{figure}
 Deskriptive Angaben zu den daraus resultierenden Parametern, der Asymptote $a$ und der Steigung $b$, sind in \autoref{tab:spatial_suppression_exponential_model} zu finden.
 Weil der Determinationskoeffizient $R^2$ bei nicht-linearen Modellen kein adäquates Mass für die Anpassungsgüte des Modells an die Daten darstellt \citep{Spiess2010}, wurde für jede Person der \gls{rmse} berechnet. Der \gls{rmse} ist die Quadratwurzel aus dem Mittelwert der quadrierten Fehler und somit ein Mass für die durchschnittliche Abweichung der vorhergesagten Werte von den empirischen Werten. 
-Obwohl der \gls{rmse} für einige \glspl{vp} sehr gross ausfiel, eignete sich ein exponentielles Modell zur Beschreibung der Daten für einen grossen Teil der \glspl{vp} gut (siehe \autoref{fig:rmse_density}). Der Median betrug $6$ ms und das dritte Quartil lag bei $9$ ms.
+Obwohl der \gls{rmse} für einige \glspl{vp} sehr gross ausfiel, eignete sich ein exponentielles Modell zur Beschreibung der Daten für einen grossen Teil der \glspl{vp} gut (siehe \autoref{fig:spatial_suppression_rmse_density}). Der Median betrug $6$ ms und das dritte Quartil lag bei $9$ ms.
 %Um zu sehen, ob die Analyse der Aufgabenparameter durch diejenigen \glspl{vp} verzerrt wurde, bei welchen eine Beschreibung der Daten mit einem exponentiellen Modell weniger angebracht war, wurden die Auswertungen einmal mit der Gesamtstichprobe ($N_{100\%}=177$), einmal mit einer Teilstichprobe mit \glspl{vp} welche einen \gls{rmse} von kleiner dem dritten Quartil ($n_{75\%}=X$) aufwiesen und einmal mit einer Teilstichprobe mit \glspl{vp} welche einen \gls{rmse} von nicht grösser als dem Median aufwiesen ($n_{50\%}=X$) durchgeführt.
 Um zu vermeiden, dass die Analysen der Aufgabenparameter durch diejenigen \glspl{vp} verzerrt wurden, bei welchen eine Beschreibung der Daten mit einem exponentiellen Modell nicht angebracht war, wurden \glspl{vp} mit einem \gls{rmse} von grösser dem Median von den Analysen ausgeschlossen. 
 In dieser Teilstichprobe ($n=89$) fiel die Streuung der Aufgabenparameter etwas geringer aus als in der Gesamtstichprobe ($N=177$). So betrug in der Teilstichprobe die \gls{sd} der Asymptote noch $23$ ms und die \gls{sd} der Steigung noch $0.051$ (vgl. \autoref{tab:spatial_suppression_exponential_model}).
@@ -1589,11 +1589,13 @@ In dieser Teilstichprobe ($n=89$) fiel die Streuung der Aufgabenparameter etwas 
 	\centering
 	%	\captionsetup{font = small}
 	\begin{adjustbox}{width=1\textwidth}
-		\input{tikzDevice/rmse_density.tex}
+		\input{tikzDevice/spatial_suppression_rmse_density.tex}
 	\end{adjustbox}
-	\caption[Dichtefunktion des RMSE]{Dichtefunktion des aus der exponentiellen Regression abgeleiteten Root Mean Square Error (\gls{rmse}; in Millisekunden).  Alle Datenpunkte sind auf der \textit{x}-Achse mit vertikalen Strichen markiert.}
-	\label{fig:rmse_density}
+	\caption[Dichtefunktion des RMSE]{Dichtefunktion des aus der exponentiellen Regression abgeleiteten Root Mean Square Error (\gls{rmse}; in Millisekunden) in der \gls{ssauf}.  Alle Datenpunkte sind auf der \textit{x}-Achse mit vertikalen Strichen markiert.}
+	\label{fig:spatial_suppression_rmse_density}
 \end{figure}
+
+
 
 
 
@@ -1621,7 +1623,7 @@ Mit der dritten Fragestellung sollte der Zusammenhang zwischen der \gls{ssauf} u
 Alle konfirmatorischen Faktorenanalysen wurden mit der Satorra-Bentler Maximum-Likelihood Schätzmethode \citep{Satorra1994} berechnet, weil diese bei nicht-normal\-ver\-teilten, intervallskalierten Daten empfohlen wird \citep[z.B.][]{Curran1996, Finney2006}.
 Um die aus den Aufgaben extrahierten Faktoren auf latenter Ebene miteinander in Verbindung zu bringen, wurden als erstes für jede Aufgabe einzeln kongenerische Messmodelle \citep{Joereskog1971} gerechnet. Diese dem Strukturgleichungsmodell vorausgehende Prüfung der Modellannahmen erlaubte es, allfällige Fehlspezifikationen bereits auf Aufgabenebene zu erkennen.
 
-Das kongenerische Messmodell der \gls{ssauf} (Modell 1; siehe \autoref{fig:spatial_suppression_congeneric}) bildete die empirischen Varianzen und Kovarianzen schlecht ab.  Der \gls{cst} zeigte eine überzufällig hohe Abweichung zwischen der theoretische und der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix an und die approximativen Fit-Indizes lagen weit weg vom akzeptablen Bereich [$\upchi^2(2)=103.13$, $p<.001$, $\textnormal{CFI}=.78$, $\textnormal{RMSEA}=.53$, $\textnormal{SRMR}=.06$].
+Das kongenerische Messmodell der \gls{ssauf} (Modell 1; siehe \autoref{fig:spatial_suppression_congeneric}) bildete die empirischen Varianzen und Kovarianzen schlecht ab.  Der \gls{cst} zeigte eine überzufällig hohe Abweichung zwischen der theoretische und der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix an und der \gls{cfi} und \gls{rmsea} lagen weit weg vom akzeptablen Bereich [$\upchi^2(2)=103.13$, $p<.001$, $\textnormal{CFI}=.78$, $\textnormal{RMSEA}=.53$, $\textnormal{SRMR}=.06$].
 
 Um den \gls{gfaktor} aus dem \gls{bist} zu bilden, wurden die gemittelten \textit{z}-Werte der Operationen \gls{k}, \gls{b} und \gls{M} als Indikatoren verwendet \citep[für ein gleiches Vorgehen siehe][]{Stauffer2014}. Weil dieses kongenerische Messmodell mit drei Indikatoren genau identifiziert war, konnte es nicht getestet werden \citep[][S. 125]{Kline2011}.
 
@@ -1660,10 +1662,12 @@ Um den \gls{gfaktor} aus dem \gls{bist} zu bilden, wurden die gemittelten \texti
 	
 	\vspace{.2cm}
 	\caption[CFA Platzhalter Test]{Modell 1: Kongenerisches Messmodell der \gls{ssauf} (\textsf{S}). Eingezeichnet sind die standardisierten Koeffizienten.\\
-		$^1$ Die unstandardisierte Faktorladung wurde auf $1$ fixiert, um die Identifizierung der Varianz der latenten Variablen zu ermöglichen.\\
-		$^{***}~p~<~.001$.}
+	$^1$Um die Identifizierung der Varianz der latenten Variable zu ermöglichen, wurde diese unstandardisierte Faktorladung auf $1$ fixiert.\\
+	$^{***}p~<~.001$.}
 	\label{fig:spatial_suppression_congeneric}
 \end{figure}
+
+
 
 \begin{figure}[htbp]
 	\centering
@@ -1723,8 +1727,8 @@ Um den \gls{gfaktor} aus dem \gls{bist} zu bilden, wurden die gemittelten \texti
 	
 	\vspace{.2cm}
 	\caption[CFA Platzhalter Test]{Modell 2: Latenter Zusammenhang zwischen der \gls{ssauf} (\textsf{S}) und dem \gls{gfaktor} des \gls{bist}. Eingezeichnet sind die standardisierten Koeffizienten. \textsf{K} = Kapazität; \textsf{B} = Bearbeitungsgeschwindigkeit; \textsf{M} = Merkfähigkeit.\\
-		$^1$ Diese unstandardisierte Faktorladungen wurde auf $1$ fixiert, um die Identifizierung der Varianz der latenten Variablen zu ermöglichen.\\
-		$^{**}~p~=~.01$. $^{***}~p~<~.001$.}
+	$^1$Um die Identifizierung der Varianz der latenten Variable zu ermöglichen, wurde diese unstandardisierte Faktorladung auf $1$ fixiert.\\
+	$^{**}p~=~.01$. $^{***}p~<~.001$.}
 	\label{fig:spatial_suppression_g_latent}
 \end{figure} 
 
@@ -1756,7 +1760,7 @@ sich zwischen der \gls{ssauf} und psychometrischer Intelligenz auf latenter Eben
 Mit der vierten Fragestellung sollte versucht werden, die \gls{ssauf} mit einem \gls{flm} zu beschreiben und die zwei aus der Aufgabe abgeleiteten latenten Variablen mit dem \gls{gfaktor} des \gls{bist} in Verbindung zu bringen.
 
 
-\subsection{Fixed-Links-Messmodell \label{subsec:flss}}
+\subsection{Fixed-Links-Messmodell \label{subsec:spatial_suppression_fixed_links_messmodell}}
 
 
 Weil die Aufgabe bisher noch nie mit einem \gls{flm} beschrieben wurde, sind unterschiedliche Modelle getestet und miteinander verglichen worden. Bei allen berechneten Modellen wurden zwei voneinander unabhängige latente Variablen angenommen: 
@@ -1766,7 +1770,7 @@ Die erste latente Variable beinhaltete aufgabenrelevante Prozesse, deren Einflü
 Die zweite latente Variable beinhaltete aufgabenrelevante Prozesse, die durch die vier Bedingungen systematisch manipuliert wurden. Der unterschiedlich starke Einfluss der in der latenten Variable abgebildeten Prozesse auf die Bedingungen der \gls{ssauf} wurde durch sich unterscheidende unstandardisierte Faktorladungen hergestellt. Diese latente Variable wird im Folgenden \textit{dynamische} latente Variable genannt.
 
 Die konstante latente Variable wurde in allen Messmodellen unabhängig von der dynamischen latenten Variable gehalten. Diese Unabhängigkeit der beiden extrahierten Variablen ist im Rahmen der Anwendung von \gls{flm}en üblich \citep[z.B.][]{Leue2012, Schweizer2007, Wang2015}, weil sich dadurch die Interpretation der latenten Variablen vereinfacht.
-Alle Modell-Fits der in den folgenden Unterabschnitten berichteten \gls{flm}e sind in \autoref{tab:fixed-links_measurement_models_spatial_suppression} aufgeführt.
+Alle Modell-Fits der in den folgenden Paragraphen berichteten \gls{flm}e sind in \autoref{tab:fixed-links_measurement_models_spatial_suppression} aufgeführt.
 
 Das erste berechnete \gls{flm} (Modell 3) berücksichtige das Ergebnis der exponentiellen Regression (siehe \autoref{sec:2Fragestellung}), welches auf manifester Ebene eine Steigung von $e^{0.103x}$ ergeben hat. Die unstandardisierten Faktorladungen der dynamischen latenten Variable wurden deshalb mit diesem Parameter [$y=e^{0.103x},\,x\in\{1, 2, 3, 4\}$] gebildet. Modell 3 bildete die empirischen Varianzen und Kovarianzen der \gls{ssauf} nicht gut ab. Der \gls{cst} war hochsignifikant und der \gls{cfi}, der \gls{rmsea} und das \gls{srmr} lagen nicht im akzeptablen Bereich.
 
@@ -1810,7 +1814,7 @@ Die unstandardisierten Faktorladungen der dynamischen latenten Variable in Model
 				\footnotesize				% font size
 				\setlength\labelsep{0pt}	% no indent on second line
 				\item \textit{Anmerkungen.} Es gilt für alle Funktionen $x\in\{1,2,3,4\}$ (ausgenommen Modell 8, in welchem $x\in\{0,1,2,3\}$). $\upchi^2 =$ Satorra-Bentler \citeyearpar{Satorra1994} korrigierter $\upchi^2$-Wert; \textit{df} = Freiheitsgrade; \gls{cfi} = comparative fit index; \gls{rmsea} = root mean square error of approximation; \gls{srmr} = standardized root mean square residual.
-				\item {$^*$} Das Modell konnte nicht interpretiert werden, weil die Fehlervarianz der $7.2^{\circ}$-Bedingung negativ geschätzt wurde.
+				\item {$^*$}Das Modell konnte nicht interpretiert werden, weil die Fehlervarianz der $7.2^{\circ}$-Bedingung negativ geschätzt wurde.
 			\end{tablenotes}
 		\end{threeparttable}
 	\end{adjustbox}
@@ -1877,6 +1881,9 @@ Die Varianz der konstanten latenten Variable betrug $0.018$ ($z~=~8.45$, $p~<.00
 Der relative Anteil dieser beiden Varianzen an der in den manifesten Variablen erklärten Varianz liess sich aufgrund der in konfirmatorischen Faktorenanalysen gegebenen multiplikativen Verknüpfung von Faktorladungen und Varianzen nicht direkt ermitteln. Um die Varianzen miteinander vergleichen zu können, wurde der Einfluss der Faktorladungen auf die Varianzen mit der Methode von  \citet{Schweizer2011a} kontrolliert. Die Skalierung der Varianzen hat ergeben, dass die konstante latente Variable 72\,\% und die dynamische latente Variable 28\,\% von der in den manifesten Variablen gemeinsamen Varianz band.
 
 Um zu prüfen, ob  Modell 8 die empirischen Daten signifikant besser abbildete als (das kongenerische) Modell 1, wurden die beiden Modelle mit einem $\upchi^2$-Differenztest \citep{Satorra2001} verglichen. Dieser hat ergeben, dass Modell 8 die Daten trotz mehr Freiheitsgraden besser beschrieb als Modell 1 [$\Delta\upchi^2(2)=46.20$, $p<.001$]. Modell 8 war Modell 1 also aufgrund adäquaterer Abbildung der empirischen Daten und höheren Sparsamkeit vorzuziehen.
+
+
+
 
 \subsection{Fixed-Links-Strukturgleichungsmodell}
 
@@ -1954,8 +1961,8 @@ Als nächstes wurde Modell 8 mit dem \gls{gfaktor} aus dem \gls{bist} in Verbind
 	\end{adjustbox}
 	
 	\vspace{.2cm}
-	\caption[CFA Platzhalter Test]{Modell 9: Latenter Zusammenhang zwischen dem Fixed-Links-Messmodell (Modell 8) der \gls{ssauf} und dem \gls{gfaktor} aus dem \gls{bist}. Eingezeichnet sind die standardisierten Koeffizienten. Hochgestellt sind die fixierten unstandardisierten Faktorladungen. \textsf{S\textsubscript{kon}} = konstante latente Variable; \textsf{S\textsubscript{dyn}} = dynamische latente Variable. \textsf{K} = Kapazität; \textsf{B} = Bearbeitungsgeschwindigkeit; \textsf{M} = Merkfähigkeit.\\
-		$^{*}~p~<~.05$. $^{***}~p~<~.001$.
+	\caption[CFA Platzhalter Test]{Modell 9: Latenter Zusammenhang zwischen dem Fixed-Links-Messmodell (Modell 8) der \gls{ssauf} (\textsf{S}) und dem \gls{gfaktor} aus dem \gls{bist}. Eingezeichnet sind die standardisierten Koeffizienten. Hochgestellt sind die fixierten unstandardisierten Faktorladungen. \textsf{S\textsubscript{kon}} = konstante latente Variable; \textsf{S\textsubscript{dyn}} = dynamische latente Variable. \textsf{K} = Kapazität; \textsf{B} = Bearbeitungsgeschwindigkeit; \textsf{M} = Merkfähigkeit.\\
+	$^{*}p~<~.05$. $^{***}p~<~.001$.
 		
 	}
 	\label{fig:ssflg}
@@ -1983,7 +1990,7 @@ Mit der fünften Fragestellung sollte die Frage geklärt werden, ob die \gls{ssa
 
 \subsection{Analyse auf manifester Ebene}
 
-\subsubsection{Die Vorhersage psychometrischer Intelligenz durch die Aufgabenbedingungen}
+\subsubsection*{Die Vorhersage psychometrischer Intelligenz durch die Aufgabenbedingungen}
 
 Die korrelative Analyse der Aufgaben in Abschnitt \autoref{subsec:Zusammenhänge}  hat gezeigt, dass alle vier Bedingungen der \gls{ha} und drei von vier Bedingungen der \gls{ssauf} mit dem \gls{zwert} des \gls{bist} zusammenhingen. Auch zwischen den Bedingungen der Aufgaben bestanden signifikante Zusammenhänge. 
 Um diese Abhängigkeiten bei der Vorhersage des \gls{zwert}s zu berücksichtigen, wurden die Bedingungen in Gruppen zusammengefasst und nacheinander blockweise in eine multiple Regressionsanalyse aufgenommen.
@@ -2065,7 +2072,7 @@ Die Bedingungen der \gls{ssauf} haben also auf Ebene der Aufgabenbedingungen kei
 
 
 
-\subsubsection{Die Vorhersage psychometrischer Intelligenz durch die Aufgabenparameter}
+\subsubsection*{Die Vorhersage psychometrischer Intelligenz durch die Aufgabenparameter}
 
 Um den \gls{zwert} des \gls{bist} mit den abgeleiteten Aufgabenparametern beider Aufgaben vorherzusagen, mussten die Aufgabenparameter der \gls{ha} noch bestimmt werden (die Aufgabenparameter der \gls{ssauf} wurden bereits in \autoref{sec:2Fragestellung} ermittelt). 
 Die Reaktionszeit (RZ) in einer Auswahlaufgabe (wie sie die \gls{ha} darstellt) kann gemäss \citet[S. 105]{Jensen1987a} mit der linearen Funktion $RZ=a+b\log_{2}n$ beschrieben werden, wobei $a$ durch den y-Achsenabschnitt, $b$ durch die Steigung der Regressionsgeraden und $\log_{2}\,n$ durch den Logarithmus zur Basis 2 der Anzahl Antwortalternativen ($n$) bestimmt ist.
@@ -2116,6 +2123,15 @@ Die Reaktionszeiten der \gls{ha} wurden für jede Person mit einer linearen Regr
 
 %Über alle \glspl{vp} gemittelt betrug $R^2=.96$, wobei im Gegensatz zur regressionsanalytischen Analyse der \gls{ssauf} (siehe \autoref{sec:2Fragestellung}) geringere individuelle Variabilität (\gls{sd} $=.04$, Min = .732, Max = .999) bestand.
 
+\begin{figure}[t]
+	\centering
+	%	\captionsetup{font = small}
+	\begin{adjustbox}{width=1\textwidth}
+		\input{tikzDevice/hick_rmse_density.tex}
+	\end{adjustbox}
+	\caption[Dichtefunktion des RMSE]{Dichtefunktion des aus der linearen Regression abgeleiteten Root Mean Square Error (\gls{rmse}; in Millisekunden) in der \gls{ha}.  Alle Datenpunkte sind auf der \textit{x}-Achse mit vertikalen Strichen markiert.}
+	\label{fig:hick_rmse_density}
+\end{figure}
 
 
 
@@ -2173,7 +2189,7 @@ Für die letzte Analyse auf manifester Ebene wurden die regressionsanalytisch he
 			\footnotesize				% font size
 			\setlength\labelsep{0pt}	% no indent on second line
 			\item \textit{Anmerkungen.} \textit{a}~=~Asymptote bei der \gls{ssauf}, Achsenabschnitt bei der \gls{ha}; \textit{b}~=~Steigung. \\
-			$^{*}~p~<~.05$. $^{**}~p~<~.01$. $^{***}~p~<~.001$ (zweiseitig).
+			$^{*}p~<~.05$. $^{**}p~<~.01$. $^{***}p~<~.001$ (zweiseitig).
 		\end{tablenotes}%
 	\end{threeparttable}%
 \end{adjustbox}
@@ -2182,7 +2198,179 @@ Für die letzte Analyse auf manifester Ebene wurden die regressionsanalytisch he
 \clearpage
 \subsection{Analyse auf latenter Ebene}
 
-\subsubsection{Traditionelle Faktorenanalysen}
+\subsubsection*{Messmodelle}
+
+Bevor die \gls{ha} mit der \gls{ssauf} und dem \gls{gfaktor} in Verbindung gesetzt werden konnte, musst für die \gls{ha} das kongenerische Messmodell und ein Fixed-Links-Messmodell bestimmt werden. Das kongenerische Messmodell der \gls{ha} (Modell 14; siehe \autoref{fig:hick_congeneric}) bildete die empirischen Varianzen und Kovarianzen schlecht ab.  Der \gls{cst} zeigte eine überzufällig hohe Abweichung zwischen der theoretische und der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix an und der \gls{cfi} und \gls{rmsea} lagen weit weg vom akzeptablen Bereich [$\upchi^2(2)=42.58$, $p<.001$, $\textnormal{CFI}=.87$, $\textnormal{RMSEA}=.33$, $\textnormal{SRMR}=.06$].
+
+\begin{figure}[htbp]
+	\centering
+	\begin{tikzpicture}
+	[font=\sffamily, scale=2, inner sep=0pt,
+	latent/.style	= {circle, draw, inner sep=0pt, minimum size=12mm},
+	manifest/.style	= {rectangle, draw, inner sep=0pt, minimum width=12mm, minimum height=12mm},
+	paths/.style	= {->, >=stealth, shorten >= 1pt},
+	error/.style	= {circle, draw=none, fill=white, minimum size=5mm},
+	covar/.style	= {<->, >=stealth, shorten >= 1pt, shorten <= 1pt}]
+	
+	\node at (0, 1.7)		[latent]	(hick)	{H};
+	
+	\node at (-1.5, 2.9)	[manifest]	(h0)	{0-bit};
+	\node at (-1.5, 2.1)	[manifest]	(h1)	{1-bit};
+	\node at (-1.5, 1.3)	[manifest]	(h2)	{2-bit};
+	\node at (-1.5, 0.5)	[manifest]	(h3)	{2.58-bit};
+	
+	\node at (-2.3, 2.9)	[error]		(e1)	{\footnotesize .55};
+	\node at (-2.3, 2.1)	[error]		(e2)	{\footnotesize .35};
+	\node at (-2.3, 1.3)	[error]		(e3)	{\footnotesize .15};
+	\node at (-2.3, 0.5)	[error]		(e4)	{\footnotesize .25};
+	
+	\draw [paths] (hick.west) -- (h0.east) node[minimum size = 4mm, draw=none, fill=white, midway] {\footnotesize .67{$^{1}$}\hphantom{$^**$}};	
+	\draw [paths] (hick.west) -- (h1.east) node[minimum size = 4mm, draw=none, fill=white, midway] {\footnotesize .80{$^{***}$}};	
+	\draw [paths] (hick.west) -- (h2.east) node[minimum size = 4mm, draw=none, fill=white, midway] {\footnotesize .92{$^{***}$}};	
+	\draw [paths] (hick.west) -- (h3.east) node[minimum size = 4mm, draw=none, fill=white, midway] {\footnotesize .87{$^{***}$}};
+	
+	\draw [paths] (e1) -- (h0.west) {};
+	\draw [paths] (e2) -- (h1.west) {};
+	\draw [paths] (e3) -- (h2.west) {};
+	\draw [paths] (e4) -- (h3.west) {};
+	\end{tikzpicture}
+	
+	\vspace{.2cm}
+	\caption[CFA Platzhalter Test]{Modell 14: Kongenerisches Messmodell der \gls{ha} (\textsf{H}). Eingezeichnet sind die standardisierten Koeffizienten.\\
+		$^1$Um die Identifizierung der Varianz der latenten Variable zu ermöglichen, wurde diese unstandardisierte Faktorladung auf $1$ fixiert.\\
+		$^{***}p~<~.001$.}
+	\label{fig:hick_congeneric}
+\end{figure}
+
+Das Vorgehen bei der Bestimmung des Fixed-Links-Messmodells für die \gls{ha} war identisch mit dem Vorgehen bei der Bestimmung des Fixed-Links-Messmodells für die \gls{ssauf} und kann in \autoref{subsec:spatial_suppression_fixed_links_messmodell} nachgelesen werden. Alle Modell-Fits der in den folgenden Paragraphen berichteten \gls{flm}e sind in \autoref{tab:hick_fixed_links_modelle} aufgeführt.
+
+\begin{table}[htbp]
+	%\flushleft
+	\centering
+	\captionsetup{labelsep = none}
+	\caption[Konfirmatorische Faktorenanalyse]{\newline  \textit{Modell-Fits der berichteten \gls{flm}e der \gls{ha}. Der Ladungsverlauf bezieht sich auf die unstandardisierten Faktorladungen der dynamischen latenten Variable. Die unstandardisierten Faktorladungen der konstanten latenten Variable betrugen immer 1} \vspace{.2cm}}
+	\label{tab:hick_fixed_links_modelle}
+	\begin{adjustbox}{width=1\textwidth, keepaspectratio}
+		\begin{threeparttable}
+			
+			{\renewcommand{\arraystretch}{1.0} % <- modify value to suit your needs: line spacing inside table
+				\begin{tabular}{
+						S[table-format = 2.0, table-space-text-post = $^{*a}$]
+						l
+						S[table-format = 2.2]
+						S[table-format = 1.0]
+						S[table-format = <0.3, add-integer-zero=false]
+						S[table-format = 1.2, add-integer-zero=false]
+						S[table-format = 0.2, add-integer-zero=false]
+						S[table-format = 0.2, add-integer-zero=false]
+						%				S[table-format = 1.2, add-integer-zero=false]
+					}
+					
+					\hline
+					{Modell}		& Ladungsverlauf	&	{$\upchi^2$}	& \textit{df}	& {\textit{p}}	&	{\textnormal{CFI}} 	&	{\textnormal{RMSEA}}	&	{\textnormal{SRMR}}\\
+					\hline
+					
+					%			1			&	SS kongenerisch	&	28.44		&	2			&	<.001			&	.78		&	.27					&	.09	\\
+					%			2			&	SGM				&	91.06	&	13			&	<.001			&	.77		&	.19					&	.06	\\
+					
+					10			&	$y=x$						&	37.34			&	4				&	<.001			&	.89				&	.22				&	.17	\\
+					11			&	$y=\log_2 x$				&	32.19			&	4				&	<.001			&	.91				&	.20				&	.14	\\
+					12			&	$y=x$					&	8.64			&	4				&	.07				&	.99				&	.08				&	.09	\\
+					13{$^{*}$}	&	$y=\log_e x$				&	{\textemdash}	&	{\textemdash}	&	{\textemdash}	&	{\textemdash}	&	{\textemdash}	&	{\textemdash}\\
+					%		13			&	$y=x$					&	26.95			&	4				&	<.001			&	.93				&	.18				&	.12	\\
+					14			&	$y=x^2$						&	11.36			&	4				&	.02				&	.98				&	.10				&	.07	\\
+					15			&	$y=\dfrac{1}{1 + e^{(-x/.8)}}$	&	4.59			&	4				&	.33				&	1.00			&	.03				&	.08	\\
+					%			\rule{0pt}{4ex}%  EXTRA vertical height
+					\hline
+					
+					
+				\end{tabular}%
+			}
+			\begin{tablenotes}[flushleft]
+				\footnotesize				% font size
+				\setlength\labelsep{0pt}	% no indent on second line
+				\item \textit{Anmerkungen.} Der Ladungsverlauf bezieht sich auf die unstandardisierten Faktorladungen der dynamischen latenten Variable. Die unstandardisierten Faktorladungen der konstanten latenten Variable betrugen immer $1$. Für Modelle 10, 13 und 14 gilt $x\in\{1,2,3,4\}$. Für Modelle 11 und 12 gilt $x\in\{1,2,4,6\}$, für Modell 15 $x\in\{-3,-1,1,3\}$. $\upchi^2 =$ Satorra-Bentler \citeyearpar{Satorra1994} korrigierter $\upchi^2$-Wert; \textit{df} = Freiheitsgrade; \gls{cfi} = comparative fit index; \gls{rmsea} = root mean square error of approximation; \gls{srmr} = standardized root mean square residual.
+				\item {$^{*}$}Das Modell konnte nicht interpretiert werden, weil eine geschätzte Varianz negativ war.
+				
+			\end{tablenotes}%
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+
+
+
+ Das erste berechnete Fixed-Links-Modell 
+
+Die regressionsanalytische Analyse der \gls{ha} (siehe \autoref{fig:linmodel}) hat zwischen der Anzahl Bits und der \gls{rz} einen linearen Zusammenhang ergeben. In Modell 10 wurden die unstandardisierten Faktorladungen der dynamischen latenten Variable deshalb linear ansteigend gewählt [$y=x,\,x\in\{1, 2, 3, 4\}$]. Modell 10 bildete die empirischen Varianzen und Kovarianzen der \gls{ha} nicht gut ab [$\upchi^2(4)=37.34$, $p<.001$, $\textnormal{CFI}=.89$, $\textnormal{RMSEA}=.22$, $\textnormal{SRMR}=.17$]. Die Varianz der konstanten latenten Variable betrug $470.13$ ($z=3.81$, $p<.001$) und die Varianz der dynamischen latenten Variable betrug $186.10$ ($z=6.53$, $p<.001$).
+In Modell 11 wurden die unstandardisierten Faktorladungen der dynamischen latenten Variable entsprechend der Anzahl Bit der Bedingung gewählt [$y=\log_{2}x,\,x\in\{1, 2, 4, 6\}$]. Modell 11 bildete die empirischen Varianzen und Kovarianzen der \gls{ha} ebenfalls nicht gut ab [$\upchi^2(4)=32.19$, $p<.001$, $\textnormal{CFI}=.91$, $\textnormal{RMSEA}=.20$, $\textnormal{SRMR}=.14$]. Die Varianz der konstanten latenten Variable betrug $759.80$ ($z=6.72$, $p<.001$) und die Varianz der dynamischen latenten Variable betrug $310.18$ ($z=5.74$, $p<.001$).
+Modell 12 testete die Annahme, dass die Ladungen der unstandardisierten Faktorladungen der dynamischen latenten Variable entsprechend der Anzahl Antwortalternativen verlaufen [$y=x,\,x\in\{1, 2, 4, 6\}$]. Modell 12 bildete die empirischen Varianzen und Kovarianzen der \gls{ha} erstmals gut ab [$\upchi^2(4)=8.64$, $p=.07$, $\textnormal{CFI}=.99$, $\textnormal{RMSEA}=.08$, $\textnormal{SRMR}=.09$]. Die Varianz der konstanten latenten Variable betrug $559.73$ ($z=4.87$, $p<.001$) und die Varianz der dynamischen latenten Variable betrug $102.83$ ($z=7.26$, $p<.001$).
+
+Modelle 10 bis 12 beinhalteten klare Annahmen über den Verlauf der unstandardisierten Faktorladungen der dynamischen latenten Variable. Als nächstes wurden explorativ Ladungsverläufe getestet, um die empirischen Daten bestmöglich zu beschreiben. 
+In Modell 13 wiesen die Faktorladungen der dynamischen latenten Variable einen logarithmischen Verlauf [$y=\log_{e}x,\,x\in\{1, 2, 3, 4\}$] auf. Dieses Modell konnte nicht interpretiert werden, weil eine geschätzte Fehlervarianz negativ war.
+Modell 14 beinhaltete einen quadratisch ansteigenden Ladungsverlauf der dynamischen latenten Variable [$y=x^2,\,x\in\{1, 2, 3, 4\}$]. Modell 14 bildete die empirischen Varianzen und Kovarianzen der \gls{ha} nicht gut ab [$\upchi^2(4)=11.36$, $p=.02$, $\textnormal{CFI}=.98$, $\textnormal{RMSEA}=.10$, $\textnormal{SRMR}=.07$]. Die Varianz der konstanten latenten Variable betrug $624.88$ ($z=5.49$, $p<.001$) und die Varianz der dynamischen latenten Variable betrug $13.53$ ($z=6.93$, $p<.001$).
+Die besten Ergebnisse erzielte Modell 15, in welchem ein logistischer Ladungsverlauf der dynamischen latenten Variable eingesetzt wurde [$y={1}/({1 + e^{(-x/.8)}}),\,x\in\{-3,-1,1,3\}$]. Das theoretische Modell (siehe \autoref{fig:hafl}) 
+
+
+\begin{figure}[htbp]
+	\centering
+	\begin{tikzpicture}
+		[font=\sffamily, scale=2, inner sep=0pt,
+		latent/.style	= {circle,draw,inner sep=0pt,minimum size=12mm},
+		manifest/.style	= {rectangle,draw,inner sep=0pt,minimum width=12mm,minimum height=12mm},
+		paths/.style	= {->, >=stealth, shorten >= 1pt},
+		error/.style	= {circle, draw=none, fill=white, minimum size=5mm},
+		covar/.style	= {<->, >=stealth, shorten >= 1pt, shorten <= 1pt}]
+		
+		\node at (1, 2.4)	[latent]	(hk)	{H\textsubscript{kon}};
+		\node at (1, 1)		[latent]	(hd)	{H\textsubscript{dyn}};
+		
+		\node at (-1.5, 2.9)	[manifest]	(h0)	{1.8$^{\circ}$};
+		\node at (-1.5, 2.1)	[manifest]	(h1)	{3.6$^{\circ}$};
+		\node at (-1.5, 1.3)	[manifest]	(h2)	{5.4$^{\circ}$};
+		\node at (-1.5, 0.5)	[manifest]	(h3)	{7.2$^{\circ}$};
+		
+		\node at (-2.3, 2.9)	[error]		(e1)	{\footnotesize .10};
+		\node at (-2.3, 2.1)	[error]		(e2)	{\footnotesize .10};
+		\node at (-2.3, 1.3)	[error]		(e3)	{\footnotesize .05};
+		\node at (-2.3, .5)		[error]		(e4)	{\footnotesize .12};
+		
+		\draw [paths] (hk.west) -- (h0.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .95{$^{1}$}};
+		\draw [paths] (hk.west) -- (h1.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .90{$^{1}$}};
+		\draw [paths] (hk.west) -- (h2.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .81{$^{1}$}};
+		\draw [paths] (hk.west) -- (h3.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .66{$^{1}$}};
+		
+		\draw [paths] (hd.west) -- (h0.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .00{$^{0.02}$}};
+		\draw [paths] (hd.west) -- (h1.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .30{$^{0.22}$}};
+		\draw [paths] (hd.west) -- (h2.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .54{$^{0.78}$}};
+		\draw [paths] (hd.west) -- (h3.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .67{$^{0.98}$}};
+		
+		\draw [paths] (e1) -- (h0.west);
+		\draw [paths] (e2) -- (h1.west);
+		\draw [paths] (e3) -- (h2.west);
+		\draw [paths] (e4) -- (h3.west);
+		\end{tikzpicture}
+	
+	\vspace{.2cm}
+	\caption[CFA Platzhalter Modell 15]{Modell 15: Fixed-Links-Messmodell der \gls{ha} (\textsf{H}). Eingezeichnet sind die standardisierten Koeffizienten. Hochgestellt sind die fixierten unstandardisierten Faktorladungen. \textsf{H\textsubscript{kon}} = konstante latente Variable; \textsf{H\textsubscript{dyn}} = dynamische latente Variable.}
+	\label{fig:hafl}
+\end{figure}
+
+
+bildete die empirischen Varianzen und Kovarianzen der \gls{ha} sehr gut ab [$\upchi^2(4)=4.59$, $p=.33$, $\textnormal{CFI}=1.00$, $\textnormal{RMSEA}=.03$, $\textnormal{SRMR}=.08$].
+Die Varianz der konstanten latenten Variable betrug $654.91$ ($z=5.74$, $p<.001$) und die Varianz der dynamischen latenten Variable betrug $2586.48$ ($z=6.89$, $p<.001$). 
+Nach Skalierung der Varianzen \citep{Schweizer2011a} betrug die Varianz der konstanten latenten Variable $654.91$ ($z~=~5.74$, $p~<.001$) und die Varianz der dynamischen latenten Variable $1040.34$ ($z~=~6.89$, $p~<~.001$). Die in der dynamischen latenten Variable gebundenen Prozesse waren also für die Bearbeitung der \gls{ha} fast eineinhalb Mal so wichtig wie die in der konstanten latenten Variable gebundenen Prozesse. Weil Modell 15 die empirischen Daten am besten abbildete, wurde für alle weiteren Berechnungen Modell 15 verwendet. Eine Übersicht über alle \gls{flm}e der \gls{ha} gibt \autoref{tab:haflm}.
+
+
+
+
+
+\subsubsection*{Strukturgleichungsmodelle}
+
+
+
+
+(siehe \autoref{fig:spatial_suppression_hick_g_model})
+
 
 \begin{figure}[htbp]
 	\begin{adjustbox}{width=1\textwidth, keepaspectratio}
@@ -2266,133 +2454,18 @@ Für die letzte Analyse auf manifester Ebene wurden die regressionsanalytisch he
 		\end{tikzpicture}
 	\end{adjustbox}
 	\vspace{.2cm}
-	\caption[CFA Platzhalter Modell XX]{Modell XX: \gls{flm} der \gls{ha}. Eingezeichnet sind die standardisierten Koeffizienten. \textsf{S\textsubscript{kon}} = konstante latente Variable; \textsf{S\textsubscript{dyn}} = dynamische latente Variable.}
-	\label{fig:lol}
+	\caption[CFA Platzhalter Modell 14]{Modell 14: Latenter Zusammenhang zwischen der \gls{ssauf} (\textsf{S}), der \gls{ha} (\textsf{H}) und dem \gls{gfaktor} des \gls{bist}. \textsf{K} = Kapazität; \textsf{B} = Bearbeitungsgeschwindigkeit; \textsf{M} = Merkfähigkeit.\\
+	$^1$Um die Identifizierung der Varianz der latenten Variable zu ermöglichen, wurde diese unstandardisierte Faktorladung auf $1$ fixiert.\\
+	$^{*}p~<~.05$. $^{***}p~<~.001$.}
+	\label{fig:spatial_suppression_hick_g_model}
 \end{figure}
 
 
-\subsubsection{FL teil}
+\subsubsection*{Fixed-Links-Strukturgleichungsmodell}
 
 Für die Analyse der Zusammenhänge auf latenter Ebene musste für die \gls{ha} zuerst ein Fixed-Links-Messmodell gefunden werden. Dabei wurden analog zum Vorgehen in \autoref{subsec:flss} zwei unabhängige latente Variablen angenommen, die die Varianz und Kovarianz der vier Hick-Bedingungen erklären. Die unstandardisierten Faktorladungen der konstanten latenten Variable betrug bei allen Messmodellen 1, die unstandardisierten Faktorladungen der dynamischen latenten Variable hingegen wurden variiert.
 
-Die regressionsanalytische Analyse der \gls{ha} (siehe \autoref{fig:linmodel}) hat zwischen der Anzahl Bits und der \gls{rz} einen linearen Zusammenhang ergeben. In Modell 10 wurden die unstandardisierten Faktorladungen der dynamischen latenten Variable deshalb linear ansteigend gewählt [$y=x,\,x\in\{1, 2, 3, 4\}$]. Modell 10 bildete die empirischen Varianzen und Kovarianzen der \gls{ha} nicht gut ab [$\upchi^2(4)=37.34$, $p<.001$, $\textnormal{CFI}=.89$, $\textnormal{RMSEA}=.22$, $\textnormal{SRMR}=.17$]. Die Varianz der konstanten latenten Variable betrug $470.13$ ($z=3.81$, $p<.001$) und die Varianz der dynamischen latenten Variable betrug $186.10$ ($z=6.53$, $p<.001$).
-In Modell 11 wurden die unstandardisierten Faktorladungen der dynamischen latenten Variable entsprechend der Anzahl Bit der Bedingung gewählt [$y=\log_{2}x,\,x\in\{1, 2, 4, 6\}$]. Modell 11 bildete die empirischen Varianzen und Kovarianzen der \gls{ha} ebenfalls nicht gut ab [$\upchi^2(4)=32.19$, $p<.001$, $\textnormal{CFI}=.91$, $\textnormal{RMSEA}=.20$, $\textnormal{SRMR}=.14$]. Die Varianz der konstanten latenten Variable betrug $759.80$ ($z=6.72$, $p<.001$) und die Varianz der dynamischen latenten Variable betrug $310.18$ ($z=5.74$, $p<.001$).
-Modell 12 testete die Annahme, dass die Ladungen der unstandardisierten Faktorladungen der dynamischen latenten Variable entsprechend der Anzahl Antwortalternativen verlaufen [$y=x,\,x\in\{1, 2, 4, 6\}$]. Modell 12 bildete die empirischen Varianzen und Kovarianzen der \gls{ha} erstmals gut ab [$\upchi^2(4)=8.64$, $p=.07$, $\textnormal{CFI}=.99$, $\textnormal{RMSEA}=.08$, $\textnormal{SRMR}=.09$]. Die Varianz der konstanten latenten Variable betrug $559.73$ ($z=4.87$, $p<.001$) und die Varianz der dynamischen latenten Variable betrug $102.83$ ($z=7.26$, $p<.001$).
 
-Modelle 10 bis 12 beinhalteten klare Annahmen über den Verlauf der unstandardisierten Faktorladungen der dynamischen latenten Variable. Als nächstes wurden explorativ Ladungsverläufe getestet, um die empirischen Daten bestmöglich zu beschreiben. 
-In Modell 13 wiesen die Faktorladungen der dynamischen latenten Variable einen logarithmischen Verlauf [$y=\log_{e}x,\,x\in\{1, 2, 3, 4\}$] auf. Dieses Modell konnte nicht interpretiert werden, weil eine geschätzte Fehlervarianz negativ war.
-Modell 14 beinhaltete einen quadratisch ansteigenden Ladungsverlauf der dynamischen latenten Variable [$y=x^2,\,x\in\{1, 2, 3, 4\}$]. Modell 14 bildete die empirischen Varianzen und Kovarianzen der \gls{ha} nicht gut ab [$\upchi^2(4)=11.36$, $p=.02$, $\textnormal{CFI}=.98$, $\textnormal{RMSEA}=.10$, $\textnormal{SRMR}=.07$]. Die Varianz der konstanten latenten Variable betrug $624.88$ ($z=5.49$, $p<.001$) und die Varianz der dynamischen latenten Variable betrug $13.53$ ($z=6.93$, $p<.001$).
-Die besten Ergebnisse erzielte Modell 15, in welchem ein logistischer Ladungsverlauf der dynamischen latenten Variable eingesetzt wurde [$y={1}/({1 + e^{(-x/.8)}}),\,x\in\{-3,-1,1,3\}$]. Das theoretische Modell (siehe \autoref{fig:hafl}) 
-
-
-\begin{figure}[htbp]
-	\centering
-
-	\begin{tikzpicture}
-	[font=\sffamily, scale=2, inner sep=0pt,
-	latent/.style	= {circle,draw,inner sep=0pt,minimum size=12mm},
-	manifest/.style	= {rectangle,draw,inner sep=0pt,minimum width=12mm,minimum height=12mm},
-	paths/.style	= {->, >=stealth, shorten >= 1pt},
-	error/.style	= {circle, draw=none, fill=white, minimum size=5mm},
-	covar/.style	= {<->, >=stealth, shorten >= 1pt, shorten <= 1pt}]
-	
-	
-	\node at (1, 2.4)	[latent]	(sk)	{S\textsubscript{kon}};
-	\node at (1, 1)		[latent]	(sd)	{S\textsubscript{dyn}};
-	
-	\node at (-1.5, 2.9)	[manifest]	(s1)	{1.8$^{\circ}$};
-	\node at (-1.5, 2.1)	[manifest]	(s2)	{3.6$^{\circ}$};
-	\node at (-1.5, 1.3)	[manifest]	(s3)	{5.4$^{\circ}$};
-	\node at (-1.5, 0.5)	[manifest]	(s4)	{7.2$^{\circ}$};
-	
-	
-	\node at (-2.3, 2.9)	[error]		(e1)	{\footnotesize .10};
-	\node at (-2.3, 2.1)	[error]		(e2)	{\footnotesize .10};
-	\node at (-2.3, 1.3)	[error]		(e3)	{\footnotesize .05};
-	\node at (-2.3, .5)		[error]		(e4)	{\footnotesize .12};
-	
-	
-	\draw [paths] (sk.west) -- (s1.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .95{$^{1}$}};
-	\draw [paths] (sk.west) -- (s2.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .90{$^{1}$}};
-	\draw [paths] (sk.west) -- (s3.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .81{$^{1}$}};
-	\draw [paths] (sk.west) -- (s4.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .66{$^{1}$}};
-	
-	\draw [paths] (sd.west) -- (s1.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .00{$^{0}$}};
-	\draw [paths] (sd.west) -- (s2.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .30{$^{1}$}};
-	\draw [paths] (sd.west) -- (s3.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .54{$^{2}$}};
-	\draw [paths] (sd.west) -- (s4.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .67{$^{3}$}};
-	
-	
-	\draw [paths] (e1) -- (s1.west);
-	\draw [paths] (e2) -- (s2.west);
-	\draw [paths] (e3) -- (s3.west);
-	\draw [paths] (e4) -- (s4.west);
-	
-	\end{tikzpicture}
-
-	\vspace{.2cm}
-	\caption[CFA Platzhalter Modell 15]{Modell 15: \gls{flm} der \gls{ha}. Eingezeichnet sind die standardisierten Koeffizienten. \textsf{S\textsubscript{kon}} = konstante latente Variable; \textsf{S\textsubscript{dyn}} = dynamische latente Variable.}
-	\label{fig:hafl}
-\end{figure}
-
-
-bildete die empirischen Varianzen und Kovarianzen der \gls{ha} sehr gut ab [$\upchi^2(4)=4.59$, $p=.33$, $\textnormal{CFI}=1.00$, $\textnormal{RMSEA}=.03$, $\textnormal{SRMR}=.08$].
-Die Varianz der konstanten latenten Variable betrug $654.91$ ($z=5.74$, $p<.001$) und die Varianz der dynamischen latenten Variable betrug $2586.48$ ($z=6.89$, $p<.001$). 
-Nach Skalierung der Varianzen \citep{Schweizer2011a} betrug die Varianz der konstanten latenten Variable $654.91$ ($z~=~5.74$, $p~<.001$) und die Varianz der dynamischen latenten Variable $1040.34$ ($z~=~6.89$, $p~<~.001$). Die in der dynamischen latenten Variable gebundenen Prozesse waren also für die Bearbeitung der \gls{ha} fast eineinhalb Mal so wichtig wie die in der konstanten latenten Variable gebundenen Prozesse. Weil Modell 15 die empirischen Daten am besten abbildete, wurde für alle weiteren Berechnungen Modell 15 verwendet. Eine Übersicht über alle \gls{flm}e der \gls{ha} gibt \autoref{tab:haflm}.
-
-
-\begin{table}[htbp]
-	%\flushleft
-	\centering
-	\captionsetup{labelsep = none}
-	\caption[Konfirmatorische Faktorenanalyse]{\newline  \textit{Übersicht über die berichteten Fixed-Links-Modelle der \gls{ha}} \vspace{.2cm}}
-	\label{tab:haflm}
-	%	\resizebox{\columnwidth}{!}{%	
-	\begin{threeparttable}
-		
-		{\renewcommand{\arraystretch}{1.0} % <- modify value to suit your needs: line spacing inside table
-		\begin{tabular}{
-				S[table-format = 2.0, table-space-text-post = $^{*a}$]
-				l
-				S[table-format = 2.2]
-				S[table-format = 1.0]
-				S[table-format = <0.3, add-integer-zero=false]
-				S[table-format = 1.2, add-integer-zero=false]
-				S[table-format = 0.2, add-integer-zero=false]
-				S[table-format = 0.2, add-integer-zero=false]
-				%				S[table-format = 1.2, add-integer-zero=false]
-			}
-			
-			\hline
-			{Modell}		& Ladungsverlauf	&	{$\upchi^2$}	& \textit{df}	& {\textit{p}}	&	{\textnormal{CFI}} 	&	{\textnormal{RMSEA}}	&	{\textnormal{SRMR}}\\
-			\hline
-
-			%			1			&	SS kongenerisch	&	28.44		&	2			&	<.001			&	.78		&	.27					&	.09	\\
-			%			2			&	SGM				&	91.06	&	13			&	<.001			&	.77		&	.19					&	.06	\\
-
-		10			&	$y=x$						&	37.34			&	4				&	<.001			&	.89				&	.22				&	.17	\\
-		11			&	$y=\log_2 x$				&	32.19			&	4				&	<.001			&	.91				&	.20				&	.14	\\
-		12			&	$y=x$					&	8.64			&	4				&	.07				&	.99				&	.08				&	.09	\\
-		13{$^{*}$}	&	$y=\log_e x$				&	{\textemdash}	&	{\textemdash}	&	{\textemdash}	&	{\textemdash}	&	{\textemdash}	&	{\textemdash}\\
-%		13			&	$y=x$					&	26.95			&	4				&	<.001			&	.93				&	.18				&	.12	\\
-		14			&	$y=x^2$						&	11.36			&	4				&	.02				&	.98				&	.10				&	.07	\\
-		15			&	$y=\dfrac{1}{1 + e^{(-x/.8)}}$	&	4.59			&	4				&	.33				&	1.00			&	.03				&	.08	\\
-%			\rule{0pt}{4ex}%  EXTRA vertical height
-			\hline
-			
-			
-		\end{tabular}%
-		}
-		\begin{tablenotes}[flushleft]
-			\footnotesize				% font size
-			\setlength\labelsep{0pt}	% no indent on second line
-			\item \textit{Anmerkungen.} Der Ladungsverlauf bezieht sich auf die unstandardisierten Faktorladungen der dynamischen latenten Variable. Die unstandardisierten Faktorladungen der konstanten latenten Variable betrugen immer $1$. Für Modelle 10, 13 und 14 gilt $x\in\{1,2,3,4\}$. Für Modelle 11 und 12 gilt $x\in\{1,2,4,6\}$, für Modell 15 $x\in\{-3,-1,1,3\}$. $\upchi^2 =$ Satorra-Bentler \citeyearpar{Satorra1994} korrigierter $\upchi^2$-Wert; \textit{df} = Freiheitsgrade; \gls{cfi} = comparative fit index; \gls{rmsea} = root mean square error of approximation; \gls{srmr} = standardized root mean square residual.
-			\item {$^{*}$} Das Modell konnte nicht interpretiert werden, weil eine geschätzte Varianz negativ war.
-			
-		\end{tablenotes}%
-	\end{threeparttable}%
-	%}
-\end{table}
 
 \clearpage
 
@@ -2430,7 +2503,8 @@ Mit Modell 8 und 15 wurde in einem letzten Schritt der \gls{gfaktor} vorhergesag
 	\end{tikzpicture}
 
 	\vspace{.2cm}
-	\caption[CFA Platzhalter Modell 16]{Modell 16: Strukturmodell \gls{flm} der \gls{ha}. Eingezeichnet sind die standardisierten Koeffizienten. \textsf{S\textsubscript{kon}} = konstante latente Variable; \textsf{S\textsubscript{dyn}} = dynamische latente Variable.}
+	\caption[CFA Platzhalter Modell 16]{Modell 16: Strukturmodell \gls{flm} der \gls{ha}. Eingezeichnet sind die standardisierten Koeffizienten. \textsf{S\textsubscript{kon}} = konstante latente Variable; \textsf{S\textsubscript{dyn}} = dynamische latente Variable.\\
+	$^{**}p~<~.01$.}
 	\label{fig:sem1}
 \end{figure}
 
@@ -2440,12 +2514,12 @@ Mit Modell 8 und 15 wurde in einem letzten Schritt der \gls{gfaktor} vorhergesag
 
 %Bei der systematischen Abarbeitung der Fragestellungen haben sich weitere Fragen ergeben, welche hier ausgeführt und beantwortet werden.
 
-\subsection{Semipartialkorrelationen}
+\subsection{trololol}
 
 Hier folgt noch:
 \begin{itemize}
 	\item Korrelationen der \gls{ss}-Bedingungen mit dem \gls{gfaktor}
-	\item \ldots
+	\item Eine Mental-Speed mit hick und suppression bedingungen auf g?
 \end{itemize}
 
 
