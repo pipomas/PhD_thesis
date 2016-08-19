@@ -1580,10 +1580,10 @@ Deskriptive Angaben zu den daraus resultierenden Parametern, der Asymptote $a$ u
 Weil der Determinationskoeffizient $R^2$ bei nicht-linearen Modellen kein adäquates Mass für die Anpassungsgüte des Modells an die Daten darstellt \citep{Spiess2010}, wurde für jede Person der \gls{rmse} berechnet. Der \gls{rmse} ist die Quadratwurzel aus dem Mittelwert der quadrierten Fehler und somit ein Mass für die durchschnittliche Abweichung der vorhergesagten Werte von den empirischen Werten. 
 Obwohl der \gls{rmse} für einige \glspl{vp} sehr gross ausfiel, eignete sich ein exponentielles Modell zur Beschreibung der Daten für einen grossen Teil der \glspl{vp} gut (siehe \autoref{fig:spatial_suppression_rmse_density}). Der Median betrug $6$ ms und das dritte Quartil lag bei $9$ ms.
 %Um zu sehen, ob die Analyse der Aufgabenparameter durch diejenigen \glspl{vp} verzerrt wurde, bei welchen eine Beschreibung der Daten mit einem exponentiellen Modell weniger angebracht war, wurden die Auswertungen einmal mit der Gesamtstichprobe ($N_{100\%}=177$), einmal mit einer Teilstichprobe mit \glspl{vp} welche einen \gls{rmse} von kleiner dem dritten Quartil ($n_{75\%}=X$) aufwiesen und einmal mit einer Teilstichprobe mit \glspl{vp} welche einen \gls{rmse} von nicht grösser als dem Median aufwiesen ($n_{50\%}=X$) durchgeführt.
-Um zu vermeiden, dass die Analysen der Aufgabenparameter durch diejenigen \glspl{vp} verzerrt wurden, bei welchen eine Beschreibung der Daten mit einem exponentiellen Modell nicht angebracht war, wurden \glspl{vp} mit einem \gls{rmse} von grösser dem Median von den Analysen ausgeschlossen. 
-In dieser Teilstichprobe ($n=89$) fiel die Streuung der Aufgabenparameter etwas geringer aus als in der Gesamtstichprobe ($N=177$). So betrug in der Teilstichprobe die \gls{sd} der Asymptote noch $23$ ms und die \gls{sd} der Steigung noch $0.051$ (vgl. \autoref{tab:spatial_suppression_exponential_model}).
-
-
+%Um zu vermeiden, dass die Analysen der Aufgabenparameter durch diejenigen \glspl{vp} verzerrt wurden, bei welchen eine Beschreibung der Daten mit einem exponentiellen Modell nicht angebracht war, wurden \glspl{vp} mit einem \gls{rmse} von grösser dem Median von den Analysen ausgeschlossen. 
+%In dieser Teilstichprobe ($n=89$) fiel die Streuung der Aufgabenparameter etwas geringer aus als in der Gesamtstichprobe ($N=177$). So betrug in der Teilstichprobe die \gls{sd} der Asymptote noch $23$ ms und die \gls{sd} der Steigung noch $0.051$ (vgl. \autoref{tab:spatial_suppression_exponential_model}).
+Um erkennen zu können, ob der Zusammenhang zwischen den beiden Aufgabenparametern (Asymptote und Steigung) oder der Zusammenhang zwischen der Asymptote respektive der Steigung mit dem \gls{zwert} des \gls{bist} durch diejenigen \glspl{vp} verzerrt wurde, bei welchen eine Beschreibung der Daten mit einem exponentiellen Modell nicht angebracht war, wurden diese Zusammenhänge in Abhängigkeit des \gls{rmse} bestimmt. 
+Dafür wurde für jeden \gls{rmse} zwischen 1 und 70 eine Teilstichprobe mit \glspl{vp} gebildet, welche den gewählten \gls{rmse} (\gls{rmse}-Grenzwert) nicht überschritten haben. Die erste Teilstichprobe ($n=3$) bestand also aus \glspl{vp}, welche einen \gls{rmse} von nicht grösser 1 aufwiesen. Die zweite Teilstichprobe ($n=11$) setzte sich aus \glspl{vp} zusammen, welche einen \gls{rmse} von nicht grösser 2 aufwiesen. Die dritte Teilstichprobe ($n=48$) beinhaltete \glspl{vp}, welche einen \gls{rmse} von nicht grösser 4 aufwiesen (usw.). Dieses Vorgehen wurde solange weitergeführt, bis bei einem \gls{rmse}-Grenzwert von 70 die Gesamtstichprobe ($N=177$) zur Bestimmung der Zusammenhänge verwendet wurde.
 
 \begin{figure}[t]
 	\centering
@@ -1594,6 +1594,41 @@ In dieser Teilstichprobe ($n=89$) fiel die Streuung der Aufgabenparameter etwas 
 	\caption[Dichtefunktion des RMSE]{Dichtefunktion des aus der exponentiellen Regression abgeleiteten Root Mean Square Error (\gls{rmse}; in Millisekunden) in der \gls{ssauf}.  Alle Datenpunkte sind auf der \textit{x}-Achse mit vertikalen Strichen markiert.}
 	\label{fig:spatial_suppression_rmse_density}
 \end{figure}
+
+Die Analyse hat ergeben, dass die Asymptote und die Steigung ab einem \gls{rmse}-Grenzwert von $1.4$ ms stark negativ miteinander zusammenhingen ($r=-.98$ bis $r=-.57$, alle $p\textnormal{s}<.05$). Eine visuelle Inspektion des Verlaufs deutete darauf hin, dass der \gls{rmse}-Grenzwert einen negativen Einfluss auf die Höhe des Zusammenhangs ausübte (siehe \autoref{fig:spatial_suppression_rmse_cutoff_asymtote_slope}).
+
+\begin{figure}[t]
+	\centering
+	%	\captionsetup{font = small}
+	\begin{adjustbox}{width=1\textwidth}
+		\input{tikzDevice/spatial_suppression_rmse_cutoff_asymptote_slope.tex}
+	\end{adjustbox}
+	\caption[RMSE einfluss]{Einfluss des \gls{rmse}-Grenzwerts auf den Zusammenhang ($r$) zwischen den beiden aus der \gls{ssauf} mit einer exponentiellen Regression abgeleiteten Asymptote und Steigung. Die durchgezogene Linie kennzeichnet den Verlauf des Zusammenhangs. Der graue Bereich beschreibt das $95\,\%$-Konfidenzintervall.}
+	\label{fig:spatial_suppression_rmse_cutoff_asymtote_slope}
+\end{figure}
+
+
+Der Zusammenhang zwischen der Asymptote und dem \gls{zwert} des \gls{bist} fiel in Abhängigkeit des \gls{rmse}-Grenzwerts weniger eindeutig aus (siehe \autoref{fig:spatial_suppression_rmse_cutoff}a).
+Während der Zusammenhang über einen grossen Teil des tieferen \gls{rmse}-Grenzwertbereichs nicht signifikant war, unterschritt der Zusammenhang zwischen $8.6$ und $9.5$ ms ($r = -.17$, $p = .049$), zwischen $26.1$ und $35.7$ ms ($r = -.15$ bis $r = -.16$, alle $p\textnormal{s} < .048$) und ab $36.5$ ms ($r = -.16$ bis $r=-.18$, alle $p\textnormal{s} < .03$) die Signifikanzgrenze. Eine visuelle Inspektion des Verlaufs liess keine Aussage darüber zu, ob der  \gls{rmse}-Grenzwert einen positiven oder negativen Einfluss auf die Höhe des Zusammenhangs ausübte.
+
+\begin{figure}[htbp]
+	\centering
+	%	\captionsetup{font = small}
+	\begin{adjustbox}{width=1\textwidth}
+		\subfloat[Test][Zusammenhang ($r$) zwischen der Asymptote und dem \gls{zwert} des \gls{bist}s.]{\input{tikzDevice/spatial_suppression_rmse_cutoff_asymptote_zscore.tex}}
+	\end{adjustbox}
+	\newline
+	\begin{adjustbox}{width=1\textwidth}
+		\subfloat[Test][Zusammenhang ($r$) zwischen der Steigung und dem \gls{zwert} des \gls{bist}s.]{\input{tikzDevice/spatial_suppression_rmse_cutoff_slope_zscore.tex}}
+	\end{adjustbox}
+	
+	\caption[RMSE einfluss]{Einfluss des \gls{rmse}-Grenzwerts auf die Zusammenhänge der aus der \gls{ssauf} mit einer exponentiellen Regression abgeleiteten Aufgabenparameter der Asymptote ($a$) und der Steigung ($b$) mit dem \gls{zwert} des \gls{bist}s. Die durchgezogene Linie kennzeichnet den Verlauf des Zusammenhangs. Der graue Bereich beschreibt das $95\,\%$-Konfidenzintervall.}
+	\label{fig:spatial_suppression_rmse_cutoff}
+\end{figure}
+
+Die Steigung und der \gls{zwert} des \gls{bist} korrelierten unabhängig vom \gls{rmse}-Grenzwert nicht signifkant miteinander ($r=-.16$ bis $r=.62$, alle $p\textnormal{s}>.08$) . (siehe \autoref{fig:spatial_suppression_rmse_cutoff}b).
+
+
 
 
 
@@ -1614,20 +1649,8 @@ Abschliessend zur zweiten Fragestellung kann festgehalten werden, dass die in de
 
 
 
-\begin{figure}[htbp]
-	\centering
-	%	\captionsetup{font = small}
-	\begin{adjustbox}{width=1\textwidth}
-		\subfloat[Test][Zusammenhang zwischen der Asymptote und dem \gls{zwert} des \gls{bist}]{\input{tikzDevice/spatial_suppression_rmse_cutoff_asymptote_zscore.tex}}
-	\end{adjustbox}
-		\newline
-	\begin{adjustbox}{width=1\textwidth}
-		\subfloat[Test][Zusammenhang zwischen der Steigung und dem \gls{zwert} des \gls{bist}]{\input{tikzDevice/spatial_suppression_rmse_cutoff_slope_zscore.tex}}
-	\end{adjustbox}
-			
-	\caption[RMSE einfluss]{Einfluss der Modellkonformität auf die Zusammenhänge der aus der exponentiellen Regression abgeleiteten Aufgabenparameter der Asymptote ($a$) und der Steigung ($b$) mit dem \gls{zwert} des \gls{bist}. Die durchgezogene Linie kennzeichnet... . Der graue Bereich kennzeichnet das $95\,\%$-Konfidenzintervall. Die gestrichelte Linie kennzeichnet einen Zusammenhang von 0.}
-	\label{fig:spatial_suppression_rmse_cutoff}
-\end{figure}
+
+
 
 
 
@@ -2135,7 +2158,7 @@ Die Reaktionszeiten der \gls{ha} wurden für jede Person mit einer linearen Regr
 			\begin{tablenotes}[flushleft]
 				\footnotesize				% font size
 				\setlength\labelsep{0pt}	% no indent on second line
-				\item \textit{Anmerkungen.} \textit{a}~=~y-Achsenabschnitt (in ms); \textit{b}~=~Steigung; Min~=~Minimum; Max~=Maximum; S-W~= Shapiro-Wilk-Test.
+				\item \textit{Anmerkungen.} \textit{a}~=~$y$-Achsenabschnitt (in ms); \textit{b}~=~Steigung; Min~=~Minimum; Max~=Maximum; S-W~= Shapiro-Wilk-Test.
 			\end{tablenotes}
 		\end{threeparttable}
 \end{table}
@@ -2157,6 +2180,29 @@ Die Reaktionszeiten der \gls{ha} wurden für jede Person mit einer linearen Regr
 Während der Achsenabschnitt ($a~=~237$) gering mit dem \textit{z}-Wert aus dem \gls{bist} korrelierte ($r_{s}~=~-.16$, $p~=~.03$), zeigte die Steigung ($b~=~67$) eine mittlere Korrelation  mit dem \textit{z}-Wert ($r_{s}~=~-.26$, $p~<~.001$).
 
 Für die letzte Analyse auf manifester Ebene wurden die regressionsanalytisch hergeleiteten Parameter der \gls{ssauf} und der \gls{ha} mit dem \textit{z}-Wert aus dem \gls{bist} in Zusammenhang gesetzt. Die Analyse zeigte, dass die regressionsanalytisch abgeleitetend Parameter der \gls{ssauf} weder signifikant mit den aus der \gls{ha} abgeleiteten Parameter, noch mit dem \textit{z}-Wert des \gls{bist} signifikant korrelierten (siehe \autoref{tab:suppression_hick_regression_correlations}).
+
+
+
+
+
+\begin{figure}[htbp]
+	\centering
+	%	\captionsetup{font = small}
+	\begin{adjustbox}{width=1\textwidth}
+		\subfloat[Test][$r$ = Zusammenhang zwischen dem $y$-Achsenabschnitt und dem \gls{zwert} des \gls{bist}s.]{\input{tikzDevice/hick_rmse_cutoff_intercept_zscore.tex}}
+	\end{adjustbox}
+	\newline
+	\begin{adjustbox}{width=1\textwidth}
+		\subfloat[Test][$r$ = Zusammenhang zwischen der Steigung und dem \gls{zwert} des \gls{bist}s.]{\input{tikzDevice/hick_rmse_cutoff_slope_zscore.tex}}
+	\end{adjustbox}
+	
+	\caption[RMSE Einfluss Hick]{Einfluss des \gls{rmse}-Grenzwerts auf die Zusammenhänge der aus der \gls{ha} mit einer linearen Regression abgeleiteten Aufgabenparameter dem $y$-Achsenabschnitt ($a$) und der Steigung ($b$) mit dem \gls{zwert} des \gls{bist}s. Die durchgezogene Linie kennzeichnet den Verlauf des Zusammenhangs. Der graue Bereich beschreibt das $95\,\%$-Konfidenzintervall.}
+	\label{fig:hick_rmse_cutoff}
+\end{figure}
+
+
+
+
 
 \begin{table}[htbp] % see http://tex.stackexchange.com/questions/247921/different-column-widths-under-a-multicolumn-prevent-appropriate-centering
 	%	\flushleft
