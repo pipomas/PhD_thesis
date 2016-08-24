@@ -1010,39 +1010,40 @@ Die Schwellenschätzungen aller \glspl{vp} sind in \autoref{fig:spatial_suppress
 \begin{table}[htbp]
 	\centering
 %	\captionsetup{font = small}
-	\caption[Deskriptive Angaben zur Schwellenbestimmung in der \gls{ssauf}]{\newline  \textit{Deskriptive Angaben zu den Schwellenschätzungen der \gls{ssauf} in Millisekunden (Mittelwert, Standardabweichung, Minimum, Maximum) und Kennwerte zur Verteilung der Daten} \vspace{.2cm}}
+	\caption[Deskriptive Angaben zur Schwellenbestimmung in der \gls{ssauf}]{\newline  \textit{Deskriptive Angaben zu den Schwellenschätzungen der \gls{ssauf} in Millisekunden (Mittelwert, Standardabweichung, Minimum, Maximum) und Kennwerte zur Verteilung sowie der Reliabilität der Daten} \vspace{.2cm}}
 	\label{tab:spatial_suppression_descriptives}
-
-	\begin{threeparttable}
-		
-		\begin{tabular}{
-				c
-				S[table-format = 2.0]
-				S[table-format = 3.0]
-				S[table-format = 2.0]
-				S[table-format = 3.0]
-				S[table-format = 1.2]
-				S[table-format = 1.2]
-				S[table-format = <0.3, add-integer-zero=false]
-			}
-			\hline
-			Bedingung 		&	\textit{M}	&	\textit{SD}	&	{Min}	&	Max 	&	\textnormal{Schiefe}	&	\textnormal{Kurtosis}  &{S-W \textit{p}-Wert}\\
-			\hline
-			$1.8^{\circ}$	&	82			&	28			&	31		&	216		&	-0.25					&	0.19					& 		.39	\\
-			$3.6^{\circ}$	&	89			&	31			&	37		&	282		&	0.02					&	0.80					& 		.03	\\
-			$5.4^{\circ}$	&	109			&	40			&	45		&	422		&	0.73					&	1.78					& 		<.001	\\
-			$7.2^{\circ}$	&	136			&	60			&	61		&	705		&	1.14					&	1.86					& 		<.001	\\
-			\hline
-		\end{tabular}%
-		%}
-		\begin{tablenotes}[flushleft]
-			\footnotesize				% font size
-			\setlength\labelsep{0pt}	% no indent on second line
-			\item \textit{Anmerkungen.} Min~=~Minimum; Max~=~Maximum; S-W~=~Shapiro-Wilk-Test.
-		\end{tablenotes}%
-	\end{threeparttable}%
-	%}
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{threeparttable}
+			\begin{tabular}{
+					c
+					S[table-format = 2.0]
+					S[table-format = 3.0]
+					S[table-format = 2.0]
+					S[table-format = 3.0]
+					S[table-format = 1.2]
+					S[table-format = 1.2]
+					S[table-format = <0.3, add-integer-zero=false]
+					S[table-format = 0.2, add-integer-zero=false]
+				}
+				\hline
+				Bedingung 		&	\textit{M}	&	\textit{SD}	&	{Min}	&	Max 	&	\textnormal{Schiefe}	&	\textnormal{Kurtosis}  &{S-W \textit{p}-Wert}& {Rel}\\
+				\hline
+				$1.8^{\circ}$	&	82			&	28			&	31		&	216		&	-0.25	&	0.19	& 		.39		&	.96	\\
+				$3.6^{\circ}$	&	89			&	31			&	37		&	282		&	0.02	&	0.80	& 		.03		&	.96	\\
+				$5.4^{\circ}$	&	109			&	40			&	45		&	422		&	0.73	&	1.78	& 		<.001	&	.96	\\
+				$7.2^{\circ}$	&	136			&	60			&	61		&	705		&	1.14	&	1.86	& 		<.001	&	.96	\\
+				\hline
+			\end{tabular}%
+			%}
+			\begin{tablenotes}[flushleft]
+				\footnotesize				% font size
+				\setlength\labelsep{0pt}	% no indent on second line
+				\item \textit{Anmerkungen.} Min~=~Minimum; Max~=~Maximum; S-W~=~Shapiro-Wilk-Test; Rel = Nach der Odd-Even-Methode, mit der Spearman-Brown-Korrektur \citep[Spearman 1910; Brown 1910; zitiert nach][S. 123]{Schermelleh-Engel2007} berechnete Splithalf-Reliabilität.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
 \end{table}
+
 
 \begin{figure}[htbp]
 	\centering
@@ -1133,7 +1134,7 @@ Die Verteilung des \gls{si} (siehe \autoref{fig:suppression_index_density}) hatt
 
 
 
-
+\clearpage
 \subsection{\gls{ha}}
 
 Die mittleren Reaktionszeiten aller \glspl{vp} sind in  \autoref{fig:hick_scatterplot} zu sehen.
@@ -1616,7 +1617,7 @@ Die Steigung und der \gls{zwert} des \gls{bist} korrelierten unabhängig vom \gl
 Um für den Vergleich zwischen dem von \citet{Melnick2013} berichteten Zusammenhang zwischen ihrer Steigung (Studie 1: $b=0.116$ und Studie 2: $b=0.139$) und IQ-Punkten und dem in der vorliegenden Arbeit ermittelten Zusammenhang zwischen der Steigung ($b=0.103$) und dem \gls{zwert} die bestmögliche Teststärke zu erhalten, wurde die Gesamtstichprobe (\gls{rmse}-Grenzwert = $65.47$ ms) verwendet. Die Analyse hat ergeben, dass sich der in der vorliegenden Arbeit ermittelte Zusammenhang ($r=.00$, $p=.97$) signifikant von dem von \citeauthor{Melnick2013} berichteten Zusammenhang ($r=.68$) unterschied ($z=5.61$, $p<.001$).
 
 Betrachtet man die mit der Gesamtstichprobe erhaltenen Ergebnisse, kann abschliessend zur zweiten Fragestellung Folgendes festgehalten werden:  
-Die aus der exponentiellen Regression abgeleitete Asymptote korrelierte in der vorliegenden Arbeit leicht negativ mit dem \gls{zwert} des \gls{bist}. Die Steigung, der zweite mit der exponentiellen Regression abgeleitete Aufgabenparameter, hing nicht signifikant mit dem \gls{zwert} zusammen. Der von \citet{Melnick2013} berichtete Zusammenhang zwischen der Steigung und psychometrischer Intelligenz konnte damit nicht bestätigt werden. 
+Die aus der exponentiellen Regression abgeleitete Asymptote korrelierte in der vorliegenden Arbeit leicht negativ mit dem \gls{zwert} des \gls{bist} ($r=-.16$, $p=.03$). Die Steigung, der zweite mit der exponentiellen Regression abgeleitete Aufgabenparameter, hing nicht signifikant mit dem \gls{zwert} zusammen ($r=.00$, $p=.97$) und bestätigte damit den von \citet{Melnick2013} berichteten Zusammenhang nicht. 
 
 \begin{figure}[htbp]
 	\centering
@@ -2181,7 +2182,6 @@ Die Reaktionszeiten der \gls{ha} wurden für jede Person mit einer linearen Regr
 
 Wie bei der \gls{ssauf} (siehe \autoref{sec:2Fragestellung}) wurde der Zusammenhang zwischen den Aufgabenparametern (y-Achsenabschnitt und Steigung) und dem \gls{zwert} des \gls{bist} in Abhängigkeit des \gls{rmse} betrachtet. Die Analysen haben ergeben, dass der y-Achsenabschnitt und der \gls{zwert} bei einem \gls{rmse}-Grenzwert zwischen $9.6$ und $10.4$~ms ($r = -.28$ bis $ -.29$, alle $p\textnormal{s} < .03$), zwischen $11$ und $15.7$~ms ($r = -.24$ bis $ -.31$, alle $p\textnormal{s} < .04$), zwischen $17.2$ und $22.2$~ms ($r = -.17$ bis $ -.20$, alle $p\textnormal{s} < .04$) und ab $23.3$~ms ($r = -.15$ bis $ -.17$, alle $p\textnormal{s} < .049$) signifikant miteinander korrelierten (siehe \autoref{fig:hick_rmse_cutoff}a). In den erwähnten Bereichen war ein tiefer y-Achsenabschnitt also tendenziell mit einem hohen \gls{zwert} verbunden. Eine visuelle Inspektion des Verlaufs liess keine Aussage darüber zu, ob der \gls{rmse}-Grenzwert einen positiven oder negativen Einfluss auf die Höhe des Zusammenhangs ausübte.
 
-Die Steigung und der \gls{zwert} des \gls{bist} korrelierten bei einem \gls{rmse}-Grenzewert zwischen $8.9$ und $10.7$~ms ($r = -.24$ bis $ -.37$, alle $p\textnormal{s} < .048$) und ab $15.7$~ms ($r = -.19$ bis $ -.28$, alle $p\textnormal{s} < .046$) signifikant miteinander (siehe \autoref{fig:hick_rmse_cutoff}b). In diesen Bereichen war eine geringe Steigung also tendenziell mit einem hohen \gls{zwert} verbunden. Wie beim Zusammenhang zwischen dem y-Achsenabschnitt und dem \gls{zwert} konnte eine visuelle Inspektion des Verlaufs keine klaren Hinweise dafür liefern, ob der \gls{rmse}-Grenzwert einen positiven oder negativen Einfluss auf die Höhe des Zusammenhangs zwischen der Steigung und dem \gls{zwert} ausübte.
 
 \begin{figure}[htbp]
 	\centering
@@ -2198,84 +2198,71 @@ Die Steigung und der \gls{zwert} des \gls{bist} korrelierten bei einem \gls{rmse
 	\label{fig:hick_rmse_cutoff}
 \end{figure}
 
-Betrachtet man die mit der Gesamtstichprobe ermittelten Ergebnisse, kann festgehalten werden, dass sowohl der y-Achsenabschnitt ($r=-.17$, $p=.02$) als auch die Steigung ($r=-.23$, $p=.002$) der \gls{ha} leicht negativ mit dem \gls{zwert} des \gls{bist} zusammenhing. Diese Zusammenhänge waren vergleichbar mit den von \citet{Jensen1987a} berichteten Ergebnissen.
+Die Steigung und der \gls{zwert} des \gls{bist} korrelierten bei einem \gls{rmse}-Grenzewert zwischen $8.9$ und $10.7$~ms ($r = -.24$ bis $ -.37$, alle $p\textnormal{s} < .048$) und ab $15.7$~ms ($r = -.19$ bis $ -.28$, alle $p\textnormal{s} < .046$) signifikant miteinander (siehe \autoref{fig:hick_rmse_cutoff}b). In diesen Bereichen war eine geringe Steigung also tendenziell mit einem hohen \gls{zwert} verbunden. Wie beim Zusammenhang zwischen dem y-Achsenabschnitt und dem \gls{zwert} konnte eine visuelle Inspektion des Verlaufs keine klaren Hinweise dafür liefern, ob der \gls{rmse}-Grenzwert einen positiven oder negativen Einfluss auf die Höhe des Zusammenhangs zwischen der Steigung und dem \gls{zwert} ausübte.
 
-%Während der Achsenabschnitt ($a~=~237$) gering mit dem \textit{z}-Wert aus dem \gls{bist} korrelierte ($r_{s}~=~-.16$, $p~=~.03$), zeigte die Steigung ($b~=~67$) eine mittlere Korrelation  mit dem \textit{z}-Wert ($r_{s}~=~-.26$, $p~<~.001$).
-%
-%Für die letzte Analyse auf manifester Ebene wurden die regressionsanalytisch hergeleiteten Parameter der \gls{ssauf} und der \gls{ha} mit dem \textit{z}-Wert aus dem \gls{bist} in Zusammenhang gesetzt. Die Analyse zeigte, dass die regressionsanalytisch abgeleitetend Parameter der \gls{ssauf} weder signifikant mit den aus der \gls{ha} abgeleiteten Parameter, noch mit dem \textit{z}-Wert des \gls{bist} signifikant korrelierten (siehe \autoref{tab:suppression_hick_regression_correlations}).
+Betrachtet man die mit der Gesamtstichprobe ermittelten Ergebnisse, kann festgehalten werden, dass sowohl der y-Achsenabschnitt ($r=-.17$, $p=.02$) als auch die Steigung ($r=-.23$, $p=.002$) der \gls{ha} leicht negativ mit dem \gls{zwert} des \gls{bist} korrelierte. Die Zusammenhänge mit den Aufgabenparametern der \gls{ssauf} sind in \autoref{tab:suppression_hick_regression_correlations} zu finden.
+%Diese Zusammenhänge waren vergleichbar mit den von \citet{Jensen1987a} berichteten Ergebnissen.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{table}[htbp] % see http://tex.stackexchange.com/questions/247921/different-column-widths-under-a-multicolumn-prevent-appropriate-centering
-	%	\flushleft
+\begin{table}[h] % see http://tex.stackexchange.com/questions/247921/different-column-widths-under-a-multicolumn-prevent-appropriate-centering
 	\centering
 	\captionsetup{labelsep = none}
 	\caption[Korrelationen all]{\newline  \textit{Produkt-Moment-Korrelationen zwischen den aus der Spatial-Suppression- und der \gls{ha} regressionsanalytisch abgeleiteten Aufgabenparametern und dem \textit{z}-Wert des \gls{bist}s} \vspace{.2cm}}
 	\label{tab:suppression_hick_regression_correlations}
 	\begin{adjustbox}{width=1\textwidth}
-	\begin{threeparttable}
-%		\sisetup{table-space-text-post = $^{***}$}
-		\newlength{\tempdima}
-		\settowidth{\tempdima}{\gls{ha}}% compute width needed
-		\addtolength{\tempdima}{-2\tabcolsep}% minus default column sep
-		\newlength{\tempdimb}
-		\settowidth{\tempdimb}{\gls{ssauf}}% compute width needed
-		\addtolength{\tempdimb}{-2\tabcolsep}% minus default column sep
-		\begin{tabular}{
+		\begin{threeparttable}
+			\newlength{\tempdima}
+			\settowidth{\tempdima}{\gls{ha}}% compute width needed
+			\addtolength{\tempdima}{-2\tabcolsep}% minus default column sep
+			\newlength{\tempdimb}
+			\settowidth{\tempdimb}{\gls{ssauf}}% compute width needed
+			\addtolength{\tempdimb}{-2\tabcolsep}% minus default column sep
+			\begin{tabular}{
 				p{.1cm}
 				c
-				S[table-format = 1.2, add-integer-zero=false, table-space-text-post = $^{***}$]
-				S[table-format = 1.2, add-integer-zero=false, table-space-text-post = $^{***}$]
+				S[table-format = 1.2, add-integer-zero=false, table-space-text-post = $^{*}$]
+				S[table-format = 1.2, add-integer-zero=false, table-space-text-post = $^{**}$]
 				p{.001cm}
 				S[table-format = 1.2, add-integer-zero=false,table-space-text-post = $^{***}$]
 				S[table-format = 0.2, add-integer-zero=false]
 				p{.001cm}
 				S[table-format = 0.0, add-integer-zero=false]
 				>{\centering\arraybackslash}p{1.2cm}
-			}
+				}
 			\hline
-			
 				&		& 	\multicolumn{2}{c}{\gls{ha}}	&	&	\multicolumn{2}{c}{\gls{ssauf}}	&	&	\multicolumn{1}{c}{\gls{bist}}	\\
-			
 			\cline{3-4}
 			\cline{6-7}
 			\cline{9-9}
-			
-				&	{Parameter}		&	{\makebox[0.5\tempdima]{1}}	&	{\makebox[0.5\tempdima]{2}}		&&	{\makebox[0.5\tempdimb]{3}}				&	 {\makebox[0.5\tempdimb]{4}}			&&{5}\\
-			\hline
-			1	&	y-Achsenabschnitt		&					&			&& 					&					&&\\
-			2	&	Steigung		&	-.08{$^{***}$}	&			&& 					&					&&\\
-			\rule{0pt}{4ex}%  EXTRA vertical height
-			3	&	Asymptote		&	.16{$^{*}$}				&	.03		&&					&					&&\\
-			4	&	Steigung		&	-.02			&	-.03	&&	-.57{$^{***}$}			&					&&\\
-			\rule{0pt}{4ex}%  EXTRA vertical height
-			5	&	\textit{z}-Wert	&	-.17{$^{*}$}	&	-.23{$^{***}$}	&&	-.16{$^{*}$}	&	.00	&&\\
 
+			& {Parameter} & {\makebox[0.5\tempdima]{1}} & {\makebox[0.5\tempdima]{2}} && {\makebox[0.5\tempdimb]{3}} & {\makebox[0.5\tempdimb]{4}} && {5}\\
 			\hline
-			
-		\end{tabular}%
-		%}
-		\begin{tablenotes}[flushleft]
-			\footnotesize				% font size
-			\setlength\labelsep{0pt}	% no indent on second line
-%			\item \textit{Anmerkungen.} \textit{a}~=~Asymptote bei der \gls{ssauf}, Achsenabschnitt bei der \gls{ha}; \textit{b}~=~Steigung. \\
-			\item $^{*}p~<~.05$. $^{***}p~<~.001$ (zweiseitig).
-		\end{tablenotes}%
-	\end{threeparttable}%
-\end{adjustbox}
+		1	&	y-Achsenabschnitt	&				&					&& 					&		&&	\\
+		2	&	Steigung			&	-.08		&					&& 					&		&&	\\
+		\rule{0pt}{4ex}%  EXTRA vertical height
+		3	&	Asymptote			&	.16{$^{*}$}	&	.03				&&					&		&&	\\
+		4	&	Steigung			&	-.02		&	-.03			&&	-.57{$^{***}$}	&		&&	\\
+		\rule{0pt}{4ex}%  EXTRA vertical height
+		5	&	\textit{z}-Wert		&	-.17{$^{*}$}&	-.23{$^{**}$}	&&	-.16{$^{*}$}	&	.00	&&	\\
+			\hline
+			\end{tabular}
+
+			\begin{tablenotes}[flushleft]
+				\footnotesize				% font size
+				\setlength\labelsep{0pt}	% no indent on second line
+%				\item \textit{Anmerkungen.} \textit{a}~=~Asymptote bei der \gls{ssauf}, Achsenabschnitt bei der \gls{ha}; \textit{b}~=~Steigung. \\
+				\item $^{*}p~<~.05$. $^{**}p~<~.01$. $^{***}p~<~.001$ (zweiseitig).
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
 \end{table}
+
+Nachdem die Aufgabenparameter der \gls{ha} bestimmt waren, konnte der \gls{zwert} des \gls{bist} mit den Aufgabenparameter der Hick- und der \gls{ssauf} vorhergesagt werden. Für diese multiple Regressionsanalyse wurde die Gesamtstichprobe verwendet, weil die Analysen zum Einfluss des \gls{rmse}-Grenzwerts auf die Zusammenhänge der Aufgabenparameter mit dem \gls{zwert} kein eindeutiges Ergebnis lieferten (siehe \autoref{fig:spatial_suppression_rmse_cutoff} und \autoref{fig:hick_rmse_cutoff}). Um die Abhängigkeiten der Aufgabenparameter zwischen den beiden Aufgaben bei der Vorhersage des \gls{zwert}s zu berücksichtigen, wurden die Aufgabenparameter in Gruppen zusammengefasst und nacheinander blockweise in die multiple Regressionsanalyse aufgenommen. 
+
+Grundlage für die Beantwortung der Fragestellung bildete Modell 12, in welchem der \gls{zwert} des \gls{bist} alleinig mit den Aufgabenparametern der \gls{ha} vorhergesagt wurde (siehe \autoref{tab:multiple_regression_all_parameters}).
+Die Regressionsanalyse hat ergeben, dass bei einer Kontrolle für den Zusammenhang zwischen den Aufgabenparametern sowohl der y-Achsenabschnitt ($\upbeta=-.19$, $p=.009$) als auch die Steigung ($\upbeta=-.24$, $p<.001$) den \gls{zwert} signifikant vorhersagten. Gemeinsam erklärten sie $9\,\%$ der Varianz im \gls{zwert}, $F(2,\,174)=8.52$, $p<.001$, $R^2=.09$. Eine tiefer y-Achsenabschnitt und eine geringe Steigung gingen also tendenziell mit einem hohen \gls{zwert} einher.
+
+Model 13 beinhaltete als Prädiktoren die Aufgabenparameter der Hick- und der \gls{ssauf} (siehe \autoref{tab:multiple_regression_all_parameters}). Gemeinsam sagten die Prädiktoren den \gls{zwert} signifikant vorher und erklärten $12\,\%$ der Varianz im \gls{zwert}, $F(4,\,172)=5.58$, $p<.001$, $R^2=.12$. 
+
 
 
 
@@ -2286,42 +2273,42 @@ Betrachtet man die mit der Gesamtstichprobe ermittelten Ergebnisse, kann festgeh
 	\label{tab:multiple_regression_all_parameters}
 	\newcommand{\rowgroup}[1]{\hspace{-1em}#1}
 	\newcommand\Tstrut{\rule{0pt}{2.1ex}}       % top strut http://tex.stackexchange.com/questions/65919/space-between-rows-in-a-table - not implemented!
-		\begin{adjustbox}{width=1\textwidth}
-	\begin{threeparttable}
-		\begin{tabular}{
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{threeparttable}
+			\begin{tabular}{
 				>{\quad}
 				l
-				S[table-format = 1.4, add-integer-zero=false]
-				S[table-format = 1.4, add-integer-zero=false]
+				S[table-format = 1.4]
+				S[table-format = 0.4]
 				S[table-format = 1.2, add-integer-zero=false]
-				S[table-format = 0.2, add-integer-zero=false]
+				S[table-format = <0.3, add-integer-zero=false]
 				p{.001cm}
-				S[table-format = 1.2, add-integer-zero=false,table-space-text-post = $^{**}$]
+				S[table-format = 1.2, table-space-text-post = $^{***}$]
 				S[table-format = 0.2, add-integer-zero=false]
-				S[table-format = 1.2, add-integer-zero=false]
+				S[table-format = 1.2]
 				S[table-format = 0.2, add-integer-zero=false]
 				>{\centering\arraybackslash}p{1.2cm}
-			}
+				}
 			\hline
-			
+
 			{Prädiktor}	&	{\textit{B}}	&	{\textit{SE}(\textit{B})}	&	{$\upbeta$}	&	{$p$}	& &	{$F$}	&	{$R^2$}	& {$\Delta F$} & {$\Delta R^2$}	\\
-			
+
 			\hline
-			
-			\rowgroup{Modell 12}	&		&			&			&			&	&	4.40{$^{**}$}	&	.09		&					\\
-			H-y-Achsenabschnitt			&	0.0008	&	0.0020	&	.04		&	.70		&	&					&			&					\\
-			H-Steigung				&	-0.0027	&	0.0022	&	-.16	&	.22		&	&					&			&					\\
-			
+
+			\rowgroup{Modell 12}	&			&			&			&			&	&	8.52{$^{***}$}	&	.09		&					\\
+			H-y-Achsenabschnitt		&	-0.0037	&	0.0014	&	-.19	&	.009	&	&					&			&					\\
+			H-Steigung				&	-0.0058	&	0.0017	&	-.24	&	<.001	&	&					&			&					\\
+
 			\rule{0pt}{4ex}			%  EXTRA vertical height
-			
-			\rowgroup{Modell 13}	&		&			&			&			&	&	2.71{$^{**}$}	&	.11		& 1.02	&	.02		\\
-			H-y-Achsenabschnitt				&	0.0018	&	0.0021	&	.10		&	.40		&	&					&			&					\\
-			H-Steigung				&	-0.0031	&	0.0022	&	-.19	&	.16		&	&					&			&					\\
-			S-Asymptote				&	-0.0009	&	0.0014	&	-.09	&	.51		&	&					&			&					\\
-			S-Steigung				&	-0.0008	&	0.0010	&	-.11	&	.41		&	&					&			&					\\
+
+			\rowgroup{Modell 13}	&			&			&			&			&	&	5.58{$^{***}$}	&	.12		& 2.49	&	.03		\\
+			H-y-Achsenabschnitt		&	-0.0031	&	0.0014	&	-.16	&	.03		&	&					&			&					\\
+			H-Steigung				&	-0.0057	&	0.0017	&	-.24	&	.001	&	&					&			&					\\
+			S-Asymptote				&	-0.0037	&	0.0017	&	-.20	&	.03		&	&					&			&					\\
+			S-Steigung				&	-0.7887	&	0.5695	&	-.12	&	.17		&	&					&			&					\\
 			\hline
 		\end{tabular}
-		
+
 		\begin{tablenotes}[flushleft]
 			\footnotesize				% font size
 			\setlength\labelsep{0pt}	% no indent on second line
