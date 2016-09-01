@@ -231,7 +231,9 @@
 			pdfkeywords={psychometric intelligence, spatial suppression, mental speed, hick task, R, LaTeX}
 			}
 
+
 %\usepackage{cleveref}		% see http://tex.stackexchange.com/questions/62611/how-to-make-ref-references-include-the-word-figure	
+\usepackage{refcheck}
 
 % Setup for glossaries (must be placed AFTER the hyperref setup) ---------------------------
 \usepackage[xindy, toc, automake, acronym, shortcuts]{glossaries}		% load options (what is 'xindy' for?)
@@ -516,7 +518,7 @@ experimentellen und angewandte psychologie deutsch nachschauen (experimental psy
 
 \section{\gls{ssans} \label{sec:SpatialSuppression}}
 
-\section{Das Impurity-Problem \label{}}
+\section{Das Impurity-Problem }
 
 \section{Fragestellungen \label{sec:Fragestellungen}}
 
@@ -578,17 +580,17 @@ Die Sehwinkel der Muster wurden mit einer Kinnstütze, die $61$~cm vom Monitor e
 %Die räumliche Frequenz aller vertikal schwarz-grau gestreiften Mustergrössen betrug wie bei \citeauthor{Melnick2013} $1^{\circ}$ pro Periodenlänge.
 Der verwendete Ton wies bei einer Frequenz von $2900$~Hz und einer Lautstärke von $70$~dB eine Länge von $50$~ms auf.
 
-%\begin{figure}[htb]
-%	\centering
-%	\subfloat[Sehwinkel $= 1.8^{\circ}$][Sehwinkel $= 1.8^{\circ}$]{\includegraphics[width=0.48\textwidth]{../jpg/s1_a}}~~
-%	\subfloat[Sehwinkel $= 3.6^{\circ}$][Sehwinkel $= 3.6^{\circ}$]{\includegraphics[width=0.48\textwidth]{../jpg/s2_a}}
-%
-%	\subfloat[Sehwinkel $= 5.4^{\circ}$][Sehwinkel $= 5.4^{\circ}$]{\includegraphics[width=0.48\textwidth]{../jpg/s3_a}}~~
-%	\subfloat[Sehwinkel $= 7.2^{\circ}$][Sehwinkel $= 7.2^{\circ}$]{\includegraphics[width=0.48\textwidth]{../jpg/s4_a}}
-%
-%	\caption[Spatial-Suppression-Bedingungen]{Die vier Mustergrössen $(a - d)$ der \gls{ssauf}.}
-%	\label{fig:SpatialSuppression}
-%\end{figure}
+\begin{figure}[htb]
+	\centering
+	\subfloat[Sehwinkel $= 1.8^{\circ}$][Sehwinkel $= 1.8^{\circ}$]{\includegraphics[width=0.48\textwidth]{../jpg/s1_a}}~~
+	\subfloat[Sehwinkel $= 3.6^{\circ}$][Sehwinkel $= 3.6^{\circ}$]{\includegraphics[width=0.48\textwidth]{../jpg/s2_a}}
+
+	\subfloat[Sehwinkel $= 5.4^{\circ}$][Sehwinkel $= 5.4^{\circ}$]{\includegraphics[width=0.48\textwidth]{../jpg/s3_a}}~~
+	\subfloat[Sehwinkel $= 7.2^{\circ}$][Sehwinkel $= 7.2^{\circ}$]{\includegraphics[width=0.48\textwidth]{../jpg/s4_a}}
+
+	\caption[Spatial-Suppression-Bedingungen]{Die vier Mustergrössen $(a - d)$ der \gls{ssauf}.}
+	\label{fig:SpatialSuppression}
+\end{figure}
 
 \subsection{Versuchsablauf \label{subsec:Prozedur}}
 
@@ -624,124 +626,124 @@ Präsentiert wurde die Aufgabe auf dem in \autoref{sub:ssas} beschriebenen Compu
 
 Die Stimuli wurden mit E-Prime\textsuperscript{\textregistered} \citep{eprime} generiert. Die weissen Stimuli wurden auf einem schwarzen Hintergrund präsentiert, welcher eine Leuchtdichte von $2\,\textnormal{cd}/ \textnormal{m}^2$ aufwies. Der horizontale und vertikale Sehwinkel der verwendeten Rechtecke betrug $1.8^{\circ}$ respektive $1.5^{\circ}$. Die Rechtecke wurden auf dem Monitor zentriert dargeboten. Die Stimulianordnung der verwendeten Bedingungen sah folgendermassen aus (siehe \autoref{fig:Hick}):  In der $0$-Bit-Bedingung wurde ein Rechteck präsentiert. In der $1$-Bit-Bedingung wurden horizontal nebeneinander zwei Rechtecke präsentiert. Die beiden Rechtecke erschlossen zusammen einen horizontalen und vertikalen Sehwinkel von $4.5^{\circ}$ respektive $1.5^{\circ}$. In der $2$-Bit-Bedingung wurden in U-Form vier Rechtecke präsentiert. Die vier Rechtecke erschlossen gemeinsam einen horizontalen und vertikalen Sehwinkel von $7.5^{\circ}$ respektive $4.3^{\circ}$. In der $2.58$-Bit-Bedingung wurden zu den in U-Form angeordneten vier Rechtecken der $2$-Bit-Bedingung in der oberen Reihe je links und rechts ein Rechteck hinzugefügt. Die sechs Rechtecke erschlossen zusammen einen horizontalen und vertikalen Sehwinkel von $12.9^{\circ}$ respektive $4.3^{\circ}$. Der Sehwinkel des imperativen Reizes, einem \enquote{+}, betrug $0.5^{\circ}$ und wurde  immer in der Mitte eines Rechtecks präsentiert. Die Sehwinkel der Stimuli wurden mit einer Kinnstütze, die $61$ cm vom Monitor entfernt war, sichergestellt. Der verwendete Ton wies bei einer Frequenz von $1000$~Hz und einer Lautstärke von $70$~dB eine Länge von $200$~ms auf.
 
-%\begin{figure}[htbp]
-%	\centering
-%	\subfloat[0-Bit]		[0-Bit-Bedingung]	{
-%		\resizebox{.9\textwidth}{!}{
-%			\begin{tikzpicture}
-%			[scale=1, font=\sffamily, inner sep=0pt, baseline,
-%			manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%			invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%			visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
-%			
-%			\node [invisible]	at (0,0)							(3)	{};
-%			\node [invisible]	[right = 11mm of 3]	  				(4)	{};
-%			\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
-%			\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
-%			\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
-%			\node [invisible]	[right = 11mm of 5]	  				(6)	{};
-%			
-%			\node [manifest] at (1.5,1.5)							(9)	{\Huge $+$};
-%			
-%			\node [visual]		at (-5,-1)	{}							;
-%			\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
-%			
-%			\begin{scope}[on background layer]
-%				\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
-%			\end{scope}
-%			\end{tikzpicture}
-%}} \newline
-%
-%\subfloat[1-Bit]		[1-Bit-Bedingung]	{
-%	\resizebox{.9\textwidth}{!}{
-%		\begin{tikzpicture}
-%		[scale=1, font=\sffamily, inner sep=0pt,
-%		manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%		invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%		visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
-%		
-%		\node [invisible]	at (0,0)							(3)	{};
-%		\node [invisible]	[right = 11mm of 3]	  				(4)	{};
-%		\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
-%		\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
-%		\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
-%		\node [invisible]	[right = 11mm of 5]	  				(6)	{};
-%		
-%		\node [manifest] at (0,1.5)				(9)		{\Huge $+$}	;
-%		\node [manifest] [right = 11mm of 9] 	(10)	{}			;	
-%		
-%		\node [visual]		at (-5,-1)	{}							;
-%		\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
-%		
-%		\begin{scope}[on background layer]
-%		\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
-%		\end{scope}
-%		\end{tikzpicture}
-%	}} \newline
-%	
-%	\subfloat[2-Bit]		[2-Bit-Bedingung]	{
-%		\resizebox{.9\textwidth}{!}{
-%			\begin{tikzpicture}
-%			[scale=1, font=\sffamily, inner sep=0pt,
-%			manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%			invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%			visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
-%			
-%			\node [invisible]	at (0,0)							(3)	{};
-%			\node [invisible]	[right = 11mm of 3]	  				(4)	{};
-%			\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
-%			\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
-%			\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
-%			\node [invisible]	[right = 11mm of 5]	  				(6)	{};
-%			
-%			\node [manifest]	at (0,0)							(3)	{};
-%			\node [manifest]	[right = 11mm of 3]	  				(4)	{};
-%			\node [manifest]	[above left  = 15mm and -3mm of 3]	(2) {\Huge $+$};
-%			\node [manifest]	[above right = 15mm and -3mm of 4]	(5) {};	
-%			
-%			\node [visual]		at (-5,-1)	{}							;
-%			\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
-%			
-%			\begin{scope}[on background layer]
-%			\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
-%			\end{scope}
-%			\end{tikzpicture}
-%		}} \newline
-%		
-%		\subfloat[$2.58$-Bit]		[$2.58$-Bit-Bedingung]	{
-%			\resizebox{.9\textwidth}{!}{
-%				\begin{tikzpicture}
-%				[scale=1, font=\sffamily, inner sep=0pt,
-%				manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%				invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%				visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
-%				
-%				\node [invisible]	at (0,0)							(3)	{};
-%				\node [invisible]	[right = 11mm of 3]	  				(4)	{};
-%				\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
-%				\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
-%				\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
-%				\node [invisible]	[right = 11mm of 5]	  				(6)	{};
-%				
-%				\node [manifest]	at (0,0)							(3)	{};
-%				\node [manifest]	[right = 11mm of 3]	  				(4)	{};
-%				\node [manifest]	[above left  = 15mm and -3mm of 3]	(2) {};
-%				\node [manifest]	[above right = 15mm and -3mm of 4]	(5) {};
-%				\node [manifest]	[left  = 11mm of 2]	  				(1)	{};
-%				\node [manifest]	[right = 11mm of 5]	  				(6)	{\Huge $+$};
-%				
-%				\node [visual]		at (-5,-1)	{}							;
-%				\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
-%				
-%				\begin{scope}[on background layer]
-%				\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
-%				\end{scope}
-%				\end{tikzpicture}
-%			}} \newline
-%			
-%			\caption[Hick Bedingungen]{Die vier Bedingungen $(a - d)$ der \gls{ha}. }
-%			\label{fig:Hick}
-%\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\subfloat[0-Bit]		[0-Bit-Bedingung]	{
+		\resizebox{.9\textwidth}{!}{
+			\begin{tikzpicture}
+			[scale=1, font=\sffamily, inner sep=0pt, baseline,
+			manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+			invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+			visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
+			
+			\node [invisible]	at (0,0)							(3)	{};
+			\node [invisible]	[right = 11mm of 3]	  				(4)	{};
+			\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
+			\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
+			\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
+			\node [invisible]	[right = 11mm of 5]	  				(6)	{};
+			
+			\node [manifest] at (1.5,1.5)							(9)	{\Huge $+$};
+			
+			\node [visual]		at (-5,-1)	{}							;
+			\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
+			
+			\begin{scope}[on background layer]
+				\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
+			\end{scope}
+			\end{tikzpicture}
+}} \newline
+
+\subfloat[1-Bit]		[1-Bit-Bedingung]	{
+	\resizebox{.9\textwidth}{!}{
+		\begin{tikzpicture}
+		[scale=1, font=\sffamily, inner sep=0pt,
+		manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+		invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+		visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
+		
+		\node [invisible]	at (0,0)							(3)	{};
+		\node [invisible]	[right = 11mm of 3]	  				(4)	{};
+		\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
+		\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
+		\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
+		\node [invisible]	[right = 11mm of 5]	  				(6)	{};
+		
+		\node [manifest] at (0,1.5)				(9)		{\Huge $+$}	;
+		\node [manifest] [right = 11mm of 9] 	(10)	{}			;	
+		
+		\node [visual]		at (-5,-1)	{}							;
+		\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
+		
+		\begin{scope}[on background layer]
+		\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
+		\end{scope}
+		\end{tikzpicture}
+	}} \newline
+	
+	\subfloat[2-Bit]		[2-Bit-Bedingung]	{
+		\resizebox{.9\textwidth}{!}{
+			\begin{tikzpicture}
+			[scale=1, font=\sffamily, inner sep=0pt,
+			manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+			invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+			visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
+			
+			\node [invisible]	at (0,0)							(3)	{};
+			\node [invisible]	[right = 11mm of 3]	  				(4)	{};
+			\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
+			\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
+			\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
+			\node [invisible]	[right = 11mm of 5]	  				(6)	{};
+			
+			\node [manifest]	at (0,0)							(3)	{};
+			\node [manifest]	[right = 11mm of 3]	  				(4)	{};
+			\node [manifest]	[above left  = 15mm and -3mm of 3]	(2) {\Huge $+$};
+			\node [manifest]	[above right = 15mm and -3mm of 4]	(5) {};	
+			
+			\node [visual]		at (-5,-1)	{}							;
+			\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
+			
+			\begin{scope}[on background layer]
+			\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
+			\end{scope}
+			\end{tikzpicture}
+		}} \newline
+		
+		\subfloat[$2.58$-Bit]		[$2.58$-Bit-Bedingung]	{
+			\resizebox{.9\textwidth}{!}{
+				\begin{tikzpicture}
+				[scale=1, font=\sffamily, inner sep=0pt,
+				manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+				invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+				visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
+				
+				\node [invisible]	at (0,0)							(3)	{};
+				\node [invisible]	[right = 11mm of 3]	  				(4)	{};
+				\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
+				\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
+				\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
+				\node [invisible]	[right = 11mm of 5]	  				(6)	{};
+				
+				\node [manifest]	at (0,0)							(3)	{};
+				\node [manifest]	[right = 11mm of 3]	  				(4)	{};
+				\node [manifest]	[above left  = 15mm and -3mm of 3]	(2) {};
+				\node [manifest]	[above right = 15mm and -3mm of 4]	(5) {};
+				\node [manifest]	[left  = 11mm of 2]	  				(1)	{};
+				\node [manifest]	[right = 11mm of 5]	  				(6)	{\Huge $+$};
+				
+				\node [visual]		at (-5,-1)	{}							;
+				\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
+				
+				\begin{scope}[on background layer]
+				\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
+				\end{scope}
+				\end{tikzpicture}
+			}} \newline
+			
+			\caption[Hick Bedingungen]{Die vier Bedingungen $(a - d)$ der \gls{ha}. }
+			\label{fig:Hick}
+\end{figure}
 
 
 
@@ -763,7 +765,7 @@ Der imperative Reiz trat in der $1$-, $2$- und $2.58$-Bit-Bedingung für alle \g
 Pro Bedingung wurde für jede \gls{vp} der Mittelwert und die Standardabweichung aller korrekten Antworten bestimmt, die zwischen $100$ und $2500$~ms lagen. Basierend auf diesen Berechnungen wurden für jede \gls{vp} in jeder Bedingung diejenigen Durchgänge entfernt, welche eine \gls{rz} $\geq$ \gls{m} $+\,3\,\times$ \gls{sd} aufwiesen. Nach dieser intraindividuellen Ausreisserkontrolle wurden die verbliebenen Durchgänge innerhalb einer Bedingung gemittelt und für jede \gls{vp} als Leistungsmass der Bedingung der \gls{ha} verwendet.
 
 
-\section{Erfassung der psychometrischen Intelligenz \label{sec:Intelligenz}}
+\section{Erfassung der psychometrischen Intelligenz \label{sec:Erfassung_der_psychometrischen_Intelligenz}}
 
 \glsunset{bist} % see http://tex.stackexchange.com/questions/30167/suppress-the-glossary-expansion-at-first-occurance
 
@@ -999,12 +1001,6 @@ $$ \textnormal{RMSEA} = \sqrt{ \frac{\upchi^2_{m}-df_{m}}{df_{m}(N-1)} } $$
 
 \subsubsection*{\gls{srmr}}
 Das \gls{srmr} ist ein Mass dafür, wie hoch die durchschnittlichen Korrelationsresiduen der manifesten Variablen sind \citep{Kline2011}. Anders formuliert gibt das \gls{srmr} den durchschnittlichen Zusammenhang der manifesten Variablen wieder, welcher nicht durch das Modell erklärt werden kann. Das \gls{srmr} sollte möglichst nahe bei Null zu liegen kommen, was bedeutet, dass das theoretische Modell die empirische Var\-ianz-Ko\-var\-ianz\-ma\-trix angemessen abbildet. Gemäss \citet{Hu1999} kann ein \gls{srmr} $\leq.08$ als guter Modell-Fit interpretiert werden.
-
-
-
-
-
-
 
 
 
@@ -2096,6 +2092,7 @@ Die Bedingungen der \gls{ssauf} haben also auf Ebene der Aufgabenbedingungen kei
 
 
 
+
 \subsubsection*{Die Vorhersage psychometrischer Intelligenz durch die Aufgabenparameter der Hick- und \gls{ssauf}}
 
 Um den \gls{zwert} des \gls{bist} mit den abgeleiteten Aufgabenparametern beider Aufgaben vorherzusagen, mussten die Aufgabenparameter der \gls{ha} noch bestimmt werden (für die Bestimmung der Aufgabenparameter der \gls{ssauf} siehe \autoref{sec:2Fragestellung}). 
@@ -2459,14 +2456,14 @@ Der standardisierte Regressionskoeffizient zwischen der aus den vier Bedingungen
 
 \subsubsection*{Fixed-Links-Mess- und Strukturgleichungsmodell}
 
-Für die Analyse der Zusammenhänge auf latenter Ebene mittels Fixed-Links-Modellen musste für die \gls{ha} zuerst ein Fixed-Links\--Mess\-modell gefunden werden. Das Vorgehen bei der Bestimmung des Fixed-Links-Mess\-mod\-el\-ls war dabei identisch mit dem Vorgehen bei der Bestimmung des Fixed-Links-Mess\-mod\-el\-ls für die \gls{ssauf} (siehe \autoref{subsec:spatial_suppression_fixed_links_messmodell}). Alle Modell-Fits der in den folgenden Paragraphen berichteten \gls{flm}e sind in \autoref{tab:hick_fixed_links_modelle} aufgeführt.
+Für die Analyse der Zusammenhänge auf latenter Ebene mittels Fixed-Links-Modellen musste für die \gls{ha} zuerst ein Fixed-Links\--Mess\-modell gefunden werden. Das Vorgehen bei der Bestimmung des Fixed-Links-Mess\-mod\-el\-ls war dabei identisch mit dem Vorgehen bei der Bestimmung des Fixed-Links-Mess\-mod\-el\-ls für die \gls{ssauf} (siehe \autoref{subsec:spatial_suppression_fixed_links_messmodell}). Alle Modell-Fits der in den folgenden Paragraphen berichteten \gls{flm}e sind in \autoref{tab:fixed-links_measurement_models_hick} aufgeführt.
 
 \begin{table}[htb]
 	%\flushleft
 	\centering
 	\captionsetup{labelsep = none}
 	\caption[Fixed-Links-Messmodelle der \gls{ha}]{\newline  \textit{Modell-Fits der Fixed-Links-Messmodelle der \gls{ha}. Der Ladungsverlauf bezieht sich auf die unstandardisierten Faktorladungen der dynamischen latenten Variable. Die unstandardisierten Faktorladungen der konstanten latenten Variable betrugen immer 1} \vspace{.2cm}}
-	\label{tab:hick_fixed_links_modelle}
+	\label{tab:fixed-links_measurement_models_hick}
 	\begin{adjustbox}{width=1\textwidth, keepaspectratio}
 		\begin{threeparttable}
 			
@@ -2688,7 +2685,7 @@ fixed-links als Lösung für exponentielle Regression, da hats einfach ein paar 
 % R E F E R E N C E S 
 % =================================================================
 \renewcommand\bibname{Literatur}				% rename bibliography
-\bibliography{bib/PhilippLibrary}				% provide .bib file
+\bibliography{bib/Library}						% provide .bib file
 \addcontentsline{toc}{chapter}{Literatur}		% for a toc entry
 %../references
 
