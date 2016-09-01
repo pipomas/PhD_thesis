@@ -2526,6 +2526,7 @@ Modell 21 testete die Annahme, dass die Ladungen der unstandardisierten Faktorla
 Die unstandardisierten Faktorladungen der dynamischen latenten Variable von Modell 22 wurden mit einer logistischen Funktion bestimmt $\{y={1}/[{1 + e^{(-x/.8)}}],\,x\in\{-3,-1,1,3\}\}$. Verglichen mit den Modellen 17 bis 21 wich die von Modell 22 implizierte Var\-ianz-Ko\-var\-ianz\-ma\-trix am wenigsten von der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix ab. Der \gls{cst} war nicht signifikant und der \gls{cfi}, der \gls{rmsea} und das \gls{srmr} deuteten auf eine gute Modellpassung hin. 
 Die Varianz der konstanten latenten Variable betrug $653.98$ ($z=5.75$, $p<.001$) und die Varianz der dynamischen latenten Variable betrug $2573.97$ ($z=6.90$, $p<.001$). Die Skalierung der Varianzen \citep{Schweizer2011a} hat ergeben, dass die konstante latente Variable $39\,\%$ und die dynamische latente Variable $61\,\%$ von der in den mainfesten Variablen gemeinsamen Varianz band.
 
+
 \begin{figure}[htbp]
 	\centering
 	\begin{tikzpicture}
@@ -2544,20 +2545,20 @@ Die Varianz der konstanten latenten Variable betrug $653.98$ ($z=5.75$, $p<.001$
 	\node at (-1.5, 1.3)	[manifest]	(h2)	{2-bit};
 	\node at (-1.5, 0.5)	[manifest]	(h3)	{2.58-bit};
 	
-	\node at (-2.3, 2.9)	[error]		(e1)	{\footnotesize .10};
-	\node at (-2.3, 2.1)	[error]		(e2)	{\footnotesize .10};
-	\node at (-2.3, 1.3)	[error]		(e3)	{\footnotesize .05};
-	\node at (-2.3, .5)		[error]		(e4)	{\footnotesize .12};
+	\node at (-2.3, 2.9)	[error]		(e1)	{\footnotesize .19};
+	\node at (-2.3, 2.1)	[error]		(e2)	{\footnotesize .21};
+	\node at (-2.3, 1.3)	[error]		(e3)	{\footnotesize .14};
+	\node at (-2.3, .5)		[error]		(e4)	{\footnotesize .24};
 	
-	\draw [paths] (hk.west) -- (h0.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .95{$^{1}$}};
-	\draw [paths] (hk.west) -- (h1.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .90{$^{1}$}};
-	\draw [paths] (hk.west) -- (h2.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .81{$^{1}$}};
-	\draw [paths] (hk.west) -- (h3.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .66{$^{1}$}};
+	\draw [paths] (hk.west) -- (h0.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .90{$^{1}$}};
+	\draw [paths] (hk.west) -- (h1.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .81{$^{1}$}};
+	\draw [paths] (hk.west) -- (h2.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .50{$^{1}$}};
+	\draw [paths] (hk.west) -- (h3.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .40{$^{1}$}};
 	
-	\draw [paths] (hd.west) -- (h0.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .00{$^{0.02}$}};
-	\draw [paths] (hd.west) -- (h1.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .30{$^{0.22}$}};
-	\draw [paths] (hd.west) -- (h2.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .54{$^{0.78}$}};
-	\draw [paths] (hd.west) -- (h3.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .67{$^{0.98}$}};
+	\draw [paths] (hd.west) -- (h0.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .04{$^{0.02}$}};
+	\draw [paths] (hd.west) -- (h1.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .36{$^{0.22}$}};
+	\draw [paths] (hd.west) -- (h2.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .78{$^{0.78}$}};
+	\draw [paths] (hd.west) -- (h3.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize .78{$^{0.98}$}};
 	
 	\draw [paths] (e1) -- (h0.west);
 	\draw [paths] (e2) -- (h1.west);
@@ -2578,19 +2579,12 @@ Die standardisierten Regressionskoeffizienten betrugen zwischen der konstanten l
 
 
 
-BLABLABLA\\
-Tiefe Faktorwerte auf der konstanten latenten Variable waren also tendenziell mit höheren Faktorwerten im \gls{gfaktor} verbunden. Der standardisierte Regressionskoeffizient zwischen der dynamischen latenten Variable und dem \gls{gfaktor} betrug $\upbeta~=~-.08$ ($p~=~.43$).
 
 
 
 
 
-
-
-
-
-
-\begin{figure}[htbp]
+\begin{figure}[t]
 	\centering
 	\begin{tikzpicture}
 	[font=\sffamily, scale=2, inner sep=0pt,
@@ -2621,10 +2615,20 @@ Tiefe Faktorwerte auf der konstanten latenten Variable waren also tendenziell mi
 	\end{tikzpicture}
 
 	\vspace{.2cm}
-	\caption[Modell 23]{Modell 23: Latenter Zusammenhang zwischen dem Fixed-Links-Messmodell der \gls{ssauf} (\textsf{S}; Modell 8), dem Fixed-Links-Messmodell  der \gls{ha} (\textsf{H}; Modell 22) und dem \gls{gfaktor} aus dem \gls{bist}. Eingezeichnet sind die standardisierten Koeffizienten. Abgebildet ist das Strukturmodell. \textsf{\textsubscript{kon}} = konstante latente Variable; \textsf{\textsubscript{dyn}} = dynamische latente Variable.\\
+	\caption[Modell 23]{Modell 23: Latenter Zusammenhang zwischen dem Fixed-Links-Messmodell der \gls{ssauf} (\textsf{S}; Modell 8), dem Fixed-Links-Messmodell  der \gls{ha} (\textsf{H}; Modell 22) und dem \gls{gfaktor} aus dem \gls{bist}. Abgebildet ist das Strukturmodell. Eingezeichnet sind die standardisierten Koeffizienten. \textsf{\textsubscript{kon}} = konstante latente Variable; \textsf{\textsubscript{dyn}} = dynamische latente Variable.\\
 	$^{**}p~<~.01$.}
 	\label{fig:spatialsuppression_hick_fixedlinks_sem}
 \end{figure}
+
+
+
+
+BLABLABLA\\
+Tiefe Faktorwerte auf der konstanten latenten Variable waren also tendenziell mit höheren Faktorwerten im \gls{gfaktor} verbunden. Der standardisierte Regressionskoeffizient zwischen der dynamischen latenten Variable und dem \gls{gfaktor} betrug $\upbeta~=~-.08$ ($p~=~.43$).
+
+
+
+
 
 Abschliessend zur fünften Fragestellung kann Folgendes festgehalten werden: \ldots
 
