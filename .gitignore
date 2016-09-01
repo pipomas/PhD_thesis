@@ -1,5 +1,6 @@
 ## intentionally untracked files to ignore
-/README_files
+# files ==================================================================
+README.Rmd
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
