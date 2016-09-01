@@ -1,4 +1,5 @@
 ## intentionally untracked files to ignore
+/README_files
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
