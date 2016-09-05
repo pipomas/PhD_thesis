@@ -153,7 +153,7 @@
 \usepackage{tikz}					% load package
 \usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri} % load options
 \tikzstyle{every picture}+=[font=\sffamily]			% use sans serif font for tikz pictures -> http://tex.stackexchange.com/questions/4887/pgf-tikz-and-sans-serif-fonts
-\usepackage{subfig}																		% for subfigures. Loads caption package internally. 
+\usepackage[lofdepth=1]{subfig}															% for subfigures. Loads caption package internally. 
 \usepackage[singlelinecheck = off,labelsep = period]{caption} 							% -> caption is aligned with table
 \captionsetup[subfigure]{labelformat=simple, labelsep = period, listofformat=subsimple} % (a) -> a.
 \captionsetup[figure]{labelfont=it, labelsep = period}									% italic labelfont in figures
@@ -182,6 +182,32 @@
     \Huge\bfseries  \thechapter\quad #1\par\nobreak
     \vskip 40\p@
   }}
+\makeatother
+
+% Removes spacing in list of figures and tables -------------------------------
+% see http://tex.stackexchange.com/questions/69321/spacing-between-chapters-in-list-of-tables
+\makeatletter
+\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+	\if@mainmatter
+	\refstepcounter{chapter}%
+	\typeout{\@chapapp\space\thechapter.}%
+	\addcontentsline{toc}{chapter}%
+	{\protect\numberline{\thechapter}#1}%
+	\else
+	\addcontentsline{toc}{chapter}{#1}%
+	\fi
+	\else
+	\addcontentsline{toc}{chapter}{#1}%
+	\fi
+	\chaptermark{#1}%
+	%                    \addtocontents{lof}{\protect\addvspace{10\p@}}% NEW
+	%                    \addtocontents{lot}{\protect\addvspace{10\p@}}% NEW
+	\if@twocolumn
+	\@topnewpage[\@makechapterhead{#2}]%
+	\else
+	\@makechapterhead{#2}%
+	\@afterheading
+	\fi}
 \makeatother
 
 % Setup for bibliography with the 'apacite' package ----------------------------
@@ -240,7 +266,7 @@
 
 % Glossary entries --------------------------------------------------------
 \newglossaryentry{ssans}
-{	name=Spatial-Suppression-Ansatz,
+{	name=Spat\-ial-Sup\-pres\-sion-An\-satz,
 	description={is}}
 
 \newglossaryentry{ssauf}
@@ -260,7 +286,7 @@
 	description=}
 
 \newglossaryentry{msa}
-{name=Mental-Speed-An\-satz,
+{name=Mental-Spe\-ed-An\-satz,
 	description=is}
 
 \newglossaryentry{msm}
@@ -273,15 +299,15 @@
 	description=}
 
 \newglossaryentry{ha}
-{	name=Hick-Aufgabe,
+{	name=Hick-Auf\-gabe,
 	description=}
 
 \newglossaryentry{ita}
-{	name=Inspection-Time-Aufgabe,
+{	name=Inspection-Time-Auf\-gabe,
 	description=}
 
 \newglossaryentry{gfaktor}
-{	name= \textit{g}-Faktor,
+{	name= \textit{g}-Fak\-tor,
 	description=}
 
 \newglossaryentry{zwert}
@@ -455,6 +481,8 @@ DGP Richtlinien weisen auf folgende Punkte hin:
 \listoffigures									% insert lof
 \addcontentsline{toc}{chapter}{Abbildungen}		% add lof to toc
 
+
+
 % Insert the lot ---------------------------------------------------
 \renewcommand\listtablename{Tabellen}			% define name of lot
 \listoftables 									% insert lot
@@ -549,7 +577,7 @@ Der \gls{ssans} zur Erklärung individueller Intelligenzunterschiede ist neu und
 
 \section{Stichprobe \label{sec:Stichprobe}}
 
-An den Testungen haben $206$~\glspl{vp} teilgenommen, wovon $29$~\glspl{vp}~($14\,\%$) aufgrund von technischen Problemen, nicht auswertbarer Subtests oder im Vergleich zu den restlichen \glspl{vp} stark abweichenden Werten ausgeschlossen wurden (siehe \autoref{cha:AAnhang} für eine genaue Erläuterung der Vorgehensweise).
+An den Testungen haben $206$~\glspl{vp} teilgenommen, wovon $29$~\glspl{vp}~($14\,\%$) aufgrund von technischen Problemen, nicht auswertbarer Subtests oder im Vergleich zu den restlichen \glspl{vp} stark abweichenden Werten ausgeschlossen wurden (siehe \autoref{cha:Anhang_A} für eine genaue Erläuterung der Vorgehensweise).
 
 Analysiert wurden die Daten von $177$ \glspl{vp}. Die $116$ Frauen und $61$ Männer waren zwischen $18$ und $30$ Jahre alt und wiesen ein mittleres Alter $\pm$ \gls{sd} von $21.14\,\pm\,2.71$ Jahren auf. 
 Um eine bezüglich der Intelligenzausprägung heterogene Stichprobe zu erhalten, nahmen \glspl{vp} aus verschiedenen Bildungsgruppen an der Untersuchung teil:
@@ -573,7 +601,7 @@ Als Grundlage für die Aufgabe diente der \href{http://www.bcs.rochester.edu/peo
 \subsection{Apparatur und Material \label{sub:ssas}}
 Präsentiert wurde die Aufgabe auf einem ASUS Vento A2 Computer, der mit einem 2.6 GHz Prozessor, 4 GB Arbeitsspeicher und 512 MB Videospeicher (Nvidia GeForce 9800 GT) ausgestattet war. Als Betriebssystem diente Windows 7. Der verwendete ASUS VG248QE Monitor wies bei einer Bildschirmbreite von $53.2$ cm und einer Bildschirmhöhe von $29.9$ cm eine Auflösung von $1920 \times 1080$ Pixel auf. Er wurde linearisiert und mit einer Bildwiederholungsrate von 144 Hz betrieben. Die Antworten der \glspl{vp} wurden mit einer PC-Tastatur erfasst. 
 
-Die visuellen Reize wurden in MATLAB\textsuperscript{\textregistered} \citep{matlab} erzeugt. Die vertikal schwarz-grau gestreiften Muster (räumliche Frequenz von $1^{\circ}$ Sehwinkel pro Periode) wurden mit einem Kontrast von $99\,\%$ auf einem grauen Hintergrund präsentiert, welcher eine Leuchtdichte von $178\,\textnormal{cd}/ \textnormal{m}^2$ aufwies. Die Leuchtdichte des Raumes betrug in unmittelbarer Umgebung des Monitors $9\,\textnormal{cd}/ \textnormal{m}^2$. Die drei in \citet{Melnick2013} verwendeten Mustergrössen mit den Sehwinkeln  $1.8^{\circ}$, $3.6^{\circ}$ und $7.2^{\circ}$ wurden um die Mustergrösse von $5.4^{\circ}$ ergänzt, wodurch sich für diese Arbeit die Mustergrössen mit den Sehwinkeln $1.8^{\circ}$, $3.6^{\circ}$, $5.4^{\circ}$ und $7.2^{\circ}$ ergaben (siehe \autoref{fig:SpatialSuppression}). 
+Die visuellen Reize wurden in MATLAB\textsuperscript{\textregistered} \citep{matlab} erzeugt. Die vertikal schwarz-grau gestreiften Muster (räumliche Frequenz von $1^{\circ}$ Sehwinkel pro Periode) wurden mit einem Kontrast von $99\,\%$ auf einem grauen Hintergrund präsentiert, welcher eine Leuchtdichte von $178\,\textnormal{cd}/ \textnormal{m}^2$ aufwies. Die Leuchtdichte des Raumes betrug in unmittelbarer Umgebung des Monitors $9\,\textnormal{cd}/ \textnormal{m}^2$. Die drei in \citet{Melnick2013} verwendeten Mustergrössen mit den Sehwinkeln  $1.8^{\circ}$, $3.6^{\circ}$ und $7.2^{\circ}$ wurden um die Mustergrösse von $5.4^{\circ}$ ergänzt, wodurch sich für diese Arbeit die Mustergrössen mit den Sehwinkeln $1.8^{\circ}$, $3.6^{\circ}$, $5.4^{\circ}$ und $7.2^{\circ}$ ergaben (siehe \autoref{fig:spatial_suppression_stimuli}). 
 Die Sehwinkel der Muster wurden mit einer Kinnstütze, die $61$~cm vom Monitor entfernt war, sichergestellt. 
 %Die räumliche Frequenz aller vertikal schwarz-grau gestreiften Mustergrössen betrug wie bei \citeauthor{Melnick2013} $1^{\circ}$ pro Periodenlänge.
 Der verwendete Ton wies bei einer Frequenz von $2900$~Hz und einer Lautstärke von $70$~dB eine Länge von $50$~ms auf.
@@ -586,8 +614,8 @@ Der verwendete Ton wies bei einer Frequenz von $2900$~Hz und einer Lautstärke v
 	\subfloat[Sehwinkel $= 5.4^{\circ}$][Sehwinkel $= 5.4^{\circ}$]{\includegraphics[width=0.48\textwidth]{../jpg/s3_a}}~~
 	\subfloat[Sehwinkel $= 7.2^{\circ}$][Sehwinkel $= 7.2^{\circ}$]{\includegraphics[width=0.48\textwidth]{../jpg/s4_a}}
 
-	\caption[Spatial-Suppression-Bedingungen]{Die vier Mustergrössen $(a - d)$ der \gls{ssauf}.}
-	\label{fig:SpatialSuppression}
+	\caption[Die Spatial-Suppression-Bedingungen]{Die vier Mustergrössen $(a - d)$ der \gls{ssauf}.}
+	\label{fig:spatial_suppression_stimuli}
 \end{figure}
 
 \subsection{Versuchsablauf \label{subsec:Prozedur}}
@@ -622,7 +650,7 @@ Angelehnt an die Versuchsanordnung von \citet{Rammsayer2007} wurde als Mass für
 \subsection{Apparatur und Material \label{sub:}}
 Präsentiert wurde die Aufgabe auf dem in \autoref{sub:ssas} beschriebenen Computer, mit dem einzigen Unterschied, dass die Auflösung des Monitors für die \gls{ha} $1280 \times 1024$ Pixel betrug. Die Antworten der \glspl{vp} wurden mit einer Cedrus RB-830 Tastatur erfasst. 
 
-Die Stimuli wurden mit E-Prime\textsuperscript{\textregistered} \citep{eprime} generiert. Die weissen Stimuli wurden auf einem schwarzen Hintergrund präsentiert, welcher eine Leuchtdichte von $2\,\textnormal{cd}/ \textnormal{m}^2$ aufwies. Der horizontale und vertikale Sehwinkel der verwendeten Rechtecke betrug $1.8^{\circ}$ respektive $1.5^{\circ}$. Die Rechtecke wurden auf dem Monitor zentriert dargeboten. Die Stimulianordnung der verwendeten Bedingungen sah folgendermassen aus (siehe \autoref{fig:Hick}):  In der $0$-Bit-Bedingung wurde ein Rechteck präsentiert. In der $1$-Bit-Bedingung wurden horizontal nebeneinander zwei Rechtecke präsentiert. Die beiden Rechtecke erschlossen zusammen einen horizontalen und vertikalen Sehwinkel von $4.5^{\circ}$ respektive $1.5^{\circ}$. In der $2$-Bit-Bedingung wurden in U-Form vier Rechtecke präsentiert. Die vier Rechtecke erschlossen gemeinsam einen horizontalen und vertikalen Sehwinkel von $7.5^{\circ}$ respektive $4.3^{\circ}$. In der $2.58$-Bit-Bedingung wurden zu den in U-Form angeordneten vier Rechtecken der $2$-Bit-Bedingung in der oberen Reihe je links und rechts ein Rechteck hinzugefügt. Die sechs Rechtecke erschlossen zusammen einen horizontalen und vertikalen Sehwinkel von $12.9^{\circ}$ respektive $4.3^{\circ}$. Der Sehwinkel des imperativen Reizes, einem \enquote{+}, betrug $0.5^{\circ}$ und wurde  immer in der Mitte eines Rechtecks präsentiert. Die Sehwinkel der Stimuli wurden mit einer Kinnstütze, die $61$ cm vom Monitor entfernt war, sichergestellt. Der verwendete Ton wies bei einer Frequenz von $1000$~Hz und einer Lautstärke von $70$~dB eine Länge von $200$~ms auf.
+Die Stimuli wurden mit E-Prime\textsuperscript{\textregistered} \citep{eprime} generiert. Die weissen Stimuli wurden auf einem schwarzen Hintergrund präsentiert, welcher eine Leuchtdichte von $2\,\textnormal{cd}/ \textnormal{m}^2$ aufwies. Der horizontale und vertikale Sehwinkel der verwendeten Rechtecke betrug $1.8^{\circ}$ respektive $1.5^{\circ}$. Die Rechtecke wurden auf dem Monitor zentriert dargeboten. Die Stimulianordnung der verwendeten Bedingungen sah folgendermassen aus (siehe \autoref{fig:hick_stimuli}):  In der $0$-Bit-Bedingung wurde ein Rechteck präsentiert. In der $1$-Bit-Bedingung wurden horizontal nebeneinander zwei Rechtecke präsentiert. Die beiden Rechtecke erschlossen zusammen einen horizontalen und vertikalen Sehwinkel von $4.5^{\circ}$ respektive $1.5^{\circ}$. In der $2$-Bit-Bedingung wurden in U-Form vier Rechtecke präsentiert. Die vier Rechtecke erschlossen gemeinsam einen horizontalen und vertikalen Sehwinkel von $7.5^{\circ}$ respektive $4.3^{\circ}$. In der $2.58$-Bit-Bedingung wurden zu den in U-Form angeordneten vier Rechtecken der $2$-Bit-Bedingung in der oberen Reihe je links und rechts ein Rechteck hinzugefügt. Die sechs Rechtecke erschlossen zusammen einen horizontalen und vertikalen Sehwinkel von $12.9^{\circ}$ respektive $4.3^{\circ}$. Der Sehwinkel des imperativen Reizes, einem \enquote{+}, betrug $0.5^{\circ}$ und wurde  immer in der Mitte eines Rechtecks präsentiert. Die Sehwinkel der Stimuli wurden mit einer Kinnstütze, die $61$ cm vom Monitor entfernt war, sichergestellt. Der verwendete Ton wies bei einer Frequenz von $1000$~Hz und einer Lautstärke von $70$~dB eine Länge von $200$~ms auf.
 
 \begin{figure}[htbp]
 	\centering
@@ -739,8 +767,8 @@ Die Stimuli wurden mit E-Prime\textsuperscript{\textregistered} \citep{eprime} g
 				\end{tikzpicture}
 			}} \newline
 			
-			\caption[Hick Bedingungen]{Die vier Bedingungen $(a - d)$ der \gls{ha}. }
-			\label{fig:Hick}
+			\caption[Die Hick-Bedingungen]{Die vier Bedingungen $(a - d)$ der \gls{ha}. }
+			\label{fig:hick_stimuli}
 \end{figure}
 
 
@@ -768,13 +796,13 @@ Pro Bedingung wurde für jede \gls{vp} der Mittelwert und die Standardabweichung
 \glsunset{bist} % see http://tex.stackexchange.com/questions/30167/suppress-the-glossary-expansion-at-first-occurance
 
 
-Psychometrische Intelligenz wurde mit einer modifizierten Kurzversion des \acrlong{bist} \citep[\gls{bist};][]{Jaeger1997} erfasst. Die fähigkeitstheoretische Grundlage des Tests ist das integrativ konzipierte bimodale und hierarchische \gls{bism} von \citet[][siehe \autoref{fig:BIS}]{Jaeger1984}. 
+Psychometrische Intelligenz wurde mit einer modifizierten Kurzversion des \acrlong{bist} \citep[\gls{bist};][]{Jaeger1997} erfasst. Die fähigkeitstheoretische Grundlage des Tests ist das integrativ konzipierte bimodale und hierarchische \gls{bism} von \citet[][siehe \autoref{fig:bis_model}]{Jaeger1984}. 
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{png/BIS}
-	\caption[Das BIS]{Das BIS von \citet{Jaeger1984}.}
-	\label{fig:BIS}
+	\caption[Das Berliner Intelligenzstrukturmodell]{Das Berliner Intelligenzstrukturmodell von \citet{Jaeger1984}.}
+	\label{fig:bis_model}
 \end{figure} 
 
 Als integratives Modell ist das \gls{bism} zu bezeichnen, weil \citet{Jaeger1984} bei der Konstruktion des Modells versucht hat, die Vielfalt intellektueller Leistungsformen möglichst umfassend zu repräsentieren.
@@ -794,13 +822,12 @@ Auf höchster Hierarchiestufe des \gls{bism} steht als Integral aller sieben Fä
 Die von \citet{Jaeger1997} vorgeschlagene Kurzversion des \gls{bist} enthält $15$ Subtests. Die Operationen \gls{b}, \gls{M} und \gls{e} werden darin mit je einem Subtest pro Inhalt erfasst, wobei \gls{k} mit zwei Subtests pro Inhalt erfasst wird. Bei der Modellierung der Daten mittels Strukturgleichungsmodellen hätte dies bei der vorliegenden Arbeit zu einer Überrepräsentation von \gls{k} im \gls{gfaktor} geführt. Um dies zu vermeiden, wurden die Operationen \gls{b} und \gls{M} um je einen Subtest pro Inhalt angereichert. Grundlage für die Auswahl der Subtests bildeten die Erkenntnisse von \citet{Wicki2014}, wobei bei der Entscheidung über die Aufnahme der Subtests ökonomische (Bearbeitungszeit der Subtests) und teststatistische (Trennschärfe und Reliabilität der Subtests)  Gesichtspunkte berücksichtigt wurden. Die Kurzversion von \citet{Jaeger1997} wurde mit folgenden Subtests ergänzt: Klassifizieren von Wörtern, Old English, Rechen-Zeichen, Wege-Erinnern, Worte Merken und Zweistellige Zahlen. 
 \citet{Wicki2014} berichtet für diese modifizierte Kurzversion für die Operationen \gls{k}, \gls{b} und \gls{M} interne Konsistenzen von Cronbachs $\alpha=.61-.73$ und Konstruktreliabilitäten, gemessen mit \citeauthor{McDonald1999}'s \citeyearpar{McDonald1999} Omegakoeffizienten, von $\Omega = .58-.64$.
 Auf Subtests der Operation \gls{e} wurde gänzlich verzichtet, weil zum einen unklar ist, wie Einfallsreichtum und Intelligenz zusammenhängen \citep{Kim2005} und zum anderen weil \citet{Jaeger1997} unbefriedigende Objektivitätswerte berichten. 
-Alle eingesetzten Subtests, deren Beschreibung sowie Zuordnung zu den jeweiligen Operationen und Inhalte sind \autoref{tab:BIS} zu entnehmen.
+Alle eingesetzten Subtests, deren Beschreibung sowie Zuordnung zu den jeweiligen Operationen und Inhalte sind \autoref{tab:bis_subtest_description} zu entnehmen.
 
 \begin{sidewaystable}
-%	\begin{threeparttable}
 	\captionsetup{labelsep = none}
-	\caption[Die Subtests des BIS-Test]{\newline  \textit{Beschreibung und Reihenfolge der eingesetzten Subtests des \gls{bist}} \vspace{.2cm}}
-	\label{tab:BIS}
+	\caption[Die verwendeten Subtests des \gls{bist}s]{\newline  \textit{Beschreibung und Reihenfolge der eingesetzten Subtests des \gls{bist}s} \vspace{.2cm}}
+	\label{tab:bis_subtest_description}
 	\begin{adjustbox}{width=\textwidth,totalheight=.9\textheight,keepaspectratio}
 		\begin{threeparttable}
 			\begin{tabular}{l l c c c c p{.0001cm} c c c p{20cm}}
@@ -844,7 +871,7 @@ Alle eingesetzten Subtests, deren Beschreibung sowie Zuordnung zu den jeweiligen
 	\end{adjustbox}
 \end{sidewaystable}
 
-Die $19$ Subtests wurden den \glspl{vp} nach der in \autoref{tab:BIS} aufgeführten Reihenfolge vorgelegt und gemäss dem Manual des \gls{bist} instruiert. 
+Die $19$ Subtests wurden den \glspl{vp} nach der in \autoref{tab:bis_subtest_description} aufgeführten Reihenfolge vorgelegt und gemäss dem Manual des \gls{bist} instruiert. 
 Die Bearbeitung der Subtests dauerte insgesamt $50$ Minuten.
 Die Aufwärmaufgabe \gls{uw} wurde nicht ausgewertet. Die Rohwerte der restlichen $18$~Subtests wurden \textit{z}-standardisiert. 
 Für die Beantwortung der Fragestellungen 1 und 2 wurden alle $18$~\textit{z}-stand\-ard\-isier\-ten Subtests gemittelt. Dadurch resultierte für jede \glspl{vp} ein \textit{z}-standardisiertes Mittel ihrer Leistung. 
@@ -976,7 +1003,7 @@ Die Fragestellungen 3, 4 und 5 werden mittels konfirmatorischer Faktorenanalysen
 
 \subsubsection*{\gls{cst}}
 
-Der \gls{cst} ist ein Modelltest, der angibt, wie stark sich die theoretische, vom Modell implizierte Var\-ianz-Ko\-var\-ianz\-ma\-trix von der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix unterscheidet \citep{Kline2011}. Die dafür berechnete Teststatistik folgt in grossen Stichproben und unter der Voraussetzung der multivariaten Normalverteilung einer zentralen Chi Quad\-rat-Ver\-teil\-ung und wird deshalb auch als $\upchi^2_{m}$ bezeichnet. Die Freiheitsgrade für den $\upchi^2$-Test ergeben sich aus den Freiheitsgraden des zu testenden Modells ($df_{m}$). Wenn $\upchi^2_{m}=0$ ist, stimmt die empirische Var\-ianz-Ko\-var\-ianz\-ma\-trix mit der vom Modell implizierten Varianz-Kovarianzmatrix ohne Abweichung überein und die empirischen Daten passen perfekt zum theoretischen Modell. Bildet das Modell die Daten nicht gut ab, wird $\upchi^2_{m}>0$. Liegt $\upchi^2_{m}$ über dem kritischen $\upchi^2_{df}$, sind die Abweichungen zwischen der empirischen und der theoretischen Varianz-Kovarianzmatrix grösser als durch den Stichprobenfehler erwartet, und die Nullhypothese wird verworfen. Wenn ein korrekt spezifiziertes Modell mit mehreren Zufallsstichproben geprüft wird, liegt der Erwartungswert von $\upchi^2_{m}$ bei $df_{m}$ und $\upchi^2_{m}$ würde bei einem $\alpha$-Fehler von $5\,\%$ bei 19 von 20 Stichproben im nicht-signifikanten Bereich liegen.
+Der \gls{cst} ist ein Modelltest, der angibt, wie stark sich die theoretische, vom Modell implizierte Var\-ianz-Ko\-var\-ianz\-ma\-trix von der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix unterscheidet \citep{Kline2011}. Die dafür berechnete Teststatistik folgt in grossen Stichproben und unter der Voraussetzung der multivariaten Normalverteilung einer zentralen Chi Quad\-rat-Ver\-teil\-ung und wird deshalb auch als $\upchi^2_{m}$ bezeichnet. Die Freiheitsgrade für den $\upchi^2$-Test ergeben sich aus den Freiheitsgraden des zu testenden Modells ($df_{m}$). Wenn $\upchi^2_{m}=0$ ist, stimmt die empirische Var\-ianz-Ko\-var\-ianz\-ma\-trix mit der vom Modell implizierten Varianz-Kovarianzmatrix ohne Abweichung überein und die empirischen Daten passen perfekt zum theoretischen Modell. Bildet das Modell die Daten nicht gut ab, wird $\upchi^2_{m}>0$. Liegt $\upchi^2_{m}$ über dem kritischen $\upchi^2_{df}$, sind die Abweichungen zwischen der empirischen und der theoretischen Varianz-Kovarianzmatrix grösser als durch den Stichprobenfehler erwartet, und die Nullhypothese wird verworfen. Wenn ein korrekt spezifiziertes Modell mit mehreren Zufallsstichproben geprüft wird, liegt der Erwartungswert von $\upchi^2_{m}$ bei $df_{m}$ und $\upchi^2_{m}$ würde bei einem $\upalpha$-Fehler von $5\,\%$ bei 19 von 20 Stichproben im nicht-signifikanten Bereich liegen.
 
 Bei der Bewertung der berichteten konfirmatorischen Faktorenanalysen wurde das Ergebnis des Modelltests (im Vergleich zu den weiter unten beschriebenen Kennwerten) am stärksten gewichtet. Diese Art der Modellbeurteilung entspricht der Vorstellung von Jöreskog \citep[1985, zitiert nach][S. 1620]{McIntosh2012}, der sich dafür aussprach alle andere Kennwerte weniger zu gewichten \citep[siehe auch][]{Hayduk2007}.
 
@@ -1024,7 +1051,7 @@ Die Streudiagramme der $82\,\%$-Er\-ken\-nungs\-schwel\-len sind in \autoref{fig
 \begin{table}[b]
 	\centering
 %	\captionsetup{font = small}
-	\caption[Deskriptive Angaben zu \gls{ssauf}]{\newline \textit{Deskriptive Angaben zu den $82\,\%$-Erkennungsschwellen der \gls{ssauf} in Millisekunden (Mittelwert, Standardabweichung, Minimum, Maximum) sowie Kennwerte zur Verteilungsform und der Reliabilität der Daten} \vspace{.2cm}}
+	\caption[Deskriptive Angaben zu den $82\,\%$-Erkennungsschwellen in der \gls{ssauf}]{\newline \textit{Deskriptive Angaben zu den $82\,\%$-Erkennungsschwellen der \gls{ssauf} in Millisekunden (Mittelwert, Standardabweichung, Minimum, Maximum) sowie Kennwerte zur Verteilungsform und der Reliabilität der Daten} \vspace{.2cm}}
 	\label{tab:spatial_suppression_descriptives}
 	\begin{adjustbox}{width=1\textwidth}
 		\begin{threeparttable}
@@ -1064,25 +1091,25 @@ Die Streudiagramme der $82\,\%$-Er\-ken\-nungs\-schwel\-len sind in \autoref{fig
 	\begin{adjustbox}{width=1\textwidth} 
 		\input{tikzDevice/spatial_suppression_scatterplot.tex}
 	\end{adjustbox}
-	\caption[Streudiagramm der \gls{ssauf}]{Streudiagramme der $82\,\%$-Erkennungsschwellen für horizontale Bewegung in der \gls{ssauf}. Die horizontale Linie kennzeichnet jeweils den Mittelwert innerhalb einer Bedingung (siehe \autoref{tab:spatial_suppression_descriptives}). Siehe \autoref{cha:AAnhang} für eine Beschreibung der Ausreisserkontrolle. Vp = Versuchsperson.}
+	\caption[Streudiagramme der $82\,\%$-Erkennungsschwellen in der \gls{ssauf}]{Streudiagramme der $82\,\%$-Erkennungsschwellen für horizontale Bewegung in der \gls{ssauf}. Die horizontale Linie kennzeichnet jeweils den Mittelwert innerhalb einer Bedingung (siehe \autoref{tab:spatial_suppression_descriptives}). Siehe \autoref{cha:Anhang_A} für eine Beschreibung der Ausreisserkontrolle. Vp = Versuchsperson.}
 	\label{fig:spatial_suppression_scatterplot}
 \end{figure}
 
-Als erstes wurde geprüft, ob die experimentelle Manipulation (die Mustergrösse) einen Einfluss auf die abhängige Variable (die $82\,\%$-Er\-ken\-nungs\-schwel\-le) ausübte. Dafür wurde eine einfaktorielle Varianzanalyse mit Messwiederholung\footnote{Die Abweichung der Daten von der Normalverteilung (siehe Kennwerte zur Verteilung in \autoref{tab:spatial_suppression_descriptives}) erforderten eigentlich verteilungsfreien Analyseverfahren. Da die Ergebnisse dieser nonparametrischen Analyseverfahren aber nicht bedeutend von den mit parametrischen Verfahren ermittelten Ergebnissen abwichen, werden im Folgenden die Ergebnisse der traditionellen (parametrischen) Verfahren berichtet. Siehe \autoref{cha:BAnhang} für die Analyse der Aufgaben mittels nonparametrischer Verfahren.}
+Als erstes wurde geprüft, ob die experimentelle Manipulation (die Mustergrösse) einen Einfluss auf die abhängige Variable (die $82\,\%$-Er\-ken\-nungs\-schwel\-le) ausübte. Dafür wurde eine einfaktorielle Varianzanalyse mit Messwiederholung\footnote{Die Abweichung der Daten von der Normalverteilung (siehe Kennwerte zur Verteilung in \autoref{tab:spatial_suppression_descriptives}) erforderten eigentlich verteilungsfreien Analyseverfahren. Da die Ergebnisse dieser nonparametrischen Analyseverfahren aber nicht bedeutend von den mit parametrischen Verfahren ermittelten Ergebnissen abwichen, werden im Folgenden die Ergebnisse der traditionellen (parametrischen) Verfahren berichtet. Siehe \autoref{cha:Anhang_B} für die Analyse der Aufgaben mittels nonparametrischer Verfahren.}
 gerechnet. Weil Sphärizität gemäss einem Mauchly-Test nicht gegeben war, $\upchi^2(5)=202.12$, $p<.001$, wurden die Freiheitsgrade des \textit{F}-Tests mit der Greenhouse-Geisser-Methode korrigiert ($\hat{\varepsilon}=.55$).
 Der \textit{F}-Test hat ergeben, dass die Unterschiede zwischen den Bedingungsmittelwerten signifikant von 0 abwichen, $F(1.65,\,290.40)=275.26$, $p<.001$, $\eta_{G}^2=.27$. Der Effekt der Mustergrösse auf die $82\,\%$-Erkennungsschwelle konnte dabei gemäss generalisiertem $\eta_{G}^2$ \citep{Olejnik2003} als gross bezeichnet werden \citep[S. 383]{Bakeman2005}.
 Um zu erfahren, ob sich alle oder nur bestimmte Mittelwertpaare signifikant voneinander unterschieden, wurden post hoc alle Mittelwerte miteinander verglichen.
 Tukey-Tests haben gezeigt, dass sich alle Mittelwertpaare signifikant voneinander unterschieden (alle \textit{p}s $<.001$).
 Die $82\,\%$-Er\-ken\-nungs\-schwel\-len der \glspl{vp} verschlechterte sich also mit zunehmender Mustergrösse signifikant.
 Die Effektstärken für die Mittelwertsunterschiede wurden mit Cohens \textit{d} für abhängige Stichproben \citep{Gibbons1993} bestimmt. 
-Dabei hat sich gezeigt, dass die Effektstärken im mittleren bis hohen Bereich \citep[][S. 40]{Cohen1988} lagen (siehe \autoref{tab:effect_sizes_spatial_suppression}). 
+Dabei hat sich gezeigt, dass die Effektstärken im mittleren bis hohen Bereich \citep[][S. 40]{Cohen1988} lagen (siehe \autoref{tab:spatial_suppression_effect_sizes}). 
 
 \begin{table}[htbp]
 	\centering
 	\setlength{\tabcolsep}{10pt}
 	\captionsetup{labelsep = none}
-	\caption[Effektstärken zwischen den Bed SS]{\newline \textit{Effektstärken (Cohens \textit{d} für abhängige Stichproben) der Mittelwertunterschiede in der \gls{ssauf}} \vspace{.2cm}}
-	\label{tab:effect_sizes_spatial_suppression}
+	\caption[Effektstärken für die Mittelwertsunterschiede in der \gls{ssauf}]{\newline \textit{Effektstärken (Cohens \textit{d} für abhängige Stichproben) der Mittelwertunterschiede in der \gls{ssauf}} \vspace{.2cm}}
+	\label{tab:spatial_suppression_effect_sizes}
 	\sisetup{table-number-alignment = center}
 	\begin{threeparttable}
 		\begin{tabular}{
@@ -1141,7 +1168,7 @@ Mittelwerte, Verteilungsangaben und die Reliabilitäten der Bedingungen lassen s
 	\begin{adjustbox}{width=1\textwidth}
 		\input{tikzDevice/hick_scatterplot.tex}
 	\end{adjustbox}
-	\caption[Streudiagramm der \gls{ha}]{Streudiagramme der mittleren Reaktionszeiten in der \gls{ha}. Die horizontale Linie kennzeichnet jeweils den Mittelwert innerhalb einer Bedingung (siehe \autoref{tab:hick_descriptives}). Siehe \autoref{subsec:hick_Versuchsablauf} für eine Beschreibung der Datenaufbereitung. Vp = Versuchsperson.}
+	\caption[Streudiagramme der Reaktionszeiten in der \gls{ha}]{Streudiagramme der mittleren Reaktionszeiten in der \gls{ha}. Die horizontale Linie kennzeichnet jeweils den Mittelwert innerhalb einer Bedingung (siehe \autoref{tab:hick_descriptives}). Siehe \autoref{subsec:hick_Versuchsablauf} für eine Beschreibung der Datenaufbereitung. Vp = Versuchsperson.}
 	\label{fig:hick_scatterplot}
 \end{figure}
 
@@ -1189,14 +1216,14 @@ Weil Sphärizität gemäss einem Mauchly-Test nicht gegeben war, $\upchi^2(5)=21
 Um zu erfahren, ob sich alle oder nur bestimmte Mittelwertpaare signifikant voneinander unterschieden, wurden post hoc alle Mittelwerte miteinander verglichen.
 Tukey-Tests haben gezeigt, dass sich alle Mittelwertpaare signifikant voneinander unterschieden (alle \textit{p}s $<.001$).
 Die Reaktionszeit der \glspl{vp} erhöhte sich also mit zunehmender Anzahl Antwortalternativen signifikant.
-Die Effektstärken für die Mittelwertsunterschiede wurden mit Cohens \textit{d} für abhängige Stichproben \citep{Gibbons1993} bestimmt und lagen alle im hohen Bereich \citep[][S. 40; siehe \autoref{tab:effect_sizes_hick}]{Cohen1988}.
+Die Effektstärken für die Mittelwertsunterschiede wurden mit Cohens \textit{d} für abhängige Stichproben \citep{Gibbons1993} bestimmt und lagen alle im hohen Bereich \citep[][S. 40; siehe \autoref{tab:hick_effect_sizes}]{Cohen1988}.
 
 \begin{table}[htbp]
 	\centering
 	\setlength{\tabcolsep}{10pt}
 	\captionsetup{labelsep = none}
-	\caption[Effektstärken zwischen den Bed Hick]{\newline \textit{Effektstärken (Cohens \textit{d} für abhängige Stichproben) der Mittelwertunterschiede in der \gls{ha}} \vspace{.2cm}}
-	\label{tab:effect_sizes_hick}
+	\caption[Effektstärken für die Mittelwertsunterschiede in der \gls{ha}]{\newline \textit{Effektstärken (Cohens \textit{d} für abhängige Stichproben) der Mittelwertunterschiede in der \gls{ha}} \vspace{.2cm}}
+	\label{tab:hick_effect_sizes}
 	\sisetup{table-number-alignment = center}
 	\begin{threeparttable}
 		\begin{tabular}{
@@ -1227,22 +1254,23 @@ Die Effektstärken für die Mittelwertsunterschiede wurden mit Cohens \textit{d}
 	\end{threeparttable}
 \end{table}
 
-Produkt-Moment-Korrelationen zwischen den vier Bedingungen der \gls{ha} sind in \autoref{tab:product_moment_correlations_manifest} abgetragen. Sie deuteten auf stark positive Zusam\-men\-hänge zwischen den Bedingungen hin. Die Zusammenhänge zwischen der 0-bit-, der 1-bit- und der 2-bit Bedingung waren dabei etwa gleich stark wie bei \citet{Schweizer2006a}.
+Produkt-Moment-Korrelationen zwischen den vier Bedingungen der \gls{ha} sind in \autoref{tab:product_moment_correlations_manifest} abgetragen. Sie deuteten auf stark positive Zusam\-men\-hänge zwischen den Bedingungen hin. 
+%Die Zusammenhänge zwischen der 0-bit-, der 1-bit- und der 2-bit Bedingung waren dabei etwa gleich stark wie bei \citet{Schweizer2006a}.
 
 \FloatBarrier
 \subsection{BIS-Test}
 
-Deskriptive Angaben zu den Subtests des \gls{bist} sind in \autoref{tab:BIS_descriptives} zu finden.
-Wie aufgrund der Modellannahmen des \gls{bist} zu erwarten war, liessen sich zwischen der Mehrheit der Subtests signifikante, positive Zusammenhänge beobachten (siehe \autoref{tab:product_correlations_BIS}). Diese Zusammenhänge bildeten die Voraussetzung für die Beantwortung der dritten, vierten und fünften Fragestellung, bei welchen aus den Aufgaben des \gls{bist} mit Hilfe von Faktorenanalysen ein \gls{gfaktor} extrahiert wurde.
+Deskriptive Angaben zu den Subtests des \gls{bist} sind in \autoref{tab:bis_descriptives} zu finden.
+Wie aufgrund der Modellannahmen des \gls{bist} zu erwarten war, liessen sich zwischen der Mehrheit der Subtests signifikante, positive Zusammenhänge beobachten (siehe \autoref{tab:bis_product_correlations}). Diese Zusammenhänge bildeten die Voraussetzung für die Beantwortung der dritten, vierten und fünften Fragestellung, bei welchen aus den Aufgaben des \gls{bist} mit Hilfe von Faktorenanalysen ein \gls{gfaktor} extrahiert wurde.
 
-Der \gls{zwert} des \gls{bist}, gebildet als Mittelwert aller $18$ \textit{z}-stand\-ard\-isier\-ter Subtests, wies einen Mittelwert $\pm$ Standardabweichung von $0.02\,\pm\,0.53$ auf (Minimum $= -1.60$, Maximum $= 1.40$). Die Verteilung der \gls{zwert}s (siehe \autoref{fig:zwert_density}) hatte eine negative Schiefe ($-0.02$) und eine positive Kurtosis ($0.16$), wich damit aber gemäss einem Shapiro-Wilk-Test  nicht signifikant von der Normalverteilung ab ($p=.82$).
+Der \gls{zwert} des \gls{bist}s, gebildet als Mittelwert aller $18$ \textit{z}-stand\-ard\-isier\-ter Subtests, wies einen Mittelwert $\pm$ Standardabweichung von $0.02\,\pm\,0.53$ auf (Minimum $= -1.60$, Maximum $= 1.40$). Die Verteilung der \gls{zwert}s (siehe \autoref{fig:bis_zscore_density}) hatte eine negative Schiefe ($-0.02$) und eine positive Kurtosis ($0.16$), wich damit aber gemäss einem Shapiro-Wilk-Test  nicht signifikant von der Normalverteilung ab ($p=.82$).
 
 \begin{table}[!t]
 	%\flushleft
 	\centering
 	\captionsetup{labelsep = none}
-	\caption[Deskriptive Angaben zur ]{\newline  \textit{Deskriptive Angaben zur Anzahl richtig gelöster Items der Subtests im \gls{bist} (Mittelwert, Standardabweichung, Minimum, Maximum) und Kennwerte zur Verteilungsform der Daten} \vspace{.2cm}}
-	\label{tab:BIS_descriptives}
+	\caption[Deskriptive Angaben zur Anzahl richtig gelöster Items der Subtests im \gls{bist}]{\newline  \textit{Deskriptive Angaben zur Anzahl richtig gelöster Items der Subtests im \gls{bist} (Mittelwert, Standardabweichung, Minimum, Maximum) und Kennwerte zur Verteilungsform der Daten} \vspace{.2cm}}
+	\label{tab:bis_descriptives}
 	\begin{adjustbox}{width=.82\textwidth,keepaspectratio} %totalheight=1\textheight,
 	\begin{threeparttable}
 		\begin{tabular}{
@@ -1284,7 +1312,7 @@ Der \gls{zwert} des \gls{bist}, gebildet als Mittelwert aller $18$ \textit{z}-st
 		\begin{tablenotes}[flushleft]
 			\footnotesize				% font size
 			\setlength\labelsep{0pt}	% no indent on second line
-			\item \textit{Anmerkungen.} Siehe \autoref{tab:BIS} für eine Beschreibung der Subtests.
+			\item \textit{Anmerkungen.} Siehe \autoref{tab:bis_subtest_description} für eine Beschreibung der Subtests.
 			Min~=~Minimum; Max~=~Maximum; S-W~=~Shapiro-Wilk-Test.
 		\end{tablenotes}
 	\end{threeparttable}
@@ -1297,14 +1325,14 @@ Der \gls{zwert} des \gls{bist}, gebildet als Mittelwert aller $18$ \textit{z}-st
 	\begin{adjustbox}{width=1\textwidth}
 		\input{tikzDevice/bis_density.tex}
 	\end{adjustbox}
-	\caption[Dichtefunktion des \gls{bist} \gls{zwert}]{Dichtefunktion des \gls{bist} \gls{zwert}s. Der \gls{zwert} wurde als Mittelwert aller 18 \textit{z}-standardisierter Subtests gebildet. Alle Datenpunkte sind auf der x-Achse mit vertikalen Strichen markiert.}
-	\label{fig:zwert_density}
+	\caption[Dichtefunktion des \gls{zwert}s aus dem \gls{bist}]{Dichtefunktion des \gls{bist} \gls{zwert}s. Der \gls{zwert} wurde als Mittelwert aller 18 \textit{z}-standardisierter Subtests gebildet. Alle Datenpunkte sind auf der x-Achse mit vertikalen Strichen markiert.}
+	\label{fig:bis_zscore_density}
 \end{figure}
 
 \begin{sidewaystable}
 	\captionsetup{labelsep = none}
-	\caption[Zusammenhänge zwischen den Subtests]{\newline  \textit{Produkt-Moment-Korrelationen zwischen den Subtests des \gls{bist}} \vspace{.2cm}}
-	\label{tab:product_correlations_BIS}
+	\caption[Produkt-Moment-Korrelationen zwischen den Subtests des \gls{bist}s]{\newline  \textit{Produkt-Moment-Korrelationen zwischen den Subtests des \gls{bist}s} \vspace{.2cm}}
+	\label{tab:bis_product_correlations}
 	\sisetup{table-space-text-post = $^{*ab}$}
 	\begin{adjustbox}{width=1\textwidth,totalheight=1\textheight,keepaspectratio}
 		\begin{threeparttable}
@@ -1358,7 +1386,7 @@ Der \gls{zwert} des \gls{bist}, gebildet als Mittelwert aller $18$ \textit{z}-st
 			\begin{tablenotes}[flushleft]
 				\footnotesize				% font size
 				\setlength\labelsep{0pt}	% no indent on second line
-				\item \textit{Anmerkung.} Siehe \autoref{tab:BIS} für eine Beschreibung der Subtests.
+				\item \textit{Anmerkung.} Siehe \autoref{tab:bis_subtest_description} für eine Beschreibung der Subtests.
 				\item {$^{*}$}$p<.05$. {$^{**}$}$p<.01$. {$^{***}$}$p<.001$ (zweiseitig).
 			\end{tablenotes}
 		\end{threeparttable}
@@ -1378,12 +1406,12 @@ Weiter korrelierte einzig die 0-bit-Bedingung der \gls{ha} signifikant mit der $
 
 Die Bedingungen der \gls{ha} korrelierten erwartungsgemäss signifikant negativ mit psychometrischer Intelligenz \citep[$r=-.19$ bis $-.28$, alle $p\textnormal{s}<.05$; vgl. ][]{Sheppard2008}.
 
-Die Bedingungen der \gls{ssauf} korrelierten mit Ausnahme des Zusammenhangs zwischen der $7.2^{\circ}$-Bedingung und dem \gls{zwert} des \gls{bist} ($r=-.12$, $p=.10$) alle signifikant negativ mit psychometrischer Intelligenz ($r=-.16$ bis $-.19$, alle $p\textnormal{s}<.05$).
+Die Bedingungen der \gls{ssauf} korrelierten mit Ausnahme des Zusammenhangs zwischen der $7.2^{\circ}$-Bedingung und dem \gls{zwert} des \gls{bist}s ($r=-.12$, $p=.10$) alle signifikant negativ mit psychometrischer Intelligenz ($r=-.16$ bis $-.19$, alle $p\textnormal{s}<.05$).
 
 \begin{sidewaystable}
 	\centering
 	\captionsetup{labelsep = none}
-	\caption[Korrelationen zwischen den drei Aufgaben]{\newline  \textit{Produkt-Moment-Korrelationen zwischen den Bedingungen der \gls{ssauf}, dem \gls{si}, den Bedingungen der \gls{ha}, dem \textit{z}-Wert und dem \gls{gfaktor} des \gls{bist}} \vspace{.2cm}}
+	\caption[Produkt-Moment-Korrelationen zwischen der \gls{ssauf}, dem \gls{si}, der \gls{ha}, dem \textit{z}-Wert und dem \gls{gfaktor} des \gls{bist}s]{\newline  \textit{Produkt-Moment-Korrelationen zwischen den Bedingungen der \gls{ssauf}, dem \gls{si}, den Bedingungen der \gls{ha}, dem \textit{z}-Wert und dem \gls{gfaktor} des \gls{bist}s} \vspace{.2cm}}
 	\label{tab:product_moment_correlations_manifest}
 	\sisetup{table-space-text-post = $^{***}$}
 %	\begin{adjustbox}{width=.90\textwidth, keepaspectratio}
@@ -1461,7 +1489,7 @@ Dabei hat sich ergeben, dass sich der in der vorliegenden Arbeit ermittelte Korr
 	\begin{adjustbox}{width=1\textwidth}
 		\input{tikzDevice/si_intelligence_scatterplot.tex}
 	\end{adjustbox}
-	\caption[Zusammenhang zwischen \gls{si} und \gls{zwert} des \gls{bist}]{Streudiagramm des Zusammenhangs zwischen dem \gls{si} und dem \gls{zwert} aus dem \gls{bist} ($r=.00$, $p=.98$).}
+	\caption[Zusammenhang zwischen dem \gls{si} und \gls{zwert} des \gls{bist}s]{Streudiagramm des Zusammenhangs zwischen dem \gls{si} und dem \gls{zwert} aus dem \gls{bist} ($r=.00$, $p=.98$).}
 	\label{fig:suppression_index_zscore_scatterplot}
 \end{figure}
 
@@ -1494,7 +1522,7 @@ Für jede \gls{vp} wurden die vier $82\,\%$-Erkennungsschwellen mit einer expone
 	%\flushleft
 	\centering
 	\captionsetup{labelsep = none}
-	\caption[Deskriptive Angaben zur ]{\newline  \textit{Deskriptive Angaben zur exponentiellen Regression ($y=a \times e^{bx}$) für die Vorhersage der Wahrnehmungsleistung durch die Mustergrössen der \gls{ssauf} und Kennwerte zur Verteilungsform der Daten} \vspace{.2cm}}
+	\caption[Deskriptive Angaben zur exponentiellen Regression für die Vorhersage der $82\,\%$-Er\-ken\-nungs\-schwel\-len durch die Mustergrössen der \gls{ssauf}]{\newline  \textit{Deskriptive Angaben zur exponentiellen Regression ($y=a \times e^{bx}$) für die Vorhersage der $82\,\%$-Er\-ken\-nungs\-schwel\-len durch die Mustergrössen der \gls{ssauf} und Kennwerte zur Verteilungsform der Daten} \vspace{.2cm}}
 	\label{tab:spatial_suppression_exponential_model}
 	\begin{adjustbox}{width=1\textwidth}
 		\begin{threeparttable}
@@ -1529,7 +1557,7 @@ Für jede \gls{vp} wurden die vier $82\,\%$-Erkennungsschwellen mit einer expone
 	\begin{adjustbox}{width=1\textwidth}
 		\input{tikzDevice/spatial_suppression_exponential_model.tex}
 	\end{adjustbox}
-	\caption[Exponentielles Modell der \gls{ssauf}]{Exponentieller Einfluss der Mustergrösse auf die $82\,\%$-Er\-ken\-nungs\-schwel\-le für horizontale Bewegung in der \gls{ssauf}. Eingezeichnet sind die Mittelwerte $\pm$ Standardfehler der Mittelwerte. Die x- und die y-Achse sind beide logarithmiert. $y=70 \times e^{0.103x}$.}
+	\caption[Exponentielles Modell zur Vorhersage der $82\,\%$-Er\-ken\-nungs\-schwel\-le durch die Mustergrösse der \gls{ssauf}]{Exponentieller Einfluss der Mustergrösse auf die $82\,\%$-Er\-ken\-nungs\-schwel\-le für horizontale Bewegung in der \gls{ssauf}. Eingezeichnet sind die Mittelwerte $\pm$ Standardfehler der Mittelwerte. Die x- und die y-Achse sind beide logarithmiert. $y=70 \times e^{0.103x}$.}
 	\label{fig:spatial_suppression_exponential_model}
 \end{figure}
 Deskriptive Angaben zu den daraus resultierenden Parametern, der Asymptote $a$ und der Steigung $b$, sind in \autoref{tab:spatial_suppression_exponential_model} zu finden.
@@ -1542,11 +1570,11 @@ Obwohl der \gls{rmse} für einige \glspl{vp} sehr gross ausfiel, eignete sich ei
 	\begin{adjustbox}{width=1\textwidth}
 		\input{tikzDevice/spatial_suppression_rmse_density.tex}
 	\end{adjustbox}
-	\caption[Dichtefunktion des RMSE]{Dichtefunktion des aus der exponentiellen Regression abgeleiteten Root Mean Square Error (\gls{rmse}; in Millisekunden)  der \gls{ssauf}.  Alle Datenpunkte sind auf der x-Achse mit vertikalen Strichen markiert.}
+	\caption[Dichtefunktion des aus der \gls{ssauf} mit einer exponentiellen Regression abgeleiteten \gls{rmse}]{Dichtefunktion des aus der \gls{ssauf} mit einer exponentiellen Regression abgeleiteten Root Mean Square Error (\gls{rmse}; in Millisekunden).  Alle Datenpunkte sind auf der x-Achse mit vertikalen Strichen markiert.}
 	\label{fig:spatial_suppression_rmse_density}
 \end{figure}
 
-Um erkennen zu können, ob der Zusammenhang zwischen den beiden Aufgabenparametern (Asymptote und Steigung), der Zusammenhang zwischen der Steigung und dem \gls{si} oder der Zusammenhang zwischen der Asymptote respektive der Steigung mit dem \gls{zwert} des \gls{bist} durch diejenigen \glspl{vp} verzerrt wurde, bei welchen eine Beschreibung der Daten mit einem exponentiellen Modell nicht angebracht war, wurden diese Zusammenhänge in Abhängigkeit des \gls{rmse} bestimmt. 
+Um erkennen zu können, ob der Zusammenhang zwischen den beiden Aufgabenparametern (Asymptote und Steigung), der Zusammenhang zwischen der Steigung und dem \gls{si} oder der Zusammenhang zwischen der Asymptote respektive der Steigung mit dem \gls{zwert} des \gls{bist}s durch diejenigen \glspl{vp} verzerrt wurde, bei welchen eine Beschreibung der Daten mit einem exponentiellen Modell nicht angebracht war, wurden diese Zusammenhänge in Abhängigkeit des \gls{rmse} bestimmt. 
 Dafür wurde für jeden \gls{rmse} zwischen $1$~ms und $70$~ms eine Teilstichprobe mit \glspl{vp} gebildet, welche den gewählten \gls{rmse} (\gls{rmse}-Grenzwert) nicht überschritten haben. Die erste Teilstichprobe ($n=4$) bestand also aus \glspl{vp}, welche einen \gls{rmse} von nicht grösser $1$~ms aufwiesen. Die zweite Teilstichprobe ($n=11$) setzte sich aus \glspl{vp} zusammen, welche einen \gls{rmse} von nicht grösser $2$~ms aufwiesen. Die dritte Teilstichprobe ($n=32$) beinhaltete \glspl{vp}, welche einen \gls{rmse} von nicht grösser $3$~ms aufwiesen (usw.). Dieses Vorgehen wurde solange weitergeführt, bis die Teilstichprobe bei einem \gls{rmse}-Grenzwert von $65.47$~ms alle \glspl{vp} ($N=177$) beinhaltete. 
 Damit liessen sich die Zusammenhänge über den ganzen \gls{rmse}-Grenz\-wert\-be\-reich bestimmen. Eine Teilstichprobe bei einem tiefen \gls{rmse}-Grenz\-wert umfasste also \glspl{vp}, welche Modell-konforme Daten aufwiesen, während eine Teilstichprobe bei einem hohen \gls{rmse}-Grenzwert auch \glspl{vp} beinhaltete, welche stärker vom exponentiellen Modell abwichen. 
 
@@ -1562,20 +1590,20 @@ Die Analyse hat ergeben, dass die Asymptote und die Steigung ab einem \gls{rmse}
 	\begin{adjustbox}{width=1\textwidth}
 		\subfloat[Test][Zusammenhang ($r$) zwischen der Steigung und dem \gls{si}.]{\input{tikzDevice/spatial_suppression_rmse_cutoff_slope_suppressionindex.tex}}
 	\end{adjustbox}
-	\caption[RMSE einfluss]{Einfluss des \gls{rmse}-Grenzwerts auf ($a$) den Zusammenhang der aus der \gls{ssauf} mit einer exponentiellen Regression abgeleiteten Aufgabenparameter der Asymptote und der Steigung  respektive auf ($b$) den Zusammenhang zwischen der Steigung und den \gls{si}. Die durchgezogene Linie kennzeichnet den Verlauf des Zusammenhangs. Der graue Bereich beschreibt das $95\,\%$-Konfidenzintervall.}
+	\caption[Einfluss des \gls{rmse}-Grenzwerts der \gls{ssauf} auf den Zusammenhang zwischen der Asymptote, der Steigung und dem \gls{si}]{Einfluss des \gls{rmse}-Grenzwerts auf ($a$) den Zusammenhang zwischen den aus der \gls{ssauf} mit einer exponentiellen Regression abgeleiteten Aufgabenparametern der Asymptote und der Steigung respektive auf ($b$) den Zusammenhang zwischen der Steigung und den \gls{si}. Die durchgezogene Linie kennzeichnet den Verlauf des Zusammenhangs. Der graue Bereich beschreibt das $95\,\%$-Konfidenzintervall.}
 	\label{fig:spatial_suppression_rmse_cutoff_asymtote_slope_suppressionindex}
 \end{figure}
 
 Die Steigung korrelierte über den ganzen \gls{rmse}-Grenzwertbereich stark positiv mit dem \gls{si} ($r=.96$ bis $.99$, alle $p\textnormal{s}<.001$; siehe \autoref{fig:spatial_suppression_rmse_cutoff_asymtote_slope_suppressionindex}b). Die tiefste Schätzung ($r=.96$, $p<.001$) unterschied sich dabei signifikant ($z=7.85$, $p<.001$) von dem von \citet{Melnick2013} berichteten Zusammenhang ($r>.996$).
 
-Der Zusammenhang zwischen der Asymptote und dem \gls{zwert} des \gls{bist} fiel in Abhängigkeit des \gls{rmse}-Grenzwerts weniger eindeutig aus (siehe \autoref{fig:spatial_suppression_rmse_cutoff}a).
+Der Zusammenhang zwischen der Asymptote und dem \gls{zwert} des \gls{bist}s fiel in Abhängigkeit des \gls{rmse}-Grenzwerts weniger eindeutig aus (siehe \autoref{fig:spatial_suppression_asymtote_slope_zscore}a).
 Während der Zusammenhang über einen grossen Teil des tieferen \gls{rmse}-Grenzwertbereichs nicht signifikant war, unterschritt der Zusammenhang zwischen $8.6$ und $9.5$ ms ($r = -.17$, $p = .049$), zwischen $26.1$ und $35.7$ ms ($r = -.15$ bis $ -.16$, alle $p\textnormal{s} < .048$) und ab $36.5$ ms ($r = -.16$ bis $-.18$, alle $p\textnormal{s} < .03$) die Signifikanzgrenze. In den erwähnten Bereichen war eine tiefe Asymptote also tendenziell mit einem hohen \gls{zwert} verbunden. Eine visuelle Inspektion des Verlaufs liess keine Aussage darüber zu, ob der  \gls{rmse}-Grenzwert einen positiven oder negativen Einfluss auf die Höhe des Zusammenhangs ausübte.
 
-Die Steigung und der \gls{zwert} des \gls{bist} korrelierten unabhängig vom \gls{rmse}-Grenzwert nicht signifikant miteinander ($r=-.16$ bis $.62$, alle $p\textnormal{s}>.08$; siehe \autoref{fig:spatial_suppression_rmse_cutoff}b). 
+Die Steigung und der \gls{zwert} des \gls{bist}s korrelierten unabhängig vom \gls{rmse}-Grenzwert nicht signifikant miteinander ($r=-.16$ bis $.62$, alle $p\textnormal{s}>.08$; siehe \autoref{fig:spatial_suppression_asymtote_slope_zscore}b). 
 Um für den Vergleich zwischen dem von \citet{Melnick2013} berichteten Zusammenhang zwischen ihrer Steigung (Studie 1: $b=0.116$ und Studie 2: $b=0.139$) und IQ-Punkten und dem in der vorliegenden Arbeit ermittelten Zusammenhang zwischen der Steigung ($b=0.103$) und dem \gls{zwert} die bestmögliche Teststärke zu erhalten, wurde die Gesamtstichprobe (\gls{rmse}-Grenzwert = $65.47$ ms) verwendet. Die Analyse hat ergeben, dass sich der in der vorliegenden Arbeit ermittelte Zusammenhang ($r=.00$, $p=.97$) signifikant von dem von \citeauthor{Melnick2013} berichteten Zusammenhang ($r=.68$) unterschied ($z=5.61$, $p<.001$).
 
 Betrachtet man die mit der Gesamtstichprobe erhaltenen Ergebnisse, kann abschliessend zur zweiten Fragestellung Folgendes festgehalten werden:  
-Die aus der exponentiellen Regression abgeleitete Asymptote korrelierte in der vorliegenden Arbeit leicht negativ mit dem \gls{zwert} des \gls{bist} ($r=-.16$, $p=.03$). Die Steigung, der zweite mit der exponentiellen Regression abgeleitete Aufgabenparameter, hing nicht signifikant mit dem \gls{zwert} zusammen ($r=.00$, $p=.97$) und bestätigte damit den von \citet{Melnick2013} berichteten Zusammenhang nicht. 
+Die aus der exponentiellen Regression abgeleitete Asymptote korrelierte in der vorliegenden Arbeit leicht negativ mit dem \gls{zwert} des \gls{bist}s ($r=-.16$, $p=.03$). Die Steigung, der zweite mit der exponentiellen Regression abgeleitete Aufgabenparameter, hing nicht signifikant mit dem \gls{zwert} zusammen ($r=.00$, $p=.97$) und bestätigte damit den von \citet{Melnick2013} berichteten Zusammenhang nicht. 
 
 \begin{figure}[htbp]
 	\centering
@@ -1588,8 +1616,8 @@ Die aus der exponentiellen Regression abgeleitete Asymptote korrelierte in der v
 		\subfloat[Test][Zusammenhang ($r$) zwischen der Steigung und dem \gls{zwert} des \gls{bist}s.]{\input{tikzDevice/spatial_suppression_rmse_cutoff_slope_zscore.tex}}
 	\end{adjustbox}
 	
-	\caption[RMSE einfluss]{Einfluss des \gls{rmse}-Grenzwerts auf die Zusammenhänge der aus der \gls{ssauf} mit einer exponentiellen Regression abgeleiteten Aufgabenparameter ($a$) der Asymptote  und ($b$) der Steigung  mit dem \gls{zwert} des \gls{bist}s. Die durchgezogene Linie kennzeichnet den Verlauf des Zusammenhangs. Der graue Bereich beschreibt das $95\,\%$-Konfidenzintervall.}
-	\label{fig:spatial_suppression_rmse_cutoff}
+	\caption[Einfluss des \gls{rmse}-Grenzwerts der \gls{ssauf} auf den Zusammenhang zwischen der Asymptote, der Steigung und dem \gls{zwert} des \gls{bist}s]{Einfluss des \gls{rmse}-Grenzwerts auf die Zusammenhänge der aus der \gls{ssauf} mit einer exponentiellen Regression abgeleiteten Aufgabenparameter ($a$) der Asymptote  und ($b$) der Steigung  mit dem \gls{zwert} des \gls{bist}s. Die durchgezogene Linie kennzeichnet den Verlauf des Zusammenhangs. Der graue Bereich beschreibt das $95\,\%$-Konfidenzintervall.}
+	\label{fig:spatial_suppression_asymtote_slope_zscore}
 \end{figure}
 
 
@@ -1627,7 +1655,7 @@ Mit der dritten Fragestellung sollte der Zusammenhang zwischen der \gls{ssauf} u
 Alle konfirmatorischen Faktorenanalysen wurden mit der Satorra-Bentler Maximum-Likelihood Schätzmethode \citep{Satorra1994} berechnet, weil diese bei nicht-normal\-ver\-teilten, intervallskalierten Daten empfohlen wird \citep[z.B.][]{Curran1996, Finney2006}.
 Um die aus den Aufgaben extrahierten Faktoren auf latenter Ebene miteinander in Verbindung zu bringen, wurden als erstes für jede Aufgabe einzeln kongenerische Messmodelle \citep{Joereskog1971} gerechnet. Diese dem Strukturgleichungsmodell vorausgehende Prüfung der Modellannahmen erlaubte es, allfällige Fehlspezifikationen bereits auf Aufgabenebene zu erkennen.
 
-Das kongenerische Messmodell der \gls{ssauf} (Modell 1; siehe \autoref{fig:spatial_suppression_congeneric}) bildete die empirischen Varianzen und Kovarianzen schlecht ab.  Der \gls{cst} zeigte eine überzufällig hohe Abweichung zwischen der theoretische und der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix an und der \gls{cfi} und \gls{rmsea} lagen weit weg vom akzeptablen Bereich, $\upchi^2(2)=103.13$, $p<.001$, $\textnormal{CFI}=.78$, $\textnormal{RMSEA}=.53$, $\textnormal{SRMR}=.06$.
+Das kongenerische Messmodell der \gls{ssauf} (Modell 1; siehe \autoref{fig:spatial_suppression_congeneric_model}) bildete die empirischen Varianzen und Kovarianzen schlecht ab.  Der \gls{cst} zeigte eine überzufällig hohe Abweichung zwischen der theoretische und der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix an und der \gls{cfi} und \gls{rmsea} lagen weit weg vom akzeptablen Bereich, $\upchi^2(2)=103.13$, $p<.001$, $\textnormal{CFI}=.78$, $\textnormal{RMSEA}=.53$, $\textnormal{SRMR}=.06$.
 
 Um den \gls{gfaktor} aus dem \gls{bist} zu bilden, wurden die gemittelten \textit{z}-Werte der Operationen \gls{k}, \gls{b} und \gls{M} als Indikatoren verwendet \citep[für ein gleiches Vorgehen siehe][]{Stauffer2014}. Weil dieses kongenerische Messmodell mit drei Indikatoren genau identifiziert war, konnte es nicht getestet werden \citep[][S. 125]{Kline2011}.
 
@@ -1665,10 +1693,10 @@ Um den \gls{gfaktor} aus dem \gls{bist} zu bilden, wurden die gemittelten \texti
 	\end{tikzpicture}
 	
 	\vspace{.2cm}
-	\caption[Modell 1: Messmodell der \gls{ssauf}]{Modell 1: Kongenerisches Messmodell der \gls{ssauf} (\textsf{S}). Eingezeichnet sind die standardisierten Koeffizienten.\\
+	\caption[Modell 1: Kongenerisches Messmodell der \gls{ssauf}]{Modell 1: Kongenerisches Messmodell der \gls{ssauf} (\textsf{S}). Eingezeichnet sind die standardisierten Koeffizienten.\\
 	$^1$Um die Identifizierung der Varianz der latenten Variable zu ermöglichen, wurde diese unstandardisierte Faktorladung auf $1$ fixiert.\\
 	$^{***}p~<~.001$.}
-	\label{fig:spatial_suppression_congeneric}
+	\label{fig:spatial_suppression_congeneric_model}
 \end{figure}
 
 
@@ -1730,7 +1758,7 @@ Um den \gls{gfaktor} aus dem \gls{bist} zu bilden, wurden die gemittelten \texti
 	\end{tikzpicture}
 	
 	\vspace{.2cm}
-	\caption[Modell 2: Latenter Zusammenhang zwischen der \gls{ssauf} und dem \gls{gfaktor}]{Modell 2: Latenter Zusammenhang zwischen der \gls{ssauf} (\textsf{S}) und dem \gls{gfaktor} des \gls{bist}. Eingezeichnet sind die standardisierten Koeffizienten. \textsf{K} = Kapazität; \textsf{B} = Bearbeitungsgeschwindigkeit; \textsf{M} = Merkfähigkeit.\\
+	\caption[Modell 2: Strukturgleichungsmodell zur Vorhersage des \gls{gfaktor}s durch die \gls{ssauf}]{Modell 2: Latenter Zusammenhang zwischen der \gls{ssauf} (\textsf{S}) und dem \gls{gfaktor} des \gls{bist}. Eingezeichnet sind die standardisierten Koeffizienten. \textsf{K} = Kapazität; \textsf{B} = Bearbeitungsgeschwindigkeit; \textsf{M} = Merkfähigkeit.\\
 	$^1$Um die Identifizierung der Varianz der latenten Variable zu ermöglichen, wurde diese unstandardisierte Faktorladung auf $1$ fixiert.\\
 	$^{**}p~=~.01$. $^{***}p~<~.001$.}
 	\label{fig:spatial_suppression_g_model}
@@ -1767,18 +1795,18 @@ Mit der vierten Fragestellung sollte versucht werden, die \gls{ssauf} mit einem 
 
 \subsection{Fixed-Links-Messmodell \label{subsec:spatial_suppression_fixed_links_messmodell}}
 
-Weil die Aufgabe bisher noch nie mit einem \gls{flm} beschrieben wurde, sind unterschiedliche Modelle getestet und miteinander verglichen worden. Bei allen berechneten Modellen wurden zwei voneinander unabhängige latente Variablen angenommen: 
+Weil die \gls{ssauf} noch nie mit einem \gls{flm} beschrieben wurde, sind unterschiedliche Modelle getestet und miteinander verglichen worden. Bei allen berechneten Modellen wurden zwei voneinander unabhängige latente Variablen angenommen: 
 
 Die erste latente Variable beinhaltete aufgabenrelevante Prozesse, deren Einflüsse sich über die vier Bedingungen hinweg nicht verändert haben. In den Messmodellen wurde dieser gleichbleibende Einfluss hergestellt, indem die unstandardisierten Faktorladungen aller manifesten Variablen auf den Wert 1 fixiert wurden. Diese latente Variable wird im Folgenden \textit{konstante} latente Variable genannt. 
 
-Die zweite latente Variable beinhaltete aufgabenrelevante Prozesse, die durch die vier Bedingungen systematisch manipuliert wurden. Der unterschiedlich starke Einfluss der in der latenten Variable abgebildeten Prozesse auf die Bedingungen der \gls{ssauf} wurde in den Messmodellen durch sich unterscheidende unstandardisierte Faktorladungen hergestellt. Diese latente Variable wird im Folgenden \textit{dynamische} latente Variable genannt.
+Die zweite latente Variable beinhaltete aufgabenrelevante Prozesse, die durch die vier Bedingungen systematisch manipuliert wurden. Der unterschiedlich starke Einfluss der in der latenten Variable abgebildeten Prozesse auf die $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-len der \gls{ssauf} wurde in den Messmodellen durch sich unterscheidende unstandardisierte Faktorladungen hergestellt. Diese latente Variable wird im Folgenden \textit{dynamische} latente Variable genannt.
 
 Die konstante latente Variable wurde in allen Messmodellen unabhängig von der dynamischen latenten Variable gehalten. Diese Unabhängigkeit der beiden extrahierten Variablen ist im Rahmen der Anwendung von \gls{flm}en üblich \citep[z.B.][]{Wagner2014, Schweizer2007, Wang2015}, weil sich dadurch die Interpretation der latenten Variablen vereinfacht.
-Alle Modell-Fits der in den folgenden Paragraphen berichteten \gls{flm}e sind in \autoref{tab:fixed-links_measurement_models_spatial_suppression} aufgeführt.
+Alle Modell-Fits der in den folgenden Paragraphen berichteten \gls{flm}e sind in \autoref{tab:spatial_suppression_fixedlinks_measurement_models} aufgeführt.
 
 Das erste berechnete \gls{flm} (Modell 3) berücksichtige das Ergebnis der exponentiellen Regression (siehe \autoref{sec:2Fragestellung}), welches auf manifester Ebene eine Steigung von $e^{0.103x}$ ergeben hat. Die unstandardisierten Faktorladungen der dynamischen latenten Variable wurden deshalb mit diesem Parameter ($y=e^{0.103x},\,x\in\{1, 2, 3, 4\}$) gebildet. Modell 3 bildete die empirischen Varianzen und Kovarianzen der \gls{ssauf} nicht gut ab. Der \gls{cst} war hochsignifikant und der \gls{cfi}, der \gls{rmsea} und das \gls{srmr} lagen nicht im akzeptablen Bereich.
 
-Modell 4 beachtete die Tatsache, dass die den \glspl{vp} vorgelegten Mustergrössen ($1.8^{\circ}$, $3.6^{\circ}$, $5.4^{\circ}$, $7.2^{\circ}$) in gleichmässigen Abständen zueinander lagen.
+Modell 4 beachtete die Tatsache, dass die den \glspl{vp} vorgelegten Mustergrössen ($1.8^{\circ}$, $3.6^{\circ}$, $5.4^{\circ}$, $7.2^{\circ}$) ein Vielfaches von $1.8$ waren.
 Die unstandardisierten Faktorladungen der dynamischen latenten Variable in Modell 4 wurden deshalb linear ansteigend ($y=x,\,x\in\{1, 2, 3, 4\}$) fixiert. Modell 4 bildete die empirischen Varianzen und Kovarianzen der \gls{ssauf} ebenfalls nicht gut ab. Der $\upchi^2$-Wert reduzierte sich im Vergleich zu Modell 3 zwar beträchtlich, war aber immer noch hochsignifikant. Die schlechte Passung des Modells wurde weiter durch einen hohen \gls{rmsea} und ein hohes \gls{srmr} angezeigt.
 
 
@@ -1787,7 +1815,7 @@ Die unstandardisierten Faktorladungen der dynamischen latenten Variable in Model
 	\centering
 	\captionsetup{labelsep = none}
 	\caption[Modell-Fits der Fixed-Links-Messmodelle der \gls{ssauf}]{\newline  \textit{Modell-Fits der berichteten \gls{flm}e der \gls{ssauf}. Der Ladungsverlauf bezieht sich auf die unstandardisierten Faktorladungen der dynamischen latenten Variable. Die unstandardisierten Faktorladungen der konstanten latenten Variable betrugen immer 1} \vspace{.2cm}}
-	\label{tab:fixed-links_measurement_models_spatial_suppression}
+	\label{tab:spatial_suppression_fixedlinks_measurement_models}
 	\begin{adjustbox}{width=1\textwidth}
 		\begin{threeparttable}
 	%		\sisetup{table-space-text-post = $^{*}$} % not needed
@@ -1832,12 +1860,12 @@ In Modell 6 wiesen die unstandardisierten Faktorladungen der dynamischen latente
 
 Die unstandardisierten Faktorladungen der dynamischen latenten Variable von Modell 7 wurden mit einer quadratischen Funktion ($y=x^2,\,x\in\{1, 2, 3, 4\}$) bestimmt. Der \gls{cst} erkannte keine signifikante Abweichung zwischen der von Modell 7 implizierten und der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix. Obwohl der \gls{cfi} im akzeptablen Bereich lag, deuteten der \gls{rmsea} und das \gls{srmr} auf eine schlechte Passung des Modells hin.
 
-In Modell 8 (siehe \autoref{fig:fixed-links_measurement_model_spatial_suppression}) wurden die unstandardisierten Faktorladungen der dynamischen latenten Variable erneut linear ansteigend fixiert.
+In Modell 8 (siehe \autoref{fig:spatial_suppression_fixedlinks_measurement_model}) wurden die unstandardisierten Faktorladungen der dynamischen latenten Variable erneut linear ansteigend fixiert.
 Im Gegensatz zu Modell 4 wurde die Faktorladung der ersten Bedingung aber auf 0 gesetzt ($y=x,\,x\in\{0, 1, 2, 3\}$).
 Verglichen mit den Modellen 3 bis 7 wich die von Modell 8 implizierte Var\-ianz-Ko\-var\-ianz\-ma\-trix am wenigsten von der empirische Var\-ianz-Ko\-var\-ianz\-ma\-trix ab. Der \gls{cst} war nicht signifikant und der \gls{cfi} und \gls{rmsea} deuteten auf eine gute Modellpassung hin. 
 Das \gls{srmr}  lag nicht unter dem von \citet{Hu1999} vorgegebenen Wert von $\leq.08$, fiel aber deshalb  nicht tiefer aus, weil die beiden latenten Variablen unabhängig voneinander gehalten wurden\footnote{Gestützt wurde diese Erklärung durch der Tatsache, dass das \gls{srmr} deutlich tiefer ausfiel, als die Unabhängigkeit zwischen der konstanten latenten Variable und der dynamischen latenten Variable aufgehoben wurde, $\upchi^2(3)=1.98$, $p=.58$, $\textnormal{CFI}>.999$, $\textnormal{RMSEA}~=~.036$, $\textnormal{SRMR}~=~.023$. Die beiden latenten Variablen korrelierten in diesem Fall mit $r=-.22$ ($p=.02$). Das \gls{srmr} wurde bei der Beurteilung der folgenden Modelle deshalb nicht mehr berücksichtigt.}. 
 Die Varianz der konstanten latenten Variable betrug $0.018$ ($z~=~8.45$, $p~<.001$) und die Varianz der dynamischen latenten Variable betrug $0.002$ ($z~=~5.53$, $p~<~.001$). 
-Der relative Anteil dieser beiden Varianzen an der in den manifesten Variablen erklärten Varianz liess sich aufgrund der in konfirmatorischen Faktorenanalysen gegebenen multiplikativen Verknüpfung von Faktorladungen und Varianzen nicht direkt ermitteln. Um die Varianzen miteinander vergleichen zu können, wurde der Einfluss der Faktorladungen auf die Varianzen mit der Methode von  \citet{Schweizer2011a} kontrolliert. Die Skalierung der Varianzen hat ergeben, dass die konstante latente Variable 72\,\% und die dynamische latente Variable 28\,\% von der in den manifesten Variablen gemeinsamen Varianz band.
+Der relative Anteil dieser beiden Varianzen an der in den manifesten Variablen erklärten Varianz liess sich aufgrund der in konfirmatorischen Faktorenanalysen gegebenen multiplikativen Verknüpfung von Faktorladungen und Varianzen nicht direkt ermitteln. Um die Varianzen miteinander vergleichen zu können, wurde der Einfluss der Faktorladungen auf die Varianzen deshalb mit der Methode von  \citet{Schweizer2011a} kontrolliert. Die Skalierung der Varianzen hat ergeben, dass die konstante latente Variable 72\,\% und die dynamische latente Variable 28\,\% von der in den manifesten Variablen gemeinsamen Varianz band.
 
 \begin{figure}[htbp]
 	\centering
@@ -1882,8 +1910,8 @@ Der relative Anteil dieser beiden Varianzen an der in den manifesten Variablen e
 	\end{tikzpicture}
 	
 	\vspace{.2cm}
-	\caption[Modell 8: Fixed-Links-Messmodell der \gls{ssauf}]{Modell 8: Fixed-Links-Messmodell der \gls{ssauf} (\textsf{S}). Eingezeichnet sind die standardisierten Koeffizienten. Hochgestellt sind die fixierten unstandardisierten Faktorladungen. \textsf{S\textsubscript{kon}} = konstante latente Variable; \textsf{S\textsubscript{dyn}} = dynamische latente Variable.}
-	\label{fig:fixed-links_measurement_model_spatial_suppression}
+	\caption[Modell 8: Fixed-Links-Messmodell der \gls{ssauf}]{Modell 8: Fixed-Links-Messmodell der \gls{ssauf} (\textsf{S}). Eingezeichnet sind die standardisierten Koeffizienten. Hochgestellt sind die fixierten unstandardisierten Faktorladungen. \textsf{\textsubscript{kon}} = konstante latente Variable; \textsf{\textsubscript{dyn}} = dynamische latente Variable.}
+	\label{fig:spatial_suppression_fixedlinks_measurement_model}
 \end{figure} 
 
 Im Vergleich zum kongenerischen Messmodell (Modell 1) vermochte das Fixed-Links-Messmodell (Modell 8) die empirischen Daten deutlich besser abzubilden. Die bessere Passung von Modell 8 äusserte sich im Vergleich zu Modell 1 in einem nicht-signifikanten $\upchi^2$-Wert, im akzeptablen \gls{cfi} und \gls{rmsea} sowie in zwei zusätzlichen Freiheitsgraden. Modell 8 war Modell 1 also aufgrund adäquaterer Abbildung der empirischen Daten und höherer Sparsamkeit vorzuziehen.
@@ -1892,7 +1920,7 @@ Im Vergleich zum kongenerischen Messmodell (Modell 1) vermochte das Fixed-Links-
 
 \subsection{Fixed-Links-Strukturgleichungsmodell}
 
-Als nächstes wurde Modell 8 mit dem \gls{gfaktor} aus dem \gls{bist} in Verbindung gebracht (Modell 9; siehe \autoref{fig:spatialsuppression_fixedlinks_sem}).
+Als nächstes wurde Modell 8 mit dem \gls{gfaktor} aus dem \gls{bist} in Verbindung gebracht (Modell 9; siehe \autoref{fig:spatial_suppression_fixedlinks_sem}).
 Das Modell bildete die empirischen Varianzen und Kovarianzen gut ab. Der \gls{cst} war nicht signifikant und der \gls{cfi} und \gls{rmsea} lagen im akzeptablen Bereich, $\upchi^2(14)=19.06$, $p=.16$, $\textnormal{CFI}=.99$, $\textnormal{RMSEA}~=~.05$, $\textnormal{SRMR}~=~.09$. 
 Der standardisierte Regressionskoeffizient zwischen der konstanten latenten Variable und dem \gls{gfaktor} betrug $\upbeta~=~-.25$ ($p~=~.02$). Der standardisierte Regressionskoeffizient zwischen der dynamischen latenten Variable und dem \gls{gfaktor} betrug $\upbeta~=~-.08$ ($p~=~.43$).
 Gemeinsam erklärten die konstante und die dynamische latente Variable der \gls{ssauf} $7\,\%$ der Varianz im \gls{gfaktor}.
@@ -1970,16 +1998,16 @@ Gemeinsam erklärten die konstante und die dynamische latente Variable der \gls{
 	\end{adjustbox}
 	
 	\vspace{.2cm}
-	\caption[Modell 9: Fixed-Links-Strukturgleichungsmodell zwischen der \gls{ssauf} und dem \gls{gfaktor}]{Modell 9: Latenter Zusammenhang zwischen dem Fixed-Links-Messmodell (Modell 8) der \gls{ssauf} (\textsf{S}) und dem \gls{gfaktor} aus dem \gls{bist}. Eingezeichnet sind die standardisierten Koeffizienten. Hochgestellt sind die fixierten unstandardisierten Faktorladungen. \textsf{S\textsubscript{kon}} = konstante latente Variable; \textsf{S\textsubscript{dyn}} = dynamische latente Variable. \textsf{K} = Kapazität; \textsf{B} = Bearbeitungsgeschwindigkeit; \textsf{M} = Merkfähigkeit.\\
+	\caption[Modell 9: Fixed-Links-Strukturgleichungsmodell zur Vorhersage des \gls{gfaktor}s durch die \gls{ssauf}]{Modell 9: Latenter Zusammenhang zwischen dem Fixed-Links-Messmodell (Modell 8) der \gls{ssauf} (\textsf{S}) und dem \gls{gfaktor} aus dem \gls{bist}. Eingezeichnet sind die standardisierten Koeffizienten. Hochgestellt sind die fixierten unstandardisierten Faktorladungen. \textsf{\textsubscript{kon}} = konstante latente Variable; \textsf{\textsubscript{dyn}} = dynamische latente Variable. \textsf{K} = Kapazität; \textsf{B} = Bearbeitungsgeschwindigkeit; \textsf{M} = Merkfähigkeit.\\
 	$^{*}p~<~.05$. $^{***}p~<~.001$.
 	}
-	\label{fig:spatialsuppression_fixedlinks_sem}
+	\label{fig:spatial_suppression_fixedlinks_sem}
 \end{figure} 
 
-Im Vergleich zum herkömmlichen Strukturgleichungsmodell (Modell 2) bildete das Fixed-Links-Strukturgleichungsmodell (Modell 9) die empirischen Daten deutlich besser ab. Die bessere Passung von Modell 9 äusserte sich im Vergleich zu Modell 2 in einem nicht-signifikanten $\upchi^2$-Wert, im akzeptablen \gls{cfi} und \gls{rmsea} sowie in einem zusätzlichen Freiheitsgrad. Modell 9 war Modell 2 folglich aufgrund adäquaterer Abbildung der empirischen Daten und höherer Sparsamkeit vorzuziehen. 
+Im Vergleich zum herkömmlichen Strukturgleichungsmodell (Modell 2) bildete das Fixed-Links-Strukturgleichungsmodell (Modell 9) die empirischen Daten deutlich besser ab. Die bessere Passung von Modell 9 äusserte sich im Vergleich zu Modell 2 in einem nicht-signifikanten $\upchi^2$-Wert, im akzeptablen \gls{cfi} und \gls{rmsea} sowie in einem zusätzlichen Freiheitsgrad. Bezüglich der Varianzaufklärung im \gls{gfaktor} waren sich Modell 2 ($5\,\%$) und Modell 9 ($7\,\%$)  vergleichsweise ähnlich. Modell 9 war Modell 2 folglich aufgrund adäquaterer Abbildung der empirischen Daten und höherer Sparsamkeit vorzuziehen. 
 
-Abschliessend zur vierten Fragestellung kann Folgendes festgehalten werden: Auf Messmodellebene vermochte das \gls{flm} (Modell 8) die empirischen Daten der \gls{ssauf} besser zu beschreiben als das kongenerische Messmodell (Modell 1). Auch im Zusammenhang mit dem \gls{gfaktor} war die Beschreibung der empirischen Daten mittels Fixed-Links-Strukturgleichungsmodell (Modell 9) dem herkömmlichen Strukturgleichungsmodell (Modell 2) klar überlegen. Bezüglich der Varianzaufklärung im \gls{gfaktor} waren sich Modell 2 ($5\,\%$) und Modell 9 ($7\,\%$)  vergleichsweise ähnlich. 
-In Modell 9 zeigte sich zwischen der konstanten latenten Variable der \gls{ssauf} und dem \gls{gfaktor} ein mittelstarker Zusammenhang. Tiefere Faktorwerte auf der konstanten latenten Variable waren tendenziell mit höheren Faktorwerten im \gls{gfaktor} verbunden.
+Abschliessend zur vierten Fragestellung kann Folgendes festgehalten werden: Auf Messmodellebene vermochte das \gls{flm} (Modell 8) die empirischen Daten der \gls{ssauf} besser zu beschreiben als das kongenerische Messmodell (Modell 1). Auch im Zusammenhang mit dem \gls{gfaktor} war die Beschreibung der empirischen Daten mittels Fixed-Links-Strukturgleichungsmodell (Modell 9) dem herkömmlichen Strukturgleichungsmodell (Modell 2) klar überlegen. 
+In Modell 9 zeigte sich zwischen der konstanten latenten Variable der \gls{ssauf} und dem \gls{gfaktor} ein (geringer bis) mittlerer negativer Zusammenhang. Tiefere Faktorwerte auf der konstanten latenten Variable waren also tendenziell mit höheren Faktorwerten im \gls{gfaktor} verbunden.
 Zwischen der dynamischen latenten Variable der \gls{ssauf} und dem \gls{gfaktor} bestand ein so geringer Zusammenhang, dass er bei gewählten Irrtumswahrscheinlichkeit von $5\,\%$ nicht von 0 unterschieden werden konnte. 
 
 
@@ -2003,7 +2031,7 @@ Mit der fünften Fragestellung sollte die Frage geklärt werden, ob die \gls{ssa
 
 \subsubsection*{Die Vorhersage psychometrischer Intelligenz durch die Aufgabenbedingungen der Hick- und \gls{ssauf}}
 
-Die korrelative Analyse der Aufgaben in \autoref{subsec:Zusammenhänge}  hat gezeigt, dass alle vier Bedingungen der \gls{ha} und drei von vier Bedingungen der \gls{ssauf} mit dem \gls{zwert} des \gls{bist} zusammenhingen. Auch zwischen den Bedingungen der Aufgaben bestanden signifikante Zusammenhänge. 
+Die korrelative Analyse der Aufgaben in \autoref{subsec:Zusammenhänge}  hat gezeigt, dass alle vier Bedingungen der \gls{ha} und drei von vier Bedingungen der \gls{ssauf} mit dem \gls{zwert} des \gls{bist}s zusammenhingen. Auch zwischen den Bedingungen der Aufgaben bestanden signifikante Zusammenhänge. 
 Um diese Abhängigkeiten bei der Vorhersage des \gls{zwert}s zu berücksichtigen, wurden die Bedingungen in Gruppen zusammengefasst und nacheinander blockweise in eine multiple Regressionsanalyse aufgenommen.
 
 Ausgangslage für die Beantwortung der Fragestellung bildete Modell 10 (siehe \autoref{tab:multiple_regression_all_conditions}), in welchem der \gls{zwert} des \gls{bist}s alleinig mit den vier Bedingungen der \gls{ha} vorhergesagt wurde. Die Regressionsanalyse hat ergeben, dass 
@@ -2014,7 +2042,7 @@ Der Umstand, dass die einzelnen Bedingungen nicht signifikante Regressionskoeffi
 \begin{table}[tb]
 	\centering
 	\captionsetup{labelsep = none}
-	\caption[Vorhersage ]{\newline  \textit{Multiple Regression zur Vorhersage des \gls{zwert}s des \gls{bist} durch die Bedingungen der \gls{ha} (Modell 10) respektive durch die Bedingungen der Hick- und der \gls{ssauf} (Modell 11)} \vspace{.2cm}}
+	\caption[Multiple Regression zur Vorhersage des \gls{zwert}s des \gls{bist}s durch die Bedingungen der Spa\-ti\-al-Sup\-pres\-sion- und der \gls{ha}]{\newline  \textit{Multiple Regression zur Vorhersage des \gls{zwert}s des \gls{bist}s durch die Bedingungen der \gls{ha} (Modell 10) respektive durch die Bedingungen der Hick- und der \gls{ssauf} (Modell 11)} \vspace{.2cm}}
 	\label{tab:multiple_regression_all_conditions}
 	\newcommand{\rowgroup}[1]{\hspace{-1em}#1}
 	\newcommand\Tstrut{\rule{0pt}{2.1ex}}       % top strut http://tex.stackexchange.com/questions/65919/space-between-rows-in-a-table - not implemented!
@@ -2072,7 +2100,7 @@ Modell 11 (siehe \autoref{tab:multiple_regression_all_conditions}) beinhaltete a
 Erneut sagte bei einer Kontrolle für die Abhängigkeiten zwischen den acht Bedingungen keiner der Prädiktoren den \gls{zwert} signifikant vorher (alle $p\textnormal{s}>.16$). 
 Zusammen aber sagten die Prädiktoren den \gls{zwert} signifikant vorher und erklärten $11\,\%$ der Varianz im \gls{zwert}, $F(8,\,168)=2.71$, $p=.008$, $R^2=.11$. 
 
-Um zu prüfen, ob die Bedingungen der \gls{ssauf} einen inkrementellen Beitrag zur Varianzaufklärung im \gls{zwert} des \gls{bist} leisteten, wurde der Zuwachs an erklärter Varianz im \gls{zwert} zwischen Modell 10 und Modell 11 auf Signifikanz getestet. 
+Um zu prüfen, ob die Bedingungen der \gls{ssauf} einen inkrementellen Beitrag zur Varianzaufklärung im \gls{zwert} des \gls{bist}s leisteten, wurde der Zuwachs an erklärter Varianz im \gls{zwert} zwischen Modell 10 und Modell 11 auf Signifikanz getestet. 
 Dabei hat sich ergeben, dass $\Delta R^2=.02$ kein signifikanter Zuwachs an erklärter Varianz darstellte, $F(4,\,168)=1.02$, $p=.40$.
 Die Bedingungen der \gls{ssauf} haben also auf Ebene der Aufgabenbedingungen keinen inkrementellen Beitrag zur Aufklärung individueller Intelligenzunterschiede geleistet.
 
@@ -2090,7 +2118,7 @@ Die Bedingungen der \gls{ssauf} haben also auf Ebene der Aufgabenbedingungen kei
 
 \subsubsection*{Die Vorhersage psychometrischer Intelligenz durch die Aufgabenparameter der Hick- und \gls{ssauf}}
 
-Um den \gls{zwert} des \gls{bist} mit den abgeleiteten Aufgabenparametern beider Aufgaben vorherzusagen, mussten die Aufgabenparameter der \gls{ha} noch bestimmt werden (für die Bestimmung der Aufgabenparameter der \gls{ssauf} siehe \autoref{sec:2Fragestellung}). 
+Um den \gls{zwert} des \gls{bist}s mit den abgeleiteten Aufgabenparametern beider Aufgaben vorherzusagen, mussten die Aufgabenparameter der \gls{ha} noch bestimmt werden (für die Bestimmung der Aufgabenparameter der \gls{ssauf} siehe \autoref{sec:2Fragestellung}). 
 Die Reaktionszeit (RZ) in einer Auswahlaufgabe (wie sie die \gls{ha} darstellt) kann gemäss \citet[S. 105]{Jensen1987a} mit der linearen Funktion $RZ=a+b\log_{2}n$ beschrieben werden, wobei $a$ durch den y-Achsenabschnitt, $b$ durch die Steigung der Regressionsgeraden und $\log_{2}\,n$ durch den Logarithmus zur Basis 2 der Anzahl Antwortalternativen ($n$) bestimmt ist.
 Das Produkt $\log_{2}\,n$ wurde von \citet{Hick1952} als \textit{Bit} bezeichnet und entspricht derjenigen Menge an Information, welche die Entscheidung zwischen zwei gleich wahrscheinlichen Antwortalternativen ermöglicht\footnote{Entsprechend dieser Definition gab das \textit{Bit} den Bedingungen der \gls{ha} ihre Namen: In der 0-bit-Bedingung steht eine Antwortalternative zur Verfügung ($\log_{2}\,1=0$), in der 1-bit-Bedingung stehen zwei Antwortalternativen zur Verfügung ($\log_{2}\,2=1$), in der 2-bit-Bedingung stehen vier Antwortalternativen zur Verfügung ($\log_{2}\,4=2$) und in der 2.58-bit-Bedingung stehen sechs Antwortalternative zur Verfügung ($\log_{2}\,6=2.58$).} \citep[siehe auch][S. 27]{Jensen2006}.
 
@@ -2102,14 +2130,14 @@ Die Reaktionszeiten der \gls{ha} wurden für jede Person mit einer linearen Regr
 	\begin{adjustbox}{width=1\textwidth}
 		\input{tikzDevice/hick_linear_model.tex}
 	\end{adjustbox}
-	\caption[Lineares Modell der \gls{ha}]{Linearer Einfluss des Bits auf die Reaktionszeit in der \gls{ha}. Eingezeichnet sind die Mittelwerte $\pm$ Standardfehler der Mittelwerte. $y = 232 + 76\log_{2}\,n$. n = Anzahl Antwortalternativen.}
+	\caption[Lineares Modell zur Vorhersage der Reaktionszeit durch das Bit der \gls{ha}]{Linearer Einfluss des Bits auf die Reaktionszeit in der \gls{ha}. Eingezeichnet sind die Mittelwerte $\pm$ Standardfehler der Mittelwerte. $y = 232 + 76\log_{2}\,n$. n = Anzahl Antwortalternativen.}
 	\label{fig:hick_linear_model}
 \end{figure}
 
 \begin{table}[htbp]
 	\centering
 	\captionsetup{labelsep = none}
-	\caption[Deskriptive Angaben zur ]{\newline  \textit{Deskriptive Angaben zur linearen Regression ($y=a + b\log_{2}\,n$) für die Vorhersage der Reaktionszeiten durch die Anzahl Antwortalternativen n der \gls{ha} und Kennwerte zur Verteilungsform der Daten} \vspace{.2cm}}
+	\caption[Deskriptive Angaben zur linearen Regression für die Vorhersage der Reaktionszeiten durch die Bits der \gls{ha}]{\newline  \textit{Deskriptive Angaben zur linearen Regression ($y=a + b\log_{2}\,n$) für die Vorhersage der Reaktionszeiten durch die Anzahl Antwortalternativen n der \gls{ha} und Kennwerte zur Verteilungsform der Daten} \vspace{.2cm}}
 	\label{tab:hick_linear_model}
 		\begin{threeparttable}
 			\begin{tabular}{
@@ -2146,11 +2174,11 @@ Die Reaktionszeiten der \gls{ha} wurden für jede Person mit einer linearen Regr
 	\begin{adjustbox}{width=1\textwidth}
 		\input{tikzDevice/hick_rmse_density.tex}
 	\end{adjustbox}
-	\caption[Dichtefunktion des RMSE]{Dichtefunktion des aus der linearen Regression abgeleiteten Root Mean Square Error (\gls{rmse}; in Millisekunden) der \gls{ha}.  Alle Datenpunkte sind auf der x-Achse mit vertikalen Strichen markiert.}
+	\caption[Dichtefunktion des aus der \gls{ha} mit einer linearen Regression abgeleiteten \gls{rmse}]{Dichtefunktion des aus der \gls{ha} mit einer linearen Regression abgeleiteten Root Mean Square Error (\gls{rmse}; in Millisekunden).  Alle Datenpunkte sind auf der x-Achse mit vertikalen Strichen markiert.}
 	\label{fig:hick_rmse_density}
 \end{figure}
 
-Wie bei der \gls{ssauf} (siehe \autoref{sec:2Fragestellung}) wurde der Zusammenhang zwischen den Aufgabenparametern (y-Achsenabschnitt und Steigung) und dem \gls{zwert} des \gls{bist} in Abhängigkeit des \gls{rmse} betrachtet. Die Analysen haben ergeben, dass der y-Achsenabschnitt und der \gls{zwert} bei einem \gls{rmse}-Grenzwert zwischen $9.6$ und $10.4$~ms ($r = -.28$ bis $ -.29$, alle $p\textnormal{s} < .03$), zwischen $11$ und $15.7$~ms ($r = -.24$ bis $ -.31$, alle $p\textnormal{s} < .04$), zwischen $17.2$ und $22.2$~ms ($r = -.17$ bis $ -.20$, alle $p\textnormal{s} < .04$) und ab $23.3$~ms ($r = -.15$ bis $ -.17$, alle $p\textnormal{s} < .049$) signifikant miteinander korrelierten (siehe \autoref{fig:hick_rmse_cutoff}a). In den erwähnten Bereichen war ein tiefer y-Achsenabschnitt also tendenziell mit einem hohen \gls{zwert} verbunden. Eine visuelle Inspektion des Verlaufs liess keine Aussage darüber zu, ob der \gls{rmse}-Grenzwert einen positiven oder negativen Einfluss auf die Höhe des Zusammenhangs ausübte.
+Wie bei der \gls{ssauf} (siehe \autoref{sec:2Fragestellung}) wurde der Zusammenhang zwischen den Aufgabenparametern (y-Achsenabschnitt und Steigung) und dem \gls{zwert} des \gls{bist}s in Abhängigkeit des \gls{rmse} betrachtet. Die Analysen haben ergeben, dass der y-Achsenabschnitt und der \gls{zwert} bei einem \gls{rmse}-Grenzwert zwischen $9.6$ und $10.4$~ms ($r = -.28$ bis $ -.29$, alle $p\textnormal{s} < .03$), zwischen $11$ und $15.7$~ms ($r = -.24$ bis $ -.31$, alle $p\textnormal{s} < .04$), zwischen $17.2$ und $22.2$~ms ($r = -.17$ bis $ -.20$, alle $p\textnormal{s} < .04$) und ab $23.3$~ms ($r = -.15$ bis $ -.17$, alle $p\textnormal{s} < .049$) signifikant miteinander korrelierten (siehe \autoref{fig:hick_rmse_cutoff}a). In den erwähnten Bereichen war ein tiefer y-Achsenabschnitt also tendenziell mit einem hohen \gls{zwert} verbunden. Eine visuelle Inspektion des Verlaufs liess keine Aussage darüber zu, ob der \gls{rmse}-Grenzwert einen positiven oder negativen Einfluss auf die Höhe des Zusammenhangs ausübte.
 
 
 \begin{figure}[htbp]
@@ -2164,20 +2192,20 @@ Wie bei der \gls{ssauf} (siehe \autoref{sec:2Fragestellung}) wurde der Zusammenh
 		\subfloat[Test][Zusammenhang ($r$) zwischen der Steigung und dem \gls{zwert} des \gls{bist}s.]{\input{tikzDevice/hick_rmse_cutoff_slope_zscore.tex}}
 	\end{adjustbox}
 	
-	\caption[RMSE Einfluss Hick]{Einfluss des \gls{rmse}-Grenzwerts auf die Zusammenhänge der aus der \gls{ha} mit einer linearen Regression abgeleiteten Aufgabenparameter ($a$) dem y-Achsenabschnitt und ($b$) der Steigung mit dem \gls{zwert} des \gls{bist}s. Die durchgezogene Linie kennzeichnet den Verlauf des Zusammenhangs. Der graue Bereich beschreibt das $95\,\%$-Konfidenzintervall.}
+	\caption[Einfluss des \gls{rmse}-Grenzwerts der \gls{ha} auf den Zusammenhang zwischen dem y-Achsenabschnitt, der Steigung und dem \gls{zwert} des \gls{bist}s]{Einfluss des \gls{rmse}-Grenzwerts auf die Zusammenhänge der aus der \gls{ha} mit einer linearen Regression abgeleiteten Aufgabenparameter dem ($a$) y-Achsenabschnitt und der ($b$) Steigung mit dem \gls{zwert} des \gls{bist}s. Die durchgezogene Linie kennzeichnet den Verlauf des Zusammenhangs. Der graue Bereich beschreibt das $95\,\%$-Konfidenzintervall.}
 	\label{fig:hick_rmse_cutoff}
 \end{figure}
 
-Die Steigung und der \gls{zwert} des \gls{bist} korrelierten bei einem \gls{rmse}-Grenzewert zwischen $8.9$ und $10.7$~ms ($r = -.24$ bis $ -.37$, alle $p\textnormal{s} < .048$) und ab $15.7$~ms ($r = -.19$ bis $ -.28$, alle $p\textnormal{s} < .046$) signifikant miteinander (siehe \autoref{fig:hick_rmse_cutoff}b). In diesen Bereichen war eine geringe Steigung also tendenziell mit einem hohen \gls{zwert} verbunden. Wie beim Zusammenhang zwischen dem y-Achsenabschnitt und dem \gls{zwert} konnte eine visuelle Inspektion des Verlaufs keine klaren Hinweise dafür liefern, ob der \gls{rmse}-Grenzwert einen positiven oder negativen Einfluss auf die Höhe des Zusammenhangs zwischen der Steigung und dem \gls{zwert} ausübte.
-Betrachtet man die mit der Gesamtstichprobe ermittelten Ergebnisse, kann festgehalten werden, dass sowohl der y-Achsenabschnitt ($r=-.17$, $p=.02$) als auch die Steigung ($r=-.23$, $p=.002$) der \gls{ha} leicht negativ mit dem \gls{zwert} des \gls{bist} korrelierte. %Die Zusammenhänge der Aufgabenparameter der Hick- und der \gls{ssauf} mit dem \gls{zwert} des \gls{bist} sind in  zu finden.
+Die Steigung und der \gls{zwert} des \gls{bist}s korrelierten bei einem \gls{rmse}-Grenzewert zwischen $8.9$ und $10.7$~ms ($r = -.24$ bis $ -.37$, alle $p\textnormal{s} < .048$) und ab $15.7$~ms ($r = -.19$ bis $ -.28$, alle $p\textnormal{s} < .046$) signifikant miteinander (siehe \autoref{fig:hick_rmse_cutoff}b). In diesen Bereichen waren geringe Steigungen also tendenziell mit höheren \gls{zwert}en verbunden. Wie beim Zusammenhang zwischen dem y-Achsenabschnitt und dem \gls{zwert} konnte eine visuelle Inspektion des Verlaufs keine klaren Hinweise dafür liefern, ob der \gls{rmse}-Grenzwert einen positiven oder negativen Einfluss auf die Höhe des Zusammenhangs zwischen der Steigung und dem \gls{zwert} ausübte.
+Betrachtet man die mit der Gesamtstichprobe ermittelten Ergebnisse, kann festgehalten werden, dass sowohl der y-Achsenabschnitt ($r=-.17$, $p=.02$) als auch die Steigung ($r=-.23$, $p=.002$) der \gls{ha} leicht negativ mit dem \gls{zwert} des \gls{bist}s korrelierte. %Die Zusammenhänge der Aufgabenparameter der Hick- und der \gls{ssauf} mit dem \gls{zwert} des \gls{bist}s sind in  zu finden.
 %Diese Zusammenhänge waren vergleichbar mit den von \citet{Jensen1987a} berichteten Ergebnissen.
 
-Nachdem die Aufgabenparameter der \gls{ha} bestimmt waren, konnte der \gls{zwert} des \gls{bist} mit den Aufgabenparameter der Hick- und der \gls{ssauf} vorhergesagt werden. Für diese multiple Regressionsanalyse wurde die Gesamtstichprobe verwendet, weil die Analysen zum Einfluss des \gls{rmse}-Grenzwerts auf die Zusammenhänge der Aufgabenparameter mit dem \gls{zwert} kein eindeutiges Ergebnis lieferten (siehe \autoref{fig:spatial_suppression_rmse_cutoff} und \autoref{fig:hick_rmse_cutoff}). Um die Abhängigkeiten der Aufgabenparameter zwischen den beiden Aufgaben (siehe \autoref{tab:suppression_hick_regression_correlations}) bei der Vorhersage des \gls{zwert}s zu berücksichtigen, wurden die Aufgabenparameter in Gruppen zusammengefasst und nacheinander blockweise in die multiple Regressionsanalyse aufgenommen. 
+Nachdem die Aufgabenparameter der \gls{ha} bestimmt waren, konnte der \gls{zwert} des \gls{bist}s mit den Aufgabenparameter der Hick- und der \gls{ssauf} vorhergesagt werden. Für diese multiple Regressionsanalyse wurde die Gesamtstichprobe verwendet, weil die Analysen zum Einfluss des \gls{rmse}-Grenzwerts auf die Zusammenhänge der Aufgabenparameter mit dem \gls{zwert} kein eindeutiges Ergebnis lieferten (siehe \autoref{fig:spatial_suppression_asymtote_slope_zscore} und \autoref{fig:hick_rmse_cutoff}). Um die Abhängigkeiten der Aufgabenparameter zwischen den beiden Aufgaben (siehe \autoref{tab:suppression_hick_regression_correlations}) bei der Vorhersage des \gls{zwert}s zu berücksichtigen, wurden die Aufgabenparameter in Gruppen zusammengefasst und nacheinander blockweise in die multiple Regressionsanalyse aufgenommen. 
 
-\begin{table}[b] % see http://tex.stackexchange.com/questions/247921/different-column-widths-under-a-multicolumn-prevent-appropriate-centering
+\begin{table}[htbp] % see http://tex.stackexchange.com/questions/247921/different-column-widths-under-a-multicolumn-prevent-appropriate-centering
 	\centering
 	\captionsetup{labelsep = none}
-	\caption[Korrelationen all]{\newline  \textit{Produkt-Moment-Korrelationen zwischen den aus der Spatial-Suppression- und der \gls{ha} regressionsanalytisch abgeleiteten Aufgabenparametern und dem \textit{z}-Wert des \gls{bist}s} \vspace{.2cm}}
+	\caption[Produkt-Moment-Korrelationen zwischen dem \gls{zwert} des \gls{bist}s und den Aufgabenparameter der Spa\-ti\-al-Sup\-pres\-sion- und der \gls{ha}]{\newline  \textit{Produkt-Moment-Korrelationen zwischen den aus der Spatial-Suppression- und der \gls{ha} regressionsanalytisch abgeleiteten Aufgabenparametern und dem \textit{z}-Wert des \gls{bist}s} \vspace{.2cm}}
 	\label{tab:suppression_hick_regression_correlations}
 	\begin{adjustbox}{width=1\textwidth}
 		\begin{threeparttable}
@@ -2230,15 +2258,15 @@ Nachdem die Aufgabenparameter der \gls{ha} bestimmt waren, konnte der \gls{zwert
 
 
 
-Grundlage für die Beantwortung der Fragestellung bildete Modell 12, in welchem der \gls{zwert} des \gls{bist} alleinig mit den Aufgabenparametern der \gls{ha} vorhergesagt wurde (siehe \autoref{tab:multiple_regression_all_parameters}).
+Grundlage für die Beantwortung der Fragestellung bildete Modell 12, in welchem der \gls{zwert} des \gls{bist}s alleinig mit den Aufgabenparametern der \gls{ha} vorhergesagt wurde (siehe \autoref{tab:multiple_regression_all_parameters}).
 Die Regressionsanalyse hat ergeben, dass bei einer Kontrolle für den Zusammenhang zwischen den Aufgabenparametern sowohl der y-Achsenabschnitt ($\upbeta=-.19$, $p=.009$) als auch die Steigung ($\upbeta=-.24$, $p<.001$) den \gls{zwert} signifikant vorhersagten. Gemeinsam erklärten sie mit $9\,\%$ einen signifikanten Varianzanteil im \gls{zwert}, $F(2,\,174)=8.52$, $p<.001$, $R^2=.09$. Tiefere y-Achsenabschnitte und geringere Steigungen gingen also tendenziell mit höheren \gls{zwert}en einher.
 
 %Gemeinsam ekrlärten sie einen signifkanten Varianzanteil von 9%
 
-\begin{table}[t]
+\begin{table}[htbp]
 	\centering
 	\captionsetup{labelsep = none}
-	\caption[Vorhersage ]{\newline  \textit{Multiple Regression zur Vorhersage des \gls{zwert}s des \gls{bist} durch die Aufgabenparameter der \gls{ha} (Modell 12) respektive durch die Aufgabenparameter der Hick- und der \gls{ssauf} (Modell 13)} \vspace{.2cm}}
+	\caption[Multiple Regression zur Vorhersage des \gls{zwert}s des \gls{bist}s durch die Aufgabenparameter der Spa\-ti\-al-Sup\-pres\-sion- und der \gls{ha}]{\newline  \textit{Multiple Regression zur Vorhersage des \gls{zwert}s des \gls{bist}s durch die Aufgabenparameter der \gls{ha} (Modell 12) respektive durch die Aufgabenparameter der Hick- und der \gls{ssauf} (Modell 13)} \vspace{.2cm}}
 	\label{tab:multiple_regression_all_parameters}
 	\newcommand{\rowgroup}[1]{\hspace{-1em}#1}
 	\newcommand\Tstrut{\rule{0pt}{2.1ex}}       % top strut http://tex.stackexchange.com/questions/65919/space-between-rows-in-a-table - not implemented!
@@ -2293,7 +2321,7 @@ Die Regressionsanalyse hat ergeben, dass bei einer Kontrolle für die Zusammenh�
 Gemeinsam erklärten die Prädiktoren mit $12\,\%$ einen signifikanten Varianzanteil im \gls{zwert}, $F(4,\,172)=5.58$, $p<.001$, $R^2=.12$. 
 Tiefere y-Achsenabschnitte und geringere Steigungen in der \gls{ha} sowie tiefere Asymptoten in der \gls{ssauf} gingen also tendenziell mit höheren \gls{zwert}en einher.
 
-Um zu prüfen, ob die Aufgabenparameter der \gls{ssauf} einen inkrementellen Beitrag zur Varianzaufklärung im \gls{zwert} des \gls{bist} leisteten, wurde der Zuwachs an erklärter Varianz im \gls{zwert} zwischen Modell 12 und Modell 13 auf Signifikanz getestet. 
+Um zu prüfen, ob die Aufgabenparameter der \gls{ssauf} einen inkrementellen Beitrag zur Varianzaufklärung im \gls{zwert} des \gls{bist}s leisteten, wurde der Zuwachs an erklärter Varianz im \gls{zwert} zwischen Modell 12 und Modell 13 auf Signifikanz getestet. 
 Dabei hat sich ergeben, dass $\Delta R^2=.03$ kein signifikanter Zuwachs an erklärter Varianz darstellte, $F(2,\,172)=2.49$, $p=.09$.
 Obwohl die Asymptote der \gls{ssauf} ein signifikanter Prädiktor des \gls{zwert}s war, haben die Asymptote und die Steigung der \gls{ssauf} auf Ebene der Aufgabenparameter also keinen inkrementellen Beitrag zur Aufklärung individueller Intelligenzunterschiede geleistet.
 
@@ -2308,7 +2336,7 @@ Obwohl die Asymptote der \gls{ssauf} ein signifikanter Prädiktor des \gls{zwert
 
 \subsubsection*{Mess- und Strukturgleichungsmodell}
 
-Bevor die \gls{ha} mit der \gls{ssauf} und dem \gls{gfaktor} in Verbindung gesetzt werden konnte, musst für die \gls{ha} das kongenerische Messmodell bestimmt werden. Modell 14 (siehe \autoref{fig:hick_congeneric}) 
+Bevor die \gls{ha} mit der \gls{ssauf} und dem \gls{gfaktor} in Verbindung gesetzt werden konnte, musst für die \gls{ha} das kongenerische Messmodell bestimmt werden. Modell 14 (siehe \autoref{fig:hick_congeneric_model}) 
 \begin{figure}[!t]
 	\centering
 	\begin{tikzpicture}
@@ -2343,10 +2371,10 @@ Bevor die \gls{ha} mit der \gls{ssauf} und dem \gls{gfaktor} in Verbindung geset
 	\end{tikzpicture}
 	
 	\vspace{.2cm}
-	\caption[Modell 14: Messmodell der \gls{ha}]{Modell 14: Kongenerisches Messmodell der \gls{ha} (\textsf{H}). Eingezeichnet sind die standardisierten Koeffizienten.\\
+	\caption[Modell 14: Kongenerisches Messmodell der \gls{ha}]{Modell 14: Kongenerisches Messmodell der \gls{ha} (\textsf{H}). Eingezeichnet sind die standardisierten Koeffizienten.\\
 		$^1$Um die Identifizierung der Varianz der latenten Variable zu ermöglichen, wurde diese unstandardisierte Faktorladung auf $1$ fixiert.\\
 		$^{***}p~<~.001$.}
-	\label{fig:hick_congeneric}
+	\label{fig:hick_congeneric_model}
 \end{figure}
 bildete die empirischen Varianzen und Kovarianzen der \gls{ha} schlecht ab.  Der \gls{cst} zeigte eine überzufällig hohe Abweichung zwischen der theoretische und der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix an und der \gls{cfi} und \gls{rmsea} lagen weit weg vom akzeptablen Bereich, $\upchi^2(2)=42.58$, $p<.001$, $\textnormal{CFI}=.87$, $\textnormal{RMSEA}=.33$, $\textnormal{SRMR}=.06$.
 
@@ -2437,13 +2465,13 @@ bildete die empirischen Varianzen und Kovarianzen der \gls{ha} schlecht ab.  Der
 		\end{tikzpicture}
 	\end{adjustbox}
 	\vspace{.2cm}
-	\caption[Modell 15: Latenter Zusammenhang zwischen der Spa\-ti\-al-Sup\-pres\-sion-, der \gls{ha} und dem \gls{gfaktor}]{Modell 15: Latenter Zusammenhang zwischen der \gls{ssauf} (\textsf{S}), der \gls{ha} (\textsf{H}) und dem \gls{gfaktor} des \gls{bist}. \textsf{K} = Kapazität; \textsf{B} = Bearbeitungsgeschwindigkeit; \textsf{M} = Merkfähigkeit.\\
+	\caption[Modell 15: Strukturgleichungsmodell zur Vorhersage des \gls{gfaktor}s durch die Spa\-ti\-al-Sup\-pres\-sion- und die \gls{ha}]{Modell 15: Latenter Zusammenhang zwischen der \gls{ssauf} (\textsf{S}), der \gls{ha} (\textsf{H}) und dem \gls{gfaktor} des \gls{bist}. \textsf{K} = Kapazität; \textsf{B} = Bearbeitungsgeschwindigkeit; \textsf{M} = Merkfähigkeit.\\
 		$^1$Um die Identifizierung der Varianz der latenten Variable zu ermöglichen, wurde diese unstandardisierte Faktorladung auf $1$ fixiert.\\
 		$^{*}p~<~.05$. $^{***}p~<~.001$.}
 	\label{fig:spatial_suppression_hick_g_model}
 \end{figure}
 
-Trotz des schlechten kongenerischen Modell-Fits der \gls{ha} wurde Modell 14 in einem Strukturgleichungsmodell mit dem kongenerischen Messmodell der \gls{ssauf} (Modell 1; siehe \autoref{fig:spatial_suppression_congeneric}) und dem \gls{gfaktor} des \gls{bist} in Verbindung gebracht. Das theoretische Modell (Modell 15; siehe \autoref{fig:spatial_suppression_hick_g_model}) bildete die empirischen Daten erneut schlecht ab.  Der \gls{cst} zeigte eine überzufällig hohe Abweichung zwischen der theoretische und der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix an und der \gls{cfi} und \gls{rmsea} lagen nicht im akzeptablen Bereich, $\upchi^2(41)=205.68$, $p<.001$, $\textnormal{CFI}=.86$, $\textnormal{RMSEA}=.15$, $\textnormal{SRMR}=.06$. 
+Trotz des schlechten kongenerischen Modell-Fits der \gls{ha} wurde Modell 14 in einem Strukturgleichungsmodell mit dem kongenerischen Messmodell der \gls{ssauf} (Modell 1; siehe \autoref{fig:spatial_suppression_congeneric_model}) und dem \gls{gfaktor} des \gls{bist} in Verbindung gebracht. Das theoretische Modell (Modell 15; siehe \autoref{fig:spatial_suppression_hick_g_model}) bildete die empirischen Daten erneut schlecht ab.  Der \gls{cst} zeigte eine überzufällig hohe Abweichung zwischen der theoretische und der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix an und der \gls{cfi} und \gls{rmsea} lagen nicht im akzeptablen Bereich, $\upchi^2(41)=205.68$, $p<.001$, $\textnormal{CFI}=.86$, $\textnormal{RMSEA}=.15$, $\textnormal{SRMR}=.06$. 
 Der standardisierte Regressionskoeffizient zwischen der aus den vier Bedingungen der \gls{ssauf} extrahierten latenten Variable und dem \gls{gfaktor} betrug $\upbeta~=~-.19$ ($p~=~.03$). Der standardisierte Regressionskoeffizient zwischen der aus den vier Bedingungen der \gls{ha} extrahierten latenten Variable und dem \gls{gfaktor} betrug $\upbeta~=~-.33$ ($p~<~.001$). Der Korrelationskoeffizient zwischen den aus den vier Bedingungen der Spatial-Suppression- und \gls{ha} extrahierten latenten Variablen betrug $r~=~.14$ ($p~=~.16$). Gemeinsam erklärten diese beiden latenten Variablen $16\,\%$ der Varianz im \gls{gfaktor}.
 
 
@@ -2451,14 +2479,14 @@ Der standardisierte Regressionskoeffizient zwischen der aus den vier Bedingungen
 
 \subsubsection*{Fixed-Links-Mess- und Strukturgleichungsmodell}
 
-Für die Analyse der Zusammenhänge auf latenter Ebene mittels Fixed-Links-Modellen musste für die \gls{ha} zuerst ein Fixed-Links\--Mess\-modell gefunden werden. Das Vorgehen bei der Bestimmung des Fixed-Links-Mess\-mod\-el\-ls war dabei identisch mit dem Vorgehen bei der Bestimmung des Fixed-Links-Mess\-mod\-el\-ls für die \gls{ssauf} (siehe \autoref{subsec:spatial_suppression_fixed_links_messmodell}). Alle Modell-Fits der in den folgenden Paragraphen berichteten \gls{flm}e sind in \autoref{tab:fixed-links_measurement_models_hick} aufgeführt.
+Für die Analyse der Zusammenhänge auf latenter Ebene mittels Fixed-Links-Modellen musste für die \gls{ha} zuerst ein Fixed-Links\--Mess\-modell gefunden werden. Das Vorgehen bei der Bestimmung des Fixed-Links-Mess\-mod\-el\-ls war dabei identisch mit dem Vorgehen bei der Bestimmung des Fixed-Links-Mess\-mod\-el\-ls für die \gls{ssauf} (siehe \autoref{subsec:spatial_suppression_fixed_links_messmodell}). Alle Modell-Fits der in den folgenden Paragraphen berichteten \gls{flm}e sind in \autoref{tab:hick_fixedlinks_measurement_models} aufgeführt.
 
-\begin{table}[htb]
+\begin{table}[htbp]
 	%\flushleft
 	\centering
 	\captionsetup{labelsep = none}
-	\caption[Fixed-Links-Messmodelle der \gls{ha}]{\newline  \textit{Modell-Fits der Fixed-Links-Messmodelle der \gls{ha}. Der Ladungsverlauf bezieht sich auf die unstandardisierten Faktorladungen der dynamischen latenten Variable. Die unstandardisierten Faktorladungen der konstanten latenten Variable betrugen immer 1} \vspace{.2cm}}
-	\label{tab:fixed-links_measurement_models_hick}
+	\caption[Modell-Fits der Fixed-Links-Messmodelle der \gls{ha}]{\newline  \textit{Modell-Fits der Fixed-Links-Messmodelle der \gls{ha}. Der Ladungsverlauf bezieht sich auf die unstandardisierten Faktorladungen der dynamischen latenten Variable. Die unstandardisierten Faktorladungen der konstanten latenten Variable betrugen immer 1} \vspace{.2cm}}
+	\label{tab:hick_fixedlinks_measurement_models}
 	\begin{adjustbox}{width=1\textwidth, keepaspectratio}
 		\begin{threeparttable}
 			
@@ -2495,7 +2523,7 @@ Für die Analyse der Zusammenhänge auf latenter Ebene mittels Fixed-Links-Model
 			\begin{tablenotes}[flushleft]
 				\footnotesize				% font size
 				\setlength\labelsep{0pt}	% no indent on second line
-				\item \textit{Anmerkungen.} Für Modelle 16, 17, 19 und 20 gilt $x\in\{1,2,3,4\}$. Für Modelle 18 und 21 gilt $x\in\{1,2,4,6\}$ und für Modell 21 \textcolor{red}{gilt?} $x\in\{-3,-1,1,3\}$. $\upchi^2 =$ Satorra-Bentler \citeyearpar{Satorra1994} korrigierter $\upchi^2$-Wert; \textit{df} = Freiheitsgrade; \gls{cfi} = comparative fit index; \gls{rmsea} = root mean square error of approximation; \gls{srmr} = standardized root mean square residual.
+				\item \textit{Anmerkungen.} Für Modelle 16, 17, 19 und 20 gilt $x\in\{1,2,3,4\}$. Für Modelle 18 und 21 gilt $x\in\{1,2,4,6\}$ und für Modell 21 $x\in\{-3,-1,1,3\}$. $\upchi^2 =$ Satorra-Bentler \citeyearpar{Satorra1994} korrigierter $\upchi^2$-Wert; \textit{df} = Freiheitsgrade; \gls{cfi} = comparative fit index; \gls{rmsea} = root mean square error of approximation; \gls{srmr} = standardized root mean square residual.
 				\item {$^{*}$}Das Modell konnte nicht interpretiert werden, weil die Fehlervarianz der 0-bit-Bedingung negativ geschätzt wurde.
 				
 			\end{tablenotes}%
@@ -2508,7 +2536,7 @@ Für die Analyse der Zusammenhänge auf latenter Ebene mittels Fixed-Links-Model
 Das erste berechnete Fixed-Links-Modell (Modell 16) berücksichtige die von Blank \citep[1934; zitiert nach][S. 103]{Jensen1987a} formulierte logarithmische Beziehung zwischen der Anzahl Antwortalternativen und der Reaktionszeit. Die unstandardisierten Faktorladungen der dynamischen latenten Variablen wurden deshalb mit einer logarithmischen Funktion ($y=\log_{e}x,\,x\in\{1, 2, 3, 4\}$) bestimmt. Dieses Modell konnte nicht interpretiert werden, weil die Fehlervarianz der 0-bit-Bedingung negativ geschätzt wurde.
 
 \citet{Schweizer2006a} hat in seiner Arbeit für die dynamische latenten Variable der \gls{ha} unter anderen Verläufen auch einen linearen Verlauf eingesetzt. 
-Die unstandardisierten Faktorladungen der dynamischen latenten Variable in Modell 17 wurden deshalb linear ansteigend ($y=x,\,x\in\{1, 2, 3, 4\}$) fixiert. Das Modell bildete die empirischen Varianzen und Kovarianzen der \gls{ssauf} nicht gut ab. Der $\upchi^2$-Wert war hochsignifikant und der \gls{cfi}, der \gls{rmsea} und das \gls{srmr} lagen weit weg vom akzeptablen Bereich.
+Die unstandardisierten Faktorladungen der dynamischen latenten Variable in Modell 17 wurden deshalb linear ansteigend ($y=x,\,x\in\{1, 2, 3, 4\}$) fixiert. Das Modell bildete die empirischen Varianzen und Kovarianzen der \gls{ha} nicht gut ab. Der $\upchi^2$-Wert war hochsignifikant und der \gls{cfi}, der \gls{rmsea} und das \gls{srmr} lagen weit weg vom akzeptablen Bereich.
 
 In Modell 18 wiesen die unstandardisierten Faktorladungen der dynamischen latenten Variablen einen Verlauf entsprechend den verwendeten Bit-Bedingungen auf ($y=\log_{2}x,\,x\in\{1, 2, 4, 6\}$). Das Modell bildete die empirischen Varianzen und Kovarianzen der \gls{ha} nicht adäquat ab. Zwar reduzierte sich der $\upchi^2$-Wert im Vergleich zu Modell 17 leicht, der \gls{cst} war aber immer noch signifikant. Weiter deuteten der \gls{cfi}, der \gls{rmsea} und das \gls{srmr} mit Werten ausserhalb des akzeptablen Bereichs auf eine schlechte Modellpassung hin.
 
@@ -2518,7 +2546,7 @@ In Modell 20 wurden die unstandardisierten Faktorladungen der dynamischen latent
 
 Modell 21 testete die Annahme, dass die Ladungen der unstandardisierten Faktorladungen der dynamischen latenten Variable entsprechend der Anzahl Antwortalternativen verlaufen ($y=x,\,x\in\{1, 2, 4, 6\}$). Der \gls{cst} erkannte keine signifikante Abweichung zwischen der von Modell 21 implizierten und der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix. Der \gls{rmsea} und das \gls{srmr} hingegen lagen ausserhalb des akzeptablen Bereichs.
 
-Die unstandardisierten Faktorladungen der dynamischen latenten Variable von Modell 22 wurden mit einer logistischen Funktion bestimmt $\{y={1}/[{1 + e^{(-x/.8)}}],\,x\in\{-3,-1,1,3\}\}$. Verglichen mit den Modellen 17 bis 21 wich die von Modell 22 implizierte Var\-ianz-Ko\-var\-ianz\-ma\-trix am wenigsten von der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix ab. Der \gls{cst} war nicht signifikant und der \gls{cfi}, der \gls{rmsea} und das \gls{srmr} deuteten auf eine gute Modellpassung hin. 
+Die unstandardisierten Faktorladungen der dynamischen latenten Variable von Modell 22 (siehe \autoref{fig:hick_fixedlinks_measurement_model}) wurden mit einer logistischen Funktion bestimmt $\{y={1}/[{1 + e^{(-x/.8)}}],\,x\in\{-3,-1,1,3\}\}$. Verglichen mit den Modellen 17 bis 21 wich die von Modell 22 implizierte Var\-ianz-Ko\-var\-ianz\-ma\-trix am wenigsten von der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix ab. Der \gls{cst} war nicht signifikant und der \gls{cfi}, der \gls{rmsea} und das \gls{srmr} deuteten auf eine gute Modellpassung hin. 
 Die Varianz der konstanten latenten Variable betrug $653.98$ ($z=5.75$, $p<.001$) und die Varianz der dynamischen latenten Variable betrug $2573.97$ ($z=6.90$, $p<.001$). Die Skalierung der Varianzen \citep{Schweizer2011a} hat ergeben, dass die konstante latente Variable $39\,\%$ und die dynamische latente Variable $61\,\%$ von der in den mainfesten Variablen gemeinsamen Varianz band.
 
 
@@ -2562,8 +2590,8 @@ Die Varianz der konstanten latenten Variable betrug $653.98$ ($z=5.75$, $p<.001$
 	\end{tikzpicture}
 	
 	\vspace{.2cm}
-	\caption[Modell 20: Fixed-Links-Messmodell der \gls{ha}]{Modell 22: Fixed-Links-Messmodell der \gls{ha} (\textsf{H}). Eingezeichnet sind die standardisierten Koeffizienten. Hochgestellt sind die fixierten unstandardisierten Faktorladungen. \textsf{H\textsubscript{kon}} = konstante latente Variable; \textsf{H\textsubscript{dyn}} = dynamische latente Variable.}
-	\label{fig:fixed-links_measurement_model_hick}
+	\caption[Modell 22: Fixed-Links-Messmodell der \gls{ha}]{Modell 22: Fixed-Links-Messmodell der \gls{ha} (\textsf{H}). Eingezeichnet sind die standardisierten Koeffizienten. Hochgestellt sind die fixierten unstandardisierten Faktorladungen. \textsf{\textsubscript{kon}} = konstante latente Variable; \textsf{\textsubscript{dyn}} = dynamische latente Variable.}
+	\label{fig:hick_fixedlinks_measurement_model}
 \end{figure}
 
 Im Vergleich zum kongenerischen Messmodell der \gls{ha} (Modell 14) vermochte das Fixed-Links-Messmodell (Modell 22) die empirischen Daten deutlich besser abzubilden. Die bessere Passung von Modell 22 äusserte sich im Vergleich zu Modell 14 in einem nicht-signifikanten $\upchi^2$-Wert, im akzeptablen \gls{cfi} und \gls{rmsea} sowie in zwei zusätzlichen Freiheitsgraden. Modell 8 war Modell 1 also aufgrund adäquaterer Abbildung der empirischen Daten und höherer Sparsamkeit vorzuziehen.
@@ -2571,7 +2599,7 @@ Im Vergleich zum kongenerischen Messmodell der \gls{ha} (Modell 14) vermochte da
 In einem letzten Schritt wurde das Fixed-Links-Messmodell der \gls{ssauf} (Modell 8) mit dem Fixed-Links-Messmodell der \gls{ha} (Modell 22) und dem \gls{gfaktor} aus dem \gls{bist} in Verbindung gebracht (Modell 23; siehe \autoref{fig:spatialsuppression_hick_fixedlinks_sem}). Das Modell bildete die empirischen Varianzen und Kovarianzen gut ab. Der \gls{cst} war nicht signifikant und der \gls{cfi}, der \gls{rmsea} und das \gls{srmr} lagen im akzeptablen Bereich, $\upchi^2(40)=48.81$, $p=.16$, $\textnormal{CFI}=.99$, $\textnormal{RMSEA}~=~.04$, $\textnormal{SRMR}~=~.08$. 
 Die standardisierten Regressionskoeffizienten betrugen zwischen der konstanten latenten Variable der \gls{ssauf} und dem \gls{gfaktor} $\upbeta~=~-.21$ ($p~=~.06$), zwischen der dynamischen latenten Variable der \gls{ssauf} und dem \gls{gfaktor} $\upbeta~=~-.08$ ($p~=~.38$), zwischen der konstanten latenten Variable der \gls{ha} und dem \gls{gfaktor} $\upbeta~=~-.17$ ($p~=~.06$) und zwischen der dynamischen latenten Variable der \gls{ha} und dem \gls{gfaktor} $\upbeta~=~-.26$ ($p~=~.002$). Gemeinsam erklärten die konstanten und dynamischen latenten Variablen der Spatial-Suppression- und \gls{ha} $16\,\%$ der Varianz im \gls{gfaktor}. Die Korrelationskoeffizient betrug zwischen den beiden konstanten latenten Variablen $r=.21$ ($p=.005$), zwischen den beiden dynamischen latenten Variablen $r=-.13$ ($p=.11$), zwischen der konstanten latenten Variable der \gls{ha} und der dynamischen latenten Variable der \gls{ssauf} $r=.15$ ($p=.09$) und zwischen der konstanten latenten Variable der \gls{ssauf} und der dynamischen latenten Variable der \gls{ha} $r=.00$ ($p=.97$).
 
-\begin{figure}[htbp]
+\begin{figure}[t]
 	\centering
 	\begin{tikzpicture}
 	[font=\sffamily, scale=2, inner sep=0pt,
@@ -2602,17 +2630,21 @@ Die standardisierten Regressionskoeffizienten betrugen zwischen der konstanten l
 	\end{tikzpicture}
 	
 	\vspace{.2cm}
-	\caption[Modell 23]{Modell 23: Latenter Zusammenhang zwischen dem Fixed-Links-Messmodell der \gls{ssauf} (\textsf{S}; Modell 8), dem Fixed-Links-Messmodell  der \gls{ha} (\textsf{H}; Modell 22) und dem \gls{gfaktor} aus dem \gls{bist}. Abgebildet ist das Strukturmodell. Eingezeichnet sind die standardisierten Koeffizienten. \textsf{\textsubscript{kon}} = konstante latente Variable; \textsf{\textsubscript{dyn}} = dynamische latente Variable.\\
+	\caption[Modell 23: Fixed-Links-Strukturgleichungsmodell zur Vorhersage des \gls{gfaktor}s durch die Spa\-ti\-al-Sup\-pres\-sion- und die \gls{ha}]{Modell 23: Latenter Zusammenhang zwischen dem Fixed-Links-Messmodell der \gls{ssauf} (\textsf{S}; Modell 8), dem Fixed-Links-Messmodell  der \gls{ha} (\textsf{H}; Modell 22) und dem \gls{gfaktor} aus dem \gls{bist}. Abgebildet ist das Strukturmodell. Eingezeichnet sind die standardisierten Koeffizienten. \textsf{\textsubscript{kon}} = konstante latente Variable; \textsf{\textsubscript{dyn}} = dynamische latente Variable.\\
 		$^{**}p~<~.01$.}
 	\label{fig:spatialsuppression_hick_fixedlinks_sem}
 \end{figure}
 
 
-Im Vergleich zum herkömmlichen Strukturgleichungsmodell (Modell 15) vermochte das Fixed-Links-Strukturgleichungsmodell (Modell 23) die empirischen Daten deutlich besser abzubilden. Die bessere Passung von Modell 23 äusserte sich im Vergleich zu Modell 15 in einem nicht-signifikanten $\upchi^2$-Wert und in einem akzeptablen \gls{cfi} und \gls{rmsea}. Modell 23 war Modell 15 also aufgrund adäquaterer Abbildung der empirischen Daten vorzuziehen. 
-Bezüglich der Varianzaufklärung im \gls{gfaktor} waren Modell 15 ($16\,\%$) und Modell 23 ($16\,\%$) identisch. 
+Im Vergleich zum herkömmlichen Strukturgleichungsmodell (Modell 15) vermochte das Fixed-Links-Strukturgleichungsmodell (Modell 23) die empirischen Daten deutlich besser abzubilden. Die bessere Passung von Modell 23 äusserte sich im Vergleich zu Modell 15 in einem nicht-signifikanten $\upchi^2$-Wert und in einem akzeptablen \gls{cfi} und \gls{rmsea}. Bezüglich der Varianzaufklärung im \gls{gfaktor} waren Modell 15 ($16\,\%$) und Modell 23 ($16\,\%$) identisch. Modell 23 war Modell 15 folglich aufgrund adäquaterer Abbildung der empirischen Daten vorzuziehen. 
 
-Abschliessend zur fünften Fragestellung kann folgendes Festgehalten werden: Auf manifester Ebene vermochte die \gls{ssauf} (sowohl auf Ebene der Aufgabenbedingungen als auch auf Ebene der Aufgabenparameter) keinen inkrementellen Beitrag zur Aufklärung individueller Intelligenzunterschiede leisten. Auf latenter Ebene zeigte sich in einem herkömmlichen Strukturgleichungsmodell (Modell 15) ein schwach negativer Zusammenhang zwischen der aus den vier Bedingungen der \gls{ssauf} abgeleiteten latenten Variable und dem \gls{gfaktor}, während im Fixed-Links-Strukturgleichungsmodell (Modell 23) weder die konstante latente Variable noch die dynamische latente Variable der \gls{ssauf} signifikant mit dem \gls{gfaktor} korrelierte. Dabei zeigte sich jedoch ein schwacher bis mittlerer Zusammenhang zwischen der konstanten latenten Variable der Spatial-Suppression- und der \gls{ha}.
+Abschliessend zur fünften Fragestellung kann folgendes Festgehalten werden: 
+Auf manifester Ebene vermochte die \gls{ssauf} (sowohl auf Ebene der Aufgabenbedingungen als auch auf Ebene der Aufgabenparameter) bei einer Kontrolle des Zusammenhang zwischen der \gls{ha} und psychometrischer Intelligenz keinen inkrementellen Beitrag zur Aufklärung individueller Intelligenzunterschiede leisten.
 
+Auf latenter Ebene zeigte sich in einem herkömmlichen Strukturgleichungsmodell (Modell 15) ein geringer bis mittlerer negativer Zusammenhang zwischen der aus den vier Bedingungen der \gls{ssauf} abgeleiteten latenten Variable und dem \gls{gfaktor}. Tiefere Faktorwerte auf der aus den vier Bedingungen der \gls{ssauf} extrahierten latenten Variable waren also tendenziell mit höheren Faktorwerten im \gls{gfaktor} verbunden. 
+Dieser latente Zusammenhang erklärte ungefähr $4\,\%$ der Varianz im \gls{gfaktor} und leistete damit bei Berücksichtigung des Zusammenhangs zwischen der \gls{ha} und dem \gls{gfaktor} einen inkrementellen Beitrag zur Aufklärung individueller Intelligenzunterschiede. Diese Resultate müssen jedoch aufgrund des schlechten Modell-Fits mit Vorsicht interpretiert werden.
+
+Bei der Analyse der Zusammenhänge mittels Fixed-Links-Struk\-tur\-glei\-chungs\-mo\-dell zeigte sich zwischen der konstanten latenten Variable der \gls{ssauf} und der konstanten latenten Variable der \gls{ha} ein geringer bis mittlerer positiver Zusammenhang. Tiefere Faktorwerte in der einen latenten Variable waren also tendenziell mit tieferen Faktorwerten in der anderen latenten Variable verbunden. Signifikanter Prädiktor des \gls{gfaktor}s war bei dem gewählten $\upalpha$-Fehler von $5\,\%$ nur die dynamische latente Variable der \gls{ha}, welche einen (geringen bis) mittleren negativen Zusammenhang mit dem \gls{gfaktor} aufwies. Tiefere Faktorwerte in der dynamischen latenten Variable der \gls{ha} waren also tendenziell mit höheren Faktorwerten im \gls{gfaktor} verbunden.
 
 
 
@@ -2663,6 +2695,7 @@ fixed-links als Lösung für exponentielle Regression, da hats einfach ein paar 
 % 3. compile document with pdfLateX
 % 4. -> glossaries should appear in pdf
 
+
 % =================================================================
 % R E F E R E N C E S 
 % =================================================================
@@ -2682,7 +2715,7 @@ fixed-links als Lösung für exponentielle Regression, da hats einfach ein paar 
 \setcounter{table}{0}
 \renewcommand{\thetable}{A\arabic{table}}
 
-\chapter{Anhang \label{cha:AAnhang}}
+\chapter{Anhang \label{cha:Anhang_A}}
 Dieser Anhang beschreibt die Vorgehensweise bei der Datenaufbereitung, welche zum Ausschluss von \glspl{vp} geführt hat (vgl. \autoref{sec:Stichprobe}). Am Ende des Anhangs fasst \autoref{tab:Datenbereinigung} die Datenbereinigung zusammen.
 
 \section{Alter}
@@ -2748,7 +2781,7 @@ Bei den Subtests \gls{bd}, \gls{kw}, \gls{oe}, \gls{RZ}, \gls{tg}, \gls{uw} und 
 % =================================================================
 % A P P E N D I X   B
 % =================================================================
-\chapter{Anhang \label{cha:BAnhang}}
+\chapter{Anhang \label{cha:Anhang_B}}
 
 Dieser Anhang beinhaltet Ergebnisse der Deskriptiv- und Inferenzstatistik, welche sich bei der Anwendung nonparametrischer Analyseverfahren ergeben haben. Die Ergebnisse dieser nonparametrischer Analyseverfahren wichen nicht bedeutend von den mit parametrischen Verfahren ermittelten Ergebnissen ab (vgl. \autoref{sec:Deskriptive_Statistik}).
 
@@ -2763,7 +2796,7 @@ Um zu testen, ob die experimentelle Manipulation (die Anzahl an Antwortalternati
 
 \section{BIS-Test}
 
-Die Zusammenhänge der Subtests wurden mit Spearmans Rangkorrelationen bestimmt und sind in \autoref{tab:BIS_subtest_correlations_parametric_and_nonparametric} unterhalb der Diagonale abgetragen. Oberhalb der Diagonale sind die Differenzen zwischen den Produkt-Moment-Korrelationen und Spearmans Rangkorrelationen abgetragen.
+Die Zusammenhänge der Subtests wurden mit Spearmans Rangkorrelationen bestimmt und sind in \autoref{tab:bis_subtest_description_subtest_correlations_parametric_and_nonparametric} unterhalb der Diagonale abgetragen. Oberhalb der Diagonale sind die Differenzen zwischen den Produkt-Moment-Korrelationen und Spearmans Rangkorrelationen abgetragen.
 
 \section{Zusammenhangsmasse}
 
@@ -2771,8 +2804,8 @@ Die Zusammenhänge der Subtests wurden mit Spearmans Rangkorrelationen bestimmt 
 
 \begin{sidewaystable}[htbp]
 	\captionsetup{labelsep = none}
-	\caption[Zusammenhänge zwischen den Subtests]{\newline  \textit{Spearmans Rangkorrelationen (unterhalb der Diagonale) zwischen den Subtests des \gls{bist}. Oberhalb der Diagonale sind die Differenzen zwischen der Produkt-Moment-Korrelation und Spearmans Rangkorrelation abgetragen} \vspace{.2cm}}
-	\label{tab:BIS_subtest_correlations_parametric_and_nonparametric}
+	\caption[Spearmans Rangkorrelationen zwischen den Subtests des \gls{bist}s]{\newline  \textit{Spearmans Rangkorrelationen (unterhalb der Diagonale) zwischen den Subtests des \gls{bist}. Oberhalb der Diagonale sind die Differenzen zwischen der Produkt-Moment-Korrelation und Spearmans Rangkorrelation abgetragen} \vspace{.2cm}}
+	\label{tab:bis_subtest_description_subtest_correlations_parametric_and_nonparametric}
 	\sisetup{table-space-text-post = $^{*ab}$  }
 	\begin{adjustbox}{width=1\textwidth,totalheight=1\textheight,keepaspectratio}
 		\begin{threeparttable}
@@ -2827,7 +2860,7 @@ Die Zusammenhänge der Subtests wurden mit Spearmans Rangkorrelationen bestimmt 
 			\begin{tablenotes}[flushleft]
 				\footnotesize				% font size
 				\setlength\labelsep{0pt}	% no indent on second line
-				\item \textit{Anmerkung.} Siehe \autoref{tab:BIS} für eine Beschreibung der Subtests.
+				\item \textit{Anmerkung.} Siehe \autoref{tab:bis_subtest_description} für eine Beschreibung der Subtests.
 				\item {$^a$}Der exakte Zusammenhang betrug $r_{s}=.147$, $p=.051$. Alle restlichen in der Tabelle mit $r_{s}=.15$ bezeichneten Korrelationskoeffizienten wiesen \textit{p}-Werte $<.05$ auf.
 				\item {$^{*}$}$p<.05$. {$^{**}$}$p<.01$. {$^{***}$}$p<.001$ (zweiseitig).
 			\end{tablenotes}
@@ -2838,7 +2871,7 @@ Die Zusammenhänge der Subtests wurden mit Spearmans Rangkorrelationen bestimmt 
 \begin{sidewaystable}[htbp]
 	\centering
 	\captionsetup{labelsep = none}
-	\caption[Korrelationen zwischen den Aufgaben]{\newline  \textit{Spearmans Rangkorrelationen (unterhalb der Diagonale) zwischen den Bedingungen der \gls{ssauf}, dem \gls{si}, den Bedingungen der \gls{ha}, dem \textit{z}-Wert und dem \gls{gfaktor} des \gls{bist}. Oberhalb der Diagonale sind die Differenzen zwischen der Produkt-Moment-Korrelation und Spearmans Rangkorrelation abgetragen} \vspace{.2cm}}
+	\caption[Spearmans Rangkorrelationen zwischen der \gls{ssauf}, dem \gls{si}, der \gls{ha}, dem \textit{z}-Wert und dem \gls{gfaktor} des \gls{bist}s]{\newline  \textit{Spearmans Rangkorrelationen (unterhalb der Diagonale) zwischen den Bedingungen der \gls{ssauf}, dem \gls{si}, den Bedingungen der \gls{ha}, dem \textit{z}-Wert und dem \gls{gfaktor} des \gls{bist}. Oberhalb der Diagonale sind die Differenzen zwischen der Produkt-Moment-Korrelation und Spearmans Rangkorrelation abgetragen} \vspace{.2cm}}
 	\label{tab:correlations_between_manifest_parametric_and_nonparametric}
 	\sisetup{table-space-text-post = $^{***}$}
 %	\begin{adjustbox}{width=.85\textwidth, keepaspectratio}
