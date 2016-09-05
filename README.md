@@ -1,32 +1,22 @@
 TeX file and pdf
 ================
 
-This repository contains my PhD thesis `diss.pdf` and all files to reproduce it.
+This repository contains my PhD thesis and all files to reproduce it.
 
 Repository content
 ------------------
 
--   `bib`: `Library.bib`: Text file with citations.
+-   `png`: This folder stores a few portable network graphics.
 
-### `png`
+-   `tikzDevice`: .tex code blocks which can be interpreted with the help of the TikZ package. Used to draw visually pleasing figures. All files get sourced from `diss.tex` at some point.
 
--   This folder stores a few portable network graphics.
+-   `apacite-mod.bst`: A modified apacite.bst file. It [tweaks the reference style for companies](http://tex.stackexchange.com/questions/304217/reference-list-suppressing-dots-after-company-names-apacite).
 
-### `tikzDevice`
+-   `bibliography.bib`: Text file with references.
 
--   `.tex` code blocks which can be interpreted with the help of the TikZ package. Used to draw visually pleasing figures. All files get sourced from the `diss.tex` file at some point.
+-   `diss.pdf`: Pdf file of my PhD thesis
 
-### `apacite-mod.bst`
-
--   A modified apacite.bst file. It [tweaks the reference style for companies](http://tex.stackexchange.com/questions/304217/reference-list-suppressing-dots-after-company-names-apacite).
-
-### `diss.pdf`
-
--   Pdf file of my PhD thesis
-
-### `diss.tex`
-
--   Tex file of my PhD thesis
+-   `diss.tex`: Tex file of my PhD thesis
 
 ### Prerequisites for reproducing `diss.pdf`
 
