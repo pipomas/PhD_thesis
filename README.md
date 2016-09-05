@@ -6,9 +6,7 @@ This repository contains my PhD thesis `diss.pdf` and all files to reproduce it.
 Repository content
 ------------------
 
-### `bib`
-
--   `Library.bib`: Text file with citations.
+-   `bib`: `Library.bib`: Text file with citations.
 
 ### `png`
 
@@ -37,4 +35,4 @@ Repository content
 -   Download this repository (**not only `diss.tex`**) by clicking on the green «*Clone or download*» button in the top right corner, and open `diss.tex` from within the downloaded folder. Do not move it out of the downloaded folder, it will not compile correctly.
 -   Compile `diss.tex` multiple times.
 
-last updated on September 01, 2016 :tada:
+last updated on September 05, 2016 :tada:
