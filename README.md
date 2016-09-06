@@ -14,9 +14,9 @@ Repository content
 
 -   `bibliography.bib`: Text file with references.
 
--   `diss.pdf`: Pdf file of my PhD thesis
+-   `diss.pdf`: Pdf file of my PhD thesis (not finished yet, in full progress)
 
--   `diss.tex`: Tex file of my PhD thesis
+-   `diss.tex`: Tex file of my PhD thesis (not finished yet, in full progress)
 
 ### Prerequisites for reproducing `diss.pdf`
 
@@ -25,4 +25,4 @@ Repository content
 -   Download this repository (**not only `diss.tex`**) by clicking on the green «*Clone or download*» button in the top right corner, and open `diss.tex` from within the downloaded folder. Do not move it out of the downloaded folder, it will not compile correctly.
 -   Compile `diss.tex` multiple times.
 
-last updated on September 05, 2016 :tada:
+last updated on September 06, 2016 :tada:
