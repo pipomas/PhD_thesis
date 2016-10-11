@@ -416,44 +416,93 @@ longplural={},
 \layout								% prints layout page at the beginning of the document
 \frontmatter						% triggers roman numerals 
 
-
 % =================================================================
 % T I T L E   P A G E
 % =================================================================
-
-% Declare new goemetry for the title page only --------------------
+% Declare new goemetry for the title and copyright page only ------
 \newgeometry{top=2in,bottom=2in,right=1.5in,left=1.5in}
 
 \begin{titlepage}
-	
-	\vspace*{2cm}
-	
-	\huge\centering Spatial-Suppression, Mental-Speed und psychometrische Intelligenz 
+
+	\centering
+		\huge Spatial-Suppression, Mental-Speed und psychometrische Intelligenz 
 	
 	\noindent\makebox[\textwidth]{\rule{\textwidth}{0.4pt}}
 	
 	\vspace{1.2cm}
 	
-	{\centering
+	\centering{
 		\Large \textit{Inauguraldissertation}
 		
-		\vspace{1.2cm}
+		\vspace{1cm}
 		
 		der Philosophisch-humanwissenschaftlichen Fakultät der Universität Bern zur Erlangung der Doktorwürde
 		
 		\vspace{1cm}
+		
 		vorgelegt von\\
-		Philipp Thomas
+		Philipp Thomas\\
+		St. Gallen
+		
 		\vspace{1cm}
-		
-		bei\\
-		Prof. Dr. Stefan Troche\\
-		
-		\vspace*{\fill}
-		\Large Bern, Oktober 2016
-		
-		
+
+		\Large Bern, Dezember 2016
 	}
+
+		\vspace*{\fill}
+		\small
+	\flushleft Originaldokument gespeichert auf dem Webserver der Universitätsbibliothek Bern.
+
+	\vspace{.2cm}
+	\centering{\includegraphics[width=.3\textwidth]{png/CC_licence}}
+	\vspace{0cm}
+
+	\RaggedRight Dieses Werk ist unter einem Creative Commons Namensnennung - Keine kommerzielle Nutzung - Keine Bearbeitung 2.5 Schweiz Lizenzvertrag lizenziert. Um die Lizenz anzusehen, gehen Sie bitte zu \url{http://creativecommons.org/licenses/by-nc-nd/2.5/ch} oder schicken Sie einen Brief an Creative Commons, 171 Second Street, Suite 300, San Francisco, California 94105, USA.
+
+% =================================================================
+% C O P Y R I G H T   P A G E
+% =================================================================
+	\clearpage
+	\pagestyle{empty}
+	\centering
+	
+	\textbf{Urheberrechtlicher Hinweis}
+
+	\hspace{1cm}
+
+	Dieses Dokument steht unter einer Lizenz der Creative Commons Namensnennung - Keine kommerzielle Nutzung - Keine Bearbeitung 2.5 Schweiz.\\ \url{http://creativecommons.org/licenses/by-nc-nd/2.5/ch}
+	
+	\hspace{1cm}
+
+	\RaggedRight Sie dürfen dieses Werk zu den folgenden Bedingungen vervielfältigen, verbreiten und öffentlich zugänglich machen:
+
+	\begin{table}[h]
+		\centering
+		\small
+		\begin{tabular}{c m{.7\textwidth}}
+%			\hline
+			\raisebox{-.47\height} 	{\includegraphics[width=.1\textwidth]{png/CC_by_me}}
+			&
+			\textbf{Namensnennung}. Sie müssen den Namen des Autors/Rechteinhabers in der von ihm festgelegten Weise nennen (wodurch aber nicht der Eindruck entstehen darf, Sie oder die Nutzung des Werkes durch Sie würden entlohnt). \\
+%			\hline
+			\rule{0pt}{9ex}%  EXTRA vertical height
+			\raisebox{-.5\height} {\includegraphics[width=.1\textwidth]{png/CC_nc_me}}
+			&
+			\textbf{Keine kommerzielle Nutzung}. Dieses Werk darf nicht für kommerzielle Zwecke verwendet werden. \\
+%			\hline
+			\rule{0pt}{9ex}%  EXTRA vertical height
+			\raisebox{-.5\height} {\includegraphics[width=.1\textwidth]{png/CC_nd_me}}
+			&
+			\textbf{Keine Bearbeitung}. Dieses Werk darf nicht bearbeitet oder in anderer Weise verändert werden. \\
+%			\hline
+		\end{tabular}
+	\end{table}
+	
+	\RaggedRight Im Falle einer Verbreitung müssen Sie anderen die Lizenzbedingungen, unter welche dieses Werk fällt, mitteilen. Jede der vorgenannten Bedingungen kann aufgehoben werden, sofern Sie die Einwilligung des Rechteinhabers dazu erhalten. Diese Lizenz lässt die Urheberpersönlichkeitsrechte nach Schweizer Recht unberührt. 
+
+	\hspace{1cm}
+	
+	Eine ausführliche Fassung des Lizenzvertrags befindet sich unter \url{http://creativecommons.org/licenses/by-nc-nd/2.5/ch/legalcode.de}.
 
 \end{titlepage}
 % Ends the declared geometry for the titlepage
@@ -524,7 +573,7 @@ allen Menschen, die mich in der Zeit unterstützt haben und dazu beigetragen hab
 \citep{Upper1974} 
 \citep{Pahud2016}
 
-Der \LaTeX-Code für die Reproduktion dieses pdfs und der R-Code für die Reproduktion der berichteten Resultate sind unter \url{http://www.github.com/pipomas} verfügbar.
+Der \LaTeX- und R-Code für die Reproduktion dieser Arbeit sind verfügbar unter \url{http://www.github.com/pipomas}.
 
 
 \vspace{6 mm}
@@ -568,7 +617,7 @@ Die Frage nach der Ursache für Intelligenzunterschiede stellte sich schon \cite
 
 Untersuchungen der letzten Jahrzehnte  haben gezeigt, dass Verarbeitungsgeschwindigkeit (\gls{ms}) und psychometrische Intelligenz zusammenhängen \citep[für Übersichtsarbeiten siehe][]{Deary2000a, Jensen2006, Sheppard2008}. \gls{ms} wird dabei oft mit Hilfe einer sogenannten \gls{eka} erfasst. 
 
-Eine \gls{eka} (\citealp[S. 290]{Anderson2001}; \citealp[S. 11]{Carroll1993}; \citealp[S. 207--209]{Jensen2006}) ist eine Aufgabe, die gesunde Personen mit genügend Zeit ohne grosse mentale Anstrengung fehlerfrei lösen können. Die Stimuli sind gross abgebildet und klar erkennbar, sodass sie von allen Personen mit normalem Sehvermögen gut wahrzunehmen sind. Die \gls{vp} wird aufgefordert, so schnell wie möglich eine Antwort abzugeben und dabei Fehler zu vermeiden. Weil das Lösen der Aufgabe nur sehr simple mentale Prozesse beansprucht, werden interindividuelle Strategien, die das Lösen der Aufgabe erleichtern, unterdrückt. Unterschiede in der Reaktionszeit zwischen \glspl{vp} können dann nur durch die Geschwindigkeit verursacht werden, mit welcher die \glspl{vp} die Aufgabe verarbeiten und auf Stimuli reagieren.
+Eine \gls{eka} (\citealp[S. 290]{Anderson2001}; \citealp[S. 11]{Carroll1993}; \citealp[S. 207--209]{Jensen2006}) ist eine Aufgabe, die gesunde Personen mit genügend Zeit ohne grosse mentale Anstrengung fehlerfrei lösen können. Die Stimuli sind gross abgebildet und klar erkennbar, sodass sie von allen Personen mit normalem Sehvermögen gut wahrzunehmen sind. Die \gls{vp} wird aufgefordert, so schnell wie möglich eine Antwort abzugeben und dabei Fehler zu vermeiden. Weil das Lösen der Aufgabe nur sehr simple mentale Prozesse beansprucht, sind interindividuelle Strategien, die das Lösen der Aufgabe erleichtern, nicht vorhanden. Unterschiede in der Reaktionszeit zwischen \glspl{vp} können dann nur durch die Geschwindigkeit verursacht werden, mit welcher die \glspl{vp} die Aufgabe verarbeiten und auf Stimuli reagieren.
 Beispiele für solche reaktionszeitbasierten \glspl{eka} sind
 die Coincidence-Timing-Aufgabe \citep{Smith1987},
 die \gls{ha} \citep{Hick1952},
@@ -582,13 +631,17 @@ oder das Visual-Scan-Paradigma \citep[][S. 66--71]{Neisser1967}.
 
 Eine der beliebtesten und ältesten \gls{eka} ist die \gls{ha} \citep{Hick1952}. Die \gls{ha} erfasst einfache Reaktionszeit und die Reaktionszeit für eine Mehrfachauswahl. Die Reaktionszeit in der \gls{ha} kann gemäss \citet[S. 105]{Jensen1987a} mit der linearen Funktion \textit{Reaktionszeit}~$=a+b\log_{2}n$ beschrieben werden, wobei $a$ durch den y-Achsen\-ab\-schnitt, $b$ durch die Steigung der Regres\-sions\-geraden und $\log_{2}\,n$ durch den Logarithmus zur Basis 2 der Anzahl Antwortalternativen ($n$) bestimmt ist. Das Produkt $\log_{2}\,n$ wurde von \citet{Hick1952} als \textit{Bit} bezeichnet und entspricht derjenigen Menge an Information, welche die Entscheidung zwischen zwei gleich wahrscheinlichen Antwortalternativen ermöglicht\footnote{Entsprechend dieser Definition gab das \textit{Bit} den Bedingungen der \gls{ha} ihre Namen: In der 0-bit-Bedingung steht eine Antwortalternative zur Verfügung ($\log_{2}\,1=0$), in der 1-bit-Bedingung stehen zwei Antwortalternativen zur Verfügung ($\log_{2}\,2=1$), in der 2-bit-Bedingung stehen vier Antwortalternativen zur Verfügung ($\log_{2}\,4=2$) und in der 2.58-bit-Bedingung stehen sechs Antwortalternative zur Verfügung ($\log_{2}\,6=2.58$).} \citep[siehe auch][S. 27]{Jensen2006}.
 
-Für die Differentielle Psychologie wurde die \gls{ha} mit der Untersuchung von Roth \citep[1964; zitiert nach][S. 105]{Jensen1987a} interessant. Er berichtete über einen Zusammenhang von $r=-.39$ zwischen der aus den Reaktionszeiten abgeleiteten Steigung ($b$) und Intelligenz. Intelligentere \glspl{vp} zeigten also mit zunehmender Anzahl Antwortalternativen einen weniger starke Verlangsamung ihrer Reaktionszeit als weniger intelligente \glspl{vp}. Weiter fand Roth keinen Zusammenhang zwischen dem y-Achsenabschnitt und Intelligenz. Diese Resultate legten die Vermutung nahe, dass Unterschiede in komplexer kognitiver Leistung erfasst mit Intelligenztests von der Geschwindigkeit abhängen, mit der Informationen verarbeitet werden.
+Für die Differentielle Psychologie wurde die \gls{ha} mit der Untersuchung von Roth \citep[1964; zitiert nach][S. 105]{Jensen1987a} interessant. Er berichtete über einen Zusammenhang von $r=-.39$ zwischen der aus den Reaktionszeiten abgeleiteten Steigung ($b$) und psychometrischer Intelligenz. Intelligentere \glspl{vp} zeigten also mit zunehmender Anzahl Antwortalternativen einen weniger starke Verlangsamung ihrer Reaktionszeit als weniger intelligente \glspl{vp}. Weiter fand Roth keinen Zusammenhang zwischen dem y-Achsenabschnitt ($a$) und psychometrischer Intelligenz. Diese ersten Resultate legten die Vermutung nahe, dass Unterschiede in komplexer kognitiver Leistung erfasst mit Intelligenztests mitunter von der Geschwindigkeit abhängen, mit der Informationen verarbeitet werden.
 
-Spätere Untersuchungen haben gezeigt, dass auch der y-Achsenabschnitt ($a$) negativ mit Intelligenz zusammenhängt \citep{Jensen1982b, Jensen1987a, Neubauer1997a, Neubauer1997b}. Intelligentere \glspl{vp} zeigten also kürzere einfache Reaktionszeiten als weniger intelligente \glspl{vp}. Im Gegensatz zur Steigung, welche die Verarbeitungsgeschwindigkeit von Informationen abbildet wird beim y-Achsenabschnitt angenommen, dass er ein Mass für die Zeitdauer ist, welche sensorische und motorische Prozesse benötigen um den Reiz im Kortex wahrzunehmen respektive die Muskeln über efferente Nerven anzusteuern.
+Spätere Untersuchungen haben dann gezeigt, dass auch der y-Achsenabschnitt ($a$) negativ mit psychometrischer Intelligenz zusammenhängt \citep{Jensen1982b, Jensen1987a, Neubauer1997a, Neubauer1997b}. Intelligentere \glspl{vp} zeigten also kürzere einfache Reaktionszeiten als weniger intelligente \glspl{vp}. Im Gegensatz zur Steigung, welche die Verarbeitungsgeschwindigkeit von Informationen abbildet wird beim y-Achsenabschnitt angenommen, dass er ein Mass für die Zeitdauer ist, welche sensorische und motorische Prozesse benötigen um den Reiz im Kortex wahrzunehmen respektive die Muskeln über efferente Nerven anzusteuern \citep{Jensen1998b}.
 
-Eine Meta-Analyse von \citet{Sheppard2008} hat ergeben, dass die Reaktionszeiten der \gls{ha} im Bereich von $r=-.20 - -.40$ mit Intelligenz korrelieren.
-Der Mental-Speed-Ansatz \citep{Jensen1982a, Jensen1982b, Vernon1983} erklärt den Zusammenhang zwischen kürzeren Reaktionszeiten und besserer mentaler Leistung mit biologischen Bottom-Up-Mechanismen.  damit, dass eine schnelle und effiziente Verarbeitung von Informationen sowohl bei einer Reaktionszeitaufgabe wie auch bei einem Intelligenztest benötigt wird. Als Grundlage für diesen Zusammenhang kommen höhere neuronale Effizienz \citep{Bates1995, Hendrickson1980}, eine bessere Myelinisierung von Neuronen \citep{Miller1994}, eine höhere neuronale Plastizität \citep{Garlick2002}, oder spezifische Aktivierung \citep{Neubauer1995} in Frage.
+Abgesehen vom negativen Zusammenhang zwischen diesen regressionsanalytisch abgeleiteten Aufgabenparametern und psychometrischer Intelligenz sind sämtliche  Reaktionszeiten der \gls{ha} negativ mit psychometrischer Intelligenz korreliert. Eine Meta-Analyse von \citet{Sheppard2008} hat ergeben, dass die Reaktionszeiten der \gls{ha} im Bereich von $r=-.20$ bis $r=-.40$ mit psychometrischer Intelligenz korrelieren. Der Mental-Speed-Ansatz \citep{Jensen1982a, Jensen1982b, Vernon1983} erklärt den Zusammenhang zwischen kürzeren Reaktionszeiten respektive schnelleren Verarbeitung von Informationen und besserer mentaler Leistung mit biologischen Bottom-Up-Mechanismen. Dazu gehören zum Beispiel eine höhere neuronale Effizienz \citep{Bates1995, Hendrickson1980}, eine bessere Myelinisierung von Neuronen \citep{Miller1994}, eine höhere neuronale Plastizität \citep{Garlick2002}, oder die spezifische Aktivierung des Kortex \citep{Neubauer1995}. 
 
+Der \gls{msa} bietet Erklärungen für den Zusammenhang zwischen AGK und Intelligenz. Oder Melnick?
+
+Diese Bottom-Up-Mechanismen sind Erklärungen für den beobachten Zusammenhang zwischen Reaktionszeiten psychometrischer Intelligenz. 
+
+\citep{Jensen1993}
 
 
 

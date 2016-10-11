@@ -10,6 +10,8 @@ Repository content
 
 -   `tikzDevice`: .tex code blocks which can be interpreted with the help of the TikZ package. Used to draw visually pleasing figures. All files get sourced from `diss.tex` at some point.
 
+-   `LICENCE`: Content with scientific value (i.e. not bare LaTeX code) is licensed under a Creative Commons Attribution - NonCommercial - NoDerivatives 2.5 Switzerland License. Read the licence carefully to see what you are allowed to do.
+
 -   `apacite-mod.bst`: A modified apacite.bst file. It [tweaks the reference style for companies](http://tex.stackexchange.com/questions/304217/reference-list-suppressing-dots-after-company-names-apacite).
 
 -   `bibliography.bib`: Text file with references.
@@ -25,4 +27,4 @@ Repository content
 -   Download this repository (**not only `diss.tex`**) by clicking on the green «*Clone or download*» button in the top right corner, and open `diss.tex` from within the downloaded folder. Do not move it out of the downloaded folder, it will not compile correctly.
 -   Compile `diss.tex` multiple times.
 
-last updated on September 06, 2016 :tada:
+last updated on October 11, 2016 :tada:
