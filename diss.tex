@@ -565,8 +565,8 @@ DGP Richtlinien weisen auf folgende Punkte hin:
 % =================================================================
 % P R E F A C E
 % =================================================================
-\chapter*{Danksagung \label{cha:Vorwort}}
-\addcontentsline{toc}{chapter}{Vorwort}
+\chapter*{\large{Danksagung} \label{cha:Vorwort}}
+\addcontentsline{toc}{chapter}{Danksagung}
 Diese Arbeit ist das Produkt meiner dreijährigen Forschungstätigkeit. Danken möchte ich 
 allen Menschen, die mich in der Zeit unterstützt haben und dazu beigetragen haben, dass diese
 %Arbeit erfolgreich zu Ende gebracht wurde. Namentlich möchte ich mich bei Herrn \mbox{Prof. Dr. Thomas
@@ -1113,10 +1113,90 @@ Psychometrische Intelligenz wurde mit einer modifizierten Kurzversion des \acrlo
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{png/BIS}
+	\begin{adjustbox}{width=.9\textwidth}
+		\begin{tikzpicture}
+		[scale=1, font=\sffamily, inner sep=0pt]
+		
+		\draw[dashed]	(0, 0) -- (4, 6) -- (7, 1.5) -- (3, -4.5) -- (0, 0);
+		
+		\draw[dashed]	(1, 1.5) -- (4, -3);
+		\draw[dashed]	(2, 3) -- (5, -1.5);
+		\draw[dashed]	(3, 4.5) -- (6, 0);
+		
+		\draw[dashed]	(1, -1.5) -- (5, 4.5);
+		\draw[dashed]	(2, -3) -- (6, 3);
+		
+		\draw			(0, 6.6) -- (1, 7) -- (6, 7) -- (7, 6.6);
+		
+%		\draw[draw=none] (1, 7.1) -- (6, 7.1)
+%		node[pos=0.5, rotate=0, above=1]{\LARGE AI - {\textrm{\textit{g}}}\textsubscript{\tiny BIS}};
+		
+		\draw[draw=none] (1, 7.1) -- (6, 7.1)
+		node[pos=0.5, rotate=0, above=.2]{\Large Allgemeine Intelligenz (AI)};
+		
+		\draw[draw=none] (0, 0) -- (4, 6)
+		node[pos=0.4, rotate=56, above=1]{\LARGE{OPERATIONEN}};
+		
+		\draw[draw=none] (4, 6) -- (7, 1.5)
+		node[pos=0.63, rotate=-56, above=1]{\LARGE{INHALTE}};
+		
+		
+		% F content ----------------------------------------------
+		\draw[draw=none] (0, -1)
+		node {\LARGE{F}};
+		
+		\draw[draw=none] (-1, -1)
+		node[above=.05]{\scriptsize Figural-}
+		node[below=.05]{\scriptsize bildhaft};
+		
+		% V content ----------------------------------------------
+		\draw[draw=none] (1, -2.5)
+		node{\LARGE{V}};
+		
+		\draw[draw=none] (0.1, -2.5)
+		node{\scriptsize Verbal};
+		
+		% N content ----------------------------------------------
+		\draw[draw=none] (2, -4)
+		node{\LARGE{N}};
+		
+		\draw[draw=none] (.8, -4)
+		node{\scriptsize Numerisch};
+		
+		% B operation --------------------------------------------
+		\draw[draw=none] (7, 0.5)
+		node {\LARGE{B}};
+		
+		\draw[draw=none] (8.5, 0.5)
+		node[above=.05]{\scriptsize Bearbeitungs-\hphantom{iit}}
+		node[below=.05]{\scriptsize geschwindigkeit};
+		
+		% M operation --------------------------------------------
+		\draw[draw=none] (6, -1)
+		node {\LARGE{M}};
+		
+		\draw[draw=none] (7.5, -1)
+		node{\scriptsize Merkfähigkeit};
+		
+		% E operation --------------------------------------------
+		\draw[draw=none] (5, -2.5)
+		node {\LARGE{E}};
+		
+		\draw[draw=none] (6.5, -2.5)
+		node{\scriptsize Einfallsreichtum};
+		
+		% K operation --------------------------------------------
+		\draw[draw=none] (4, -4)
+		node {\LARGE{K}};
+		
+		\draw[draw=none] (5.9, -4)
+		node{\scriptsize Verarbeitungskapazität};
+		\end{tikzpicture}
+	\end{adjustbox}
+	\vspace*{.5cm}
 	\caption[Das Berliner Intelligenzstrukturmodell]{Das Berliner Intelligenzstrukturmodell von \citet{Jaeger1984}.}
 	\label{fig:bis_model}
-\end{figure} 
+\end{figure}
 
 Als integratives Modell ist das \gls{bism} zu bezeichnen, weil \citet{Jaeger1984} bei der Konstruktion des Modells versucht hat, die Vielfalt intellektueller Leistungsformen möglichst umfassend zu repräsentieren.
 Bimodal ist das \gls{bism}, weil das Modell zwei Modalitäten aufweist, unter welchen Leistungen und Fähigkeiten klassifiziert werden können. 
@@ -1137,9 +1217,10 @@ Die von \citet{Jaeger1997} vorgeschlagene Kurzversion des \gls{bist} enthält $1
 Auf Subtests der Operation \gls{e} wurde gänzlich verzichtet, weil zum einen unklar ist, wie Einfallsreichtum und Intelligenz zusammenhängen \citep{Kim2005} und zum anderen weil \citet{Jaeger1997} unbefriedigende Objektivitätswerte berichten. 
 Alle eingesetzten Subtests, deren Beschreibung sowie Zuordnung zu den jeweiligen Operationen und Inhalte sind \autoref{tab:bis_subtest_description} zu entnehmen.
 
-verarbeitungskapazität und g
-breite testbatterie -> g faktor ableitbar
-parallelen zwischen bis und carroll
+\textcolor{red}{verarbeitungskapazität und g
+	breite testbatterie -> g faktor ableitbar
+	parallelen zwischen bis und carroll}
+
 
 \begin{sidewaystable}
 	\captionsetup{labelsep = none}
