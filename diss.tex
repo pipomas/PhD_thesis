@@ -524,7 +524,7 @@ longplural={},
 % S U M M A R Y
 % =================================================================
 \chapter*{Zusammenfassung \label{cha:Zusammenfassung}}
-\addcontentsline{toc}{chapter}{Zusammenfassung}
+%\addcontentsline{toc}{chapter}{Zusammenfassung}
 \noindent
 DGP Richtlinien weisen auf folgende Punkte hin:
 \begin{itemize}
@@ -555,35 +555,25 @@ DGP Richtlinien weisen auf folgende Punkte hin:
 \tableofcontents								% insert toc
 %\addcontentsline{toc}{chapter}{Inhalte}		% add toc to toc? :D
 
-% Insert the lof ---------------------------------------------------
-\renewcommand\listfigurename{Abbildungen}		% define name of lof
-\listoffigures									% insert lof
-\addcontentsline{toc}{chapter}{Abbildungen}		% add lof to toc
-
-
-
-% Insert the lot ---------------------------------------------------
-\renewcommand\listtablename{Tabellen}			% define name of lot
-\listoftables 									% insert lot
-\addcontentsline{toc}{chapter}{Tabellen}		% add lot to toc
 
 
 
 % =================================================================
-% P R E F A C E
+% A C K N O W L E D G M E N T S
 % =================================================================
 \clearpage
-\chapter*{Danksagung}
+\chapter*{\LARGE Danksagung}
 \addcontentsline{toc}{chapter}{Danksagung}
+\vspace{-.7cm}
 Diese Arbeit ist das Produkt meiner dreijährigen Forschungstätigkeit. Mein Dank gilt allen Personen, die mit ihrer Unterstützung zum Gelingen dieser Arbeit beigetragen haben.
 
-Namentlich möchte ich mich bei Herr \mbox{Prof. Dr. Stefan Troche} bedanken, der mir mit zahlreichen Tipps und Hinweisen geholfen hat, und mit seinen .
+Namentlich möchte ich mich bei Herr \mbox{Prof. Dr. Stefan Troche} bedanken, der mir mit zahlreichen Tipps und Hinweisen geholfen hat, und mit seinen.
 \mbox{Prof. Dr. Thomas Rammsayer} möchte ich für zu jeder Zeit als Ansprechperson zur Verfügung stand seine zahlreichen Tipps und Anregungen bezüglich der statistischen Analysen
 %danken. \mbox{Prof. Dr. Duje Tadin} ebenfalls. 
 %\citep{Upper1974} 
 %\citep{Pahud2016}
 
-Der \LaTeX- und R-Code für die Reproduktion dieser Arbeit sind verfügbar unter \url{http://www.github.com/pipomas}.
+
 
 
 \vspace{6 mm}
@@ -593,10 +583,8 @@ Philipp Thomas\\
 \today
 \end{quote}
 
-\section*{Online-Material}
-\addcontentsline{toc}{chapter}{Online-Material}
 
-Der \LaTeX- und R-Code für die Reproduktion dieser Arbeit sind verfügbar unter \url{http://www.github.com/pipomas}.
+
 
 
 \mainmatter				% page numbers in arabic
@@ -620,19 +608,14 @@ Auf höchster Hierarchiestufe lässt sich der \gls{gfaktor} wiederfinden, welche
 Sie vereint viele der bis dahin postulierten Modellstrukturen, namentlich die Idee des \gls{gfaktor}s \citep{Spearman1904, Spearman1927}, die mehreren Faktoren von \citet{Thurstone1938}, \gls{Gf} und \gls{Gc} aus dem Modell von \citet{Cattell1971} und den hierarchischen Aufbau, wie er zum Beispiel in den Modellen von \citet{Vernon1950} oder \citet{Jaeger1984} zu finden ist \citep[für Erweiterungen der \gls{tst} siehe][]{McGrew2005, McGrew2009}.
 
 Alternative Theorien, welche die positiven Zusammenhänge zwischen verschiedenen Tests zur Erfassung von kognitiver Leistung nicht mit dem \gls{gfaktor} erklären, sind selten. 
-So geht zum Beispiel das Bond-Modell von \citet{Thomson1916} davon aus, dass das Bearbeiten einer kognitiven Aufgabe spezifische Module (kognitive Prozesse, sogenannte \textit{bonds}) benötigt, die unkorreliert sind. Werden die Module während der Erfassung kognitiver Fähigkeiten mit unterschiedliche kognitiven Tests benötigt, kann es vorkommen, dass ein Modul für mehrere Tests beansprucht wird. Ein Modul fliesst also in die Leistung mehrerer Tests ein, was schlussendlich zu positiven Korrelationen zwischen verschiedenen Tests führen kann. Der \gls{gfaktor} ist unter dieser Betrachtungsweise also ein Artefakt, der auf unzureichende Messgüte von kognitiven Tests zurückzuführen ist \citep[für einen Gegenüberstellung zwischen dem \gls{gfaktor} und dem Bond-Modell siehe][]{Bartholomew2013}.
-Die Mutualism-theory-of-\textit{g} \citep{VanDerMaas2006} erklärt die positiven Zusammenhänge zwischen kognitiven Tests nochmals auf eine andere Weise. Die Theorie geht davon aus, dass kognitive Prozesse zu Beginn unabhängig sind. Mit zunehmender Ausbildung der kognitiven Prozessen entwickeln sich allerdings reziproke vorteilhafte Abhängigkeiten zwischen einzelnen Prozessen, womit sich positive Zusammenhänge zwischen kognitiven Tests ebenso gut erklären lassen wie mit dem \gls{gfaktor}. \citet{Gignac2014, Gignac2016} zeigte mit seinen kürzlich erschienen Untersuchungen jedoch, dass der \gls{gfaktor} zum jetzigen Zeitpunkt die zu bevorzugende Erklärung für das Auftreten des \textit{positive man\-i\-fold} ist. 
+So geht zum Beispiel das Bond-Modell \citep{Thomson1916} davon aus, dass das Bearbeiten einer kognitiven Aufgabe spezifische Module (kognitive Prozesse, sogenannte \textit{bonds}) benötigt, die unkorreliert sind. Werden die Module während der Erfassung kognitiver Fähigkeiten mit unterschiedliche kognitiven Tests benötigt, kann es vorkommen, dass ein Modul für mehrere Tests beansprucht wird. Ein Modul fliesst also in die Leistung mehrerer Tests ein, was schlussendlich zu positiven Korrelationen zwischen verschiedenen Tests führen kann. Der \gls{gfaktor} ist unter dieser Betrachtungsweise also ein Artefakt, der auf unzureichende Messgüte von kognitiven Tests zurückzuführen ist \citep[für einen Gegenüberstellung zwischen dem \gls{gfaktor} und dem Bond-Modell siehe][]{Bartholomew2013}.
+Die Mutualism-theory-of-\textit{g} \citep{VanDerMaas2006} erklärt die positiven Zusammenhänge zwischen kognitiven Tests nochmals auf eine andere Weise. Die Theorie geht davon aus, dass kognitive Prozesse zu Beginn unabhängig sind. Mit zunehmender Ausbildung der kognitiven Prozessen entwickeln sich allerdings reziproke vorteilhafte Abhängigkeiten zwischen einzelnen Prozessen, womit sich positive Zusammenhänge zwischen kognitiven Tests ebenso gut erklären lassen, wie mit dem \gls{gfaktor}. \citet{Gignac2014, Gignac2016} zeigte mit seinen kürzlich erschienen Untersuchungen jedoch, dass der \gls{gfaktor} zum jetzigen Zeitpunkt die zu bevorzugende Erklärung für das Auftreten des \textit{positive man\-i\-fold} ist. 
 
-Um den \gls{gfaktor} aus einer Korrelationsmatrix kognitiver Tests zu extrahieren, müssen zwei Bedingungen erfüllt sein \citep{Jensen1998a}. Zum einen muss die Anzahl an kognitiven Tests genügend gross sein, damit die extrahierten Faktoren reliabel sind und zum anderen muss eine genügend grosse Bandbreite an unterschiedlichen Tests kognitiver Fähigkeiten verwendet werden. Der \gls{gfaktor} tritt dann unabhängig von der eingesetzten Testbatterie \citep{Johnson2004, Johnson2008} oder der verwendeten faktorenanalytischen Methode \citep{Jensen1994} immer als erster extrahierter Faktor auf. 
+Um den \gls{gfaktor} aus einer Korrelationsmatrix kognitiver Tests zu extrahieren, müssen zwei Bedingungen erfüllt sein \citep[][S. 73]{Jensen1998b}. Zum einen muss die Anzahl an kognitiven Tests genügend gross sein, damit die extrahierten Faktoren reliabel sind und zum anderen muss eine genügend grosse Bandbreite an unterschiedlichen Tests kognitiver Fähigkeiten verwendet werden. Der \gls{gfaktor} tritt dann unabhängig von der eingesetzten Testbatterie \citep{Johnson2004, Johnson2008} immer als erster extrahierter Faktor auf. Diese Robustheit gegenüber des eingesetzten Tests lässt sich damit erklären, dass der \gls{gfaktor} das Generelle von kognitiver Leistung erfasst und aufgabenspezifische Varianz vernachlässigt. Weiter haben Untersuchungen gezeigt, dass der \gls{gfaktor} von der eingesetzten faktorenanalytischen Methode (Hauptachsen- oder Hauptkomponentenanalyse) so gut wie nicht beeinflusst wird \citep{Jensen1994, Ree1991}.
 
-Der \gls{gfaktor} bildet dann das Gemeinsame der kognitiven Tests ab und vernachlässigt das Aufgabenspezifische.
+Mit zahlreichen Untersuchungen zur Kriteriumsvalidität des \gls{gfaktor}s wurde belegt, dass er praktische Bedeutsamkeit besitzt. So konnten zum Beispiel zwischen dem \gls{gfaktor} und Lernfähigkeit \citep{Christal1991}, schulischer Leistung \citep{Jensen1998b} oder beruflicher Leistung \citep{Schmidt2004} Zusammenhäng beobachtet werden. Aber auch mit generelleren Variablen wie der Gesundheit, dem Sozialverhalten, der Straffälligkeit, der Neigung zu Rassismus oder Alkoholismus konnten Zusammenhänge festgestellt werden \citep[für eine Übersicht siehe][]{Brand1987}.
 
-Untersuchungen haben gezeigt, dass der \gls{gfaktor} dafür gut geeignet ist.
-
-
-g als sinnvoller faktor für untersuchung geeignet. am meisten empirische evidenz vorhanden. biologische grundlage vorhanden, mit berufs- oder schulerfolg zusammen. jensen 2006 schauen, wofür g alles prädiktiv ist.
-
-
+Der \gls{gfaktor} \ldots
 
 
 
@@ -641,15 +624,29 @@ g als sinnvoller faktor für untersuchung geeignet. am meisten empirische eviden
 
 %Die Frage nach der Ursache für Intelligenzunterschiede stellte sich schon \citet{Galton1883}. Er hatte die Annahme, dass intelligente Personen über die Fähigkeit verfügen eine grosse Menge an eingehender Sinnesinformation zu verarbeiten, während nicht so intelligente Personen weniger scharfe Sinne besitzen. \citeauthor{Galton1883} operationalisierte die Schärfe der Sinne beispielsweise mit dem Seh- und Hörvermögen, der Farbdiskriminationsleistung oder dem Schmerzempfinden. \citet{Spearman1904} nahm diese Idee der besseren sensorischen Diskriminationsfähigkeit von intelligenten Personen auf und machte selbst Untersuchungen dazu. Er fand positive Zusammenhänge zwischen Diskriminationsleistung und Intelligenz. Es gibt noch andere Ansätze, welche im Folgenden ausführlich beschrieben werden.
 
-Von grossem interesse sind, was sind kognitive grundlagen von intelligenzunterschiede? sensorische diskirminiation, ag, blabla, einer der ältesten ansätze auch mental speed. dieser ansatz sollte in der arbeit vertieft betrachtet werden.
+Von grossem Interesse sind die kognitiven Grundlagen für Intelligenzunterschiede. 
 
-\begin{itemize}
-	\item Ansätze woran?
-	\item kristall kylonnen
-	\item ag - randall engle
-	\item mental speed: neubauer, deary
-	\item 
-\end{itemize}
+Unterschiedliche Ansätze, Intelligenzunterschiede zu erklären.
+
+Sensorische Diskrimination \citet{Galton1883, Spearman1904}
+
+Arbeitsgedächtniskapazität \citep{Kyllonen1990}
+
+
+
+Mit einer der ältesten Ansätze wird im folgenden Abschnitt erklärt und bildet den Rahmen für diese Untersuchung.
+
+
+
+Von grossem interesse sind, was sind kognitive grundlagen von intelligenzunterschiede? sensorische diskirminiation, ag, blabla...
+
+%\begin{itemize}
+%	\item Ansätze woran?
+%	\item kristall kylonnen
+%	\item ag - randall engle
+%	\item mental speed: neubauer, deary
+%	\item 
+%\end{itemize}
 
 \subsection{Der Mental-Speed-Ansatz}
 
@@ -684,7 +681,7 @@ Eine der beliebtesten und ältesten \gls{eka} ist die \gls{ha} \citep{Hick1952}.
 
 Für die Differentielle Psychologie wurde die \gls{ha} mit der Untersuchung von Roth \citep[1964; zitiert nach][S. 105]{Jensen1987a} interessant. Er berichtete über einen Zusammenhang von $r=-.39$ zwischen der aus den Reaktionszeiten abgeleiteten Steigung ($b$) und psychometrischer Intelligenz. Intelligentere \glspl{vp} zeigten also mit zunehmender Anzahl Antwortalternativen einen weniger starke Verlangsamung ihrer Reaktionszeit  (ANSTIEG!) als weniger intelligente \glspl{vp}. Weiter fand Roth keinen Zusammenhang zwischen dem y-Ach\-sen\-ab\-schnitt ($a$) und psychometrischer Intelligenz. Diese ersten Resultate legten die Vermutung nahe, dass Unterschiede in komplexer kognitiver Leistung erfasst mit Intelligenztests mitunter von der Geschwindigkeit abhängen, mit der Informationen verarbeitet werden.
 
-Spätere Untersuchungen haben dann gezeigt, dass auch der y-Ach\-sen\-ab\-schnitt ($a$) negativ mit psychometrischer Intelligenz zusammenhängt \citep{Jensen1982b, Jensen1987a, Neubauer1997a, Neubauer1997b}. Intelligentere \glspl{vp} zeigten also kürzere einfache Reaktionszeiten als weniger intelligente \glspl{vp}. Im Gegensatz zur Steigung, welche die Verarbeitungsgeschwindigkeit von Informationen abbildet, wird beim y-Ach\-sen\-ab\-schnitt angenommen, dass er ein Mass für die Zeitdauer ist, welche sensorische und motorische Prozesse benötigen, um den Reiz im Kortex wahrzunehmen und die Muskeln über efferente Nerven anzusteuern \citep{Jensen1998b}.
+Spätere Untersuchungen haben dann gezeigt, dass auch der y-Ach\-sen\-ab\-schnitt ($a$) negativ mit psychometrischer Intelligenz zusammenhängt \citep{Jensen1982b, Jensen1987a, Neubauer1997a, Neubauer1997b}. Intelligentere \glspl{vp} zeigten also kürzere einfache Reaktionszeiten als weniger intelligente \glspl{vp}. Im Gegensatz zur Steigung, welche die Verarbeitungsgeschwindigkeit von Informationen abbildet, wird beim y-Ach\-sen\-ab\-schnitt angenommen, dass er ein Mass für die Zeitdauer ist, welche sensorische und motorische Prozesse benötigen, um den Reiz im Kortex wahrzunehmen und die Muskeln über efferente Nerven anzusteuern \citep{Jensen1998a}.
 
 Abgesehen vom negativen Zusammenhang zwischen diesen regressionsanalytisch abgeleiteten Aufgabenparametern und psychometrischer Intelligenz sind sämtliche  Reaktionszeiten der \gls{ha} negativ mit psychometrischer Intelligenz korreliert. Eine Meta-Analyse von \citet{Sheppard2008} hat ergeben, dass die Reaktionszeiten der \gls{ha} im Bereich von $r=-.20$ bis $r=-.40$ mit psychometrischer Intelligenz korrelieren. 
 
@@ -701,7 +698,7 @@ Der Mental-Speed-Ansatz \citep{Jensen1982a, Jensen1982b, Vernon1983} erklärt di
 
 Ungeachtet dessen wird der \gls{msa} verwendet, um den Zusammenhang zwischen der Arbeitsgedächtniskapazität und Intelligenz \citep[siehe][]{Ackerman2005} zu erklären. Im Modell von \citet{Lehrl1988, Lehrl1990} bestimmt sich die Kapazität des Arbeitsgedächtnisses unter anderem durch die Geschwindigkeit, mit der Personen ein Bit verarbeiten. ERKLÄRUNG. AUCH MELNICK GEHEN DARAUF EIN? (STEFANs idee) 
 
-Eine neuere Studie \citep{Melnick2013} verwendete Verarbeitungsgeschwindigkeit, um einen Anteil vom  Zusammenhang zwischen Spatial-Suppression und psychometrischer Intelligenz zu erklären. Der \gls{ssans} wird im nächsten Unterabschnitt vorgestellt.
+Eine neuere Untersuchung \citep{Melnick2013} verwendete Verarbeitungsgeschwindigkeit, um einen Anteil vom  Zusammenhang zwischen Spatial-Suppression und psychometrischer Intelligenz zu erklären. Der \gls{ssans} wird im nächsten Unterabschnitt vorgestellt.
 
 %\citep{Neubauer2000}
 %Ulman Lindenberger / Saulberg: AG über mental-speed zu erklären ?
@@ -710,7 +707,7 @@ Eine neuere Studie \citep{Melnick2013} verwendete Verarbeitungsgeschwindigkeit, 
 
 \subsection{Der Spatial-Suppression-Ansatz}
 
-Das Phänomen der \gls{ss} wurde von \citet{Tadin2003} unabhängig von psychometrischer Intelligenz beschrieben. \citeauthor{Tadin2003} untersuchten in ihrer Studie, mit welcher zeitlichen Dauer ein sich bewegendes Streifenmuster präsentiert werden muss, damit die Bewegungsrichtung des Musters korrekt wahrgenommen wird. Dabei haben sie die Grösse des Musters manipuliert und mit Erstaunen festgestellt, dass die Bewegungsrichtung mit zunehmender Grösse des Streifenmusters schwieriger zu erkennen war. Für die Erkennung der Bewegungsrichtung von kleinen Mustern wurde also weniger Zeit benötigt, als für die Erkennung der Bewegungsrichtung von grossen Mustern. Dieses perzeptuelle Phänomen wurde von \citeauthor{Tadin2003} \gls{ss} genannt.
+Das Phänomen der \gls{ss} wurde von \citet{Tadin2003} unabhängig von psychometrischer Intelligenz beschrieben. \citeauthor{Tadin2003} untersuchten in ihrer Untersuchung, mit welcher zeitlichen Dauer ein sich bewegendes Streifenmuster präsentiert werden muss, damit die Bewegungsrichtung des Musters korrekt wahrgenommen wird. Dabei haben sie die Grösse des Musters manipuliert und mit Erstaunen festgestellt, dass die Bewegungsrichtung mit zunehmender Grösse des Streifenmusters schwieriger zu erkennen war. Für die Erkennung der Bewegungsrichtung von kleinen Mustern wurde also weniger Zeit benötigt, als für die Erkennung der Bewegungsrichtung von grossen Mustern. Dieses perzeptuelle Phänomen wurde von \citeauthor{Tadin2003} \gls{ss} genannt.
 
 Welcher neuronale Mechanismus steckt hinter \gls{ss}? \citet{Tadin2003} erklärten die Ergebnisse mit dem von \citet{Allman1985a} entdeckten bewegungsbezogenen Zentrum-Umfeld-Antagonismus von Neuronen im \gls{mt} des Okzipitallappen.
 
@@ -3093,6 +3090,20 @@ fixed-links als Lösung für exponentielle Regression, da hats einfach ein paar 
 %../references
 
 % =================================================================
+% L I S T   O F   F I G U R E S
+% =================================================================
+\renewcommand\listfigurename{Abbildungen}		% define name of lof
+\listoffigures									% insert lof
+\addcontentsline{toc}{chapter}{Abbildungen}		% add lof to toc
+
+% =================================================================
+% L I S T   O F   T A B L E S
+% =================================================================
+\renewcommand\listtablename{Tabellen}			% define name of lot
+\listoftables 									% insert lot
+\addcontentsline{toc}{chapter}{Tabellen}		% add lot to toc
+
+% =================================================================
 % A P P E N D I X   A
 % =================================================================
 \appendix
@@ -3116,7 +3127,7 @@ Trotz sorgfältiger Auswahl der \glspl{vp} hat sich nachträglich bei der Alters
 Zu Beginn der Datenerhebung wurde die \gls{ssauf} mit einem Kontrast von $74\,\%$ dargeboten. Nach Inspektion der Daten der sieben ersten getesteten \glspl{vp} wurde in Absprache mit Duje Tadin entschieden, den Kontrast der Aufgabe auf $99\,\%$ zu erhöhen. Mit dieser Erhöhung des Kontrasts wurde sichergestellt, dass die über die vier Mustergrössen hinweg erwartete Verschlechterung der Wahrnehmungsleistung möglichst gross ausfällt \citep[für den Zusammenhang zwischen Kontrast und Wahrnehmungsleistung siehe][]{Tadin2003}. Den restlichen \glspl{vp} wurde die Aufgabe folglich mit einem Kontrast von $99\,\%$ dargeboten und die Daten der ersten sieben \glspl{vp} wurden von der Analyse ausgeschlossen.
 
 Der Code, welcher die Darbietungszeiten generierte, hatte eine programmierte Darbietungszeitlimite von $1000$~ms. Immer wenn der adaptive Alogrithmus des QUEST-Verfahrens \citep{Watson1983} eine Darbietungszeit von $> 1000$~ms ermittelte, wurde den \glspl{vp} deshalb der Stimulus mit einer Darbietungszeit von exakt $1000$~ms präsentiert. 
-Die Daten von $12$~\glspl{vp} mussten vor der Analyse entfernt werden, weil sie bei den sechs Schätzungen der $82\,\%$-Er\-ken\-nungs\-schwel\-le innerhalb einer Mustergrösse mehr als ein Mal eine $82\,\%$-Er\-ken\-nungs\-schwel\-le von $> 1000$~ms erzielt hatten. Dasselbe Ausschlussverfahren verwendeten auch \citet{Melnick2013}.
+Die Daten von $12$~\glspl{vp} mussten vor der Analyse entfernt werden, weil sie bei den sechs Schätzungen der $82\,\%$-Er\-ken\-nungs\-schwel\-le innerhalb einer Mustergrösse mehr als ein Mal eine $82\,\%$-Er\-ken\-nungs\-schwel\-le von $> 1000$~ms erzielt hatten. Dasselbe Ausschlussverfahren verwendeten \citet{Melnick2013}.
 
 Die Daten von zwei \glspl{vp} wurden von der Analyse ausgeschlossen, weil sie verglichen mit den restlichen \glspl{vp} in der $1.8^{\circ}$-Be\-ding\-ung eine gemittelte $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-le hatten, die über das dreifache der \gls{sd} der $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-le der Gesamtstichprobe betrug. Diese drei \glspl{vp} wurden nicht zur Grundpopulation gezählt und vor der Analyse entfernt.
 
@@ -3324,8 +3335,12 @@ Die Zusammenhänge der Subtests wurden mit Spearmans Rangkorrelationen bestimmt 
 \end{sidewaystable}
 
 
+% =================================================================
+% A P P E N D I X   C
+% =================================================================
+\chapter[Anhang - Online-Material]{Anhang}
 
-
+Der \LaTeX- und R-Code für die Reproduktion dieser Arbeit sind verfügbar unter \url{http://www.github.com/pipomas}.
 
 
 
