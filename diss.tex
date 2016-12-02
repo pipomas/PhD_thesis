@@ -29,7 +29,7 @@
 \renewcommand{\textfraction}	{.001}				% minimum fraction text per side
 \renewcommand{\topfraction}		{.999}				% fraction of float on top page
 \renewcommand{\bottomfraction}	{.999}				% fraction of float on bottum page
-\usepackage[hang, bottom]{footmisc}					% footnotes are indented and always on bottom uf page
+\usepackage[hang, bottom]{footmisc}					% footnotes are indented and always on bottom of the page
 \usepackage{cancel}									% for \cancel{expression} 
 \usepackage{pifont}									% for "itemize" symbols
 \usepackage{color}									% \textcolor{color}{text} for coloring text
@@ -417,13 +417,15 @@ longplural={},
 %\usepackage[pagewise]{lineno}		% line numbering for reviewing
 %\linenumbers						% do it :)
 
-
+\usepackage{todonotes}
 
 \raggedbottom			% o_o http://tex.stackexchange.com/questions/36423/random-unwanted-space-between-paragraphs ?
 %\widowpenalty=300		% avoid single lines (values 0-1000)
 %\clubpenalty=300		% avoid single lines (values 0-1000)
 
 %\usepackage[all]{nowidow}
+
+%\usepackage[nottoc]{tocbibind}
 
 
 % ==========================================================================================
@@ -732,33 +734,14 @@ Eine zweite latente Variable beinhaltet Varianz aufgabenrelevanter Prozesse, der
 Erreicht wird diese Trennung von Prozessen, indem die unstandardisierten Faktorladungen der manifesten Indikatoren auf die beiden latenten Faktoren vor der Modellschätzung fixiert werden. Die unstandardisierten Faktorladungen der ersten latenten Variablen werden dabei alle auf den gleichen Wert gesetzt. Die unstandardisierten Faktorladungen der zweiten latenten Variable folgen einem Verlauf, der sich aus theoretischen Überlegungen zum Einfluss der erfassten, experimentell manipulierten Prozesse ergibt. 
 Weil durch die Fixierung der unstandardisierten Faktorladungen im Rahmen der Parameterschätzung die Matrix der Faktorladungen nicht mehr geschätzt wird (sie wird a priori bestimmt), muss die latente Varianz der Faktoren auf Signifikanz geprüft werden. In Kombination mit einem guten Modell-Fit lässt erst eine signifikante latente Varianz eines Faktors die Interpretation der erfassten Prozesse zu. Verfehlt die latente Varianz eines Faktors das Signifikanzniveau, wurden darin keine bedeutsamen Prozesse abgebildet und das gesamte Modell kann nicht interpretiert werden.
 
-\glspl{flm} stellen eine Möglichkeit dar, dem \gls{ip} entgegenzutreten und Prozesse voneinander zu trennen. Sie haben gegenüber anderen Methoden zur Analyse von experimentell manipulierten Aufgaben zwei entscheidende Vorteile: Durch die Analyse auf latenter Ebene kann der Messfehler bestimmt und von der Analyse ausgeschlossen werden. 
+\glspl{flm} stellen somit eine Möglichkeit dar, dem \gls{ip} entgegenzutreten und Prozesse voneinander zu trennen. Sie haben gegenüber anderen Methoden zur Analyse von experimentell manipulierten Aufgaben entscheidende Vorteile.
+Im Vergleich mit Analysemethoden auf manifester Ebene berücksichtigen \glspl{flm}, dass ein beobachteter Messwert Messfehler enthält \citep{Moosbrugger2007}. Dieser Messfehler wird bei einer latenten Analyse isoliert, womit die den manifesten Zusammenhängen zugrunde liegende Beziehung aufgedeckt wird und validere Schlussfolgerungen gezogen werden können.
+Im Vergleich mit herkömmlichen Faktorenanalysen, welche gemeinsame Varianz von manifesten Variablen auf einen einzigen Faktor zurückführen, trennen \glspl{flm} latente Varianz in Prozesse, die über die experimentelle Manipulation hinweg einen gleichbleibenden Einfluss auf die manifesten Variablen ausüben von solchen, die sich mit der experimentellen Manipulation verändern. Dadurch lässt sich auf statistischer Ebene die an der experimentellen Manipulation beteiligten Prozesse von allen andere Prozessen trennen.
+Hiermit unterscheiden sich \glspl{flm} auch von bifaktoriellen Modellen \citep{Moosbrugger2006, Schweizer2010}. Bifaktorielle Modelle trennen wie \glspl{flm} gemeinsame Varianz von manifesten Variablen in zwei latente Faktoren, die Faktorladungen werden jedoch nicht a priori aufgrund theoretischer Überlegungen zum Einfluss der Prozesse auf die manifesten Variablen fixiert. Mit bifaktoriellen Modellen lässt sich folglich die von der experimentellen Manipulation verursachte Varianz in den manifesten Variablen nicht von der Varianz der Prozesse trennen, welche unabhängig der experimentellen Manipulation sind.
 
-statt und isoliert damit den Messfehler. 
-
-Im Vergleich mit manifesten Analysemethoden ()
-
-(2) \glspl{flm} trennen latente Varianz in Prozesse, die über die experimentelle Manipulation hinweg einen gleichbleibenden Einfluss auf die manifesten Variablen von solchen, die sich über die experimentelle Manipulation hinweg verändern. (3) 
-
-Sie bieten gegenüber den Lösungsansätzen auf manifester Ebene den Vorteil, dass sie den Messfehler anerkennen und isolieren. Gegenüber herkömmlichen latenten Analyseverfahren sind 
-
-
-Im Zusammenhang mit psychometrischer Intelligenz wurden sie bereits mehrmals erfolgreich eingesetzt \citep{Miller2010, Thomas2015, Troche2009e, Wagner2014, Pahud2017, Stauffer2014}. 
-
-
-
-
-
-Dadurch unterscheiden sich \glspl{flm} von bifaktoriellen Modellen \citep{Moosbrugger2006, Schweizer2010}. 
-
-
-
-- FLM als alternativer Ansatz für Regression für RT
-
+Untersuchungen, die \glspl{flm} benützt haben um die Verunreinigung von kognitiven Korrelaten psychometrischer Intelligenz auf statistischer Ebene rückgängig zu machen gibt es einige \citep[z. B.][]{Miller2010, Thomas2015, Troche2009e, Wagner2014, Pahud2017, Stauffer2014}. Die formulierten theoretischen Modelle beschrieben dabei die empirischen Daten jeweils sehr gut (oder besser als herkömmliche Faktorenanalysen). Diese Ergebnisse belegen, dass \glspl{flm} bei der Bestimmung der kognitiven Grundlagen individueller Intelligenzunterschiede nicht nur aus theoretischer, sondern auch aus praktischer Sichtweise zu bevorzugen sind. Wenn immer eine Aufgabe zur Erfassung eines Konstrukts experimentell manipuliert wird, bieten sich somit \glspl{flm} als eine elegante Modellierungstechnik an, die Verunreinigung von Massen zur Erfassung kognitiver Konstrukte zu unterbinden.
 
 %Die Idee der experimentellen Manipulation besteht darin, alle Prozesse bis auf den eigentlich interessierenden Prozess über alle Bedingungen hinweg konstant zu halten. 
-
-- Vorteil gegenüber anderen Methoden? (manifest)
 
 
 
@@ -775,7 +758,8 @@ Der \gls{ssans} zur Erklärung individueller Intelligenzunterschiede ist neu und
 
 	\item Eine weitere Möglichkeit zur Quantifizierung von \gls{ss} besteht darin, die Aufgabenbedingungen auf latenter Ebene zu analysieren und damit die Zusammenhänge der Aufgabenbedingungen auf einen oder mehrere unbeobachtete Faktoren zurückzuführen. Im Gegensatz zur manifesten Auswertung (vgl. Punkt 1 und 2) berücksichtigt die Analyse auf latenter Ebene die Tatsache, dass sich ein beobachteter Messwert immer aus einem wahren Anteil der Merkmalsausprägung und einem zufällig zustande gekommenen Fehleranteil, der unabhängig von der wahren Merkmalsausprägung ist, zusammensetzt. Ein latenter Faktor beinhaltet nur die wahren Merkmalsausprägungen von Personen, womit sich, verglichen mit einer Analyse auf manifester Ebene, Zusammenhänge mit anderen Variablen valider bestimmen lassen. Die Bedeutung der \gls{ssauf} als Prädiktor von \textit{g}, der latenten Operationalisierung psychometrischer Intelligenz, sollte demnach auf latenter Ebene deutlicher erkennbar sein als auf manifester Ebene.
 
-	\item Um bei der Beschreibung der \gls{ssauf} auf latenter Ebene eine vergleichbare Trennung von Prozessen zu erhalten wie unter Punkt 2 auf manifester Ebene, wird versucht die Aufgabenbedingungen mit einem \gls{flm} (\textcolor{red}{/autoref{Verweis auf Einleitung, in welcher FLM beschrieben werden folgt noch}}) zu beschreiben. 
+	\item Um bei der Beschreibung der \gls{ssauf} auf latenter Ebene eine vergleichbare Trennung von Prozessen zu erhalten wie unter Punkt 2 auf manifester Ebene, wird versucht die Aufgabenbedingungen mit einem \gls{flm} zu beschreiben
+	\todo[color=green!40, fancyline]{/autoref auf FLM einfügen}.
 	Dafür werden zwei latente Variablen angenommen: Die erste latente Variable bildet durch konstantgehaltene Faktorladungen aufgabenrelevante Prozesse ab, deren Einflüsse sich über die vier Bedingungen hinweg nicht ändern. 
 	Die zweite latente Variable weist sich unterscheidende Faktorladungen auf, welche  bestimmten Annahmen folgend gewählt werden.
 	Durch die sich unterscheidenden Faktorladungen werden in der zweiten latenten Variable aufgabenrelevante Prozesse gebunden, die durch die vier Bedingungen systematisch manipuliert wurden. Weil die Aufgabe noch nie mit einem \gls{flm} beschrieben wurde, werden unterschiedliche Ladungsverläufe gegeneinander getestet und das beste Modell für die weiteren Analysen ausgewählt.
@@ -823,17 +807,17 @@ Die Sehwinkel der Muster wurden mit einer Kinnstütze, die $61$~cm vom Monitor e
 %Die räumliche Frequenz aller vertikal schwarz-grau gestreiften Mustergrössen betrug wie bei \citeauthor{Melnick2013} $1^{\circ}$ pro Periodenlänge.
 Der verwendete Ton wies bei einer Frequenz von $2900$~Hz und einer Lautstärke von $70$~dB eine Länge von $50$~ms auf.
 
-%\begin{figure}[htb]
-%	\centering
-%	\subfloat[Sehwinkel $= 1.8^{\circ}$][Sehwinkel $= 1.8^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s1_a}}~~
-%	\subfloat[Sehwinkel $= 3.6^{\circ}$][Sehwinkel $= 3.6^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s2_a}}
-%
-%	\subfloat[Sehwinkel $= 5.4^{\circ}$][Sehwinkel $= 5.4^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s3_a}}~~
-%	\subfloat[Sehwinkel $= 7.2^{\circ}$][Sehwinkel $= 7.2^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s4_a}}
-%
-%	\caption[Die Spatial-Suppression-Bedingungen]{Die vier Mustergrössen $(a - d)$ der \gls{ssauf}.}
-%	\label{fig:spatial_suppression_stimuli}
-%\end{figure}
+\begin{figure}[htb]
+	\centering
+	\subfloat[Sehwinkel $= 1.8^{\circ}$][Sehwinkel $= 1.8^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s1_a}}~~
+	\subfloat[Sehwinkel $= 3.6^{\circ}$][Sehwinkel $= 3.6^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s2_a}}
+
+	\subfloat[Sehwinkel $= 5.4^{\circ}$][Sehwinkel $= 5.4^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s3_a}}~~
+	\subfloat[Sehwinkel $= 7.2^{\circ}$][Sehwinkel $= 7.2^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s4_a}}
+
+	\caption[Die Spatial-Suppression-Bedingungen]{Die vier Mustergrössen $(a - d)$ der \gls{ssauf}.}
+	\label{fig:spatial_suppression_stimuli}
+\end{figure}
 
 \subsection{Versuchsablauf \label{subsec:Prozedur}}
 
@@ -869,124 +853,124 @@ Präsentiert wurde die Aufgabe auf dem in \autoref{sub:ssas} beschriebenen Compu
 
 Die Stimuli wurden mit E-Prime\textsuperscript{\textregistered} \citep{eprime} generiert. Die weissen Stimuli wurden auf einem schwarzen Hintergrund präsentiert, welcher eine Leuchtdichte von $2\,\textnormal{cd}/ \textnormal{m}^2$ aufwies. Der horizontale und vertikale Sehwinkel der verwendeten Rechtecke betrug $1.8^{\circ}$ respektive $1.5^{\circ}$. Die Rechtecke wurden auf dem Monitor zentriert dargeboten. Die Stimulianordnung der verwendeten Bedingungen sah folgendermassen aus (siehe \autoref{fig:hick_stimuli}):  In der $0$-Bit-Bedingung wurde ein Rechteck präsentiert. In der $1$-Bit-Bedingung wurden horizontal nebeneinander zwei Rechtecke präsentiert. Die beiden Rechtecke erschlossen zusammen einen horizontalen und vertikalen Sehwinkel von $4.5^{\circ}$ respektive $1.5^{\circ}$. In der $2$-Bit-Bedingung wurden in U-Form vier Rechtecke präsentiert. Die vier Rechtecke erschlossen gemeinsam einen horizontalen und vertikalen Sehwinkel von $7.5^{\circ}$ respektive $4.3^{\circ}$. In der $2.58$-Bit-Bedingung wurden zu den in U-Form angeordneten vier Rechtecken der $2$-Bit-Bedingung in der oberen Reihe je links und rechts ein Rechteck hinzugefügt. Die sechs Rechtecke erschlossen zusammen einen horizontalen und vertikalen Sehwinkel von $12.9^{\circ}$ respektive $4.3^{\circ}$. Der Sehwinkel des imperativen Reizes, einem \enquote{+}, betrug $0.5^{\circ}$ und wurde  immer in der Mitte eines Rechtecks präsentiert. Die Sehwinkel der Stimuli wurden mit einer Kinnstütze, die $61$ cm vom Monitor entfernt war, sichergestellt. Der verwendete Ton wies bei einer Frequenz von $1000$~Hz und einer Lautstärke von $70$~dB eine Länge von $200$~ms auf.
 
-%\begin{figure}[htbp]
-%	\centering
-%	\subfloat[0-Bit]		[0-Bit-Bedingung]	{
-%		\resizebox{.9\textwidth}{!}{
-%			\begin{tikzpicture}
-%			[scale=1, font=\sffamily, inner sep=0pt, baseline,
-%			manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%			invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%			visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
-%			
-%			\node [invisible]	at (0,0)							(3)	{};
-%			\node [invisible]	[right = 11mm of 3]	  				(4)	{};
-%			\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
-%			\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
-%			\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
-%			\node [invisible]	[right = 11mm of 5]	  				(6)	{};
-%			
-%			\node [manifest] at (1.5,1.5)							(9)	{\Huge $+$};
-%			
-%			\node [visual]		at (-5,-1)	{}							;
-%			\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
-%			
-%			\begin{scope}[on background layer]
-%				\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
-%			\end{scope}
-%			\end{tikzpicture}
-%}} \newline
-%
-%\subfloat[1-Bit]		[1-Bit-Bedingung]	{
-%	\resizebox{.9\textwidth}{!}{
-%		\begin{tikzpicture}
-%		[scale=1, font=\sffamily, inner sep=0pt,
-%		manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%		invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%		visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
-%		
-%		\node [invisible]	at (0,0)							(3)	{};
-%		\node [invisible]	[right = 11mm of 3]	  				(4)	{};
-%		\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
-%		\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
-%		\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
-%		\node [invisible]	[right = 11mm of 5]	  				(6)	{};
-%		
-%		\node [manifest] at (0,1.5)				(9)		{\Huge $+$}	;
-%		\node [manifest] [right = 11mm of 9] 	(10)	{}			;	
-%		
-%		\node [visual]		at (-5,-1)	{}							;
-%		\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
-%		
-%		\begin{scope}[on background layer]
-%		\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
-%		\end{scope}
-%		\end{tikzpicture}
-%	}} \newline
-%	
-%	\subfloat[2-Bit]		[2-Bit-Bedingung]	{
-%		\resizebox{.9\textwidth}{!}{
-%			\begin{tikzpicture}
-%			[scale=1, font=\sffamily, inner sep=0pt,
-%			manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%			invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%			visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
-%			
-%			\node [invisible]	at (0,0)							(3)	{};
-%			\node [invisible]	[right = 11mm of 3]	  				(4)	{};
-%			\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
-%			\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
-%			\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
-%			\node [invisible]	[right = 11mm of 5]	  				(6)	{};
-%			
-%			\node [manifest]	at (0,0)							(3)	{};
-%			\node [manifest]	[right = 11mm of 3]	  				(4)	{};
-%			\node [manifest]	[above left  = 15mm and -3mm of 3]	(2) {\Huge $+$};
-%			\node [manifest]	[above right = 15mm and -3mm of 4]	(5) {};	
-%			
-%			\node [visual]		at (-5,-1)	{}							;
-%			\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
-%			
-%			\begin{scope}[on background layer]
-%			\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
-%			\end{scope}
-%			\end{tikzpicture}
-%		}} \newline
-%		
-%		\subfloat[$2.58$-Bit]		[$2.58$-Bit-Bedingung]	{
-%			\resizebox{.9\textwidth}{!}{
-%				\begin{tikzpicture}
-%				[scale=1, font=\sffamily, inner sep=0pt,
-%				manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%				invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-%				visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
-%				
-%				\node [invisible]	at (0,0)							(3)	{};
-%				\node [invisible]	[right = 11mm of 3]	  				(4)	{};
-%				\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
-%				\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
-%				\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
-%				\node [invisible]	[right = 11mm of 5]	  				(6)	{};
-%				
-%				\node [manifest]	at (0,0)							(3)	{};
-%				\node [manifest]	[right = 11mm of 3]	  				(4)	{};
-%				\node [manifest]	[above left  = 15mm and -3mm of 3]	(2) {};
-%				\node [manifest]	[above right = 15mm and -3mm of 4]	(5) {};
-%				\node [manifest]	[left  = 11mm of 2]	  				(1)	{};
-%				\node [manifest]	[right = 11mm of 5]	  				(6)	{\Huge $+$};
-%				
-%				\node [visual]		at (-5,-1)	{}							;
-%				\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
-%				
-%				\begin{scope}[on background layer]
-%				\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
-%				\end{scope}
-%				\end{tikzpicture}
-%			}} \newline
-%			
-%			\caption[Die Hick-Bedingungen]{Die vier Bedingungen $(a - d)$ der \gls{ha}. }
-%			\label{fig:hick_stimuli}
-%\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\subfloat[0-Bit]		[0-Bit-Bedingung]	{
+		\resizebox{.9\textwidth}{!}{
+			\begin{tikzpicture}
+			[scale=1, font=\sffamily, inner sep=0pt, baseline,
+			manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+			invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+			visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
+			
+			\node [invisible]	at (0,0)							(3)	{};
+			\node [invisible]	[right = 11mm of 3]	  				(4)	{};
+			\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
+			\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
+			\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
+			\node [invisible]	[right = 11mm of 5]	  				(6)	{};
+			
+			\node [manifest] at (1.5,1.5)							(9)	{\Huge $+$};
+			
+			\node [visual]		at (-5,-1)	{}							;
+			\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
+			
+			\begin{scope}[on background layer]
+				\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
+			\end{scope}
+			\end{tikzpicture}
+}} \newline
+
+\subfloat[1-Bit]		[1-Bit-Bedingung]	{
+	\resizebox{.9\textwidth}{!}{
+		\begin{tikzpicture}
+		[scale=1, font=\sffamily, inner sep=0pt,
+		manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+		invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+		visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
+		
+		\node [invisible]	at (0,0)							(3)	{};
+		\node [invisible]	[right = 11mm of 3]	  				(4)	{};
+		\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
+		\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
+		\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
+		\node [invisible]	[right = 11mm of 5]	  				(6)	{};
+		
+		\node [manifest] at (0,1.5)				(9)		{\Huge $+$}	;
+		\node [manifest] [right = 11mm of 9] 	(10)	{}			;	
+		
+		\node [visual]		at (-5,-1)	{}							;
+		\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
+		
+		\begin{scope}[on background layer]
+		\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
+		\end{scope}
+		\end{tikzpicture}
+	}} \newline
+	
+	\subfloat[2-Bit]		[2-Bit-Bedingung]	{
+		\resizebox{.9\textwidth}{!}{
+			\begin{tikzpicture}
+			[scale=1, font=\sffamily, inner sep=0pt,
+			manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+			invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+			visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
+			
+			\node [invisible]	at (0,0)							(3)	{};
+			\node [invisible]	[right = 11mm of 3]	  				(4)	{};
+			\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
+			\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
+			\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
+			\node [invisible]	[right = 11mm of 5]	  				(6)	{};
+			
+			\node [manifest]	at (0,0)							(3)	{};
+			\node [manifest]	[right = 11mm of 3]	  				(4)	{};
+			\node [manifest]	[above left  = 15mm and -3mm of 3]	(2) {\Huge $+$};
+			\node [manifest]	[above right = 15mm and -3mm of 4]	(5) {};	
+			
+			\node [visual]		at (-5,-1)	{}							;
+			\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
+			
+			\begin{scope}[on background layer]
+			\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
+			\end{scope}
+			\end{tikzpicture}
+		}} \newline
+		
+		\subfloat[$2.58$-Bit]		[$2.58$-Bit-Bedingung]	{
+			\resizebox{.9\textwidth}{!}{
+				\begin{tikzpicture}
+				[scale=1, font=\sffamily, inner sep=0pt,
+				manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+				invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+				visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
+				
+				\node [invisible]	at (0,0)							(3)	{};
+				\node [invisible]	[right = 11mm of 3]	  				(4)	{};
+				\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
+				\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
+				\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
+				\node [invisible]	[right = 11mm of 5]	  				(6)	{};
+				
+				\node [manifest]	at (0,0)							(3)	{};
+				\node [manifest]	[right = 11mm of 3]	  				(4)	{};
+				\node [manifest]	[above left  = 15mm and -3mm of 3]	(2) {};
+				\node [manifest]	[above right = 15mm and -3mm of 4]	(5) {};
+				\node [manifest]	[left  = 11mm of 2]	  				(1)	{};
+				\node [manifest]	[right = 11mm of 5]	  				(6)	{\Huge $+$};
+				
+				\node [visual]		at (-5,-1)	{}							;
+				\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
+				
+				\begin{scope}[on background layer]
+				\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
+				\end{scope}
+				\end{tikzpicture}
+			}} \newline
+			
+			\caption[Die Hick-Bedingungen]{Die vier Bedingungen $(a - d)$ der \gls{ha}. }
+			\label{fig:hick_stimuli}
+\end{figure}
 
 
 
@@ -1115,15 +1099,14 @@ Innerhalb der Modalität Inhalte lässt sich nach \citet{Jaeger1984} sprachgebun
 \Gls{f} spiegelt die Fähigkeit wider, Aufgabenmaterial zu verarbeiten, welches bildhaftes beziehungsweise räumliches Vorstellen erfordert.
 
 Auf höchster Hierarchiestufe des \gls{bism} steht als Integral aller sieben Fähigkeiten (\gls{k}, \gls{b}, \gls{M}, \gls{e}, \gls{v}, \gls{n} und \gls{f}) die \gls{ai}. Die \gls{ai} und die Fähigkeiten unterscheiden sich aber lediglich im Differenzierungsgrad. \gls{ai} bildet Intelligenzleistungen gemäss \citet{Jaeger1984} aus grosser Distanz ab, während die sieben Fähigkeiten auf der Ebene darunter Intelligenzleistungen aus geringerer Distanz mit feinerem Auflösungsgrad abbilden. Untersuchungen zum \gls{bism} konnten die postulierte Struktur des \gls{bist}s replizieren  und Zusammenhänge mit anderen Intelligenzmodellen wie denjenigen von \citet{Cattell1971}  oder von \citet{Carroll1993} herstellen \citep{Bucik1996, Beauducel2002, Suess2002}.
+\todo[color=green!40, fancyline]{K und g. Breite Testbatterie -> gfaktor ableitbar. Parallelen zwischen BIS und Carroll erwähnen?}
 
 Die von \citet{Jaeger1997} vorgeschlagene Kurzversion des \gls{bist}s enthält $15$ Subtests. Die Operationen \gls{b}, \gls{M} und \gls{e} werden darin mit je einem Subtest pro Inhalt erfasst, wobei \gls{k} mit zwei Subtests pro Inhalt erfasst wird. Bei der Modellierung der Daten mittels Strukturgleichungsmodellen hätte dies bei der vorliegenden Arbeit zu einer Überrepräsentation von \gls{k} im \gls{gfaktor} geführt. Um dies zu vermeiden, wurden die Operationen \gls{b} und \gls{M} um je einen Subtest pro Inhalt angereichert. Grundlage für die Auswahl der Subtests bildeten die Erkenntnisse von \citet{Wicki2014}, wobei bei der Entscheidung über die Aufnahme der Subtests ökonomische (Bearbeitungszeit der Subtests) und teststatistische (Trennschärfe und Reliabilität der Subtests)  Gesichtspunkte berücksichtigt wurden. Die Kurzversion von \citet{Jaeger1997} wurde mit folgenden Subtests ergänzt: Klassifizieren von Wörtern, Old English, Rechen-Zeichen, Wege-Erinnern, Worte Merken und Zweistellige Zahlen. 
-\citet{Wicki2014} berichtet für diese modifizierte Kurzversion für die Operationen \gls{k}, \gls{b} und \gls{M} interne Konsistenzen von Cronbachs $\alpha=.61-.73$ und Konstruktreliabilitäten, gemessen mit \citeauthor{McDonald1999}'s \citeyearpar{McDonald1999} Omegakoeffizienten, von $\Omega = .58-.64$.
+\citet{Wicki2014} berichtet für diese modifizierte Kurzversion für die Operationen \gls{k}, \gls{b} und \gls{M} interne Konsistenzen von Cronbachs $\alpha=.61-.73$ und Konstruktreliabilitäten, gemessen mit \citeauthor{McDonald1999}\textcolor{blue}{s} \citeyearpar{McDonald1999} Omegakoeffizienten, von $\Omega = .58-.64$.
 Auf Subtests der Operation \gls{e} wurde gänzlich verzichtet, weil zum einen unklar ist, wie Einfallsreichtum und Intelligenz zusammenhängen \citep{Kim2005} und zum anderen weil \citet{Jaeger1997} unbefriedigende Objektivitätswerte berichten. 
 Alle eingesetzten Subtests, deren Beschreibung sowie Zuordnung zu den jeweiligen Operationen und Inhalte sind \autoref{tab:bis_subtest_description} zu entnehmen.
 
-\textcolor{red}{verarbeitungskapazität und g
-	breite testbatterie -> g faktor ableitbar
-	parallelen zwischen bis und carroll}
+
 
 
 \begin{sidewaystable}
@@ -1877,7 +1860,7 @@ Obwohl der \gls{rmse} für einige \glspl{vp} sehr gross ausfiel, eignete sich ei
 \end{figure}
 
 Um erkennen zu können, ob der Zusammenhang zwischen den beiden Aufgabenparametern (Asymptote und Steigung), der Zusammenhang zwischen der Steigung und dem \gls{si} oder der Zusammenhang zwischen der Asymptote respektive der Steigung mit dem \gls{zwert} des \gls{bist}s durch diejenigen \glspl{vp} verzerrt wurde, bei welchen eine Beschreibung der Daten mit einem exponentiellen Modell nicht angebracht war, wurden diese Zusammenhänge in Abhängigkeit des \gls{rmse} bestimmt. 
-Dafür wurde für jeden \gls{rmse} zwischen $1$ und $70$~ms eine Teilstichprobe mit \glspl{vp} gebildet, welche den gewählten \gls{rmse} (\gls{rmse}-Grenzwert) nicht überschritten haben. Die erste Teilstichprobe ($n=4$) bestand folglich aus \glspl{vp}, welche einen \gls{rmse} von nicht grösser als $1$~ms aufwiesen. Die zweite Teilstichprobe ($n=11$) setzte sich aus \glspl{vp} zusammen, welche einen \gls{rmse} von nicht grösser als $2$~ms aufwiesen. Die dritte Teilstichprobe ($n=32$) beinhaltete \glspl{vp}, welche einen \gls{rmse} von nicht grösser als $3$~ms aufwiesen (usw.). Dieses Vorgehen wurde solange weitergeführt, bis die Teilstichprobe bei einem \gls{rmse}-Grenzwert von $65.47$~ms alle \glspl{vp} ($N=177$) beinhaltete. 
+Dafür wurde für jeden \gls{rmse} \todo[color=green!40, fancyline]{Caption der Abbildung inhaltlich korrekt?} zwischen $1$ und $70$~ms eine Teilstichprobe mit \glspl{vp} gebildet, welche den gewählten \gls{rmse} (\gls{rmse}-Grenzwert) nicht überschritten haben. Die erste Teilstichprobe ($n=4$) bestand folglich aus \glspl{vp}, welche einen \gls{rmse} von nicht grösser als $1$~ms aufwiesen. Die zweite Teilstichprobe ($n=11$) setzte sich aus \glspl{vp} zusammen, welche einen \gls{rmse} von nicht grösser als $2$~ms aufwiesen. Die dritte Teilstichprobe ($n=32$) beinhaltete \glspl{vp}, welche einen \gls{rmse} von nicht grösser als $3$~ms aufwiesen (usw.). Dieses Vorgehen wurde solange weitergeführt, bis die Teilstichprobe bei einem \gls{rmse}-Grenzwert von $65.47$~ms alle \glspl{vp} ($N=177$) beinhaltete. 
 Damit liessen sich die Zusammenhänge über den ganzen \gls{rmse}-Grenz\-wert\-be\-reich bestimmen. Eine Teilstichprobe bei einem tiefen \gls{rmse}-Grenz\-wert umfasste somit \glspl{vp}, welche Modell-konforme Daten aufwiesen, während eine Teilstichprobe bei einem hohen \gls{rmse}-Grenzwert auch \glspl{vp} beinhaltete, deren Werte stärker vom exponentiellen Modell abwichen.
 
 Die Analyse hat ergeben, dass die Asymptote und die Steigung ab einem \gls{rmse}-Grenzwert von $1.4$ ms stark negativ miteinander zusammenhingen ($r=-.57$ bis $-.98$, alle $p\textnormal{s}<.05$). Eine visuelle Inspektion des Verlaufs deutete darauf hin, dass der \gls{rmse}-Grenzwert einen negativen Einfluss auf die Höhe des Zusammenhangs ausübte (siehe \autoref{fig:spatial_suppression_rmse_cutoff_asymtote_slope_suppressionindex}a).
@@ -2480,7 +2463,9 @@ Als Mass für die Anpassungsgüte des Modells an die Daten wurde analog zum Vorg
 	\label{fig:hick_rmse_density}
 \end{figure}
 
-Wie bei der \gls{ssauf} (siehe \autoref{sec:2Fragestellung}) wurde der Zusammenhang zwischen den Aufgabenparametern (y-Ach\-sen\-ab\-schnitt und Steigung) und dem \gls{zwert} des \gls{bist}s in Abhängigkeit des \gls{rmse} betrachtet. Die Analysen haben ergeben, dass der y-Ach\-sen\-ab\-schnitt und der \gls{zwert} bei \gls{rmse}-Grenzwerten zwischen $9.6$ und $10.4$~ms ($r = -.28$ bis $ -.29$, alle $p\textnormal{s} < .03$), zwischen $11$ und $15.7$~ms ($r = -.24$ bis $ -.31$, alle $p\textnormal{s} < .04$), zwischen $17.2$ und $22.2$~ms ($r = -.17$ bis $ -.20$, alle $p\textnormal{s} < .04$) sowie ab $23.3$~ms ($r = -.15$ bis $ -.17$, alle $p\textnormal{s} < .049$) signifikant negativ miteinander korrelierten (siehe \autoref{fig:hick_rmse_cutoff}a). In den erwähnten Bereichen war ein tiefer y-Ach\-sen\-ab\-schnitt folglich tendenziell mit einem hohen \gls{zwert} verbunden. Eine visuelle Inspektion des Verlaufs liess keine Aussage darüber zu, ob der \gls{rmse}-Grenzwert einen positiven oder negativen Einfluss auf die Höhe des Zusammenhangs ausübte.
+%\todo[color=green!40, fancyline]{Caption inhaltlich korrekt?}
+
+Wie bei der \gls{ssauf} (siehe \autoref{sec:2Fragestellung}) wurde der Zusammenhang zwischen den Aufgabenparametern (y-Ach\-sen\-ab\-schnitt und Steigung) und dem \gls{zwert} des \gls{bist}s in Abhängigkeit des \gls{rmse} betrachtet. Die Analysen haben ergeben, dass der y-Ach\-sen\-ab\-schnitt und der \gls{zwert} bei \gls{rmse}-Grenzwerten zwischen $9.6$ und $10.4$~ms ($r = -.28$ bis $ -.29$, alle $p\textnormal{s} < .03$), zwischen $11$ und $15.7$~ms ($r = -.24$ bis $ -.31$, alle $p\textnormal{s} < .04$), zwischen $17.2$ und $22.2$~ms ($r = -.17$ bis $ -.20$, alle $p\textnormal{s} < .04$) sowie ab $23.3$~ms ($r = -.15$ bis $ -.17$, alle $p\textnormal{s} < .049$) signifikant negativ miteinander \todo[color=green!40, fancyline]{Caption der Abbildung inhaltlich korrekt?} korrelierten (siehe \autoref{fig:hick_rmse_cutoff}a). In den erwähnten Bereichen war ein tiefer y-Ach\-sen\-ab\-schnitt folglich tendenziell mit einem hohen \gls{zwert} verbunden. Eine visuelle Inspektion des Verlaufs liess keine Aussage darüber zu, ob der \gls{rmse}-Grenzwert einen positiven oder negativen Einfluss auf die Höhe des Zusammenhangs ausübte.
 
 
 \begin{figure}[htbp]
@@ -2967,7 +2952,7 @@ Bei der Analyse der Zusammenhänge mittels Fixed-Links-Struk\-tur\-glei\-chungs\
 	\item Anderes Resultate, weil anderer IQ-Test eingesetzt?
 	\item Anderes Resultat, weil nicht Projektor eingesetzt?
 	\item für diese kurzversion betsehenkeine normen. wir sind aber auch nicht am iq sondern an der varianzaufklärung interessiert. deshalb nicht relevant.
-	\item 360-Hz Code auf 144-Hz Monitor? \citet{Lappin2009, Tadin2006} haben Schwellen von 10 ms!
+	\item 
 	\item BD und OE einzig n.s. negative korrelationen, kurz aufnehmen
 	\item Fixed-links modellierungen lohnen sich (wie auch bei AGK oder Speed prozessen -> LIT)
 \end{itemize}
@@ -2984,6 +2969,8 @@ fixed-links als Lösung für exponentielle Regression, da hats einfach ein paar 
 
 
 
+
+
 zusammenfassen
 - fragestellungen
 - literatur
@@ -2994,12 +2981,16 @@ zusammenfassen
 Code LOL
 (D. Tadin, persönl. Mitteilung, 13.09.2016)
 
+360-Hz Code auf 144-Hz Monitor? \citet{Lappin2009, Tadin2006} haben Schwellen von 10 ms!
+
 \section{Ausblick}
+
+
 
 % =================================================================
 % G L O S S A R Y   &   A C R O N Y M S
 % =================================================================
-\printglossaries	% put this where you want your list of entries to appear 
+%\printglossaries	% put this where you want your list of entries to appear 
 % Important:
 % 1. compile document with PdfLaTeX
 % 2. run 'makeglossaries diss' in terminal
@@ -3010,24 +3001,30 @@ Code LOL
 % =================================================================
 % R E F E R E N C E S 
 % =================================================================
+\cleardoublepage								% for hyperref to jump to the correct page, see
+\phantomsection									% http://tex.stackexchange.com/questions/44088/when-do-i-need-to-invoke-phantomsection
 \renewcommand\bibname{Literatur}				% rename bibliography
-\bibliography{bibliography.bib}					% provide .bib file
 \addcontentsline{toc}{chapter}{Literatur}		% for a toc entry
-%../references
+\bibliography{bibliography.bib}					% provide .bib file
+
 
 % =================================================================
 % L I S T   O F   F I G U R E S
 % =================================================================
+\cleardoublepage								% for hyperref to jump to the correct page, see
+\phantomsection									% http://tex.stackexchange.com/questions/44088/when-do-i-need-to-invoke-phantomsection
 \renewcommand\listfigurename{Abbildungen}		% define name of lof
-\listoffigures									% insert lof
 \addcontentsline{toc}{chapter}{Abbildungen}		% add lof to toc
+\listoffigures									% insert lof
 
 % =================================================================
 % L I S T   O F   T A B L E S
 % =================================================================
+\cleardoublepage								% for hyperref to jump to the correct page, see
+\phantomsection									% http://tex.stackexchange.com/questions/44088/when-do-i-need-to-invoke-phantomsection
 \renewcommand\listtablename{Tabellen}			% define name of lot
-\listoftables 									% insert lot
 \addcontentsline{toc}{chapter}{Tabellen}		% add lot to toc
+\listoftables 									% insert lot
 
 % =================================================================
 % A P P E N D I X   A
@@ -3036,14 +3033,15 @@ Code LOL
 % not sure if this code works -----------
 \setcounter{figure}{0}
 \renewcommand\thefigure{\Alph{appndx}\@arabic\c@figure}
-% works --------------------------
-\setcounter{table}{0}
-\renewcommand{\thetable}{A\arabic{table}}
-
 %\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 %\addtocontents{lof}{\protect\setcounter{tocdepth}{0}}
 
 \chapter[Anhang - Datenaufbereitung]{Anhang \label{cha:Anhang_A}}
+
+% works --------------------------
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+
 Dieser Anhang beschreibt die Vorgehensweise bei der Datenaufbereitung, welche zum Ausschluss von \glspl{vp} geführt hat (vgl. \autoref{sec:Stichprobe}). Am Ende des Anhangs fasst \autoref{tab:Datenbereinigung} die Datenbereinigung zusammen.
 
 \subsection*{Alter}
@@ -3110,6 +3108,9 @@ Bei den Subtests \gls{bd}, \gls{kw}, \gls{oe}, \gls{RZ}, \gls{tg}, \gls{uw} und 
 % A P P E N D I X   B
 % =================================================================
 \chapter[Anhang - Nonparametrische Analysen]{Anhang \label{cha:Anhang_B}}
+% works --------------------------
+\setcounter{table}{0}
+\renewcommand{\thetable}{B\arabic{table}}
 
 Dieser Anhang beinhaltet Ergebnisse der Deskriptiv- und Inferenzstatistik, welche sich bei der Anwendung nonparametrischer Analyseverfahren ergeben haben. Die Ergebnisse dieser nonparametrischer Analyseverfahren wichen nicht bedeutend von den mit parametrischen Verfahren ermittelten Ergebnissen ab (vgl. \autoref{sec:Deskriptive_Statistik}).
 
