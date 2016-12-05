@@ -807,17 +807,17 @@ Die Sehwinkel der Muster wurden mit einer Kinnstütze, die $61$~cm vom Monitor e
 %Die räumliche Frequenz aller vertikal schwarz-grau gestreiften Mustergrössen betrug wie bei \citeauthor{Melnick2013} $1^{\circ}$ pro Periodenlänge.
 Der verwendete Ton wies bei einer Frequenz von $2900$~Hz und einer Lautstärke von $70$~dB eine Länge von $50$~ms auf.
 
-\begin{figure}[htb]
-	\centering
-	\subfloat[Sehwinkel $= 1.8^{\circ}$][Sehwinkel $= 1.8^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s1_a}}~~
-	\subfloat[Sehwinkel $= 3.6^{\circ}$][Sehwinkel $= 3.6^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s2_a}}
-
-	\subfloat[Sehwinkel $= 5.4^{\circ}$][Sehwinkel $= 5.4^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s3_a}}~~
-	\subfloat[Sehwinkel $= 7.2^{\circ}$][Sehwinkel $= 7.2^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s4_a}}
-
-	\caption[Die Spatial-Suppression-Bedingungen]{Die vier Mustergrössen $(a - d)$ der \gls{ssauf}.}
-	\label{fig:spatial_suppression_stimuli}
-\end{figure}
+%\begin{figure}[htb]
+%	\centering
+%	\subfloat[Sehwinkel $= 1.8^{\circ}$][Sehwinkel $= 1.8^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s1_a}}~~
+%	\subfloat[Sehwinkel $= 3.6^{\circ}$][Sehwinkel $= 3.6^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s2_a}}
+%
+%	\subfloat[Sehwinkel $= 5.4^{\circ}$][Sehwinkel $= 5.4^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s3_a}}~~
+%	\subfloat[Sehwinkel $= 7.2^{\circ}$][Sehwinkel $= 7.2^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s4_a}}
+%
+%	\caption[Die Spatial-Suppression-Bedingungen]{Die vier Mustergrössen $(a - d)$ der \gls{ssauf}.}
+%	\label{fig:spatial_suppression_stimuli}
+%\end{figure}
 
 \subsection{Versuchsablauf \label{subsec:Prozedur}}
 
@@ -853,124 +853,124 @@ Präsentiert wurde die Aufgabe auf dem in \autoref{sub:ssas} beschriebenen Compu
 
 Die Stimuli wurden mit E-Prime\textsuperscript{\textregistered} \citep{eprime} generiert. Die weissen Stimuli wurden auf einem schwarzen Hintergrund präsentiert, welcher eine Leuchtdichte von $2\,\textnormal{cd}/ \textnormal{m}^2$ aufwies. Der horizontale und vertikale Sehwinkel der verwendeten Rechtecke betrug $1.8^{\circ}$ respektive $1.5^{\circ}$. Die Rechtecke wurden auf dem Monitor zentriert dargeboten. Die Stimulianordnung der verwendeten Bedingungen sah folgendermassen aus (siehe \autoref{fig:hick_stimuli}):  In der $0$-Bit-Bedingung wurde ein Rechteck präsentiert. In der $1$-Bit-Bedingung wurden horizontal nebeneinander zwei Rechtecke präsentiert. Die beiden Rechtecke erschlossen zusammen einen horizontalen und vertikalen Sehwinkel von $4.5^{\circ}$ respektive $1.5^{\circ}$. In der $2$-Bit-Bedingung wurden in U-Form vier Rechtecke präsentiert. Die vier Rechtecke erschlossen gemeinsam einen horizontalen und vertikalen Sehwinkel von $7.5^{\circ}$ respektive $4.3^{\circ}$. In der $2.58$-Bit-Bedingung wurden zu den in U-Form angeordneten vier Rechtecken der $2$-Bit-Bedingung in der oberen Reihe je links und rechts ein Rechteck hinzugefügt. Die sechs Rechtecke erschlossen zusammen einen horizontalen und vertikalen Sehwinkel von $12.9^{\circ}$ respektive $4.3^{\circ}$. Der Sehwinkel des imperativen Reizes, einem \enquote{+}, betrug $0.5^{\circ}$ und wurde  immer in der Mitte eines Rechtecks präsentiert. Die Sehwinkel der Stimuli wurden mit einer Kinnstütze, die $61$ cm vom Monitor entfernt war, sichergestellt. Der verwendete Ton wies bei einer Frequenz von $1000$~Hz und einer Lautstärke von $70$~dB eine Länge von $200$~ms auf.
 
-\begin{figure}[htbp]
-	\centering
-	\subfloat[0-Bit]		[0-Bit-Bedingung]	{
-		\resizebox{.9\textwidth}{!}{
-			\begin{tikzpicture}
-			[scale=1, font=\sffamily, inner sep=0pt, baseline,
-			manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-			invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-			visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
-			
-			\node [invisible]	at (0,0)							(3)	{};
-			\node [invisible]	[right = 11mm of 3]	  				(4)	{};
-			\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
-			\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
-			\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
-			\node [invisible]	[right = 11mm of 5]	  				(6)	{};
-			
-			\node [manifest] at (1.5,1.5)							(9)	{\Huge $+$};
-			
-			\node [visual]		at (-5,-1)	{}							;
-			\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
-			
-			\begin{scope}[on background layer]
-				\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
-			\end{scope}
-			\end{tikzpicture}
-}} \newline
-
-\subfloat[1-Bit]		[1-Bit-Bedingung]	{
-	\resizebox{.9\textwidth}{!}{
-		\begin{tikzpicture}
-		[scale=1, font=\sffamily, inner sep=0pt,
-		manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-		invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-		visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
-		
-		\node [invisible]	at (0,0)							(3)	{};
-		\node [invisible]	[right = 11mm of 3]	  				(4)	{};
-		\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
-		\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
-		\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
-		\node [invisible]	[right = 11mm of 5]	  				(6)	{};
-		
-		\node [manifest] at (0,1.5)				(9)		{\Huge $+$}	;
-		\node [manifest] [right = 11mm of 9] 	(10)	{}			;	
-		
-		\node [visual]		at (-5,-1)	{}							;
-		\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
-		
-		\begin{scope}[on background layer]
-		\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
-		\end{scope}
-		\end{tikzpicture}
-	}} \newline
-	
-	\subfloat[2-Bit]		[2-Bit-Bedingung]	{
-		\resizebox{.9\textwidth}{!}{
-			\begin{tikzpicture}
-			[scale=1, font=\sffamily, inner sep=0pt,
-			manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-			invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-			visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
-			
-			\node [invisible]	at (0,0)							(3)	{};
-			\node [invisible]	[right = 11mm of 3]	  				(4)	{};
-			\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
-			\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
-			\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
-			\node [invisible]	[right = 11mm of 5]	  				(6)	{};
-			
-			\node [manifest]	at (0,0)							(3)	{};
-			\node [manifest]	[right = 11mm of 3]	  				(4)	{};
-			\node [manifest]	[above left  = 15mm and -3mm of 3]	(2) {\Huge $+$};
-			\node [manifest]	[above right = 15mm and -3mm of 4]	(5) {};	
-			
-			\node [visual]		at (-5,-1)	{}							;
-			\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
-			
-			\begin{scope}[on background layer]
-			\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
-			\end{scope}
-			\end{tikzpicture}
-		}} \newline
-		
-		\subfloat[$2.58$-Bit]		[$2.58$-Bit-Bedingung]	{
-			\resizebox{.9\textwidth}{!}{
-				\begin{tikzpicture}
-				[scale=1, font=\sffamily, inner sep=0pt,
-				manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-				invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
-				visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
-				
-				\node [invisible]	at (0,0)							(3)	{};
-				\node [invisible]	[right = 11mm of 3]	  				(4)	{};
-				\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
-				\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
-				\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
-				\node [invisible]	[right = 11mm of 5]	  				(6)	{};
-				
-				\node [manifest]	at (0,0)							(3)	{};
-				\node [manifest]	[right = 11mm of 3]	  				(4)	{};
-				\node [manifest]	[above left  = 15mm and -3mm of 3]	(2) {};
-				\node [manifest]	[above right = 15mm and -3mm of 4]	(5) {};
-				\node [manifest]	[left  = 11mm of 2]	  				(1)	{};
-				\node [manifest]	[right = 11mm of 5]	  				(6)	{\Huge $+$};
-				
-				\node [visual]		at (-5,-1)	{}							;
-				\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
-				
-				\begin{scope}[on background layer]
-				\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
-				\end{scope}
-				\end{tikzpicture}
-			}} \newline
-			
-			\caption[Die Hick-Bedingungen]{Die vier Bedingungen $(a - d)$ der \gls{ha}. }
-			\label{fig:hick_stimuli}
-\end{figure}
+%\begin{figure}[htbp]
+%	\centering
+%	\subfloat[0-Bit]		[0-Bit-Bedingung]	{
+%		\resizebox{.9\textwidth}{!}{
+%			\begin{tikzpicture}
+%			[scale=1, font=\sffamily, inner sep=0pt, baseline,
+%			manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+%			invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+%			visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
+%			
+%			\node [invisible]	at (0,0)							(3)	{};
+%			\node [invisible]	[right = 11mm of 3]	  				(4)	{};
+%			\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
+%			\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
+%			\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
+%			\node [invisible]	[right = 11mm of 5]	  				(6)	{};
+%			
+%			\node [manifest] at (1.5,1.5)							(9)	{\Huge $+$};
+%			
+%			\node [visual]		at (-5,-1)	{}							;
+%			\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
+%			
+%			\begin{scope}[on background layer]
+%				\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
+%			\end{scope}
+%			\end{tikzpicture}
+%}} \newline
+%
+%\subfloat[1-Bit]		[1-Bit-Bedingung]	{
+%	\resizebox{.9\textwidth}{!}{
+%		\begin{tikzpicture}
+%		[scale=1, font=\sffamily, inner sep=0pt,
+%		manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+%		invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+%		visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
+%		
+%		\node [invisible]	at (0,0)							(3)	{};
+%		\node [invisible]	[right = 11mm of 3]	  				(4)	{};
+%		\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
+%		\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
+%		\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
+%		\node [invisible]	[right = 11mm of 5]	  				(6)	{};
+%		
+%		\node [manifest] at (0,1.5)				(9)		{\Huge $+$}	;
+%		\node [manifest] [right = 11mm of 9] 	(10)	{}			;	
+%		
+%		\node [visual]		at (-5,-1)	{}							;
+%		\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
+%		
+%		\begin{scope}[on background layer]
+%		\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
+%		\end{scope}
+%		\end{tikzpicture}
+%	}} \newline
+%	
+%	\subfloat[2-Bit]		[2-Bit-Bedingung]	{
+%		\resizebox{.9\textwidth}{!}{
+%			\begin{tikzpicture}
+%			[scale=1, font=\sffamily, inner sep=0pt,
+%			manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+%			invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+%			visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
+%			
+%			\node [invisible]	at (0,0)							(3)	{};
+%			\node [invisible]	[right = 11mm of 3]	  				(4)	{};
+%			\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
+%			\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
+%			\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
+%			\node [invisible]	[right = 11mm of 5]	  				(6)	{};
+%			
+%			\node [manifest]	at (0,0)							(3)	{};
+%			\node [manifest]	[right = 11mm of 3]	  				(4)	{};
+%			\node [manifest]	[above left  = 15mm and -3mm of 3]	(2) {\Huge $+$};
+%			\node [manifest]	[above right = 15mm and -3mm of 4]	(5) {};	
+%			
+%			\node [visual]		at (-5,-1)	{}							;
+%			\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
+%			
+%			\begin{scope}[on background layer]
+%			\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
+%			\end{scope}
+%			\end{tikzpicture}
+%		}} \newline
+%		
+%		\subfloat[$2.58$-Bit]		[$2.58$-Bit-Bedingung]	{
+%			\resizebox{.9\textwidth}{!}{
+%				\begin{tikzpicture}
+%				[scale=1, font=\sffamily, inner sep=0pt,
+%				manifest/.style		= {draw, rectangle, thick, white, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+%				invisible/.style	= {draw, rectangle, thick, black!80, inner sep=0pt, minimum width=19mm, minimum height=16mm},
+%				visual/.style 		= {draw, rectangle, thick, white, fill=white!100, minimum width= 10.65mm, minimum height=.5mm}]
+%				
+%				\node [invisible]	at (0,0)							(3)	{};
+%				\node [invisible]	[right = 11mm of 3]	  				(4)	{};
+%				\node [invisible]	[above left  = 15mm and -3mm of 3]	(2) {};
+%				\node [invisible]	[above right = 15mm and -3mm of 4]	(5) {};
+%				\node [invisible]	[left  = 11mm of 2]	  				(1)	{};
+%				\node [invisible]	[right = 11mm of 5]	  				(6)	{};
+%				
+%				\node [manifest]	at (0,0)							(3)	{};
+%				\node [manifest]	[right = 11mm of 3]	  				(4)	{};
+%				\node [manifest]	[above left  = 15mm and -3mm of 3]	(2) {};
+%				\node [manifest]	[above right = 15mm and -3mm of 4]	(5) {};
+%				\node [manifest]	[left  = 11mm of 2]	  				(1)	{};
+%				\node [manifest]	[right = 11mm of 5]	  				(6)	{\Huge $+$};
+%				
+%				\node [visual]		at (-5,-1)	{}							;
+%				\node [white]		at (-5,-.6) {\Large$1^{\circ}$}		;
+%				
+%				\begin{scope}[on background layer]
+%				\node [fill=black!80, inner sep= 20pt, fit=(1) (2) (3) (4) (5) (6)] {};
+%				\end{scope}
+%				\end{tikzpicture}
+%			}} \newline
+%			
+%			\caption[Die Hick-Bedingungen]{Die vier Bedingungen $(a - d)$ der \gls{ha}. }
+%			\label{fig:hick_stimuli}
+%\end{figure}
 
 
 
@@ -1385,7 +1385,7 @@ gerechnet. Weil Sphärizität gemäss einem Mauchly-Test nicht gegeben war, $\up
 Der \textit{F}-Test hat ergeben, dass die Unterschiede zwischen den Bedingungsmittelwerten signifikant von 0 abwichen, $F(1.65,\,290.40)=275.26$, $p<.001$, $\eta_{G}^2=.27$. Der Effekt der Mustergrösse auf die $82\,\%$-Erkennungsschwelle konnte dabei gemäss generalisiertem $\eta_{G}^2$ \citep{Olejnik2003} als gross bezeichnet werden \citep[S. 383]{Bakeman2005}.
 Um zu erfahren, ob sich alle oder nur bestimmte Mittelwertpaare signifikant voneinander unterschieden, wurden post hoc alle Mittelwerte miteinander verglichen.
 Tukey-Tests haben gezeigt, dass sich alle Mittelwertpaare signifikant voneinander unterschieden (alle \textit{p}s $<.001$).
-Die $82\,\%$-Er\-ken\-nungs\-schwel\-len der \glspl{vp} verschlechterten sich folglich mit zunehmender Mustergrösse signifikant.
+Die $82\,\%$-Er\-ken\-nungs\-schwel\-len der \glspl{vp} erhöhten sich folglich mit zunehmender Mustergrösse signifikant.
 Die Effektstärken für die Mittelwertsunterschiede wurden mit Cohens \textit{d} für abhängige Stichproben \citep{Gibbons1993} bestimmt. 
 Dabei hat sich gezeigt, dass die Effektstärken im mittleren bis hohen Bereich \citep[][S. 40]{Cohen1988} lagen (siehe \autoref{tab:spatial_suppression_effect_sizes}). 
 
@@ -2947,6 +2947,52 @@ Bei der Analyse der Zusammenhänge mittels Fixed-Links-Struk\-tur\-glei\-chungs\
 % =================================================================
 \chapter{Diskussion \label{cha:Diskussion}}
 %\ac{MLS}
+
+Der \gls{ssans} zur Erklärung individueller Intelligenzunterschiede \citep{Melnick2013} bietet einen neuen und vielversprechenden Ausgangspunkt, wenn es um die Bestimmung der kognitiven Grundlagen für Intelligenzunterschiede geht.
+Das Ziel der vorliegenden Arbeit war es zu prüfen, ob sich die \gls{ssauf} als Prädiktor psychometrischer Intelligenz bewährt und inwiefern der \gls{ssans} 
+zur Erklärung individueller Intelligenzunterschiede \citep{Melnick2013} neuartige Erklärungsmöglichkeiten liefert, welche nicht bereits der \gls{msa} \citep[z. B.][]{Deary2000a, Jensen1982a, Jensen1982b, Jensen2006, Vernon1983} bietet. 
+
+
+
+\section{Fragestellungen}
+
+\subsection{Eine Bestätigung des Befunds von \citet{Melnick2013}?}
+
+\citeauthor{Melnick2013} berichteten über sehr reliable Erkennungsschwellen der \gls{ssauf}, die mit zunehmender Mustergrösse anstiegen. Dieses Ergebnis konnte in der vorliegenden Arbeit bestätigt werden. Die vier Bedingungen der \gls{ssauf} unterschieden sich alle bedeutsam und wiesen gleichzeitig sehr hohe Splithalf-Reliabilitäten ($r_{tt}=.96$) auf. Der \gls{si} streute in der vorliegenden Arbeit ähnlich 
+
+Der \gls{si} wies in der vorliegenden Arbeit einen Mittelwert $\pm$ Standardabweichung von $0.222\,\pm\,0.160$ auf (Minimum $= -0.185$, Maximum $= 0.886$). In der Studie 2 von \citeauthor{Melnick2013} lag der Mittelwert des \gls{si} zwar etwas höher (Mittelwert $\pm$ Standardabweichung $=0.320\,\pm\,0.155$, Minimum $=0.016$, Maximum $=0.703$; D. Tadin, persönl. Mitteilung, 25.09.2015), die Streuung des \gls{si} war jedoch vergleichbar mit den in der vorliegenden Stichprobe 
+
+
+IQ-Punkte keine Hinweise bei \citeauthor{Melnick2013}
+
+z-Werte gute Streuung
+
+
+
+Der von \citet{Melnick2013} berichtete manifeste Zusammenhang zwischen dem \gls{si} und psychometrischer Intelligenz konnte in der vorliegenden Arbeit nicht bestätigt werden. Die Korrelation fiel mit $r=.00$ ($p=.98$) so tief aus, dass 
+
+
+Alle SIs von Studie 2 (D. Tadin, persönl. Mitteilung, 25.09.2015)
+
+50 bis 100 ms Schwellen (D. Tadin, persönl. Mitteilung, 13.10.2015)
+
+
+\subsection{Ein alternatives Mass für Spatial-Suppression?}
+
+test
+
+\subsection{Latenter Zusammenhang zwischen der Spatial-Sup\-pres\-sion-Auf\-gabe und psychometrischer Intelligenz}
+
+test
+
+\subsection{Fixed-Links-Modell der Spatial-Suppression-Aufgabe}
+
+test
+
+\subsection{Spatial-Suppression, Mental-Speed und psychometrische Intelligenz}
+
+
+
 \begin{itemize}
 	\item konsistent über alle modelle, zusammenhang da latent
 	\item Anderes Resultate, weil anderer IQ-Test eingesetzt?
@@ -2978,12 +3024,26 @@ zusammenfassen
 
 \section{Limitationen}
 
-Code LOL
-(D. Tadin, persönl. Mitteilung, 13.09.2016)
+\subsection{Programmcode der Spatial-Suppression-Aufgabe}
 
-360-Hz Code auf 144-Hz Monitor? \citet{Lappin2009, Tadin2006} haben Schwellen von 10 ms!
+\begin{itemize}
+	\item Code (D. Tadin, persönl. Mitteilung, 13.09.2016)
+	\item 360-Hz Code auf 144-Hz Monitor? \citet{Lappin2009, Tadin2006} haben Schwellen von 10 ms!
+\end{itemize}
 
-\section{Ausblick}
+
+
+
+
+\subsection{Stichprobenfehler}
+
+\begin{itemize}
+	\item Fixierungen der \glspl{flm} stichprobenabhängig
+	\item 
+\end{itemize}
+
+
+\section{Wichtigkeit des Erkenntnisgewinns}
 
 
 
