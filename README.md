@@ -1,7 +1,7 @@
 Basal mechanisms of information processing and mental ability: The contributions of mental speed, and spatial suppression to individual differences in psychometric intelligence
 ================
 
-last updated on December 17, 2016 :balloon:
+last updated on December 19, 2016 :balloon:
 
 This repository, PhD\_thesis, is a digital directory where you can access my thesis, and all its files. To view them, click on **Download ZIP File** and open the downloaded repository.
 
