@@ -216,6 +216,7 @@
 \usepackage[tocbib, natbibapa, nosectionbib]{apacite}	% enable options
 %\newcommand\citepos[1]{\citeauthor{#1}s\ (\citeyear{#1})} % see http://tex.stackexchange.com/questions/137511/how-to-put-a-s-after-citing-author
 \bibliographystyle{apacite-mod}							% see apacite-mod in directory http://tex.stackexchange.com/questions/304217/reference-list-suppressing-dots-after-company-names-apacite
+%\bibliographystyle{apacite}
 \usepackage{doi}										% turns doi's into hyperlinks
 \renewcommand\doiprefix{\ignorespaces}					% removes white space in front of doi
 \AtBeginDocument{\urlstyle{APACsame}}					% removes monospaced font in url's
@@ -747,13 +748,13 @@ Der \gls{ssans} zur Erklärung individueller Intelligenzunterschiede \citep{Meln
 ($1$) Der \gls{ssans} beruht auf einer einzigen Untersuchung, die mit kleinen Stichproben gearbeitet hat \citep[Studie 1: $N=12$ und Studie 2: $N=53$;][]{Melnick2013}. Es kann deshalb nicht ausgeschlossen werden, dass Stichprobenfehler die Zusammenhänge beeinflusst haben. Um \gls{ss} als Prädiktor von psychometrischer Intelligenz zu festigen, bedarf es einer Bestätigung der Resultate von \citet{Melnick2013} mit einer grossen Stichprobe.
 ($2$) Mit dem \gls{si} liegt eine Variable vor, die als Differenz zwischen zwei Schwellenschätzungen gebildet wurde. Dabei wurde nicht berücksichtigt, dass Differenzmasse unter bestimmten, in empirischen Studien oft vorliegenden Bedingungen, problematisch sind: Weisen der Minuend  beziehungsweise der Subtrahend keine perfekte Reliabilität auf und hängen sie zusammen, reduziert sich die Reliabilität des Differenzmasses. Beträgt beispielsweise die Reliabilität vom Minuend $r_{xx} = .80$, die Reliabilität vom Subtrahend $r_{yy} = .80$ und die Korrelation von Minuend und Subtrahend $r_{xy} = .50$, reduziert sich die Reliabilität der Differenz auf $r_{DD} = .60$ \citep[][S. 145]{Murphy2005}. Wird der \gls{si} als Differenzmass gebildet, kann folglich nicht ausgeschlossen werden, dass ein verhältnismässig wenig reliables Mass vorliegt. Um valide Schlussfolgerungen über den Zusammenhang zwischen der \gls{ssauf} und psychometrischer Intelligenz zu treffen, wäre ein alternatives Mass zur Quantifizierung von \gls{ss} (das nicht auf einer Differenz beruht) dem \gls{si} vorzuziehen.
 ($3$) Auch aufschlussreich wäre eine Analyse des Zusammenhangs zwischen der \gls{ssauf} und psychometrischer Intelligenz auf latenter Ebene. \citeauthor{Melnick2013} haben bereits in ihrer Untersuchung darauf hingewiesen, dass eine Analyse zwischen Variablen auf latenter Ebene der Analyse auf manifester Ebene vorzuziehen ist, weil sie die der manifesten Korrelationen zugrunde liegende Beziehung zutage bringt. Damit wäre gleichzeitig die Problematik der Differenzbildung zur Ableitung des \gls{si} angegangen, was zu valideren Schlussfolgerungen beitragen kann.
-($4$) Darüber hinaus lässt eine Analyse auf latenter Ebene zu, die an der Beobachtung von \citeauthor{Melnick2013} beteiligten kognitiven Prozesse mithilfe sogenannter \gls{flm}e \citep[][]{Schweizer2006a, Schweizer2006b} auf statistischer Ebene voneinander zu trennen. Damit könnte sich ein besseres Verständnis darüber ergeben, warum die \gls{ssauf} mit psychometrischer Intelligenz zusammenhängt.
+($4$) Darüber hinaus lässt eine Analyse auf latenter Ebene zu, die an der Beobachtung von \citeauthor{Melnick2013} beteiligten kognitiven Prozesse mithilfe sogenannter \gls{flm}e \citep[z. B.][]{Schweizer2006a, Schweizer2006b, Schweizer2007, Schweizer2008, Schweizer2009a} auf statistischer Ebene voneinander zu trennen. Damit könnte sich ein besseres Verständnis darüber ergeben, warum die \gls{ssauf} mit psychometrischer Intelligenz zusammenhängt.
 ($5$) \citeauthor{Melnick2013} nahmen an, dass die \gls{ssauf} auch \gls{ms} erfasst. Um diese Annahme zu prüfen, muss der Zusammenhang zwischen der \gls{ssauf}
 und psychometrischer Intelligenz im Sinne eines nomologischen Netzwerks \citep{Cronbach1955} um \gls{ms} erweitert werden. 
 Damit kann die Frage beantwortet werden, ob der \gls{ssans} einen Aspekt der menschlichen Informationsverarbeitung erfasst, der neuartig ist und nicht bereits vom \gls{msa} erklärt wird.
 \todo[color=green!40, fancyline]{Ein teil des zusammenhangs über ms erklären lassen?}
 
-Die unter Punkt vier angesprochenen \gls{flm}e \citep[][]{Schweizer2006a, Schweizer2006b} nehmen in der vorliegenden Arbeit eine wichtige Rolle ein. Die Modellierungstechnik, deren Zweck und zugrundeliegende Logik werden deshalb im nächsten Abschnitt gründlich erklärt.
+Die unter Punkt vier angesprochenen \gls{flm}e \citep[z. B.][]{Schweizer2006a, Schweizer2006b, Schweizer2007, Schweizer2008, Schweizer2009a} nehmen in der vorliegenden Arbeit eine wichtige Rolle ein. Die Modellierungstechnik, deren Zweck und zugrundeliegende Logik werden deshalb im nächsten Abschnitt gründlich erklärt.
 
 
 \section{Messung kognitiver Prozesse}
@@ -761,31 +762,27 @@ Die unter Punkt vier angesprochenen \gls{flm}e \citep[][]{Schweizer2006a, Schwei
 \subsection{Ausgangslage}
 
 Die Messung kognitiver Prozesse ist anspruchsvoller, als sie auf den ersten Blick erscheint. Wenn im Rahmen von Untersuchungen experimentell manipulierte Aufgaben eingesetzt werden um kognitive Prozesse zu erfassen, sind Unterschiede zwischen Personen (Varianz in der abhängigen Variable) nicht nur auf die experimentelle Manipulation zurückzuführen, sondern auch auf Prozesse, die nichts mit der experimentellen Manipulation zu tun haben \citep[]{Jensen1982b, Miller2013, Neubauer1997a, Schweizer2007, Unsworth2007, vanZomeren1994}.
-Wenn man beispielsweise annimmt, dass die Wachsamkeit, die Motivation oder die Motorik jeder einzelnen Person einen Einfluss auf die Reaktionszeiten in der \gls{ha} haben, ist bei der Analyse bivariater Zusammenhänge zwischen den Reaktionszeiten und Intelligenz auf Gruppenebene nicht klar, was die Ursache für den mit zunehmender Anzahl Antwortalternativen stärker werdenden negativen Zusammenhang zwischen den Bedingungen der \gls{ha} und Intelligenz ist \citep{Sheppard2008}. Waren intelligentere Personen wacher, motivierter oder einfach motorisch schneller als weniger intelligente Personen? Oder weisen sich intelligentere Personen tatsächlich (wie theoretisch vermutet) durch höheren \gls{ms} aus? 
-Mit diesem Beispiel sollte klar geworden sein, dass abhängige Variablen, die aus experimentell manipulierten Aufgaben abgeleitet werden, keine reinen Masse sind. Vielmehr bilden sie ein Gemisch von Prozessen ab, die an der Antwortabgabe beteiligt waren. \todo[color=green!40, fancyline]{ungültige Schlussfolgerungen entstehen. WARUM? AUSFÜHRLICHER! SPATIAL-SUPRRESSION ALS BEISPIEL? IN FRAGESTELLUNG PLÜNDERN?}
-Diese Verunreinigung von Massen zur Erfassung kognitiver Prozesse nannte \citet{Schweizer2007} \gls{ip}.
+Wenn man beispielsweise annimmt, dass die Wachsamkeit, die Motivation oder die Motorik jeder einzelnen Person einen Einfluss auf die Reaktionszeiten in der \gls{ha} haben, ist bei der Analyse bivariater Zusammenhänge zwischen den Reaktionszeiten und Intelligenz auf Gruppenebene nicht klar, was die Ursache für den mit zunehmender Anzahl Antwortalternativen stärker werdenden negativen Zusammenhang zwischen den Bedingungen der \gls{ha} und Intelligenz ist \citep{Sheppard2008}. Waren intelligentere Personen wacher, motivierter oder einfach motorisch schneller als weniger intelligente Personen? Oder weisen sich intelligentere Personen tatsächlich (wie theoretisch vermutet) durch höheren \gls{ms} aus?
+
+Mit diesem Beispiel sollte klar geworden sein, dass abhängige Variablen, die aus experimentell manipulierten Aufgaben abgeleitet werden, keine reinen Masse sind. Vielmehr bilden sie ein Gemisch von Prozessen ab, die an der Antwortabgabe beteiligt waren. \todo[color=green!40, fancyline]{ungültige Schlussfolgerungen entstehen. WARUM? SPATIAL-SUPRRESSION ALS BEISPIEL? IN FRAGESTELLUNG PLÜNDERN?}
+Diese Verunreinigung von Massen zur Erfassung kognitiver Prozesse bezeichnete \citet{Schweizer2007} als \gls{ip}.
 
 
 \subsection{Lösungsansätze}
 
 Ideen zur Bewältigung des \gls{ip}s gibt es mehrere. Diese lassen sich nach Ansätzen auf manifester und latenter Ebene unterscheiden. 
 
-Auf manifester Ebene hat \citet{Donders1969} mit seiner Subtraktionsmethode einen Verfahren vorgeschlagen, mit dem die Zeit für einen einzelnen kognitiven Prozess (z. B. die Entscheidung für eine korrekte Antwort in der \gls{ha}) aus der Reaktionszeit herausgerechnet werden kann. WIE DENN?
-
+Auf manifester Ebene hat \citet{Donders1969} mit seiner Subtraktionsmethode einen Verfahren vorgeschlagen, mit dem die Zeit für einen einzelnen kognitiven Prozess, beispielsweise die Entscheidung für eine korrekte Antwort bei einer Mehrfachauswahl in der \gls{ha}, aus der Reaktionszeit herausgerechnet werden kann. Er ging davon aus, dass einfache Reaktionszeit hauptsächlich durch physiologische Prozesse determiniert ist, während die Reaktionszeit für eine Mehrfachauswahl neben denselben physiologischen Prozessen auch mentale Prozesse beansprucht. Seine Idee war, einfache Reaktionszeit von der Reaktionszeit für eine Mehrfachauswahl zu subtrahieren, womit die Differenz ein Mass für die Geschwindigkeit des mentalen Prozesses darstellt \citep{Donders1969}.
 Spätere Untersuchungen haben jedoch gezeigt, dass sich kognitive Komponenten nicht additiv verhalten und die Subtraktionsmethode eine zu starke Vereinfachung darstellt \citep[z. B.][]{Friston1996, Ilan1994}.
 
-\citet{Jensen1979} haben mit einer cleveren technischen Neuerung bei der Erfassung der Reaktionszeit eine Methode vorgeschlagen, um die Reaktionszeit um motorische Prozesse zu bereinigen (sensorische und kognitive Prozesse von motorischen Prozessen zu trennen). WIE DENN? MOTORISCHE ANTEILE SIND DIE GLEICHE? 
+\citet{Jensen1979} haben eine Methode entwickelt, um bei der zur Erfassung der Reaktionszeit in der \gls{ha} motorische Prozesse von sensorischen und kognitiven Prozessen zu trennen. Personen mussten dafür vor Präsentation der Stimuli ihren Antwortfinger auf eine Art Home-Taste der Tastatur legen. Erst danach wurden die Stimuli eingeblendet. Sobald die korrekte Antwort erkannt wurde, lösten die Personen ihren Finger von der Home-Taste und betätigten mit damit die Antworttaste. Durch diese Versuchsanordnung konnte die Zeitdauer, welche die Motorik in Anspruch nahm, von der Zeitdauer getrennt werden, die benötigt wurde um die Reize wahrzunehmen und eine Entscheidung zu treffen. Dabei hat sich allerdings herausgestellt, dass die motorische Komponente mit der kognitiven Komponente konfundiert war \citep{Jensen1979} und Antwortstrategien die Interpretation der isolierten Komponenten erschweren \citep{Smith1987b}.
 
+Eine auf manifester Ebene häufig angewandte Methode zur Trennung von Prozessen stellt die Regressionsanalyse dar. Das Prinzip der Analyse lässt sich gut am Beispiel des linearen Zusammenhangs zwischen der Anzahl Bits und den Reaktionszeiten der \gls{ha} \citep{Hick1952} erklären (siehe \autoref{subsec:Der_Mental-Speed-Ansatz}): Modelliert man eine lineare Abhängigkeit zwischen der Anzahl Bits und den Reaktionszeiten, resultiert ein y-Achsen\-ab\-schnitt und eine Steigung. Nach dem diese Aufgabenparameter bestimmt wurden, kann jede beliebige Reaktionszeit durch die Verrechnung des y-Achsen\-ab\-schnitts, der Steigung und der Anzahl Bits beschrieben werden \citep[S. 105]{Jensen1987a}. 
+Der y-Achsen\-ab\-schnitt und die Steigung bilden damit zwei unabhängige Komponenten der Reaktionszeit, die unterschiedliche Prozesse repräsentieren. Beim y-Achsen\-ab\-schnitt wird angenommen, dass er ein Mass für die Zeitdauer ist, welche sensorische und motorische Prozesse benötigen, um den Reiz im Kortex wahrzunehmen und die Muskeln über efferente Nerven anzusteuern, während die Steigung Verarbeitungsgeschwindigkeit von Information abbildet \citep{Jensen1998a}. Diese Trennung von Komponenten mittels der Regressionsanalyse stellt deshalb nützlich.\todo[color=green!40, fancyline]{Satz zu Ende schreiben :)}
 
-Dabei hat sich allerdings herausgestellt, dass die von \citet{Jensen1979} isolierte motorische Komponente mit kognitiven Prozessen konfundiert war \citep{Jensen1979, Smith1987b}.
+Im Gegensatz zu den Analysen, die bis hierhin besprochen wurden und auf manifester Ebene durchgeführt werden, ergibt sich bei einer Analyse auf latenter Ebene ein hilfreicher Vorteil. Genauer gesagt berücksichtigt eine latente Analyse, dass sich ein beobachteter Messwert (z. B. die Reaktionszeit in der \gls{ha}) immer aus einem wahren Anteil der Merkmalsausprägung und einem zufällig zustande gekommenen Fehleranteil, dem Messfehler, zusammensetzt. Der Messfehler ist dabei unabhängig von der wahren Merkmalsausprägung \citep{Moosbrugger2007}. Mit Hilfe der Faktorenanalyse lässt sich der Messfehler identifizieren und von der Analyse ausschliessen. Auf Gruppenebene bleibt damit nur Varianz übrig, die durch die an der Antwort beteiligten relevanten Prozesse verursacht wurde. Zusammenhänge zwischen Variablen können folglich auf latenter Ebene valider bestimmt werden als auf manifester Ebene \citep[S. 9]{Kline2011}.
 
-
-Die auf manifester Ebene am häufigsten angewandte Methode zur Trennung von Prozessen stellt die Regressionsanalyse dar. Bei der Analyse der Reaktionszeiten der \gls{ha} können diese dabei mit einem regressionsanalytischen Modell beschrieben werden. Mit den daraus abgeleiteten Aufgabenparametern lässt sich die Geschwindigkeit mit der Information kognitiv verarbeitet wird von den restlichen an der Reaktionszeit beteiligten Prozessen trennen (\citealp{Hick1952}; \citealp{Jensen1998a}; Roth \citealp[1964; zitiert nach][S. 105]{Jensen1987a}).
-
-Im Gegensatz zur Analyse von kognitiven Prozessen auf manifester Ebene ergibt sich auf latenter Ebene ein hilfreicher Vorteil. Eine latente Analyse berücksichtigt, dass sich ein beobachteter Messwert (z. B. die Reaktionszeit in der \gls{ha}) immer aus einem wahren Anteil der Merkmalsausprägung und einem  zufällig zustande gekommenen Fehleranteil, der unabhängig von der wahren Merkmalsausprägung ist, zusammensetzt \citep{Moosbrugger2007}. 
-Mit Hilfe der Faktorenanalyse lässt sich der Messfehler von den inhaltlich relevanten, an der Reaktionszeit beteiligten Prozessen trennen \citep[S. 9]{Kline2011}. Diese Isolierung des Messfehlers erhöht dann zwar die Validität von Schlussfolgerungen, das Problem der Überlagerung von Prozessen ist aber nicht komplett gelöst. 
-
-Hier setzen \glspl{flm} an \citep{Schweizer2006a, Schweizer2006b}. Während herkömmliche Faktorenanalysen gemeinsame Varianz von experimentellen Bedingungen mit einer latenten Variable abbilden, trennen \glspl{flm} gemeinsame Varianz in zwei systematische Varianzquellen (Faktoren) auf. 
+Eine Faktorenanalyse trennt also wahre Varianz von Fehlervarianz. Damit ist das \gls{ip} aber nicht gelöst. Wahre Varianz kann immer noch durch eine Vielzahl von unterschiedlichen Prozessen entstehen. Genau an diesem Punkt setzten \glspl{flm} an \citep[z. B.][]{Schweizer2006a, Schweizer2006b, Schweizer2007, Schweizer2008, Schweizer2009a}. Während herkömmliche Faktorenanalysen gemeinsame Varianz von experimentellen Bedingungen mit einer latenten Variable abbilden, trennen \glspl{flm} gemeinsame Varianz in zwei systematische Varianzquellen (Faktoren) auf. 
 Eine latente Variable bindet Varianz aufgabenrelevanter Prozesse, deren Einflüsse sich über die experimentellen Bedingungen hinweg nicht verändern. Diese erste latente Variable bildet folglich Varianz von Prozesse ab, die für das Lösen der Aufgabe zwar notwendig sind, aber einen gleichbleibenden konstanten Einfluss auf die abhängigen Variable(Reaktionszeit?, Leistungn in der Bedingung!) \cancel{Bedingungen} der Aufgabe ausüben. Diese gebundenen Prozesse sind somit unabhängig von der experimentellen Manipulation.
 
 Abbildung mit 4 Bedingungen?
@@ -797,7 +794,7 @@ Weil durch die Fixierung der unstandardisierten Faktorladungen im Rahmen der Par
 Unabhängigkeit der Latenten Variablen!
 Statischte Trennung von Prozessen
 
-\begin{figure}[htbp]
+\begin{figure}[t]
 	\centering
 
 	\begin{tikzpicture}
@@ -827,10 +824,10 @@ Statischte Trennung von Prozessen
 	\draw [paths] (sk.west) -- (s3.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize 1};
 	\draw [paths] (sk.west) -- (s4.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize 1};
 	
-	\draw [paths] (sd.west) -- (s1.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize a};
-	\draw [paths] (sd.west) -- (s2.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize b};
-	\draw [paths] (sd.west) -- (s3.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize c};
-	\draw [paths] (sd.west) -- (s4.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize d};
+	\draw [paths] (sd.west) -- (s1.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize $\lambda$};
+	\draw [paths] (sd.west) -- (s2.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize $\lambda$};
+	\draw [paths] (sd.west) -- (s3.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize $\lambda$};
+	\draw [paths] (sd.west) -- (s4.east) node[minimum size = 4mm, draw=none, fill=white, near start] {\footnotesize $\lambda$};
 	
 %	\draw [paths] (e1) -- (s1.west);
 %	\draw [paths] (e2) -- (s2.west);
@@ -1480,7 +1477,7 @@ Die Streudiagramme der $82\,\%$-Er\-ken\-nungs\-schwel\-len sind in \autoref{fig
 			\begin{tablenotes}[flushleft]
 				\footnotesize				% font size
 				\setlength\labelsep{0pt}	% no indent on second line
-				\item \textit{Anmerkungen.} Min~=~Minimum; Max~=~Maximum; S-W~=~Shapiro-Wilk-Test; $r_{tt}$~=~nach der Odd-Even-Methode berechnete, mit der Spearman-Brown-Formel \citep[Spearman 1910; Brown 1910; zitiert nach][S. 123]{Schermelleh-Engel2007} korrigierte Splithalf-Reliabilität.
+				\item \textit{Anmerkungen.} Min~=~Minimum; Max~=~Maximum; S-W~=~Shapiro-Wilk-Test; $r_{tt}$~=~nach der Odd-Even-Methode berechnete, mit der Spearman-Brown-Formel \citep[][]{Brown1910, Spearman1910} korrigierte Splithalf-Reliabilität.
 			\end{tablenotes}
 		\end{threeparttable}
 	\end{adjustbox}
@@ -1605,7 +1602,7 @@ Die Mittelwerte, Verteilungsangaben und Reliabilitäten der Bedingungen finden s
 		\begin{tablenotes}[flushleft]
 			\footnotesize				% font size
 			\setlength\labelsep{0pt}	% no indent on second line
-			\item \textit{Anmerkungen.}  Min~=~Minimum; Max~=~Maximum; S-W~=~Shapiro-Wilk-Test; $r_{tt}$~=~nach der Odd-Even-Methode berechnete, mit der Spearman-Brown-Formel \citep[Spearman 1910; Brown 1910; zitiert nach][S. 123]{Schermelleh-Engel2007} korrigierte Splithalf-Reliabilität.
+			\item \textit{Anmerkungen.}  Min~=~Minimum; Max~=~Maximum; S-W~=~Shapiro-Wilk-Test; $r_{tt}$~=~nach der Odd-Even-Methode berechnete, mit der Spearman-Brown-Formel \citep[][]{Brown1910, Spearman1910} korrigierte Splithalf-Reliabilität.
 		\end{tablenotes}%
 	\end{threeparttable}%
 	\end{adjustbox}
