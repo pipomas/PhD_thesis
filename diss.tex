@@ -34,7 +34,8 @@
 \usepackage{cancel}									% for \cancel{expression} 
 \usepackage{pifont}									% for "itemize" symbols (dinglist environment)
 \usepackage{color}									% \textcolor{color}{text} for coloring text
-\usepackage{todonotes}
+\usepackage{todonotes}								% for todo notes
+\usepackage{pdfpages}								% simplifies the insertion of external multi-page PDF
 
 % Mathpackages ---------------------------------------------------------------------
 \usepackage{mathtools}								% handy tools for mathematical typesetting
@@ -255,8 +256,8 @@
 			linkcolor=black,
 			urlcolor=blue,
 			pdfauthor={Philipp Thomas},
-%			pdfsubject={Dissertation},
-			pdftitle={Dissertation},
+			pdfsubject={Dissertation},
+			pdftitle={Der Zusammenhang zwischen Spatial-Suppression, Mental-Speed und psychometrischer Intelligenz},
 			pdfkeywords={psychometric intelligence, spatial suppression, mental speed, hick task, R, LaTeX}
 			}
 			
@@ -481,6 +482,7 @@ longplural={},
 	gross
 	gros-se
 	gros-sen
+	gros-sem
 	grös-se-re
 	grös-ste
 	grös-sten
@@ -536,6 +538,7 @@ longplural={},
 	ver-hält-nis-mäs-sig
 	ver-tei-lungs-freie
 	Ver-un-rei-ni-gungs-pro-blem
+	zu-liess
 }
 
 
@@ -550,7 +553,7 @@ longplural={},
 % ==========================================================================================
 
 \begin{document}
-\layout								% prints layout page at the beginning of the document
+%\layout							% prints layout page at the beginning of the document
 \frontmatter						% triggers roman numerals 
 
 % =================================================================
@@ -649,11 +652,43 @@ longplural={},
 \restoregeometry
 
 
+
+
+
+% =================================================================
+% A C K N O W L E D G M E N T S
+% =================================================================
+\clearpage
+\chapter*{\LARGE Danksagung}
+%\addcontentsline{toc}{chapter}{Danksagung}
+\vspace{-.7cm}
+Diese Arbeit stellt das Produkt meiner dreijährigen Forschungstätigkeit dar. Mein Dank gilt allen Personen, die mit ihrer Unterstützung zum Erfolg dieser Arbeit beigetragen haben.
+
+Namentlich möchte ich mich bei Herr \mbox{Prof. Dr. Stefan Troche} bedanken, der mich während der ganzen Arbeit eng betreut hat und mir mit zahlreichen Tipps und Hinweisen das Schreiben dieser Arbeit erleichtert hat.
+
+\mbox{Prof. Dr. Thomas Rammsayer} möchte ich dafür danken, dass er mir jederzeit als Ansprechperson zur Verfügung stand und mit hilfreichen Anregungen und Vorschlägen zum Gelingen dieser Arbeit beigetragen hat.
+
+\mbox{Prof. Dr. Duje Tadin} gilt mein Dank, weil er mich mit grossem Engagement dabei unterstützt hat, die \gls{ssauf} an der Universität Bern einzurichten und sich immer die Zeit nahm, meine Fragen zur Aufgabe zu beantworten. 
+
+Nicht zuletzt möchte ich mich bei all jenen Personen aus meinem privaten Umfeld bedanken, die mich während dieser Zeit liebevoll unterstützt haben.
+%\citep{Upper1974} 
+
+
+
+
+\vspace{5 mm}
+
+\begin{quote}
+Philipp Thomas\\
+\today
+\end{quote}
+
+
 % =================================================================
 % S U M M A R Y
 % =================================================================
 \chapter*{Zusammenfassung \label{cha:Zusammenfassung}}
-%\addcontentsline{toc}{chapter}{Zusammenfassung}
+\addcontentsline{toc}{chapter}{Zusammenfassung}
 \noindent
 DGP Richtlinien weisen auf folgende Punkte hin:
 \begin{itemize}
@@ -663,7 +698,7 @@ DGP Richtlinien weisen auf folgende Punkte hin:
 	\item \textit{Kürze}
 	\item \textit{Verständlichkeit}
 	\item Trotz Kürze sollte über die zu prüfenden psychologischen Hypothesen, die Methode, die Ergebnisse
-		  und die Interpretation informiert werden
+	und die Interpretation informiert werden
 \end{itemize}
 
 \noindent Generelle Hinweise:
@@ -687,42 +722,7 @@ DGP Richtlinien weisen auf folgende Punkte hin:
 
 
 
-% =================================================================
-% A C K N O W L E D G M E N T S
-% =================================================================
-\clearpage
-\chapter*{\LARGE Danksagung}
-\addcontentsline{toc}{chapter}{Danksagung}
-\vspace{-.7cm}
-Diese Arbeit ist das Produkt meiner dreijährigen Forschungstätigkeit. Mein Dank gilt allen Personen, die mit ihrer Unterstützung zum Gelingen dieser Arbeit beigetragen haben.
-
-Namentlich möchte ich mich bei Herr \mbox{Prof. Dr. Stefan Troche} bedanken, der mir mit zahlreichen Tipps und Hinweisen geholfen hat, und mit seinen.
-
-\mbox{Prof. Dr. Thomas Rammsayer} möchte ich für zu jeder Zeit als Ansprechperson zur Verfügung stand seine zahlreichen Tipps und Anregungen bezüglich 
-
-
-\mbox{Prof. Dr. Duje Tadin}  
-%\citep{Upper1974} 
-
-
-
-
-\vspace{6 mm}
-
-\begin{quote}
-Philipp Thomas\\
-\today
-\end{quote}
-
-
-
-
-
 \mainmatter				% page numbers in arabic
-
-
-\hyphenation{Brad-dick}
-
 % =================================================================
 % I N T R O D U C T I O N
 % =================================================================
@@ -1596,7 +1596,7 @@ Um zu erfahren, ob sich alle oder nur bestimmte Mittelwertpaare signifikant vone
 Tukey-Tests haben gezeigt, dass sich alle Mittelwertpaare signifikant voneinander unterschieden (alle \textit{p}s $<.001$).
 Die $82\,\%$-Er\-ken\-nungs\-schwel\-len der \glspl{vp} erhöhten sich folglich mit zunehmender Mustergrösse signifikant.
 Die Effektstärken für die Mittelwertsunterschiede wurden mit Cohens \textit{d} für abhängige Stichproben \citep{Gibbons1993} bestimmt. 
-Dabei hat sich gezeigt, dass die Effektstärken im mittleren bis hohen Bereich \citep[][S. 40]{Cohen1988} lagen (siehe \autoref{tab:spatial_suppression_effect_sizes}). 
+Dabei hat sich gezeigt, dass die Effektstärken im mittleren und hohen Bereich \citep[][S. 40]{Cohen1988} lagen (siehe \autoref{tab:spatial_suppression_effect_sizes}). 
 
 \begin{table}[htbp]
 	\centering
@@ -1755,7 +1755,7 @@ Produkt-Moment-Korrelationen zwischen den vier Bedingungen der \gls{ha} sind in 
 \subsection{BIS-Test \label{subsec:BIS-Test}}
 
 Deskriptive Angaben zu den Subtests des \gls{bist}s sind in \autoref{tab:bis_descriptives} zu finden.
-Wie aufgrund der Modellannahmen des \gls{bist}s zu erwarten war, liessen sich zwischen der Mehrheit der Subtests signifikante positive Zusammenhänge beobachten (siehe \autoref{tab:bis_product_correlations}). Dieser \textit{positive manifold} bildete die Voraussetzung für die Beantwortung der dritten, vierten und fünften Fragestellung, bei welchen aus den Aufgaben des \gls{bist}s mit Hilfe von Faktorenanalysen ein \gls{gfaktor} extrahiert wurde.
+Wie aufgrund der Modellannahmen des \gls{bist}s zu erwarten war, liessen sich zwischen der Mehrheit der Subtests signifikante positive Zusammenhänge beobachten (siehe \autoref{tab:bis_product_correlations}). Dieser positive manifold bildete die Voraussetzung für die Beantwortung der dritten, vierten und fünften Fragestellung, bei welchen aus den Aufgaben des \gls{bist}s mit Hilfe von Faktorenanalysen ein \gls{gfaktor} extrahiert wurde.
 
 Der \gls{zwert} des \gls{bist}s, gebildet als Mittelwert aller $18$ \textit{z}-stand\-ard\-isier\-ter Subtests, wies einen Mittelwert $\pm$ Standardabweichung von $0.02\,\pm\,0.53$ auf (Minimum $= -1.60$, Maximum $= 1.40$). Die Verteilung des \gls{zwert}s (siehe \autoref{fig:bis_zscore_density}) hatte eine negative Schiefe ($-0.02$) und eine positive Kurtosis ($0.16$), wich damit aber gemäss einem Shapiro-Wilk-Test  nicht signifikant von der Normalverteilung ab ($p=.82$).
 
@@ -3196,15 +3196,15 @@ Zudem wich die Verteilung des \gls{zwert}s nicht von der Normalverteilung ab (si
 
 \subsection{Ein alternatives Mass für Spatial-Suppression? \label{subsec:Ein_alternatives_Mass_für_SS?}}
 
-In bisherigen Untersuchungen wurde das Ausmass an \gls{ss} mit dem \gls{si} quantifiziert \citep{Melnick2013, Tadin2006, Tadin2011}. Gebildet wurde der \gls{si} dabei (wie auch in der vorliegenden Arbeit) als Differenz zwischen der Erkennungsschwelle für grosse Muster und der Erkennungsschwelle für kleine Muster. Diese Differenzbildung wirkt sich in Situationen, in welchen der Minuend beziehungsweise der Subtrahend korreliert sind und die Reliabilität der beiden nicht perfekt ist, negativ auf die Reliabilität des Differenzmasses aus (siehe \autoref{subsec:Der_Spatial-Suppression-Ansatz}).
+In bisherigen Untersuchungen wurde das Ausmass an \gls{ss} mit dem \gls{si} quantifiziert \citep{Lappin2009, Melnick2013, Tadin2006, Tadin2011}. Gebildet wurde der \gls{si} dabei (wie auch in der vorliegenden Arbeit) als Differenz zwischen der Erkennungsschwelle für grosse Muster und der Erkennungsschwelle für kleine Muster. Diese Differenzbildung wirkt sich in Situationen, in welchen der Minuend beziehungsweise der Subtrahend korreliert sind und die Reliabilität der beiden nicht perfekt ist, negativ auf die Reliabilität des Differenzmasses aus (siehe \autoref{subsec:Der_Spatial-Suppression-Ansatz}).
 Auch \citet{Melnick2013} haben erkannt, dass der \gls{si} als Mass für \gls{ss} nicht ideal ist. Sie haben in ihrer Untersuchung richtigerweise darauf hingewiesen, dass die Höhe des \gls{si} davon abhängig ist, welche Mustergrössen in einer Untersuchung verwendet werden sowie zwischen welchen Mustergrössen die Differenz gebildet wird. So lassen sich beispielsweise die Ergebnisse zum \gls{si} zwischen den Untersuchungen von \citet{Tadin2006}, \citet{Tadin2011} und \citeauthor{Melnick2013} nicht direkt vergleichen, weil sie den \gls{si} als Differenz zwischen unterschiedlichen Mustergrössen gebildet haben. Als Lösung dafür haben \citeauthor{Melnick2013} vorgeschlagen, die Erkennungsschwellen mit einem exponentiellen Modell zu beschreiben und die daraus abgeleitete Steigung als Mass für \gls{ss} zu verwenden. Damit sind beide Schwachpunkte des \gls{si} behoben: Die Steigung stellt kein Differenzmass dar (das heisst sie leidet nicht unter einer verminderten Reliabilität) und sie lässt sich unabhängig von den verwendeten Mustergrössen zwischen verschiedenen Untersuchungen vergleichen.
 
 \citet{Melnick2013} haben die Erkennungsschwellen mit einem exponentiellen Modell beschrieben und einen starken Zusammenhang zwischen der ermittelten Steigung und dem \gls{si} ($r=.99$) festgestellt. Dieser Befund konnte in der vorliegenden Arbeit bei rein inferenzstatistischer Betrachtung nicht bestätigt werden ($r=.96$). Inhaltlich muss bei diesem Zusammenhang aber immer noch von einem ausserordentlich hohen Zusammenhang gesprochen werden.
 Eindeutig nicht bestätigt werden konnte hingegen der von \citeauthor{Melnick2013} berichtete starke Zusammenhang zwischen der Steigung und psychometrischer Intelligenz ($r~=~.68$). In der vorliegenden Arbeit bestand keine Beziehung zwischen den beiden Variablen ($r=.00$).
 
-Grundsätzlich festzuhalten ist, dass sich ein exponentielles Modell zur Beschreibung der Erkennungsschwellen sehr gut eignete. Ebenso schienen die Zusammenhänge der abgeleiteten Aufgabenparameter (Asymptote und Steigung) mit psychometrischer Intelligenz nicht massgeblich durch Personen beeinflusst worden zu sein, deren Erkennungsschwellen schlecht mit einem exponentiellen Modell abgebildet werden konnten (siehe \autoref{sec:2Fragestellung}). Dieser Umstand vereinfachte die Interpretation der Resultate. Der bestätigte starke Zusammenhang zwischen dem \gls{si} und der Steigung deutete darauf hin, dass die Steigung ziemlich genau dasselbe wie der \gls{si} erfasste. In Anbetracht des nicht bestätigten Zusammenhangs zwischen dem \gls{si} und psychometrischer Intelligenz war es somit nicht erstaunlich, dass zwischen der Steigung und psychometrischer Intelligenz eine Null-Korrelation beobachtet wurde. Die Erfassung von \gls{ss} mittels der Steigung scheint gegenüber dem \gls{si} bei einem ersten Blick auf die hier berichteten Resultate keinen Mehrwert zu besitzen, weil die Steigung psychometrische Intelligenz nicht besser vorhersagte als der \gls{si}. Aus Gründen der höheren Reliabilität und der besseren Vergleichbarkeit zwischen Studien ist die exponentielle Steigung jedoch das geeignetere Mass für \gls{ss} als der \gls{si}.
+Grundsätzlich festzuhalten ist, dass sich ein exponentielles Modell zur Beschreibung der Erkennungsschwellen sehr gut eignete. Ebenso schienen die Zusammenhänge der abgeleiteten Aufgabenparameter (Asymptote und Steigung) mit psychometrischer Intelligenz nicht massgeblich durch Personen beeinflusst worden zu sein, deren Erkennungsschwellen schlecht mit einem exponentiellen Modell abgebildet werden konnten (siehe \autoref{sec:2Fragestellung}). Dieser Umstand vereinfachte die Interpretation der Ergebnisse. Der bestätigte starke Zusammenhang zwischen dem \gls{si} und der Steigung deutete darauf hin, dass die Steigung ziemlich genau dasselbe wie der \gls{si} erfasste. In Anbetracht des nicht bestätigten Zusammenhangs zwischen dem \gls{si} und psychometrischer Intelligenz war es somit nicht erstaunlich, dass zwischen der Steigung und psychometrischer Intelligenz eine Null-Korrelation beobachtet wurde. Die Erfassung von \gls{ss} mittels der Steigung scheint gegenüber dem \gls{si} bei einem ersten Blick auf die hier berichteten Resultate keinen Mehrwert zu besitzen, weil die Steigung psychometrische Intelligenz nicht besser vorhersagte als der \gls{si}. Aus Gründen der höheren Reliabilität und der besseren Vergleichbarkeit zwischen Studien ist die exponentielle Steigung jedoch das geeignetere Mass für \gls{ss} als der \gls{si}.
 
-\citet{Melnick2013} haben in Ihrer Untersuchung nur die Steigung mit psychometrischer Intelligenz in Verbindung gebracht. Den Zusammenhang zwischen der Asymptote und der Steigung sowie die Beziehung zwischen der Asymptote und psychometrischer Intelligenz haben sie nicht berichtet. Diese Zusammenhänge wurden in der vorliegenden Arbeit untersucht. Dabei hat sich ein starker negativer Zusammenhang zwischen der Asymptote und der Steigung ergeben ($r=-.57$). Ein tiefer Ursprung des exponentiellen Verlaufs der Wahrnehmungsverschlechterung ging folglich tendenziell mit einer stärkeren Wahrnehmungsverschlechterung (einer stärkeren \gls{ss}) einher.
+\citet{Melnick2013} haben in Ihrer Untersuchung nur die Steigung mit psychometrischer Intelligenz in Verbindung gebracht. Den Zusammenhang zwischen der Asymptote und der Steigung sowie die Beziehung zwischen der Asymptote und psychometrischer Intelligenz haben sie nicht berichtet. Diese Zusammenhänge wurden in der vorliegenden Arbeit untersucht. Dabei hat sich ein stark\textcolor{red}{er} negativer Zusammenhang zwischen der Asymptote und der Steigung ergeben ($r=-.57$). Ein tiefer Ursprung des exponentiellen Verlaufs der Wahrnehmungsverschlechterung ging folglich tendenziell mit einer stärkeren Wahrnehmungsverschlechterung (einer stärkeren \gls{ss}) einher.
 Dieser Befund lässt sich gut mit der Erklärung von \citeauthor{Melnick2013} für den von Ihnen beobachteten positiven Zusammenhang zwischen dem \gls{si} und psychometrischer Intelligenz vereinen. Wenn intelligente Personen tatsächlich kleine Muster schneller verarbeiten und gleichzeitig mit zunehmender Mustergrösse eine stärkere Verschlechterung der Wahrnehmungsleistung erfahren als weniger intelligente Personen, dann sollten bei der Analyse der Bedingungen mit einem exponentiellen Modell die Asymptote und die Steigung negativ zusammenhängen. 
 Konsistent mit diese Annahme von \citeauthor{Melnick2013} hing in der vorliegenden Arbeit die Asymptote schwach negativ mit psychometrischer Intelligenz zusammen ($r=-.16$). Ein tiefer Ursprung des exponentiellen Verlaufs der Wahrnehmungsverschlechterung hing somit tendenziell mit hoher psychometrischer Intelligenz zusammen. Auch wenn die Asymptote inhaltlich schwierig zu interpretieren ist, liefert dieser negative Zusammenhang einen weiteren Hinweis dafür, dass intelligentere Personen ganz generell betrachtet tendenziell schneller arbeitende Prozesse besitzen als weniger intelligente Personen \citep{Jensen1987a, Neubauer1997a, Neubauer1997b}.
 
@@ -3215,7 +3215,7 @@ Konsistent mit diese Annahme von \citeauthor{Melnick2013} hing in der vorliegend
 
 Um den Umstand zu berücksichtigen, dass sich ein beobachteter Messwert immer aus einem wahren Anteil der Merkmalsausprägung und einem zufällig zustande gekommenen Fehleranteil zusammensetzt \citep{Moosbrugger2007}, wurde der Zusammenhang zwischen der \gls{ssauf} und psychometrischer Intelligenz auf latenter Ebene untersucht. Damit konnte der Messfehler identifiziert und von der Analyse ausgeschlossen werden \citep[S. 9]{Kline2011}, was eine validere Schlussfolgerung über den Zusammenhang zwischen der \gls{ssauf} und psychometrischer Intelligenz zuliess.
 
-Das kongenerische Messmodell der \gls{ssauf}, das einen Faktor für die Erklärung der Zusammenhänge unter den Bedingungen annahm, bildete die empirischen Daten schlecht ab. Das kongenerische Messmodell des \gls{bist}s zur Extraktion des \gls{gfaktor}s, der latenten Operationalisierung psychometrischer Intelligenz, konnte aus Gründen mangelnder Identifizierbarkeit \citep[S. 125]{Kline2011} nicht isoliert getestet werden. Bei der Zusammenführung dieser beiden Modelle in einem klassischen Strukturgleichungsmodell hat sich dann ein schwacher bis mittlerer negativer Zusammenhang ($\upbeta=-.23$) zwischen der \gls{ssauf} und dem \gls{gfaktor} gezeigt. Nicht zu vernachlässigen ist, dass das theoretische Modell die empirischen Zusammenhänge dabei schlecht abbildete und die aus den vier Bedingungen der \gls{ssauf} extrahierte latente Variable lediglich $5\,\%$ der Varianz im \gls{gfaktor} erklärte.
+Das kongenerische Messmodell der \gls{ssauf}, das einen Faktor für die Erklärung der Zusammenhänge unter den Bedingungen annahm, bildete die empirischen Daten schlecht ab. Das kongenerische Messmodell des \gls{bist}s zur Extraktion des \gls{gfaktor}s, der latenten Operationalisierung psychometrischer Intelligenz, konnte aus messtechnischen Gründen nicht isoliert getestet werden (siehe \autoref{sec:3Fragestellung}). Bei der Zusammenführung dieser beiden Modelle in einem klassischen Strukturgleichungsmodell hat sich dann ein schwacher bis mittlerer negativer Zusammenhang ($\upbeta=-.23$) zwischen der \gls{ssauf} und dem \gls{gfaktor} gezeigt. Nicht zu vernachlässigen ist, dass das theoretische Modell die empirischen Zusammenhänge dabei schlecht abbildete und die aus den vier Bedingungen der \gls{ssauf} extrahierte latente Variable lediglich $5\,\%$ der Varianz im \gls{gfaktor} erklärte.
 
 Was verbirgt sich hinter der aus den vier Bedingungen der \gls{ssauf} extrahierten latenten Variable? Die durchwegs hohen positiven Faktorladungen der vier Bedingungen auf den Faktor legen kombiniert mit dem negativen Zusammenhang zum \gls{gfaktor} die Vermutung nahe, dass darin die generelle (von den Mustergrössen unabhängige) Geschwindigkeit abgebildet wurde, mit der die Bewegungsrichtung der Muster erkannt wurde. 
 Gestützt wird diese Vermutung durch die auf manifester Ebene beobachteten bivariaten Produkt-Moment-Korrelationen zwischen den Bedingungen der \gls{ssauf} und psychometrischer Intelligenz. Die Bedingungen der \gls{ssauf} korrelierten mit Ausnahme des Zusammenhangs zwischen der $7.2^{\circ}$-Bedingung und dem \gls{zwert} des \gls{bist}s alle schwach negativ mit psychometrischer Intelligenz ($r=-.16$ bis $-.19$; siehe \autoref{tab:product_moment_correlations_manifest}). Eine schnellere Erkennung der Bewegungsrichtung war somit (unabhängig von der verwendeten Mustergrösse) tendenziell mit hohen Intelligenzwerten verbunden. 
@@ -3252,13 +3252,13 @@ Was für Prozesse wurden in der konstanten latenten Variable abgebildet? Sicher 
 Diese Vermutung lässt sich gut mit den Resultaten der exponentiellen Regression zum negativen Zusammenhang zwischen der Asymptote und psychometrischer Intelligenz vereinen. Die Asymptote bildete auf manifester Ebene ebenfalls die von der experimentellen Manipulation unabhängige generelle Geschwindigkeit ab, mit der Information verarbeitet wurde (siehe \autoref{subsec:Ein_alternatives_Mass_für_SS?}). 
 Dass die konstante latente Variable ($\upbeta~=~-.25$) dabei etwas stärker mit psychometrischer Intelligenz zusammenhing als die Asymptote ($r~=~-.16$) lässt sich damit erklären, dass die Analyse auf latenter Ebene mittels \gls{flm} den Messfehler isoliert und dadurch zu höheren Zusammenhängen kommen kann als die manifeste Analyse mittels exponentieller Regression.
 
-Die dynamische latente Variable hat Varianz von aufgabenrelevanten Prozessen gebunden, deren Einflüsse sich mit der experimentellen Manipulation verändert haben. Der Einfluss der Prozesse nahm mit zunehmender Mustergrösse exponentiell zu. Weil \citet{Melnick2013} \gls{ss} mit einem exponentiellen Modell beschrieben haben, kann angenommen werden, dass sich hinter diesem exponentiellen Verlauf  \gls{ss} verbirgt. Der nicht-signifikante Zusammenhang zwischen der dynamischen latenten Variable und dem \gls{gfaktor} ($\upbeta~=~-.08$) steht dabei in der vorliegenden Arbeit in Übereinstimmung mit den Zusammenhängen zwischen anderen Massen für \gls{ss} und psychometrischer Intelligenz: Der \gls{si} sowie die exponentielle Steigung korrelierten nicht signifikant mit psychometrischer Intelligenz ($r~=~.00$ respektive $r~=~.00$).
+Die dynamische latente Variable hat Varianz von aufgabenrelevanten Prozessen gebunden, deren Einflüsse sich mit der experimentellen Manipulation verändert haben. Der Einfluss der Prozesse nahm mit zunehmender Mustergrösse exponentiell zu. Weil \citet{Melnick2013} \gls{ss} mit einem exponentiellen Modell beschrieben haben, kann angenommen werden, dass sich hinter diesem exponentiellen Verlauf  \gls{ss} verbirgt. Der nicht-signifikante Zusammenhang zwischen der dynamischen latenten Variable und dem \gls{gfaktor} ($\upbeta~=~-.08$) steht dabei in der vorliegenden Arbeit in Übereinstimmung mit den Zusammenhängen zwischen anderen Massen für \gls{ss} und psychometrischer Intelligenz: Der \gls{si} sowie die exponentielle Steigung korrelierten nicht mit psychometrischer Intelligenz ($r~=~.00$ respektive $r~=~.00$).
 
 
 
 
-
-\subsection{Der Zusammenhang zwischen Spatial-Suppression, \\Men\-tal-Speed und psychometrischer Intelligenz}
+\subsection{Der Zusammenhang zwischen der Spatial-Sup\-pres\-sion-Aufgabe, der Hick-Aufgabe und psy\-cho\-me\-trischer In\-tel\-li\-genz}
+%\subsection{Der Zusammenhang zwischen Spatial-Suppression, \\Men\-tal-Speed und psychometrischer Intelligenz}
 
 In einem letzten Schritt wurde der Zusammenhang zwischen der \gls{ssauf} und psychometrischer Intelligenz um \gls{ms} erweitert. Damit wurde geprüft, ob die \gls{ssauf} im Zusammenhang mit psychometrischer Intelligenz einen Aspekt der menschlichen Informationsverarbeitung abbildet, der neuartig ist und nicht bereits von der \gls{ha} erfasst beziehungsweise erklärt wird. Die Analysen wurden auf manifester als auch auf latenter Ebene durchgeführt.
 
@@ -3286,8 +3286,8 @@ Diese Analysen auf manifester Ebene deuteten darauf hin, dass die \gls{ssauf} im
 
 % Klassisches Strukturgleichungsmodell
 
-Die kongenerischen Messmodelle der Hick- und der \gls{ssauf}, die je einen Faktor für die Erklärung der Zusammenhänge unter den Bedingungen annahmen, bildeten die empirischen Daten schlecht ab. Das kongenerische Messmodell des \gls{bist}s zur Extraktion des \gls{gfaktor}s konnte wie bereits erwähnt aus Gründen mangelnder Identifizierbarkeit \citep[S. 125]{Kline2011} nicht isoliert getestet werden. 
-Bei der Zusammenführung dieser drei Modelle in einem klassischen Strukturgleichungsmodell hat sich ein mittlerer negativer Zusammenhang ($\upbeta=~-.33$) zwischen der \gls{ha} und dem \gls{gfaktor} gezeigt. Zwischen der \gls{ssauf} und dem \gls{gfaktor} bestand ein schwacher negativer Zusammenhang ($\upbeta=~-.19$). Die Hick- und die \gls{ssauf} korrelierten nicht signifikant ($r~=~.14$), erklärten gemeinsam jedoch $16\,\%$ der Varianz im \gls{gfaktor}. Nicht zu vernachlässigen ist dabei, dass dieses klassische Strukturgleichungsmodell die empirischen Zusammenhänge schlecht abbildete.
+Die kongenerischen Messmodelle der Hick- und der \gls{ssauf}, die je einen Faktor für die Erklärung der Zusammenhänge unter den Bedingungen annahmen, bildeten die empirischen Daten schlecht ab. Das kongenerische Messmodell des \gls{bist}s zur Extraktion des \gls{gfaktor}s konnte wie bereits erwähnt aus messtechnischen nicht isoliert getestet werden. 
+Bei der Zusammenführung dieser drei Modelle in einem klassischen Strukturgleichungsmodell hat sich ein mittlerer negativer Zusammenhang ($\upbeta=~-.33$) zwischen der \gls{ha} und dem \gls{gfaktor} gezeigt. Zwischen der \gls{ssauf} und dem \gls{gfaktor} bestand ein schwach\textcolor{red}{er} negativer Zusammenhang ($\upbeta=~-.19$). Die Hick- und die \gls{ssauf} korrelierten nicht signifikant ($r~=~.14$) und erklärten gemeinsam $16\,\%$ der Varianz im \gls{gfaktor}. Nicht zu vernachlässigen ist dabei, dass dieses klassische Strukturgleichungsmodell die empirischen Zusammenhänge schlecht abbildete.
 
 Der mittlere Zusammenhang zwischen der \gls{ha} und dem \gls{gfaktor} kann als Bestätigung früherer Untersuchungen angesehen werden, welche die \gls{ha} auf latenter Ebene mit psychometrischer Intelligenz in Verbindung gebracht haben und dabei einen vergleichbaren Zusammenhang ermittelt haben \citep[z. B.][]{Borter2016, Helmbold2007, Rammsayer2007}.
 Interessant war, dass die \gls{ssauf} über den Zusammenhang zwischen der \gls{ha} und dem \gls{gfaktor} hinaus Varianz im \gls{gfaktor} zu erklären vermochte. Auch wenn dieser Zusammenhang schwach ausfiel, lieferte diese Analyse in der vorliegenden Arbeit das erste Mal einen Hinweis dafür, dass die \gls{ssauf} im Zusammenhang mit dem \gls{gfaktor} einen Aspekt der menschlichen Informationsverarbeitung abbildet, der nicht schon von der \gls{ha} erklärt wird. Gestützt wird diese Interpretation durch den nicht-signifikanten latenten Zusammenhang zwischen der Hick- und der \gls{ssauf}. 
@@ -3304,8 +3304,8 @@ Bei der Zusammenführung der \glspl{flm} der Hick- und der \gls{ssauf} mit dem \
 Zwischen den konstanten und dynamischen latenten Variablen der Hick- und der \gls{ssauf} korrelierten einzig die beiden konstanten latenten Variablen signifikant ($r~=~.21$). Die konstanten und dynamischen latenten Variablen der Hick- und \gls{ssauf} erklärten gemeinsam $16\,\%$ der Varianz im \gls{gfaktor}.
 
 Was für Prozesse wurden in der konstanten latenten Variable der \gls{ha} abgebildet?
-Wie bei der Interpretation der konstanten latenten Variable der \gls{ssauf} kann auch hier nur vermutet werden, welche Prozesse sich dahinter verbergen. Klar ist, das es Prozesse sind, die von der experimentellen Manipulation nicht beeinflusst wurden. Es könnte also sein, dass es auch hier Prozesse sind, welche die grundlegende (von der Anzahl Antwortalternativen unabhängige) Geschwindigkeit bestimmen, mit der Reize im Kortex wahrgenommen und verarbeitet werden \citep{Jensen1998b}.
-Für die Varianz in den Reaktionszeiten aber auch verantwortlich sein könnten von der experimentellen Manipulation unabhängige situative Prozesse, wie zum Beispiel Unterschiede zwischen Personen in der allgemeinen Wachsamkeit oder der allgemeinen Motivation, die Aufgabe zu bearbeiten. 
+Wie bei der Interpretation der konstanten latenten Variable der \gls{ssauf} kann auch hier nur vermutet werden, welche Prozesse die Varianz erzeugt haben. Klar ist, das es Prozesse sind, die von der experimentellen Manipulation nicht beeinflusst wurden. Es könnte also sein, dass es auch hier Prozesse sind, welche die grundlegende (von der Anzahl Antwortalternativen unabhängige) Geschwindigkeit bestimmen, mit der Reize im Kortex wahrgenommen und verarbeitet werden \citep{Jensen1998b}.
+Für die Varianz aber auch verantwortlich sein könnten von der experimentellen Manipulation unabhängige situative Prozesse, wie zum Beispiel Unterschiede zwischen Personen in der allgemeinen Wachsamkeit oder der allgemeinen Motivation, die Aufgabe zu bearbeiten. 
 Der schwache bis mittlere positive Zusammenhang zwischen der konstanten latenten Variable der Hick- und der \gls{ssauf} deutet darauf hin, dass zumindest ein Teil der erfassten Prozesse aufgabenunspezifisch ist, das heisst sowohl in der Hick- als auch der \gls{ssauf} die Leistung beeinflusst hat. Die Vermutung, dass in den beiden konstanten latenten Variablen unter anderem die generelle Geschwindigkeit abgebildet wurde, mit der Information verarbeitet wird, muss mit diesem Zusammenhang zumindest nicht verworfen werden. 
 
 Die dynamische latente Variable der \gls{ha} hat Varianz von Prozessen gebunden, die experimentell manipuliert wurden. Manipuliert wurde die Anzahl Antwortalternativen. Es ist deshalb plausibel anzunehmen, dass in der dynamischen latenten Variable Varianz aufgrund unterschiedlicher Verarbeitungsgeschwindigkeiten von Personen abgebildet wurde \citep[vgl.][]{Jensen1998b, Roth1964}. 
@@ -3314,7 +3314,7 @@ Eine Erklärung dafür könnte sein, dass mit weiter zunehmender Anzahl Antworta
 
 Die mit der dynamischen latenten Variable der \gls{ha} erfasste Verarbeitungsgeschwindigkeit zeigte einen mittleren negativen Zusammenhang mit dem \gls{gfaktor} ($\upbeta~=~-.26$). Die konstante latente Variable sagte den \gls{gfaktor} hingegen nicht signifikant vorher ($\upbeta~=~-.17$).
 Wenn man die konstante und die dynamische latente Variable der \gls{ha} mit den auf manifester Ebene abgeleiteten Aufgabenparametern, dem y-Achsen\-ab\-schnitt und der Steigung, inhaltlich vergleicht, erkennt man, dass die konstante latente Variable dem y-Achsen\-ab\-schnitt und die dynamische latente Variable der Steigung entspricht. Unter dieser Betrachtungsweise lassen sich die Zusammenhänge der konstanten und dynamischen latenten Variablen mit dem \gls{gfaktor} gut mit bestehenden Resultaten zum Zusammenhang zwischen den Aufgabenparametern und psychometrischer Intelligenz erklären. Bei der Vorhersage von psychometrischer Intelligenz wird der Steigung bekanntermassen grössere Bedeutung zugeschrieben als dem y-Achsen\-ab\-schnitt \citep[z. B.][]{Jensen1987a, Jensen1998b, Roth1964}. In der vorliegenden Arbeit liess sich dieses Muster auf latenter Ebene wiedererkennen.
-Bekräftigt wird diese Interpretation der höheren Bedeutsamkeit der Verarbeitungsgeschwindigkeit durch die Skalierung der latenten Varianzen der \gls{ha}. Diese hat ergeben, dass die dynamische latente Variable mehr von der den Bedingungen gemeinsamen Varianz band ($61\,\%$) als die konstante Variable ($39\,\%$). Die dynamische latente Variable war folglich stärker für Unterschiede zwischen Personen in der Reaktionszeit verantwortlich als die konstante latenten Variable.
+Bekräftigt wird diese Interpretation der höheren Bedeutsamkeit der Verarbeitungsgeschwindigkeit durch die Skalierung der latenten Varianzen der \gls{ha}. Diese hat ergeben, dass die dynamische latente Variable mehr von der den Bedingungen gemeinsamen Varianz band ($61\,\%$) als die konstante Variable ($39\,\%$). Die mit der dynamischen latenten Variable erfasste Verarbeitungsgeschwindigkeit war folglich stärker für Unterschiede zwischen Personen in der Reaktionszeit verantwortlich als die Prozesse der konstanten latenten Variable.
 
 
 
@@ -3338,9 +3338,10 @@ Bevor die bis hierhin diskutierten Ergebnisse ganzheitlich betrachtet werden kö
 
 \subsection{Interpretation der latenten Variablen}
 
-Latente Variablen erfassen Varianz von Prozessen, die nicht direkt beobachtbar sind. Um sicher zu stellen, dass sich hinter einer Varianz tatsächlich die vermuteten Prozesse verbergen, müssten die Annahmen überprüft werden. Das wurde in der vorliegenden Arbeit nicht gemacht. Die Interpretationen der latenten Variablen der Hick- und der \gls{ssauf} sind deshalb lediglich als mutmassliche Inhalte zu verstehen. Ob beispielsweise die konstante latente Variable der \gls{ssauf} tatsächlich Prozesse abgebildet hat, welche die (von den Mustergrössen unabhängige) grundlegende Geschwindigkeit bestimmen, mit der Information verarbeitet wird kann mit der vorliegenden Arbeit nicht überprüft werden. Um diese Frage zu beantworten und sicher zu stellen, dass keine Fehlinterpretation vorliegt, müsste sich eine Arbeit um die Validierung der mutmasslichen Inhalte kümmern.
+Latente Variablen erfassen Varianz von Prozessen, die nicht direkt beobachtbar sind. Um sicher zu stellen, dass sich hinter einer Varianz tatsächlich die vermuteten Prozesse verbergen, müssen die Annahmen geprüft werden. Das wurde in der vorliegenden Arbeit nicht gemacht. Die Interpretationen der latenten Variablen der Hick- und der \gls{ssauf} sind deshalb lediglich als mutmassliche Inhalte zu verstehen. Ob beispielsweise die konstante latente Variable der \gls{ssauf} tatsächlich Prozesse abgebildet hat, welche die (von den Mustergrössen unabhängige) grundlegende Geschwindigkeit bestimmen, mit der Information verarbeitet wird, kann mit der vorliegenden Arbeit nicht überprüft werden. Um diese Frage zu beantworten und sicher zu stellen, dass keine Fehlinterpretationen vorliegen, muss sich eine zukünftige Arbeit um die Validierung der mutmasslichen Inhalte kümmern.
 
-Des Weiteren sind die Ladungsverläufe der experimentell manipulierten latenten Variablen in den \glspl{flm}n stichprobenabhängig. Beispielsweise haben \citet{Borter2013} und \citet{Pahud2017} die \gls{ha} mit einem \gls{flm} beschrieben und ebenfalls einen monoton steigenden Ladungsverlauf ermittelt, der exakte Verlauf folgte jedoch keiner logistischen Funktion. Wählt man bei jeder Untersuchung den Ladungsverlauf, der die Daten am besten beschreibt, fliesst jedes Mal ein Stichprobenfehler mit in die Analyse ein. Bei der Interpretation des Verlaufs eines Prozesses darf deshalb nicht vergessen gehen, dass in einer neuen Stichprobe der Verlauf anders aussehen könnte. Sobald genügend Untersuchungen vorliegen, welche dieselbe Aufgabe mit einem \gls{flm} beschrieben haben, könnten die verschiedenen Ladungsverläufe verglichen und bewertet werden. Damit würde man sich dem \textit{echten} Ladungsverlauf stückweise im Sinne einer Metaanalyse nähern.
+Weiter besteht bei der Auswahl eines \gls{flm}s anhand des Kriteriums der besten Modellpassung das Problem, dass der ermittelte Ladungsverlauf stichprobenabhängig ist. 
+Andere Untersuchungen zur \gls{ha} haben beispielsweise ebenfalls einen monoton steigenden Ladungsverlauf für die dynamische latente Variable ermittelt, der exakte Verlauf folgte aber keiner logistischen Funktion \citep{Borter2013, Pahud2017}. Bei der Interpretation des Verlaufs eines Prozesses darf deshalb nicht vergessen gehen, dass in einer neuen Stichprobe der Verlauf anders aussehen könnte. Sobald genügend Untersuchungen vorliegen, welche dieselbe Aufgabe mit einem \gls{flm} beschrieben haben, könnten die ermittelten Ladungsverläufe verglichen und bewertet werden. Damit würde man sich dem wahren Ladungsverlauf im Sinne einer Metaanalyse nähern.
 
 
 
@@ -3348,125 +3349,134 @@ Des Weiteren sind die Ladungsverläufe der experimentell manipulierten latenten 
 
 \subsection{Darbietung der Spatial-Suppression-Aufgabe}
 
-Nach Abschluss der Datenerhebung hat sich im Austausch mit D. Tadin (persönl. Mitteilung, 13.09.2016) herausgestellt, dass der für die vorliegende Arbeit verwendete Programmcode für die Darbietung der \gls{ssauf} nicht optimal auf den Computermonitor abgestimmt war. Daraus folgten zwei Konsequenzen: Zum einen war der Kontrast, mit dem die Streifenmuster präsentiert wurden, geringer als angenommen und zum anderen erhöhte sich die Ortsfrequenz der Streifenmuster. 
+%\citep[Spatial-Summation;][]{Kapadia1999, Levitt1997, Pack2005}
 
-Der reduzierte Kontrast könnte erklären, weshalb der \gls{si} in der vorliegenden Arbeit tiefer zu liegen kam als bei \citet{Melnick2013}. \gls{ss} und Kontrast sind direkt miteinander Verbunden \citep{Tadin2003}, 
+Nach Abschluss der Datenerhebung hat sich im Austausch mit D. Tadin (persönl. Mitteilung, 13.09.2016) herausgestellt, dass der  Programmcode für die Darbietung der \gls{ssauf} nicht optimal auf den in der vorliegende Arbeit verwendeten Computermonitor abgestimmt war. Daraus folgten zwei Konsequenzen: Zum einen war der Kontrast, mit dem die Streifenmuster präsentiert wurden, geringer als angenommen und zum anderen änderte sich die Ortsfrequenz der präsentierten Streifenmuster.
 
+Das Ausmass an \gls{ss} ist direkt abhängig vom Kontrast der Streifenmuster \citep{Tadin2003}. Bei steigendem Kontrast nimmt die mit zunehmender Mustergrösse relative Wahrnehmungsverschlechterung zu, und bei sinkendem Kontrast nimmt die mit zunehmender Mustergrösse relative Wahrnehmungsverschlechterung ab \citep{Tadin2003}. Nach Abschluss der Datenerhebung war es nicht möglich, das durch den nicht optimal abgestimmten Programmcode verursachte Ausmass der Kontrastreduzierung zu bestimmen (D. Tadin, persönl. Mitteilung, 13.09.2016). Sicher ist aber, dass der in der vorliegenden Arbeit verwendet Kontrast nicht wie vor Beginn der Datenerhebung berechnet bei $99\,\%$ lag. Falls der nicht optimal abgestimmte Programmcode dazu geführt haben sollte, dass der tatsächliche Kontrast bei der Darbietung der Streifenmuster unter den von \citet{Melnick2013} verwendeten $42\,\%$ lag, könnte dies eine Erklärung dafür sein, dass der Mittelwert des \gls{si} in der vorliegenden Arbeit im Vergleich zu \citeauthor{Melnick2013} tiefer zu liegen kam.
 
+Um wie viel sich die vorgesehene Ortsfrequenz der Streifenmuster ($1^{\circ}$~Sehwinkel pro Periode) durch den nicht optimal abgestimmten Programmcode bei der Darbietung der Streifenmuster veränderte, ist ebenfalls nicht klar (D. Tadin, persönl. Mitteilung, 13.09.2016). Im Gegensatz zum Kontrast des Streifenmusters, bei welchem gut untersucht wurde, was für einen Effekt er auf die Wahrnehmungsleistung hat \citep[][]{Tadin2003, Kapadia1999, Levitt1997, Pack2005}, liegen zum Effekt der Ortsfrequenz des Streifenmusters auf die Erkennungsschwelle keine Untersuchungen vor. Es ist deshalb schwierig zu beurteilen, inwiefern die Schlussfolgerungen der vorliegenden Arbeit durch die veränderte Ortsfrequenz der Streifenmuster gefährdet sind.
 
- dazu geführt haben, dass sich das Ausmass an \gls{ss} in der vorliegenden Stichprobe  
+Wie erwähnt ist bei beiden Einschränkungen (dem reduzierten Kontrast und der veränderten Ortsfrequenz) nicht klar, welchen Einfluss sie auf die Ergebnisse hatten. Trotz dieser Unsicherheit deuten einige Punkte darauf hin, dass die Resultate der \gls{ssauf} interpretierbar sind: Die Wahrnehmungsleistung der \glspl{vp} hat sich mit zunehmender Mustergrösse wie bei \citet{Melnick2013} verschlechtert, die Erkennungsschwellen zeichneten sich durch sehr hohe Split\-half-Reliabilitäten aus und die Erkennungsschwellen liessen sich wie bei \citeauthor{Melnick2013} sehr gut mit einem exponentiellen Modell beschreiben. 
+Für die folgende generelle Diskussion wird deshalb angenommen, dass der reduzierte Kontrast und die veränderte Ortsfrequenz der Streifenmuster keinen so starken Einfluss auf die Ergebnisse ausübten, dass sie eine Interpretation verbietet.
 
+%Auch wenn nicht mit Sicherheit davon ausgegangen werden kann, dass der reduzierte Kontrast und die veränderte Ortsfrequenz der Streifenmuster keinen Einfluss auf die hier berichteten Ergebnisse hatten, wird das in der folgenden generelle Diskussion angenommen. 
 
-Als Konsequenz 
-
-
-\begin{itemize}
-	\item Programmcode (D. Tadin, persönl. Mitteilung, 13.09.2016)
-	\item $360$ Hz Code auf $144$ Hz Monitor? \citet{Lappin2009, Tadin2006} haben Schwellen von 10 ms!
-	\item Vs. Splithalf-Reliabilitäten
-\end{itemize}
-
-
-Inhaltlich neue Ansichten Gignac ... 
+%\begin{itemize}
+%	\item Programmcode (D. Tadin, persönl. Mitteilung, 13.09.2016)
+%	\item $360$ Hz Code auf $144$ Hz Monitor? \citet{Lappin2009, Tadin2006} haben Schwellen von $20$ und $30$~ms!für kleine muster BEIDE 120 Hz monitor!
+%	\item Vs. Splithalf-Reliabilitäten
+%	\item Grundsätzlich scheint Aufgabe funktioniert zu haben (ANOVA, Rel, etc.)
+%\end{itemize}
 
 
 \section{Generelle Diskussion}
 
-Abschliessende Zusammenfassung mit positiver Aussicht
+Bei einer ganzheitlichen Betrachtung der Ergebnisse zum Zusammenhang zwischen der \gls{ssauf} und psychometrischer Intelligenz kann festgestellt werden, dass sich die Aufgabe als Prädiktor von psychometrischer Intelligenz nicht bewährt hat \citep[vgl.][]{Melnick2013}. Die manifesten Zusammenhänge zwischen der \gls{ssauf} und psychometrischer Intelligenz konnten in der vorliegenden Arbeit im Vergleich mit den Resultaten von \citet{Melnick2013} überhaupt nicht beobachtet werden oder fielen bedeutsam schwächer aus. 
+Die Analyse der \gls{ssauf} auf latenter Ebene hat gezeigt, dass sich die für das Lösen der Aufgabe benötigten Prozesse in zwei unabhängige Faktoren trennen lassen. Der erste Faktor bildete Prozesse ab, welche die generelle Geschwindigkeit bestimmen, mit der die Bewegungsrichtung der Muster erkannt wurde. Der zweite Faktor bildete \gls{ss} ab. Im Zusammenhang mit psychometrischer Intelligenz wurde festgestellt, dass nicht \gls{ss} für den schwachen bis mittleren negativen Zusammenhang zwischen der Aufgabe und dem \gls{gfaktor} verantwortlich ist, sondern dass es die Prozesse sind, welche die generelle Geschwindigkeit bestimmt haben, mit der die Bewegungsrichtung der Muster erkannt wurde.
 
-Aus messtechnischer Hinsicht ist darauf hinzuweisen, dass das \gls{flm} die \gls{ssauf} sparsamer und besser abbildete als die klassische Faktorenanalyse. Auch im Zusammenhang mit dem \gls{gfaktor} bildete das Fixed-Links-Struk\-tur\-glei\-chungs\-mo\-dell die Beziehungen zwischen den Variablen deutlich besser ab als das klassische Strukturgleichungsmodell. Das \gls{flm} hat mit der statistischen Trennung der an der Aufgabe beteiligten Prozesse also dazu beigetragen, dass die der Aufgabe zugrunde liegende Struktur aufgedeckt wurde und sich der Zusammenhang der Aufgabe mit dem \gls{gfaktor} differenzierter Betrachten liess als in einem klassischen Strukturgleichungsmodell.
+Mit der Hinzunahme eines \glspl{msm}s, der \gls{ha}, wurde geprüft, ob die \gls{ssauf} einen Aspekt der menschlichen Informationsverarbeitung abbildet, der neuartig ist nicht bereits von der \gls{ha} erfasst wird. Die Analysen haben ergeben, dass die \gls{ssauf} auf manifester Ebene keine zusätzliche Varianz in psychometrischer Intelligenz zu erklären vermochte. Dies deutete darauf hin, dass die \gls{ssauf} ausschliesslich \gls{ms} abbildet, welcher ebenso gut mit der \gls{ha} erfasst werden kann. Auf latenter Ebene hingegen zeigte sich in einem klassischen Strukturgleichungsmodell zwischen der \mbox{Spatial-Suppression-,} der \gls{ha} und dem \gls{gfaktor}, dass die \gls{ssauf} einen eigenständigen Varianzanteil im \gls{gfaktor} erklärt. Die Analyse der gleichen Zusammenhänge mit einem Fixed-Links-Strukturgleichungsmodell deutete darauf hin, dass es auch hier nicht das Ausmass an \gls{ss} ist, dass mit dem \gls{gfaktor} zusammenhängt, sondern dass es die generelle Geschwindigkeit ist, mit der die Muster verarbeitet wurden. Diese generelle Geschwindigkeit von Prozessen in der \gls{ssauf} stand dabei in schwachem bis mittleren positiven Zusammenhang mit Prozessen, welche die grundlegende Geschwindigkeit bei der Bearbeitung der \gls{ha} bestimmten. Interessant war zu beobachten, dass diese grundlegende Geschwindigkeit von Prozessen in der \gls{ssauf} nicht mit der Verarbeitungsgeschwindigkeit in der \gls{ha} zusammenhing. 
+Diese Befunde deuten darauf hin, dass für die Bearbeitung der Spatial-Suppression- und der \gls{ha} zwar teilweise die gleichen grundlegenden, basalen Prozesse benötigt werden, es aber nicht die Verarbeitungsgeschwindigkeit im Sinne des \gls{msa}es \citep[z. B.][]{Deary2000a, Jensen1982a, Jensen1982b, Jensen2006, Vernon1983} ist.
 
+Aus messtechnischer Hinsicht kann darauf hingewiesen werden, dass \glspl{flm} die empirischen Zusammenhänge adäquater und sparsamer beschrieben als klassische Faktorenanalysen. Sie haben sich erneut als hilfreich erwiesen, die an experimentell manipulierten Aufgabe beteiligten Prozesse voneinander zu trennen und damit ein differenzierteres Bild der Zusammenhänge mit psychometrischer Intelligenz zu ermöglichen \citep[][]{Ren2013, Schweizer2007, Stankov2007, Wang2015}
 
-Aus messtechnischer Hinsicht kann erneut darauf hingewiesen werden, dass das \gls{flm} der \gls{ha} die empirischen Zusammenhänge besser und sparsamer beschrieb als die klassische Faktorenanalyse. Ebenso hat sich im Fixed-Links-Struk\-tur\-glei\-chungs\-mo\-dell zwischen der \gls{ha}, der \gls{ssauf} und dem \gls{gfaktor} einen deutlich besseren Modell-Fit ergeben als mit einem klassischen Strukturgleichungsmodell. \glspl{flm} haben somit dazu beigetragen, dass die an den Aufgaben beteiligten Prozessen auf statistischer Ebene voneinander getrennt werden konnten und sich ein detaillierteres Bild der Zusammenhänge mit psychometrischer Intelligenz ergab.
-
-
-konstant: konversativ
-dynamisch: offensiv
-
-Man weiss es nicht!!!!
-- KONSTANTEN SIND SCHWIERIG ZU INTERPRETIEREN. Varianz die Auftritt, aber wenig interessierend bei hick.  Hick=motorik? 
-- Var:  hick: - varianz in der vergeschw aufgrund der anzahl antwortalternativen
-- durch bindung der konstanten lässt sich experimentelle mnaipulation genäuer abbilden
-
-- grundlegende geschwindigkeit, mit der information vertielt wird
-- spezifischere netzwerke sind stärker von manipulation abhängig
-- allgemeine leistungsfähigkeit in der konstanten (motivation bei ausbalancierung drin, bei hick nicht)
-- Ideen sind da, man muss sie aber validieren (keine studien die sich mit dem befasst haben - zusammensetzung der konstantne unklar....)
+Der \gls{ssans} \citep{Melnick2013} zu Erklärung individueller Intelligenzunterschiede
 
 
 
-1. Fragestellung:
-- SI -> SS nicht mit I
-- nur kleine mustergrösse mit I
-- alle anderen korrelationen = 0
-
-2. Fragestellung:
-- SS und I nicht
-- generelle schnellerer Prozesse von intelligenten Perosnen (Asymptote)
-- Steigung besser as SI
-
-3. Fragestellung:
-- SS -.23 mit g -- generelle Geschwindigkeit für Mustererkennung -> entspricht der konstanten von FS4!?
-- Whs nicht spatial-suppression (faktorladungen ähnlich, zusammenhang mit g negativ)!
-
-4. Fragestellung:
-- kon: grundlegende Geschwindigkeit -.25, dyn: SS n.s.
-- varianzaufteilung?
-- im Zusammenhang mit g ist kon wichtiger weil sign zusammenhang und varianz grösser - konsistent mit fragestellung 3 und annahme, dass darin generelle geschwindigkeit abgebildet wrude und nicht SS!
-
-5. Fragestellung:
-- manifest: keine zusätzliche erklärung (bed + para)
-- latent: nur Hdyn prädiktor von g
-- latent: kon's korrelieren!
-- latent: 16 percent var
-- latent: latente Analyse erklärt mehr varianz auf manifeste (11 und 12 bei multipler regression)
+\gls{msa} \citep[z. B.][]{Deary2000a, Jensen1982a, Jensen1982b, Jensen2006, Vernon1983} bietet.
 
 
 
-Allgemein:
-1. SpSup kein zusammenhang mit intelligenz
-2. wenn dann genereller speed
-3. mental speed ähnlich?
-
-Diverses:
-BD OD? - positive manifold?
-
-\begin{itemize}
-	\item Multiple Regressionen deuten darauf hin, dass die \gls{ssauf} \gls{ms} erfasst
-	\item Diese Erkenntnis ist neu und deutet darauf hin, dass die Geschwindigkeit, mit der die sich bewegenden Muster wahrgenommen werden auch einen Einfluss darauf hat, wie gut (im Rahmen eines Intelligenztests) komplexe kognitive Leistung erbracht wird. 
-	Gestützt wird diese Interpretation mit den beobachteten bivariaten Produkt-Moment-Korrelationen zwischen den Bedingungen der \gls{ssauf} und psychometrischer Intelligenz. Die Bedingungen der \gls{ssauf} korrelierten mit Ausnahme des Zusammenhangs zwischen der $7.2^{\circ}$-Bedingung und dem \gls{zwert} des \gls{bist}s alle schwach negativ mit psychometrischer Intelligenz ($r=-.16$ bis $-.19$; siehe \autoref{tab:product_moment_correlations_manifest}). Diese Zusammenhänge deuten darauf hin, dass 
-	
-	die Geschwindigkeit, mit der die Muster erkannt wurden mit 
-	
-	\item SS-Bedingungen konsistent negativ mit I!
-	\item konsistent über alle modelle, zusammenhang da latent
-	\item Anderes Resultate, weil anderer IQ-Test eingesetzt?
-	\item Anderes Resultat, weil nicht Projektor eingesetzt?
-	\item für diese kurzversion betsehenkeine normen. wir sind aber auch nicht am iq sondern an der varianzaufklärung interessiert. deshalb nicht relevant.
-	\item 
-	\item BD und OE einzig n.s. negative korrelationen, kurz aufnehmen
-	\item Fixed-links modellierungen lohnen sich (wie auch bei AGK oder Speed prozessen -> LIT)
-\end{itemize}
-
-
-p-Wert problematisch:\\
-\citet{Gelman2006}\\
-\citet{Wasserstein2016}\\
-\citet{Nuzzo2014}
-\citet{Hayduk2014} Shame on disrespecting evividenc p 6 of 10
-
-
-fixed-links als Lösung für exponentielle Regression, da hats einfach ein paar Leute mit hohem RMSE gehabt. im sem drückt lässt sich der missfit quantifizieren (modelltest)
-
-
-
-
-
-zusammenfassen
-- fragestellungen
-- literatur
-- konsequenz
-
+\vspace{3cm}
+%
+%Das Ziel der vorliegenden Arbeit war es zu prüfen, ob sich die \gls{ssauf} als Prädiktor psychometrischer Intelligenz bewährt und inwiefern der \gls{ssans} \citep{Melnick2013} zu Erklärung individueller Intelligenzunterschiede neuartige Erklärungsmöglichkeiten lifert, welche nicht bereits der \gls{msa} \citep[z. B.][]{Deary2000a, Jensen1982a, Jensen1982b, Jensen2006, Vernon1983} bietet.
+%
+%Der Erkenntnisgewinn der vorliegenden lässt sich in vier Punkten 
+%
+%
+%
+%
+%
+%Allgemein:
+%1. SpSup kein zusammenhang mit intelligenz
+%2. wenn dann genereller speed - nicht Mental-Speed! dynamische korreliert nicht mit konstanter!
+%3. mental speed ähnlich?
+%4. neue untersuchung muss klarheit schaffen! zukünftige Untersuchungen
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%1. Fragestellung:
+%- SI -> SS nicht mit I
+%- nur kleine mustergrösse mit I
+%- alle anderen korrelationen = 0
+%
+%2. Fragestellung:
+%- SS und I nicht
+%- generelle schnellerer Prozesse von intelligenten Perosnen (Asymptote)
+%- Steigung besser as SI
+%
+%3. Fragestellung:
+%- SS -.23 mit g -- generelle Geschwindigkeit für Mustererkennung -> entspricht der konstanten von FS4!?
+%- Whs nicht spatial-suppression (faktorladungen ähnlich, zusammenhang mit g negativ)!
+%
+%4. Fragestellung:
+%- kon: grundlegende Geschwindigkeit -.25, dyn: SS n.s.
+%- varianzaufteilung?
+%- im Zusammenhang mit g ist kon wichtiger weil sign zusammenhang und varianz grösser - konsistent mit fragestellung 3 und annahme, dass darin generelle geschwindigkeit abgebildet wrude und nicht SS!
+%
+%5. Fragestellung:
+%- klassisches SGM: erstmals hinweis dass Aufgabe prädiktor von g sein
+%- manifest: keine zusätzliche erklärung (bed + para)
+%- latent: nur Hdyn prädiktor von g
+%- latent: kon's korrelieren!
+%- latent: 16 percent var
+%- latent: latente Analyse erklärt mehr varianz auf manifeste (11 und 12 bei multipler regression)
+%
+%Abschliessende Zusammenfassung mit positiver Aussicht
+%
+%Aus messtechnischer Hinsicht ist darauf hinzuweisen, dass das \gls{flm} die \gls{ssauf} sparsamer und besser abbildete als die klassische Faktorenanalyse. Auch im Zusammenhang mit dem \gls{gfaktor} bildete das Fixed-Links-Struk\-tur\-glei\-chungs\-mo\-dell die Beziehungen zwischen den Variablen deutlich besser ab als das klassische Strukturgleichungsmodell. Das \gls{flm} hat mit der statistischen Trennung der an der Aufgabe beteiligten Prozesse also dazu beigetragen, dass die der Aufgabe zugrunde liegende Struktur aufgedeckt wurde und sich der Zusammenhang der Aufgabe mit dem \gls{gfaktor} differenzierter Betrachten liess als in einem klassischen Strukturgleichungsmodell.
+%
+%Aus messtechnischer Hinsicht kann erneut darauf hingewiesen werden, dass das \gls{flm} der \gls{ha} die empirischen Zusammenhänge besser und sparsamer beschrieb als die klassische Faktorenanalyse. Ebenso hat sich im Fixed-Links-Struk\-tur\-glei\-chungs\-mo\-dell zwischen der \gls{ha}, der \gls{ssauf} und dem \gls{gfaktor} einen deutlich besseren Modell-Fit ergeben als mit einem klassischen Strukturgleichungsmodell. \glspl{flm} haben somit dazu beigetragen, dass die an den Aufgaben beteiligten Prozessen auf statistischer Ebene voneinander getrennt werden konnten und sich ein detaillierteres Bild der Zusammenhänge mit psychometrischer Intelligenz ergab.
+%
+%
+%
+%
+%
+%
+%\begin{itemize}
+%	\item Multiple Regressionen deuten darauf hin, dass die \gls{ssauf} \gls{ms} erfasst
+%	\item Diese Erkenntnis ist neu und deutet darauf hin, dass die Geschwindigkeit, mit der die sich bewegenden Muster wahrgenommen werden auch einen Einfluss darauf hat, wie gut (im Rahmen eines Intelligenztests) komplexe kognitive Leistung erbracht wird. 
+%	Gestützt wird diese Interpretation mit den beobachteten bivariaten Produkt-Moment-Korrelationen zwischen den Bedingungen der \gls{ssauf} und psychometrischer Intelligenz. Die Bedingungen der \gls{ssauf} korrelierten mit Ausnahme des Zusammenhangs zwischen der $7.2^{\circ}$-Bedingung und dem \gls{zwert} des \gls{bist}s alle schwach negativ mit psychometrischer Intelligenz ($r=-.16$ bis $-.19$; siehe \autoref{tab:product_moment_correlations_manifest}). Diese Zusammenhänge deuten darauf hin, dass 
+%	
+%	die Geschwindigkeit, mit der die Muster erkannt wurden mit 
+%	
+%	\item SS-Bedingungen konsistent negativ mit I!
+%	\item konsistent über alle modelle, zusammenhang da latent
+%
+%
+%
+%	\item 
+%
+%	\item Fixed-links modellierungen lohnen sich (wie auch bei AGK oder Speed prozessen -> LIT)
+%\end{itemize}
+%
+%
+%p-Wert problematisch:\\
+%\citet{Gelman2006}\\
+%\citet{Wasserstein2016}\\
+%\citet{Nuzzo2014}
+%\citet{Hayduk2014} Shame on disrespecting evividenc p 6 of 10
+%
+%
+%fixed-links als Lösung für exponentielle Regression, da hats einfach ein paar Leute mit hohem RMSE gehabt. im sem drückt lässt sich der missfit quantifizieren (modelltest)
+%
 
 
 
@@ -3503,20 +3513,20 @@ zusammenfassen
 % =================================================================
 % L I S T   O F   F I G U R E S
 % =================================================================
-\cleardoublepage								% for hyperref to jump to the correct page, see
-\phantomsection									% http://tex.stackexchange.com/questions/44088/when-do-i-need-to-invoke-phantomsection
-\renewcommand\listfigurename{Abbildungen}		% define name of lof
-\addcontentsline{toc}{chapter}{Abbildungen}		% add lof to toc
-\listoffigures									% insert lof
+%\cleardoublepage								% for hyperref to jump to the correct page, see
+%\phantomsection									% http://tex.stackexchange.com/questions/44088/when-do-i-need-to-invoke-phantomsection
+%\renewcommand\listfigurename{Abbildungen}		% define name of lof
+%\addcontentsline{toc}{chapter}{Abbildungen}		% add lof to toc
+%\listoffigures									% insert lof
 
 % =================================================================
 % L I S T   O F   T A B L E S
 % =================================================================
-\cleardoublepage								% for hyperref to jump to the correct page, see
-\phantomsection									% http://tex.stackexchange.com/questions/44088/when-do-i-need-to-invoke-phantomsection
-\renewcommand\listtablename{Tabellen}			% define name of lot
-\addcontentsline{toc}{chapter}{Tabellen}		% add lot to toc
-\listoftables 									% insert lot
+%\cleardoublepage								% for hyperref to jump to the correct page, see
+%\phantomsection									% http://tex.stackexchange.com/questions/44088/when-do-i-need-to-invoke-phantomsection
+%\renewcommand\listtablename{Tabellen}			% define name of lot
+%\addcontentsline{toc}{chapter}{Tabellen}		% add lot to toc
+%\listoftables 									% insert lot
 
 % =================================================================
 % A P P E N D I X   A
@@ -3767,18 +3777,8 @@ Der R-Code für die Reproduktion der berichteten Ergebnisse ist verfügbar unter
 % S T A T E M E N T
 % =================================================================
 \cleardoublepage
-\section*{Erklärung zur Dissertation}
 
-Hiermit bestätige ich, dass ich die Dissertation (Titel):
-
-Im Fach: 
-
-unter der Leitung von Prof. Dr.
-
-ohne unerlaubte Hilfsmittel ausgeführt habe und an keiner anderen Universität zur Erlangung eines akademischen Grades eingereicht habe.
-
-Datum:
-Unterschrift:
+\includepdf[pages={1}]{png/confirmation_blank}
 
 \end{document}
 
