@@ -10,7 +10,7 @@
 %\setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}	% https://en.wikibooks.org/wiki/LaTeX/Page_Layout#Widows_and_orphans
 \AtBeginDocument{\setlength{\parindent}{2em}}		% parindent 2 em units for new paragraph
 %\usepackage{indentfirst}							% use if first paragraph should be indented
-\usepackage[pass]{geometry}							% ’pass’ disregards the package layout, so the original ’book’ layout is memorized here
+\usepackage[pass, showframe]{geometry}							% ’pass’ disregards the package layout, so the original ’book’ layout is memorized here
 \usepackage{layout}									% show layout on page 1
 %\usepackage{showframe}								% show frame on pages
 %\usepackage{url}									% loaded internally by hyperref
@@ -361,6 +361,9 @@
 \newacronym{tg}		{TG}			{Teil-Ganzes}
 \newacronym{uw}		{UW}			{Unvollständige Wörter}
 \newacronym{xg}		{XG}			{X-Grösser}
+\newacronym{we}		{WE}			{Wege-Erinnern}
+\newacronym{wm}		{WM}			{Worte merken}
+\newacronym{zz}		{ZZ}			{Zweistellige Zahlen}
 \newacronym{soa}	{SOA}			{Stim\-u\-lus-On\-set-Asyn\-chrony}
 \newacronym{cst}	{$\upchi^2$-Test}{Chi-Qua\-drat-Test}
 \newacronym{cfi}	{CFI}			{Com\-par\-a\-tive-Fit-In\-dex}
@@ -412,6 +415,7 @@ longplural={Reaktionszeiten}]
 \hyphenation{%
 	Ab-schlies-send
 	ab-schlies-send
+	an-schlies-send
 	Ant-wort-al-ter-na-ti-ve
 	Ant-wort-al-ter-na-ti-ven
 	auf-ga-ben-re-le-van-te
@@ -423,6 +427,7 @@ longplural={Reaktionszeiten}]
 	aus-schlie-s-s-lich
 	Aus-ser-dem
 	aus-ser-halb
+	äus-ser-en
 	au-s-ser-or-dent-lich
 	be-kan-nter-mas-sen
 	Bi-fak-t-o-ri-el-le
@@ -443,14 +448,18 @@ longplural={Reaktionszeiten}]
 	Fak-tor-wer-te
 	Fak-tor-wer-ten
 	flie-sst
+	fol-gen-der-mas-sen
 	ganz-heit-lich-er-en
 	ganz-heit-lich-er-es
 	ge-mäss
 	gross
 	gros-se
+	Grös-se
 	gros-sen
+	gros-ser
 	gros-sem
 	grös-se-re
+	grös-ser
 	grös-ste
 	grös-sten
 	Haupt-kom-po-nen-ten-ana-ly-se
@@ -487,6 +496,7 @@ longplural={Reaktionszeiten}]
 	pos-i-tive
 	Prä-dik-tor
 	Prä-dik-tor-en
+	pseu-do-ran-do-mi-sier-ten
 	psy-cho-me-trische
 	psy-cho-me-trisch-er
 	psy-cho-me-trisch-en
@@ -496,6 +506,7 @@ longplural={Reaktionszeiten}]
 	Se-mi-par-ti-al-kor-re-la-ti-on-en
 	stös-st
 	stich-pro-ben-ab-hän-gig
+	Sti-mu-lus-prä-sen-ta-ti-on
 	Struk-tur-glei-chungs-mo-dell
 	Struk-tur-glei-chungs-mo-del-le
 	Sub-trak-ti-ons-me-tho-de
@@ -620,6 +631,8 @@ longplural={Reaktionszeiten}]
 % Ends the declared geometry for the titlepage
 \restoregeometry
 
+\setlength{\evensidemargin}{85pt}% instead of 70pt (default book class value)
+\setlength{\oddsidemargin}{7pt}% instead of 22pt (default book class value)
 
 
 
@@ -628,6 +641,7 @@ longplural={Reaktionszeiten}]
 % A C K N O W L E D G M E N T S
 % =================================================================
 \clearpage
+ 
 \chapter*{\LARGE Danksagung}
 %\addcontentsline{toc}{chapter}{Danksagung}
 \vspace{-.7cm}
@@ -834,7 +848,7 @@ Die unter Punkt vier angesprochenen \glspl{flm} \citep[z. B.][]{Schweizer2006a, 
 Die Modellierungstechnik, deren Zweck und deren zugrundeliegende Logik werden deshalb im nächsten Abschnitt ausführlich erklärt.
 %Danach folgen die Fragestellungen der vorliegenden Arbeit.
 
-\section{Messung kognitiver Prozesse}
+\section{Messung kognitiver Prozesse \label{sec:Messung_kognitiver_Prozesse}}
 
 \subsection{Ausgangslage}
 
@@ -966,7 +980,7 @@ Der \gls{ssans} zur Erklärung individueller Intelligenzunterschiede \citep{Meln
 
 \section{Stichprobe \label{sec:Stichprobe}}
 
-An den Testungen haben $206$~\glspl{vp} teilgenommen, wovon $29$~\glspl{vp}~($14\,\%$) aufgrund von technischen Problemen, nicht auswertbarer Subtests oder im Vergleich zu den restlichen \glspl{vp} stark abweichenden Werten ausgeschlossen wurden (siehe \autoref{cha:Anhang_A} für eine genaue Erläuterung der Vorgehensweise).
+An den Testungen haben $206$~\glspl{vp} teilgenommen, wovon $29$~\glspl{vp}~($14\,\%$) aufgrund von technischen Problemen, nicht auswertbarer Subtests oder im Vergleich zu den restlichen \glspl{vp} stark abweichenden Werten ausgeschlossen wurden (siehe \autoref{cha:Anhang_A} für eine genauere Erläuterung).
 
 Analysiert wurden die Daten von $177$ \glspl{vp}. Die $116$ Frauen und $61$ Männer waren zwischen $18$ und $30$ Jahre alt und wiesen ein mittleres Alter $\pm$ Standardabweichung von $21.14\,\pm\,2.71$ Jahren auf. 
 Um eine bezüglich der Intelligenzausprägung heterogene Stichprobe zu erhalten, nahmen \glspl{vp} aus verschiedenen Bildungsgruppen an der Untersuchung teil:
@@ -978,9 +992,8 @@ $45$~\glspl{vp} ein Bachelor-Studium,
 drei~\glspl{vp} ein Master-Studium und 
 $11$~\glspl{vp} eine andere Ausbildung.
 $160$ der $177$ \glspl{vp} waren deutscher Muttersprache. Die anderen $17$~\glspl{vp} sprachen akzentfrei deutsch. Alle \glspl{vp} berichteten über eine normale Sehschärfe, eine normale Hörfähigkeit, waren Nichtraucher, konsumierten keine Medikamente und waren nicht chronisch krank. Um Einflüsse von Koffein auf die Wahrnehmungsleistung \citep[][]{Stough1995} der \glspl{vp} zu minimieren, wurden die \glspl{vp} gebeten, bis zwei Stunden vor der Teilnahme keine koffeinhaltigen Getränke zu konsumieren. Die \glspl{vp} hatten keine Erfahrung mit den Testverfahren. 
-Für die Teilname an der Untersuchung erhielten Berner Studierende des Fachs Psychologie vier~Ver\-suchs\-per\-sonen-Stun\-den, die sie an ihr Studium anrechnen lassen konnten. Alle anderen \glspl{vp} wurden für die Teilnahme mit CHF~$50.-$ entlöhnt.
-
-
+Für die Teilname an der Untersuchung erhielten Berner Studierende des Fachs Psychologie vier Ver\-suchs\-per\-sonen-Stun\-den, die sie an ihr Studium anrechnen lassen konnten. Alle anderen \glspl{vp} wurden für die Teilnahme mit CHF~$50.-$ entlöhnt.
+%Für die Teilname an der Untersuchung erhielten Berner Studierende des Fachs Psychologie vier Ver\-suchs\-per\-sonen-Stun\-den. Alle anderen \glspl{vp} wurden mit CHF~$50.-$ entlöhnt.
 
 \section{Die Spatial-Suppression-Aufgabe \label{sec:Die_Spatial-Suppression-Aufgabe}}
 
@@ -1002,7 +1015,7 @@ Der verwendete Ton wies bei einer Frequenz von $2900$~Hz und einer Lautstärke v
 	\subfloat[Sehwinkel $= 5.4^{\circ}$][Sehwinkel $= 5.4^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s3_a}}~~
 	\subfloat[Sehwinkel $= 7.2^{\circ}$][Sehwinkel $= 7.2^{\circ}$]{\includegraphics[width=0.48\textwidth]{png/s4_a}}
 
-	\caption[Die Spatial-Suppression-Bedingungen]{Die vier Mustergrössen $(a - d)$ der \gls{ssauf}.}
+	\caption[]{Die vier Mustergrössen $(a - d)$ der \gls{ssauf}.}
 	\label{fig:spatial_suppression_stimuli}
 \end{figure}
 
@@ -1010,25 +1023,27 @@ Der verwendete Ton wies bei einer Frequenz von $2900$~Hz und einer Lautstärke v
 
 Ein Durchgang sah folgendermassen aus: Nach einer Zeitspanne von $440$~ms erschien in der Mitte des Monitors für $560$~ms ein Kreis, der sich über die ersten $200$~ms von einer Grösse von $1.6^{\circ}$ auf eine Grösse von $0.26^{\circ}$ zusammenzog, für $360$~ms diese Grösse beibehielt und anschliessend ausgeblendet wurde. Dieses Vorgehen diente dazu, den Blick der \glspl{vp} in die Bildschirmmitte zu lenken. Nach einem  Intervall von $300$~ms erschien in der Mitte des Monitors ein sich nach links oder rechts bewegendes vertikal schwarz-grau gestreiftes Musters. Die Stelle, an welcher die \glspl{vp} das Muster auf dem Monitor sahen, war stationär. Hinter dieser stationären Stelle bewegte sich das Muster mit einer Geschwindigkeit von $4^\circ / \textnormal{s} $  nach links oder nach rechts. Nach der Darbietungszeit mussten die \glspl{vp} mit einem Tastendruck entscheiden, in welche Richtung sich das Muster bewegt hat. Die \glspl{vp} erhielten die Instruktion, bei einer wahrgenommenen Bewegung nach links mit ihrem linken Zeigefinger die linke Pfeiltaste  und bei einer wahrgenommen Bewegung nach Rechts mit ihrem rechten Zeigefinger die rechte Pfeiltaste zu drücken. 
 Bei einer korrekten Antwort wurde ein Ton abgegeben und die Darbietungszeit des nächsten Musters verringert, bei einer falschen Antwort wurde kein Ton abgegeben und die Darbietungszeit des nächsten Musters erhöht. 
-Die Darbietungszeit des Musters wurde entsprechend dem QUEST-Ver\-fah\-ren \citep{Watson1983} angepasst.
-Das QUEST-Ver\-fah\-ren ist adaptiv und arbeitet mit logarithmierten Werten, das heisst alle Berechnungen des Verfahrens finden im logarithmierten Raum statt. Der Algorithmus schätzt dabei mit Hilfe von Grundprinzipien der Bayes-Statistik nach jeder Antwort eine $\log_{10}$-Erkennungsschwelle für einen im Voraus bestimmten Prozentsatz an korrekten Antworten (in der hier vorliegenden Aufgabe betrug der Prozentsatz $82\,\%$).
+Die Darbietungszeit des Musters wurde entsprechend dem QUEST-Verfahren \citep{Watson1983} angepasst.
+Das QUEST-Verfahren ist adaptiv und arbeitet mit logarithmierten Werten, das heisst alle Berechnungen des Verfahrens finden im logarithmierten Raum statt. Der Algorithmus schätzt dabei mit Hilfe von Grundprinzipien der Bayes-Statistik nach jeder Antwort eine $\log_{10}$-Erkennungsschwelle für einen im Voraus bestimmten Prozentsatz an korrekten Antworten (in der hier vorliegenden Aufgabe betrug der Prozentsatz $82\,\%$).
 Die geschätzte $\log_{10}$-Erkennungsschwelle wird dann vom Algorithmus benutzt, um die Darbietungszeit des nächsten Stimulus zu bestimmen. 
 Die \glspl{vp} wurden instruiert, sich bei der Antwortabgabe genügend Zeit zu lassen und möglichst fehlerfrei zu arbeiten. Nach Antwortabgabe startete der nächste Durchgang.
 
 Als Erstes bearbeiteten die \glspl{vp} eine Übungsaufgabe. Dabei wurden die vier Mustergrössen allen \glspl{vp} je drei Mal in einer pseudorandomisierten Abfolge präsentiert. Die Darbietungszeit aller Mustergrössen betrug zu Beginn der Aufgabe $80$~ms und wurde adaptiv angepasst. Die Übungsaufgabe dauerte etwa eine Minute und wurde nicht ausgewertet. Die $12$~Durchgänge der Übungsaufgabe dienten dazu, dass sich die \glspl{vp} mit der Art der Stimuluspräsentation, der Antworteingabe und dem Ton vertraut machen konnten. 
 
-Als Zweites folgte eine etwas längere Aufgabe. Die \glspl{vp} bearbeiteten drei Wiederholungen, die durch eine Pause von etwa $30$~Sekunden getrennt waren. Eine Wiederholung bestand aus zwei Schätzungen der $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-le pro Mustergrösse. Jede der vier Mustergrössen wurde innerhalb einer Schätzung sieben Mal präsentiert. Gesamthaft bearbeiteten die \glspl{vp} folglich $3 \times 2 \times 4 \times 7 = 168$ Durchgänge. Die Mustergrössen wurde allen \glspl{vp} in einer pseudorandomisierten Abfolge präsentiert. Die Darbietungszeit der Mustergrössen betrug zu Beginn der Aufgabe $30$~ms und wurde für jede Mustergrösse einzeln über den gesamten Verlauf der $42$~Durchgänge adaptiv angepasst. Die Aufgabe dauerte etwa $7$~Minuten und wurde nicht ausgewertet, weil sich bei einigen \glspl{vp} die Wahrnehmungsleistung während der ersten Durchgänge stark verbessern kann (D. Tadin, persönl. Mitteilung, 19.08.2014). Dieser Aufgabenblock diente dazu, diese Trainingseffekte zuzulassen und die Leistung der \glspl{vp} auf ihrem individuellem Niveau zu festigen. 
 
-Als Drittes wurde den \glspl{vp} die eigentliche Aufgabe vorgelegt. Die \glspl{vp} bearbeiteten drei Wiederholungen, die durch eine Pause von etwa einer Minute getrennt waren. Eine Wiederholung bestand aus zwei Schätzungen der $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-le pro Mustergrösse. Jede der vier Mustergrössen wurde innerhalb einer Schätzung $22$~Mal präsentiert. Gesamthaft bearbeiteten die \glspl{vp} somit $3 \times 2 \times 4 \times 22 = 528$ Durchgänge. 
-Daraus resultierten für jede \gls{vp} 24 Schätzungen der $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-le (sechs pro Mustergrösse).
+
+Als Zweites folgte eine etwas längere Aufgabe. Die \glspl{vp} bearbeiteten drei Wiederholungen, die durch eine Pause von etwa $30$~Sekunden getrennt waren. Eine Wiederholung bestand aus zwei Schätzungen der $82\,\%$-$\log_{10}$-Erkennungsschwelle pro Mustergrösse. Jede der vier Mustergrössen wurde innerhalb einer Schätzung sieben Mal präsentiert. Gesamthaft bearbeiteten die \glspl{vp} folglich $3 \times 2 \times 4 \times 7 = 168$ Durchgänge. Die Mustergrössen wurde allen \glspl{vp} in einer pseudorandomisierten Abfolge präsentiert. Die Darbietungszeit der Mustergrössen betrug zu Beginn der Aufgabe $30$~ms und wurde für jede Mustergrösse einzeln über den gesamten Verlauf der $42$~Durchgänge adaptiv angepasst. Die Aufgabe dauerte etwa $7$~Minuten und wurde nicht ausgewertet, weil sich bei einigen \glspl{vp} die Wahrnehmungsleistung während der ersten Durchgänge stark verbessern kann (D. Tadin, persönl. Mitteilung, 19.08.2014). Dieser Aufgabenblock diente dazu, diese Trainingseffekte zuzulassen und die Leistung der \glspl{vp} auf ihrem individuellem Niveau zu festigen. 
+
+Als Drittes wurde den \glspl{vp} die eigentliche Aufgabe vorgelegt. Die \glspl{vp} bearbeiteten drei Wiederholungen, die durch eine Pause von etwa einer Minute getrennt waren. Eine Wiederholung bestand aus zwei Schätzungen der $82\,\%$-$\log_{10}$-Erkennungsschwelle pro Mustergrösse. Jede der vier Mustergrössen wurde innerhalb einer Schätzung $22$~Mal präsentiert. Gesamthaft bearbeiteten die \glspl{vp} somit $3 \times 2 \times 4 \times 22 = 528$ Durchgänge. 
+Daraus resultierten für jede \gls{vp} 24 Schätzungen der $82\,\%$-$\log_{10}$-Erkennungsschwelle (sechs pro Mustergrösse).
 Die Mustergrössen wurde allen \glspl{vp} in einer pseudorandomisierten Abfolge präsentiert. Die Darbietungszeit der Mustergrössen betrug bei Start der Aufgabe $30$~ms und wurde für jede Mustergrösse einzeln über den gesamten Verlauf der $132$~Durchgänge adaptiv angepasst. 
 Die Aufgabe dauerte etwa $25$~Minuten. 
 
-Für jede \gls{vp} wurden die sechs pro Mustergrösse erhaltenen $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-len in eine Rangreihenfolge gebracht, die tiefste und höchste Schätzung entfernt und die restlichen vier $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-len gemittelt. Damit resultierte für jede \gls{vp} pro Mustergrösse ($1.8^{\circ}$, $3.6^{\circ}$, $5.4^{\circ}$ und $7.2^{\circ}$) eine $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-le für horizontale Bewegung. 
-Alle Berechnungen wurden mit diesen $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-len getätigt. 
-Ausnahme bildete die exponentielle Regression (siehe \autoref{sec:2Fragestellung}), bei welcher die vier $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-len auf Anraten von D. Tadin (persönl. Mitteilung, 11.02.2016) als Exponenten zur Basis 10 verrechnet und in dieser invertierten Form analysiert wurden.
+Für jede \gls{vp} wurden die sechs pro Mustergrösse erhaltenen $82\,\%$-$\log_{10}$-Erkennungsschwellen in eine Rangreihenfolge gebracht, die tiefste und höchste Schätzung entfernt und die restlichen vier $82\,\%$-$\log_{10}$-Erkennungsschwellen gemittelt. Damit resultierte für jede \gls{vp} pro Mustergrösse ($1.8^{\circ}$, $3.6^{\circ}$, $5.4^{\circ}$ und $7.2^{\circ}$) eine $82\,\%$-$\log_{10}$-Erkennungsschwelle für horizontale Bewegung. 
+Alle Berechnungen wurden mit diesen $82\,\%$-$\log_{10}$-Erkennungsschwellen getätigt. 
+Ausnahme bildete die exponentielle Regression (siehe \autoref{sec:2Fragestellung}), bei welcher die vier $82\,\%$-$\log_{10}$-Erkennungsschwellen auf Anraten von D. Tadin (persönl. Mitteilung, 11.02.2016) als Exponenten zur Basis 10 verrechnet und in dieser invertierten Form analysiert wurden.
 Um die Interpretation der logarithmierten Werte zu erleichtern, wurden sie für die Ergebnisdarstellung (in Tabellen und Abbildungen) invertiert.
-Der \gls{si} wurde gemäss der Vorgehensweise von \citet{Melnick2013} als Differenz zwischen der $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-le für die Mustergrösse $7.2^{\circ}$ und der $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-le für die Mustergrösse $1.8^{\circ}$ gebildet. 
+Der \gls{si} wurde gemäss der Vorgehensweise von \citet{Melnick2013} als Differenz zwischen der $82\,\%$-$\log_{10}$-Erkennungsschwelle für die Mustergrösse $7.2^{\circ}$ und der $82\,\%$-$\log_{10}$-Erkennungsschwelle für die Mustergrösse $1.8^{\circ}$ gebildet. 
 
 
 \section{Die Hick-Aufgabe \label{sec:Hick}}
@@ -1286,7 +1301,7 @@ Innerhalb der Modalität Inhalte lässt sich nach \citet{Jaeger1984} sprachgebun
 
 Auf höchster Hierarchiestufe des \gls{bism} steht als Integral aller sieben Fähigkeiten (\gls{k}, \gls{b}, \gls{M}, \gls{e}, \gls{v}, \gls{n} und \gls{f}) die \gls{ai}. Die \gls{ai} und die Fähigkeiten unterscheiden sich aber lediglich im Differenzierungsgrad. \gls{ai} bildet Intelligenzleistungen gemäss \citet{Jaeger1984} aus grosser Distanz ab, während die sieben Fähigkeiten auf der Ebene darunter Intelligenzleistungen aus geringerer Distanz mit feinerem Auflösungsgrad abbilden. Untersuchungen zum \gls{bism} konnten die postulierte Struktur des \gls{bist}s replizieren  und Zusammenhänge mit anderen Intelligenzmodellen wie denjenigen von \citet{Cattell1971}  oder von \citet{Carroll1993} herstellen \citep{Bucik1996, Beauducel2002, Suess2002}.
 
-Die von \citet{Jaeger1997} vorgeschlagene Kurzversion des \gls{bist}s enthält $15$ Subtests. Die Operationen \gls{b}, \gls{M} und \gls{e} werden darin mit je einem Subtest pro Inhalt erfasst, wobei \gls{k} mit zwei Subtests pro Inhalt erfasst wird. Bei der Modellierung der Daten mittels Strukturgleichungsmodellen hätte dies bei der vorliegenden Arbeit zu einer Überrepräsentation von \gls{k} im \gls{gfaktor} geführt. Um dies zu vermeiden, wurden die Operationen \gls{b} und \gls{M} um je einen Subtest pro Inhalt angereichert. Grundlage für die Auswahl der Subtests bildeten die Erkenntnisse von \citet{Wicki2014}, wobei bei der Entscheidung über die Aufnahme der Subtests ökonomische (Bearbeitungszeit der Subtests) und teststatistische (Trennschärfe und Reliabilität der Subtests)  Gesichtspunkte berücksichtigt wurden. Die Kurzversion von \citet{Jaeger1997} wurde mit folgenden Subtests ergänzt: Klassifizieren von Wörtern, Old English, Rechen-Zeichen, Wege-Erinnern, Worte Merken und Zweistellige Zahlen. 
+Die von \citet{Jaeger1997} vorgeschlagene Kurzversion des \gls{bist}s enthält $15$ Subtests. Die Operationen \gls{b}, \gls{M} und \gls{e} werden darin mit je einem Subtest pro Inhalt erfasst, wobei \gls{k} mit zwei Subtests pro Inhalt erfasst wird. Bei der Modellierung der Daten mittels Strukturgleichungsmodellen hätte dies bei der vorliegenden Arbeit zu einer Überrepräsentation von \gls{k} im \gls{gfaktor} geführt. Um dies zu vermeiden, wurden die Operationen \gls{b} und \gls{M} um je einen Subtest pro Inhalt angereichert. Grundlage für die Auswahl der Subtests bildeten die Erkenntnisse von \citet{Wicki2014}, wobei bei der Entscheidung über die Aufnahme der Subtests ökonomische (Bearbeitungszeit der Subtests) und teststatistische (Trennschärfe und Reliabilität der Subtests)  Gesichtspunkte berücksichtigt wurden. Die Kurzversion von \citet{Jaeger1997} wurde mit folgenden Subtests ergänzt: \gls{kw}, \gls{oe}, \gls{RZ}, \gls{we}, \gls{wm} und \gls{zz}. 
 \citet{Wicki2014} berichtet für diese modifizierte Kurzversion für die Operationen \gls{k}, \gls{b} und \gls{M} interne Konsistenzen von Cronbachs $\alpha=.61-.73$ und Konstruktreliabilitäten, gemessen mit \citeauthor{McDonald1999}\textcolor{blue}{s} \citeyearpar{McDonald1999} Omegakoeffizienten, von $\Omega = .58-.64$.
 Auf Subtests der Operation \gls{e} wurde gänzlich verzichtet, weil zum einen unklar ist, wie Einfallsreichtum und Intelligenz zusammenhängen \citep{Kim2005} und zum anderen weil \citet{Jaeger1997} unbefriedigende Objektivitätswerte berichten. 
 Alle eingesetzten Subtests, deren Beschreibung sowie deren Zuordnung zu den jeweiligen Operationen und Inhalten sind \autoref{tab:bis_subtest_description} zu entnehmen.
@@ -1326,7 +1341,7 @@ Alle eingesetzten Subtests, deren Beschreibung sowie deren Zuordnung zu den jewe
 				16				&	Klassifizieren von Wörtern&	KW			&&	\checkmark	&&&\checkmark&&& In Spalten von Wörtern sind alle Worte, die Pflanzen bezeichnen, durchzustreichen\\
 				17				&	Zweistellige Zahlen		&	ZZ			&&&	\checkmark	&&&\checkmark&& Eine Reihe zweistelliger Zahlen ist einzuprägen und unmittelbar danach in beliebiger Reihenfolge zu reproduzieren\\
 				18				&	Old English				&	OE			&&	\checkmark	&&&&&\checkmark& In Buchstabenreihen sind alle in einem vorgegebenen Schrifttyp gedruckten Buchstaben durchzustreichen\\
-				19				&	Wege--Erinnern			&	WE			&&&	\checkmark	&&&&\checkmark& Ein in einem Stadtplanausschnitt eingezeichneter Weg ist einzuprägen und unmittelbar danach zu reproduzieren\\
+				19				&	Wege-Erinnern			&	WE			&&&	\checkmark	&&&&\checkmark& Ein in einem Stadtplanausschnitt eingezeichneter Weg ist einzuprägen und unmittelbar danach zu reproduzieren\\
 				
 				\hline
 			\end{tabular}
@@ -1344,7 +1359,7 @@ Alle eingesetzten Subtests, deren Beschreibung sowie deren Zuordnung zu den jewe
 Die $19$ Subtests wurden den \glspl{vp} nach der in \autoref{tab:bis_subtest_description} aufgeführten Reihenfolge vorgelegt und gemäss dem Manual des \gls{bist}s instruiert. 
 Die Bearbeitung der Subtests dauerte insgesamt $50$ Minuten.
 Die Aufwärmaufgabe \gls{uw} wurde nicht ausgewertet. Die Rohwerte der restlichen $18$~Subtests wurden \textit{z}-standardisiert. 
-Für die Beantwortung der Fragestellungen 1 und 2 wurden alle $18$~\textit{z}-stand\-ard\-isier\-ten Subtests gemittelt. Dadurch resultierte für jede \glspl{vp} ein \textit{z}-standardisiertes Mittel ihrer Leistung. 
+Für die Beantwortung der Fragestellungen 1 und 2 wurden alle $18$~\textit{z}-standardisierten Subtests gemittelt. Dadurch resultierte für jede \glspl{vp} ein \textit{z}-standardisiertes Mittel ihrer Leistung. 
 Um für die Beantwortung der Fragestellungen 3, 4 und 5 einen \gls{gfaktor} zu bilden, wurden die $18$~\textit{z}-standardisierten Subtests innerhalb ihrer zugehörigen Operation gemittelt. Damit flossen in jede Operation (\gls{k}, \gls{b} und \gls{M}) zwei Subtests aus dem Bereich \gls{v}, zwei Subtests aus dem Bereich \gls{n} und zwei Subtests aus dem Bereich \gls{f} (insgesamt sechs Subtests) ein. Der \gls{gfaktor} wurde anschliessend aus den drei gemittelten \textit{z}-Werten der Operationen \gls{k}, \gls{b} und \gls{M} abgeleitet.
 
 
@@ -1360,7 +1375,7 @@ Die Erfassung persönlicher Angaben fand in zwei Teilen statt. In einem ersten T
 
 
 \subsubsection*{Kurzform der deutschen Übersetzung des revidierten \gls{epq-rk}}
-Die \glspl{vp} haben  computergestützt die Kurzform der deutschen Übersetzung des \gls{epq-rk} von \citet{Ruch1999} bearbeitet. Der Fragebogen enthält insgesamt $50$~Fragen, darunter $14$~Items zur Erfassung von Psychotizismus, $12$~Items zur Erfassung von Extraversion, $12$~Items zur Erfassung von Neurotizismus und $12$~Items zur Erfassung der individuellen Neigung, sozial erwünschte Antworten abzugben.
+Die \glspl{vp} haben  computergestützt die Kurzform der deutschen Übersetzung des \gls{epq-rk} von \citet{Ruch1999} bearbeitet. Der Fragebogen enthält insgesamt $50$~Fragen, darunter $14$~Items zur Erfassung von Psychotizismus, $12$~Items zur Erfassung von Extraversion, $12$~Items zur Erfassung von Neurotizismus und $12$~Items zur Erfassung der individuellen Neigung, sozial erwünschte Antworten abzugeben.
 
 \subsubsection*{Deutsche Übersetzung des \gls{dii}}
 Die deutsche Übersetzung des \gls{dii} stammt von \citet{Kuhmann1996} und beinhaltet insgesamt $23$~Items, darunter $11$~Items zur Erfassung der funktionalen Impulsivität und  $12$~Items zur Erfassung der dysfunktionalen Impulsivität. Der Fragebogen wurde von den \glspl{vp} computergestützt bearbeitet.
@@ -1390,7 +1405,7 @@ Die auf einem Computermonitor präsentierten Stimuli der \gls{ita} \citep{Vicker
 
 \section{Untersuchungsablauf \label{sec:Versuchsablauf}}
 
-Die Untersuchung wurde vor Datenerhebungsbeginn von der Ethikkomission der philosophisch-humanwissenschaftlichen Fakultät der Universität Bern gutgeheissen. Die \glspl{vp} nahmen an zwei Sitzungen teil, welche $2$ bis $14$~Tage voneinander getrennt waren. Zwei \glspl{vp} hatten krankheitsbedingt ein längeres Intervall zwischen den beiden Sitzungen ($18$ und $30$ Tage).
+Die Untersuchung wurde vor Datenerhebungsbeginn von der Ethikkommission der philosophisch-humanwissenschaftlichen Fakultät der Universität Bern gutgeheissen. Die \glspl{vp} nahmen an zwei Sitzungen teil, welche $2$ bis $14$~Tage voneinander getrennt waren. Zwei \glspl{vp} hatten krankheitsbedingt ein längeres Intervall zwischen den beiden Sitzungen ($18$ und $30$ Tage).
 
 \subsection{Sitzung 1}
 
@@ -1408,7 +1423,7 @@ Ohne die Fragestellungen der Arbeit zu offenbaren, klärte der Versuchsleiter\fo
 \noindent Diese erste Sitzung dauerte insgesamt etwa 90 Minuten.
 
 \subsection{Sitzung 2}
-Die zweite Sitzung fand als Einzeltestung in einer $5\,\textnormal{m}^2$ grossen, schallgedämpften Kabine statt. 
+Die zweite Sitzung fand als Einzeltestung in einer $5\,\textnormal{m}^2$ grossen, schallgedämmten Kabine statt. 
 Der Versuchsleiter informierte die \glspl{vp} über den Ablauf der bevorstehenden Sitzung und legte ihnen am Computer der Reihenfolge nach folgende Aufgaben vor:
 
 \begin{enumerate}
@@ -1421,11 +1436,11 @@ Der Versuchsleiter informierte die \glspl{vp} über den Ablauf der bevorstehende
 				\item Zeitgeneralisation im Millisekundenbereich
 				\item Rhythmuswahrnehmung
 			\end{dinglist}
-			wurden über alle \glspl{vp} hinweg vollständig permutiert, was in $5\,! = 120$ unterschiedlichen Reihenfolgen resultierte. Nach $120$~\glspl{vp} wurden die Reihenfolgen wiederholt, das heisst  \gls{vp} $121$ bearbeitete die Aufgaben in der gleichen Reihenfolge wie \gls{vp} 1, \gls{vp} $122$ bearbeitete die Aufgaben in der gleichen Reihenfolge wie \gls{vp} 2 usw.
+			wurden über alle \glspl{vp} hinweg vollständig permutiert, was in $5\,! = 120$ unterschiedlichen Reihenfolgen resultierte. Nach $120$~\glspl{vp} wurden die Reihenfolgen wiederholt, das heisst  \gls{vp} $121$ bearbeitete die Aufgaben in der gleichen Reihenfolge wie \gls{vp} $1$, \gls{vp} $122$ bearbeitete die Aufgaben in der gleichen Reihenfolge wie \gls{vp} $2$ usw.
 	\item	\gls{ita}
 \end{enumerate}
 
-Nach der letzten Aufgabe wurden die \glspl{vp} vollständig über das Ziel der Untersuchung aufgeklärt und entlöhnt. Diese zweite Sitzung dauerte inklusive einer fünfminütigen Pause nach 50 Minuten insgesamt etwa 120 Minuten.
+Nach der letzten Aufgabe wurden die \glspl{vp} vollständig über das Ziel der Untersuchung aufgeklärt und entlöhnt. Diese zweite Sitzung dauerte inklusive einer fünfminütigen Pause nach $50$ Minuten insgesamt etwa $120$ Minuten.
 
 
 
@@ -1509,8 +1524,11 @@ Das \gls{srmr} ist ein Mass dafür, wie hoch die durchschnittlichen Korrelations
 \subsection{Spatial-Suppression-Aufgabe \label{subsec:SSres}}
 
 Die Mittelwerte, Verteilungsangaben und Reliabilitäten der Bedingungen sind in \autoref{tab:spatial_suppression_descriptives} abgetragen. 
-Die Splithalf-Reliabilitäten der vier Bedingungen fielen mit $r_{tt}=.96$ ähnlich hoch aus wie bei \citeauthor{Melnick2013} (\citeyear{Melnick2013}; $r_{tt}=.99$).
-Die Streudiagramme der $82\,\%$-Er\-ken\-nungs\-schwel\-len sind in \autoref{fig:spatial_suppression_scatterplot} zu sehen.
+Die Streudiagramme der $82\,\%$-Erkennungs\-schwel\-len sind in \autoref{fig:spatial_suppression_scatterplot} zu sehen.
+
+% Die Splithalf-Reliabilitäten der Bedingungen fielen mit $r_{tt}=.96$ sehr hoch aus.
+% wie bei \citeauthor{Melnick2013} (\citeyear{Melnick2013}; $r_{tt}=.99$).
+
 
 \begin{table}[b]
 	\centering
@@ -1609,7 +1627,7 @@ Dabei hat sich gezeigt, dass die Effektstärken im mittleren und hohen Bereich \
 Produkt-Moment-Korrelationen zwischen den vier Bedingungen der \gls{ssauf} sind in \autoref{tab:product_moment_correlations_manifest} abgetragen. Sie deuteten ausnahmslos auf starke positive Zusammenhänge zwischen den Bedingungen hin.
 
 Der \gls{si} wies einen Mittelwert $\pm$ Standardabweichung von $0.222\,\pm\,0.160$ auf (Minimum $= -0.185$, Maximum $= 0.886$). 
-Die Verteilung des \gls{si} (siehe \autoref{fig:suppression_index_density}) hatte eine Schiefe von $0.91$ und sowie Kurtosis von $1.80$ und wich damit gemäss einem Shapiro-Wilk-Test signifikant von der Normalverteilung ab ($p<.001$).
+Die Verteilung des \gls{si} (siehe \autoref{fig:suppression_index_density}) hatte eine Schiefe von $0.91$ sowie eine Kurtosis von $1.80$ und wich damit gemäss einem Shapiro-Wilk-Test signifikant von der Normalverteilung ab ($p<.001$).
 
 \begin{figure}[htbp]
 	\centering
@@ -1868,9 +1886,8 @@ Diese Zusammenhänge können als Hinweis dafür gesehen werden, dass der \gls{si
 
 Weiter korrelierte einzig die 0-bit-Bedingung der \gls{ha} signifikant mit der $1.8^{\circ}$-, der $3.6^{\circ}$- und der $5.4^{\circ}$-Bedingung der \gls{ssauf}. Alle anderen Zusammenhänge zwischen den Bedingungen der beiden Aufgaben fielen so gering aus, dass sie bei der gewählten Irrtumswahrscheinlichkeit von weniger als $5\,\%$ nicht von 0 unterschieden werden konnten.
 
-Die Bedingungen der \gls{ha} korrelierten erwartungsgemäss signifikant negativ mit psychometrischer Intelligenz \citep[$r=-.19$ bis $-.28$, alle $p\textnormal{s}<.05$; vgl.][]{Sheppard2008}.
-
-Die Bedingungen der \gls{ssauf} korrelierten mit Ausnahme des Zusammenhangs zwischen der $7.2^{\circ}$-Bedingung und dem \gls{zwert} des \gls{bist}s ($r=-.12$, $p=.10$) alle signifikant negativ mit psychometrischer Intelligenz ($r=-.16$ bis $-.19$, alle $p\textnormal{s}<.05$).
+Die Bedingungen der \gls{ha} korrelierten schwach bis mittel negativ mit psychometrischer Intelligenz ($r=-.19$ bis $-.28$, alle $p\textnormal{s}<.05$).
+Die Bedingungen der \gls{ssauf} korrelierten mit Ausnahme des Zusammenhangs zwischen der $7.2^{\circ}$-Bedingung und dem \gls{zwert} des \gls{bist}s ($r=-.12$, $p=.10$) ebenfalls alle schwach bis mittel negativ mit psychometrischer Intelligenz ($r=-.16$ bis $-.19$, alle $p\textnormal{s}<.05$).
 
 \begin{sidewaystable}
 	\centering
@@ -2039,7 +2056,7 @@ Obwohl der \gls{rmse} für einige \glspl{vp} sehr gross ausfiel, eignete sich ei
 \end{figure}
 
 Um erkennen zu können, ob der Zusammenhang zwischen den beiden Aufgabenparametern (Asymptote und Steigung), der Zusammenhang zwischen der Steigung und dem \gls{si} oder der Zusammenhang zwischen der Asymptote respektive der Steigung mit dem \gls{zwert} des \gls{bist}s durch diejenigen \glspl{vp} verzerrt wurde, bei welchen eine Beschreibung der Daten mit einem exponentiellen Modell nicht angebracht war, wurden diese Zusammenhänge in Abhängigkeit des \gls{rmse} bestimmt. 
-Dafür wurde für jeden \gls{rmse} zwischen $1$ und $70$~ms eine Teilstichprobe mit \glspl{vp} gebildet, welche den gewählten \gls{rmse} (\gls{rmse}-Grenzwert) nicht überschritten haben. Die erste Teilstichprobe ($n=4$) bestand folglich aus \glspl{vp}, welche einen \gls{rmse} von nicht grösser als $1$~ms aufwiesen. Die zweite Teilstichprobe ($n=11$) setzte sich aus \glspl{vp} zusammen, welche einen \gls{rmse} von nicht grösser als $2$~ms aufwiesen. Die dritte Teilstichprobe ($n=32$) beinhaltete \glspl{vp}, welche einen \gls{rmse} von nicht grösser als $3$~ms aufwiesen (usw.). Dieses Vorgehen wurde solange weitergeführt, bis die Teilstichprobe bei einem \gls{rmse}-Grenzwert von $65.47$~ms alle \glspl{vp} ($N=177$) beinhaltete. 
+Dafür wurde für jeden \gls{rmse} zwischen $1$ und $70$~ms eine Teilstichprobe mit \glspl{vp} gebildet, welche den gewählten \gls{rmse} (\gls{rmse}-Grenzwert) nicht überschritten haben. Die erste Teilstichprobe ($n=4$) bestand folglich aus \glspl{vp}, welche einen \gls{rmse} von nicht grösser als $1$~ms aufwiesen. Die zweite Teilstichprobe ($n=11$) setzte sich aus \glspl{vp} zusammen, welche einen \gls{rmse} von nicht grösser als $2$~ms aufwiesen. Die dritte Teilstichprobe ($n=32$) beinhaltete \glspl{vp}, welche einen \gls{rmse} von nicht grösser als $3$~ms aufwiesen, usw. Dieses Vorgehen wurde solange weitergeführt, bis die Teilstichprobe bei einem \gls{rmse}-Grenzwert von $65.47$~ms alle \glspl{vp} ($N=177$) beinhaltete. 
 Damit liessen sich die Zusammenhänge über den ganzen \gls{rmse}-Grenz\-wert\-be\-reich bestimmen. Eine Teilstichprobe bei einem tiefen \gls{rmse}-Grenz\-wert umfasste somit \glspl{vp}, welche Modell-konforme Daten aufwiesen, während eine Teilstichprobe bei einem hohen \gls{rmse}-Grenzwert auch \glspl{vp} beinhaltete, deren Werte stärker vom exponentiellen Modell abwichen.
 
 Die Analyse hat ergeben, dass die Asymptote und die Steigung ab einem \gls{rmse}-Grenzwert von $1.4$ ms stark negativ miteinander zusammenhingen ($r=-.57$ bis $-.98$, alle $p\textnormal{s}<.05$). Eine visuelle Inspektion des Verlaufs deutete darauf hin, dass der \gls{rmse}-Grenzwert einen negativen Einfluss auf die Höhe des Zusammenhangs ausübte (siehe \autoref{fig:spatial_suppression_rmse_cutoff_asymtote_slope_suppressionindex}a).
@@ -2183,9 +2200,9 @@ Um den \gls{gfaktor} aus dem \gls{bist} zu bilden, wurden die gemittelten \texti
 	\node at (-1.5, -.4)	[manifest]	(s3)	{5.4$^{\circ}$};
 	\node at (-1.5, -1.2)	[manifest]	(s4)	{7.2$^{\circ}$};
 	
-	\node at (3, .8)		[manifest]	(k)		{Kap};
-	\node at (3, 0)			[manifest]	(b)		{Bea};
-	\node at (3, -.8)		[manifest]	(m)		{Mer};
+	\node at (3, .8)		[manifest]	(k)		{K};
+	\node at (3, 0)			[manifest]	(b)		{B};
+	\node at (3, -.8)		[manifest]	(m)		{M};
 	
 	\node at (-2.3, 1.2)	[error]		(e1)	{\footnotesize .44};
 	\node at (-2.3, 0.4)	[error]		(e2)	{\footnotesize .23};
@@ -2222,7 +2239,7 @@ Um den \gls{gfaktor} aus dem \gls{bist} zu bilden, wurden die gemittelten \texti
 	\end{tikzpicture}
 	
 	\vspace{.2cm}
-	\caption[Modell 2: Strukturgleichungsmodell zur Vorhersage des \gls{gfaktor}s durch die \gls{ssauf}]{Modell 2: Latenter Zusammenhang zwischen der \gls{ssauf} (\textsf{S}) und dem \gls{gfaktor} des \gls{bist}s. Eingezeichnet sind die standardisierten Koeffizienten. \textsf{Kap} = Kapazität; \textsf{Bea} = Bearbeitungsgeschwindigkeit; \textsf{Mer} = Merkfähigkeit.\\
+	\caption[Modell 2: Strukturgleichungsmodell zur Vorhersage des \gls{gfaktor}s durch die \gls{ssauf}]{Modell 2: Latenter Zusammenhang zwischen der \gls{ssauf} (\textsf{S}) und dem \gls{gfaktor} des \gls{bist}s. Eingezeichnet sind die standardisierten Koeffizienten. \textsf{K} = Kapazität; \textsf{B} = Bearbeitungsgeschwindigkeit; \textsf{M} = Merkfähigkeit.\\
 	$^1$Um die Identifizierung der Varianz der latenten Variable zu ermöglichen, wurde diese unstandardisierte Faktorladung auf $1$ fixiert.\\
 	$^{**}p~<~.01$. $^{***}p~<~.001$.}
 	\label{fig:spatial_suppression_g_model}
@@ -2411,9 +2428,9 @@ Gemeinsam erklärten die konstante und die dynamische latente Variable der \gls{
 		\node at (-1.5, -1.2)	[manifest]	(s4)	{7.2$^{\circ}$};
 		
 		
-		\node at (4, .8)		[manifest]	(k)		{Kap};
-		\node at (4, 0)			[manifest]	(b)		{Bea};
-		\node at (4, -.8)		[manifest]	(m)		{Mer};
+		\node at (4, .8)		[manifest]	(k)		{K};
+		\node at (4, 0)			[manifest]	(b)		{B};
+		\node at (4, -.8)		[manifest]	(m)		{M};
 		
 		\node at (-2.3, 1.2)	[error]		(e1)	{\footnotesize .10};
 		\node at (-2.3, 0.4)	[error]		(e2)	{\footnotesize .10};
@@ -2463,7 +2480,7 @@ Gemeinsam erklärten die konstante und die dynamische latente Variable der \gls{
 	\end{adjustbox}
 	
 	\vspace{.2cm}
-	\caption[Modell 9: Fixed-Links-Strukturgleichungsmodell zur Vorhersage des \gls{gfaktor}s durch die \gls{ssauf}]{Modell 9: Latenter Zusammenhang zwischen dem Fixed-Links-Messmodell (Modell 8) der \gls{ssauf} (\textsf{S}) und dem \gls{gfaktor} aus dem \gls{bist}. Eingezeichnet sind die standardisierten Koeffizienten. Hochgestellt sind die fixierten unstandardisierten Faktorladungen. \textsf{\textsubscript{kon}} = konstante latente Variable; \textsf{\textsubscript{dyn}} = dynamische latente Variable; \textsf{Kap} = Kapazität; \textsf{Bea} = Bearbeitungsgeschwindigkeit; \textsf{Mer} = Merkfähigkeit.\\
+	\caption[Modell 9: Fixed-Links-Strukturgleichungsmodell zur Vorhersage des \gls{gfaktor}s durch die \gls{ssauf}]{Modell 9: Latenter Zusammenhang zwischen dem Fixed-Links-Messmodell (Modell 8) der \gls{ssauf} (\textsf{S}) und dem \gls{gfaktor} aus dem \gls{bist}. Eingezeichnet sind die standardisierten Koeffizienten. Hochgestellt sind die fixierten unstandardisierten Faktorladungen. \textsf{\textsubscript{kon}} = konstante latente Variable; \textsf{\textsubscript{dyn}} = dynamische latente Variable; \textsf{K} = Kapazität; \textsf{B} = Bearbeitungsgeschwindigkeit; \textsf{M} = Merkfähigkeit.\\
 	$^{*}p~<~.05$. $^{***}p~<~.001$.
 	}
 	\label{fig:spatial_suppression_fixedlinks_sem}
@@ -2877,9 +2894,9 @@ Trotz des schlechten kongenerischen Modell-Fits der \gls{ha} wurde Modell 14 in 
 		\node at (-1.5, -2.1)	[manifest]	(h2)	{2-bit};
 		\node at (-1.5, -2.9)	[manifest]	(h3)	{2.58-bit};
 		
-		\node at (3, .8)		[manifest]	(k)		{Kap};
-		\node at (3, 0)			[manifest]	(b)		{Bea};
-		\node at (3, -.8)		[manifest]	(m)		{Mer};
+		\node at (3, .8)		[manifest]	(k)		{K};
+		\node at (3, 0)			[manifest]	(b)		{B};
+		\node at (3, -.8)		[manifest]	(m)		{M};
 		
 		\node at (-2.3, 2.9)	[error]		(e1)	{\footnotesize .44};
 		\node at (-2.3, 2.1)	[error]		(e2)	{\footnotesize .23};
@@ -2934,7 +2951,7 @@ Trotz des schlechten kongenerischen Modell-Fits der \gls{ha} wurde Modell 14 in 
 		\end{tikzpicture}
 	\end{adjustbox}
 	\vspace{.2cm}
-	\caption[Modell 15: Strukturgleichungsmodell zur Vorhersage des \gls{gfaktor}s durch die Spa\-ti\-al-Sup\-pres\-sion- und die \gls{ha}]{Modell 15: Latenter Zusammenhang zwischen der \gls{ssauf} (\textsf{S}), der \gls{ha} (\textsf{H}) und dem \gls{gfaktor} des \gls{bist}s. \textsf{Kap} = Kapazität; \textsf{Bea} = Bearbeitungsgeschwindigkeit; \textsf{Mer} = Merkfähigkeit.\\
+	\caption[Modell 15: Strukturgleichungsmodell zur Vorhersage des \gls{gfaktor}s durch die Spa\-ti\-al-Sup\-pres\-sion- und die \gls{ha}]{Modell 15: Latenter Zusammenhang zwischen der \gls{ssauf} (\textsf{S}), der \gls{ha} (\textsf{H}) und dem \gls{gfaktor} des \gls{bist}s. \textsf{K} = Kapazität; \textsf{B} = Bearbeitungsgeschwindigkeit; \textsf{M} = Merkfähigkeit.\\
 		$^1$Um die Identifizierung der Varianz der latenten Variable zu ermöglichen, wurde diese unstandardisierte Faktorladung auf $1$ fixiert.\\
 		$^{*}p~<~.05$. $^{***}p~<~.001$.}
 	\label{fig:spatial_suppression_hick_g_model}
@@ -3143,9 +3160,9 @@ Im folgenden Abschnitt werden die wichtigsten Resultate der fünf Fragestellunge
 Die von \citeauthor{Melnick2013} berichteten manifesten Zusammenhänge zwischen der \gls{ssauf} und psychometrischer Intelligenz konnten in der vorliegenden Arbeit durchwegs nicht bestätigt werden. 
 Während \citeauthor{Melnick2013} einen starken Zusammenhang zwischen dem \gls{si} und psychometrischer Intelligenz berichteten (Studie 1: $r~=~.64$ und Studie 2: $r~=~.71$) konnte in der vorliegenden Arbeit kein bedeutsamer Zusammenhang festgestellt werden ($r=.00$). 
 Weiter fiel die von \citeauthor{Melnick2013} in Studie~$2$ geschilderte Korrelation zwischen der $1.8^{\circ}$-Bedingung und psychometrischer Intelligenz ($r=-.46$) in der vorliegenden Arbeit signifikant geringer aus ($r=-.16$) und deutete lediglich auf einen schwachen Zusammenhang hin.
-Auch die von \citeauthor{Melnick2013} in Studie~$2$ angegebenen Semipartialkorrelationen zwischen der kleinsten Mustergrösse ($1.8^{\circ}$-Bedingung) beziehungsweise der grössten Mustergrösse ($7.2^{\circ}$-Bedingung) und psychometrischer Intelligenz ($r=-.71$ respektive $r=.55$) konnten nicht bestätigt werden, da sie signifikant tiefer zu liegen kamen und bei einer Irrtumswahrscheinlichkeit von weniger als $5\,\%$ nicht von $0$ unterschieden werden konnten ($r=-.11$ respektive $r=-.04$).
+Auch die von \citeauthor{Melnick2013} in Studie~$2$ angegebenen Semipartialkorrelationen zwischen der Erkennungsschwelle der kleinsten Mustergrösse ($1.8^{\circ}$-Bedingung) beziehungsweise der Erkennungsschwelle der grössten Mustergrösse ($7.2^{\circ}$-Bedingung) und psychometrischer Intelligenz ($r=-.71$ respektive $r=.55$) konnten nicht bestätigt werden, da sie signifikant tiefer zu liegen kamen und bei einer Irrtumswahrscheinlichkeit von weniger als $5\,\%$ nicht von $0$ unterschieden werden konnten ($r=-.11$ respektive $r=-.04$).
 
-Welche Gründe könnten für die widersprüchlichen Ergebnisse verantwortlich sein? 
+Welche Gründe könnten für die widersprüchlichen Ergebnisse verantwortlich sein?
 Die Erkennungsschwellen der \gls{ssauf} wiesen in der vorliegenden Arbeit ($r_{tt} = .96$) wie bei \citeauthor{Melnick2013} (\citeyear{Melnick2013}; $r_{tt} = .99$) sehr hohe Splithalf-Reliabilitäten auf. Die Erkennungsschwellen haben somit sehr genau die Zeitdauer erfasst, die benötigt wurde um die Bewegungsrichtung der Muster korrekt zu erkennen. Auch hat sich in der vorliegenden Arbeit die Wahrnehmungsleistung mit zunehmender Mustergrösse wie bei \citeauthor{Melnick2013} verschlechtert (siehe \autoref{subsec:SSres}). Dies deutet darauf hin, dass die Reliabilität der \gls{ssauf} nicht die Ursache für die fehlende Bestätigung der Befunde von \citeauthor{Melnick2013} zu sein scheint.
 
 Auch der \gls{si} liefert bei näherer Betrachtung keine Erklärung für das Ergebnis. Zwar lag der Mittelwert des \gls{si} in Studie 2 von \citet{Melnick2013} höher (Mittelwert $\pm$ Standardabweichung $=0.320\,\pm\,0.155$, Minimum $=0.016$, Maximum $=0.703$; D. Tadin, persönl. Mitteilung, 25.09.2015) als in der vorliegenden Arbeit (Mittelwert $\pm$ Standardabweichung $=0.222\,\pm\,0.160$, Minimum $= -0.185$, Maximum $= 0.886$)\footnote{Ein \textit{t}-Test für unabhängige Stichproben ergab, dass sich die beiden Mittelwerte signifikant voneinander unterschieden, $t(88)=4.01$, $p<.001$. Die Effektstärke (Cohens \textit{d} für unabhängige Stichproben) für diesen Mittelwertsunterschied betrug $d=.61$ und lag damit im hohen Bereich.}, die Streuungen hingegen unterschieden sich nicht\footnote{Gemäss einem Levene-Test musste die Annahme der Varianzgleichheit der beiden Streuungen nicht verworfen werden, $F(1,\,228)=0.18$, $p=.67$.}. 
@@ -3176,7 +3193,7 @@ Grundsätzlich festzuhalten ist, dass sich ein exponentielles Modell zur Beschre
 
 \citet{Melnick2013} haben in Ihrer Untersuchung nur die Steigung mit psychometrischer Intelligenz in Verbindung gebracht. Den Zusammenhang zwischen der Asymptote und der Steigung sowie die Beziehung zwischen der Asymptote und psychometrischer Intelligenz haben sie nicht berichtet. Diese Zusammenhänge wurden in der vorliegenden Arbeit untersucht. Dabei hat sich ein starker negativer Zusammenhang zwischen der Asymptote und der Steigung ergeben ($r=-.57$). Ein tiefer Ursprung des exponentiellen Verlaufs der Wahrnehmungsverschlechterung ging folglich tendenziell mit einer stärkeren Wahrnehmungsverschlechterung (einer stärkeren \gls{ss}) einher.
 Dieser Befund lässt sich gut mit der Erklärung von \citeauthor{Melnick2013} für den von Ihnen beobachteten positiven Zusammenhang zwischen dem \gls{si} und psychometrischer Intelligenz vereinen. Wenn intelligente Personen tatsächlich kleine Muster schneller verarbeiten und gleichzeitig mit zunehmender Mustergrösse eine stärkere Verschlechterung der Wahrnehmungsleistung erfahren als weniger intelligente Personen, dann sollten bei der Analyse der Bedingungen mit einem exponentiellen Modell die Asymptote und die Steigung negativ zusammenhängen. 
-Konsistent mit dieser Annahme von \citeauthor{Melnick2013} hing in der vorliegenden Arbeit die Asymptote schwach negativ mit psychometrischer Intelligenz zusammen ($r=-.16$). Ein tiefer Ursprung des exponentiellen Verlaufs der Wahrnehmungsverschlechterung hing somit tendenziell mit hoher psychometrischer Intelligenz zusammen. Auch wenn die Asymptote inhaltlich schwierig zu interpretieren ist, liefert dieser negative Zusammenhang einen weiteren Hinweis dafür, dass intelligentere Personen ganz generell betrachtet tendenziell schneller arbeitende Prozesse besitzen als weniger intelligente Personen \citep{Jensen1987a, Neubauer1997a, Neubauer1997b}.
+Konsistent mit dieser Annahme von \citeauthor{Melnick2013} hing in der vorliegenden Arbeit die Asymptote schwach negativ mit psychometrischer Intelligenz zusammen ($r=-.16$). Ein tiefer Ursprung des exponentiellen Verlaufs der Wahrnehmungsverschlechterung hing somit tendenziell mit hoher psychometrischer Intelligenz zusammen. Auch wenn die Asymptote inhaltlich schwierig zu interpretieren ist, liefert dieser negative Zusammenhang einen weiteren Hinweis dafür, dass intelligentere Personen ganz generell betrachtet tendenziell schneller arbeitende Prozesse besitzen als weniger intelligente Personen \citep{Jensen1987a, Jensen1998b, Neubauer1997a, Neubauer1997b}.
 
 
 
@@ -3199,7 +3216,7 @@ Gestützt wird diese Vermutung durch die auf manifester Ebene beobachteten bivar
 %
 %Diese Beobachtung lässt sich gut in gesicherte Befunde zum 
 
-Die Annahme, dass die latente Variable \gls{ss} abbildete ist aus zwei Gründen unwahrscheinlich: Zum einen hätten sich negative oder zumindest sehr geringe Faktorladungen auf der $1.8^{\circ}$- und der $3.6^{\circ}$-Bedingung zeigen müssen, da \gls{ss} als die mit zunehmender Mustergrösse relative  Wahrnehmungsverschlechterung definiert ist \citep{Melnick2013, Tadin2003, Tadin2006, Tadin2011}. Zum anderen hätte sich zwischen der latenten Variable und dem \gls{gfaktor} ein positiver Zusammenhang zeigen müssen, weil \gls{ss} (operationalisiert mit dem \gls{si}) bei \citet{Melnick2013} stark positiv mit psychometrischer Intelligenz zusammenhing.
+Die Annahme, dass die latente Variable \gls{ss} abbildete ist aus zwei Gründen unwahrscheinlich: Zum einen hätten sich negative oder zumindest sehr schwache Faktorladungen auf der $1.8^{\circ}$- und der $3.6^{\circ}$-Bedingung zeigen müssen, da \gls{ss} als die mit zunehmender Mustergrösse relative  Wahrnehmungsverschlechterung definiert ist \citep{Melnick2013, Tadin2003, Tadin2006, Tadin2011}. Zum anderen hätte sich zwischen der latenten Variable und dem \gls{gfaktor} ein positiver Zusammenhang zeigen müssen, weil \gls{ss} (operationalisiert mit dem \gls{si}) bei \citet{Melnick2013} stark positiv mit psychometrischer Intelligenz zusammenhing.
 Weil weder das Eine noch das Andere beobachtet wurde scheint es nicht plausibel, dass die latente Variable \gls{ss} abbildete.
 
 
@@ -3210,8 +3227,8 @@ Weil weder das Eine noch das Andere beobachtet wurde scheint es nicht plausibel,
 %\subsection{Leidet die Spa\-tial-Sup\-pres\-sion-Auf\-gabe unter dem Im\-pu\-ri\-ty-Pro\-blem und können Fixed-Links-Modelle aufgabenrelevante Prozesse voneinander trennen?}
 \subsection{Kann die Spa\-tial-Sup\-pres\-sion-Auf\-gabe mit einem \\Fixed-Links-Mo\-dell beschrieben werden und wie hängen die getrennten Prozesse mit dem \textit{g}-Faktor zusammen?}
 
-Die Analyse von Zusammenhängen mittels klassischer Faktorenanalysen erlaubt es, wahre Varianz von Fehlervarianz zu trennen \citep[S. 9]{Kline2011}. Nicht gelöst wird dabei das \gls{ip} (siehe \autoref{subsec:Loesungsansaetze}). 
-Um das \gls{ip} anzugehen, wurde die \gls{ssauf} mit einem \gls{flm} beschrieben und die daraus abgeleiteten Faktoren wurden in einem Fixed-Links-Struk\-tur\-glei\-chungs\-mo\-dell mit psychometrischer Intelligenz in Verbindung gebracht.
+Die Analyse von Zusammenhängen mittels klassischer Faktorenanalysen erlaubt es, wahre Varianz von Fehlervarianz zu trennen \citep[S. 9]{Kline2011}. Nicht gelöst wird dabei das \gls{ip} (siehe \autoref{sec:Messung_kognitiver_Prozesse}). 
+Um das \gls{ip} anzugehen, wurde die \gls{ssauf} mit einem \gls{flm} \citep[z. B.][]{Schweizer2006a, Schweizer2006b, Schweizer2007, Schweizer2008, Schweizer2009a} beschrieben und die daraus abgeleiteten Faktoren wurden in einem Fixed-Links-Struk\-tur\-glei\-chungs\-mo\-dell mit psychometrischer Intelligenz in Verbindung gebracht.
 
 Das \gls{flm} der \gls{ssauf}, das zwei unabhängige Faktoren für die Erklärung der Zusammenhänge unter den Bedingungen annahm, bildete die empirischen Daten  gut ab. 
 Während in der konstanten latenten Variable Prozesse gebunden wurden, welche in allen Bedingungen einen gleichbleibenden Einfluss auf die Erkennungsschwelle hatten, wurden mit der dynamischen latenten Variable Prozesse erfasst, die einen mit zunehmender Mustergrösse linear ansteigenden Einfluss auf die Erkennungsschwelle ausübten ($y=x,\,x\in\{0, 1, 2, 3\}$).
@@ -3222,10 +3239,13 @@ Die in der konstanten latenten Variable abgebildeten Prozesse waren folglich deu
 Bei der Zusammenführung des \gls{flm}s der \gls{ssauf} mit dem \gls{gfaktor} hat sich ebenfalls eine gute Passung zwischen theoretischem Modell und empirischen Daten ergeben. Zwischen der konstanten latenten Variable der \gls{ssauf} und dem \gls{gfaktor} zeigte sich ein mittlerer negativer Zusammenhang ($\upbeta~=~-.25$). Zwischen der dynamischen latenten Variable der \gls{ssauf} und dem \gls{gfaktor} bestand ein so schwacher Zusammenhang ($\upbeta~=~-.08$), dass er bei einem $\alpha$-Fehler von $5\,\%$ nicht von $0$ unterschieden werden konnte. Die konstante und die dynamische latente Variable erklärten gemeinsam $7\,\%$ der Varianz im \gls{gfaktor}.
 
 Was für Prozesse wurden in der konstanten latenten Variable abgebildet? Sicher ist, das es aufgabenrelevante Prozesse sind, deren Einflüsse sich über die experimentellen Bedingungen hinweg nicht verändert haben. Der negative Zusammenhang zwischen der konstanten latenten Variable und dem \gls{gfaktor} lässt die Interpretation zu, dass es Prozesse sind, welche die (von den Mustergrössen unabhängige) grundlegende Geschwindigkeit bestimmen, mit der Information verarbeitet wird \citep[für ähnliche Annahmen über die Inhalte der konstanten latenten Variable siehe][]{Schweizer2007, Stauffer2014}.
-Diese Vermutung lässt sich gut mit den Resultaten der exponentiellen Regression zum negativen Zusammenhang zwischen der Asymptote und psychometrischer Intelligenz vereinen. Die Asymptote bildete auf manifester Ebene ebenfalls die von der experimentellen Manipulation unabhängige grundlegende Geschwindigkeit ab, mit der Information verarbeitet wurde (siehe \autoref{subsec:Ein_alternatives_Mass_für_SS?}). 
-Dass die konstante latente Variable ($\upbeta~=~-.25$) dabei etwas stärker mit psychometrischer Intelligenz zusammenhing als die Asymptote ($r~=~-.16$) lässt sich damit erklären, dass die Analyse auf latenter Ebene mittels \gls{flm} den Messfehler isoliert und dadurch zu höheren Zusammenhängen kommen kann als die manifeste Analyse mittels exponentieller Regression.
+Diese Vermutung lässt sich gut mit den Resultaten der exponentiellen Regression zum negativen Zusammenhang zwischen der Asymptote und psychometrischer Intelligenz vereinen ($r~=~-.16$). 
+Bei der Asymptote kann ebenfalls davon ausgegangen werden, dass sie die von der experimentellen Manipulation unabhängige grundlegende Geschwindigkeit abbildet, mit die Bewegungsrichtung der Muster erkannt wurde (siehe \autoref{subsec:Ein_alternatives_Mass_für_SS?}).
 
-Die dynamische latente Variable hat Varianz von aufgabenrelevanten Prozessen gebunden, deren Einflüsse sich mit der experimentellen Manipulation verändert haben. Der Einfluss der Prozesse nahm mit zunehmender Mustergrösse exponentiell zu. Weil \citet{Melnick2013} \gls{ss} mit einem exponentiellen Modell beschrieben haben, kann angenommen werden, dass sich hinter diesem exponentiellen Verlauf  \gls{ss} verbirgt. Der nicht-signifikante Zusammenhang zwischen der dynamischen latenten Variable und dem \gls{gfaktor} ($\upbeta~=~-.08$) steht dabei in der vorliegenden Arbeit in Übereinstimmung mit den Zusammenhängen zwischen anderen Massen für \gls{ss} und psychometrischer Intelligenz: Der \gls{si} sowie die exponentielle Steigung korrelierten ebenfalls nicht mit psychometrischer Intelligenz ($r~=~.00$ respektive $r~=~.00$).
+%Die Asymptote bildete auf manifester Ebene ebenfalls die von der experimentellen Manipulation unabhängige grundlegende Geschwindigkeit ab, mit der Information verarbeitet wurde (siehe \autoref{subsec:Ein_alternatives_Mass_für_SS?}). 
+%Dass die konstante latente Variable ($\upbeta~=~-.25$) dabei etwas stärker mit psychometrischer Intelligenz zusammenhing als die Asymptote ($r~=~-.16$) lässt sich damit erklären, dass eine Analyse auf latenter Ebene den Messfehler isoliert und dadurch zu höheren Zusammenhängen kommen kann als die manifeste Analyse mittels exponentieller Regression \citep[z. B.][]{}.
+
+Die dynamische latente Variable hat Varianz von aufgabenrelevanten Prozessen gebunden, deren Einflüsse sich mit der experimentellen Manipulation verändert haben. Der Einfluss der in der dynamischen latenten Variablen erfassten Prozesse nahm aufgrund der gewählten Faktorladungen mit zunehmender Mustergrösse exponentiell zu. Weil \citet{Melnick2013} \gls{ss} mit einem exponentiellen Modell beschrieben haben, kann angenommen werden, dass sich hinter der dynamischen latenten Variable  \gls{ss} verbirgt. Der nicht-signifikante Zusammenhang zwischen der dynamischen latenten Variable und dem \gls{gfaktor} ($\upbeta~=~-.08$) steht dabei in der vorliegenden Arbeit in Übereinstimmung mit den Zusammenhängen zwischen anderen Massen für \gls{ss} und psychometrischer Intelligenz: Der \gls{si} sowie die exponentielle Steigung korrelierten ebenfalls nicht mit psychometrischer Intelligenz ($r~=~.00$ respektive $r~=~.00$).
 
 
 
@@ -3240,10 +3260,10 @@ In einem letzten Schritt wurde der Zusammenhang zwischen der \gls{ssauf} und psy
 %Mit einer multiplen Regression zur Vorhersage psychometrischer Intelligenz durch die Hick- und der \gls{ssauf} wurde geprüft, inwieweit die \gls{ssauf} zur Aufklärung individueller Intelligenzunterschiede neuartige Erklärungsmöglichkeiten bietet oder ob die \gls{ha} den Zusammenhang zwischen der \gls{ssauf} und psychometrischer Intelligenz zu erklären vermag. Die multiple Regression wurde mit den Aufgabenbedingungen und den Aufgabenparameter durchgeführt.
 
 Die Reaktionszeiten der \gls{ha} stiegen auf Gruppenebene mit zunehmender Anzahl Antwortalternativen an \citep{Hick1952} und die Aufgabenbedingungen korrelierten  erwartungsgemäss negativ mit psychometrischer Intelligenz \citep[$r~=~-.19$ bis $-.28$; vgl.][]{Sheppard2008}.
-Bei der Vorhersage der Reaktionszeiten der \gls{ha} mit einem linearen Modell zeigte sich, dass sich damit die Reaktionszeiten für einen grossen Teil der Stichprobe gut beschrieben liessen (siehe \autoref{subsec:Aufgabenparameter_Hick}). Die daraus abgeleiteten Aufgabenparameter hingen konsistent mit etablierten Befunden negativ mit psychometrischer Intelligenz zusammen \citep[vgl.][]{Roth1964, Jensen1982b, Jensen1987a, Jensen1998b, Neubauer1997a, Neubauer1997b, Rammsayer2007}: Der y-Ach\-sen\-ab\-schnitt korrelierte schwach negativ ($r~=~-.17$) und die Steigung schwach bis mittel negativ ($r~=~-.23$) mit psychometrischer Intelligenz. 
+Bei der Vorhersage der Reaktionszeiten der \gls{ha} mit einem linearen Modell zeigte sich, dass sich damit die Reaktionszeiten für einen grossen Teil der Stichprobe gut beschrieben liessen (siehe \autoref{subsec:Aufgabenparameter_Hick}). Die daraus abgeleiteten Aufgabenparameter hingen in Übereinstimmung mit etablierten Befunden negativ mit psychometrischer Intelligenz zusammen \citep[vgl.][]{Roth1964, Jensen1982b, Jensen1987a, Jensen1998b, Neubauer1997a, Neubauer1997b, Rammsayer2007}: Der y-Ach\-sen\-ab\-schnitt korrelierte schwach negativ ($r~=~-.17$) und die Steigung schwach bis mittel negativ ($r~=~-.23$) mit psychometrischer Intelligenz. 
 
 Bei der Vorhersage psychometrischer Intelligenz hat sich sowohl auf Ebene der Aufgabenbedingungen als auch auf Ebene der Aufgabenparameter gezeigt, dass die \gls{ssauf} bei einer Kontrolle des Zusammenhangs zwischen der \gls{ha} und psychometrischer Intelligenz keine zusätzliche Varianz erklären konnte.
-Diese Analysen auf manifester Ebene deuteten darauf hin, dass die \gls{ssauf} im Zusammenhang mit psychometrischer Intelligenz keinen Aspekt der menschlichen Informationsverarbeitung erfasst, der neuartig ist und nicht schon von der \gls{ha} erklärt wird.
+Diese Analysen auf manifester Ebene deuteten darauf hin, dass die \gls{ssauf} im Zusammenhang mit psychometrischer Intelligenz keinen Aspekt der menschlichen Informationsverarbeitung erfasst, der neu ist und nicht schon von der \gls{ha} erklärt wird.
 
 %Bei der Vorhersage psychometrischer Intelligenz durch die Aufgabenbedingungen der Hick- und der \gls{ssauf} hat sich gezeigt, dass die Aufgabenbedingungen der \gls{ssauf} bei einer Kontrolle des Zusammenhangs zwischen den Aufgabenbedingungen der \gls{ha} und psychometrischer Intelligenz keine zusätzliche Varianz erklären konnten. Gemeinsam erklärten die Aufgabenbedingungen $11\,\%$ der Varianz im \gls{zwert} des \gls{bist}s.
 %
@@ -3264,8 +3284,9 @@ Bei der Analyse der Zusammenhänge in einem klassischen Strukturgleichungsmodell
 Der mittlere Zusammenhang zwischen der \gls{ha} und dem \gls{gfaktor} kann als Bestätigung früherer Untersuchungen angesehen werden, welche die \gls{ha} auf latenter Ebene mit psychometrischer Intelligenz in Verbindung gebracht haben und eine vergleichbare Effektstärke ermittelt haben \citep[z. B.][]{Borter2016, Helmbold2007, Schweizer2006b, Rammsayer2007}.
 Interessant war, dass die \gls{ssauf} über den Zusammenhang zwischen der \gls{ha} und dem \gls{gfaktor} hinaus Varianz im \gls{gfaktor} zu erklären vermochte. Dieser schwache bis mittlere Zusammenhang lieferte in der vorliegenden Arbeit das erste Mal einen Hinweis dafür, dass die \gls{ssauf} im Zusammenhang mit psychometrischer Intelligenz einen Aspekt der menschlichen Informationsverarbeitung abbildet, der nicht bereits von der \gls{ha} erklärt wird. Gestützt wird diese Interpretation durch den nicht-signifikanten latenten Zusammenhang zwischen der Hick- und der \gls{ssauf}. 
 Damit kann die \gls{ssauf} als Mediator des Zusammenhangs zwischen der \gls{ha} und dem \gls{gfaktor} ausgeschlossen werden.
-Aufgrund der bereits diskutierten hohen positiven Faktorladungen der vier Bedingungen der \gls{ssauf} auf den Faktor, ist anzunehmen, dass darin aber nicht \gls{ss} abgebildet wurde, sondern die grundlegende (von den Mustergrössen unabhängige) Geschwindigkeit, mit der die Bewegungsrichtung der Muster erkannt wurde. Geprüft werden konnte diese Annahme im berechneten klassischen Strukturgleichungsmodell allerdings nicht. Über diese Vermutung Aufschluss geben konnten die Ergebnisse der \glspl{flm}, welche als nächstes diskutiert werden.
-
+Aufgrund der bereits diskutierten hohen positiven Faktorladungen der vier Bedingungen der \gls{ssauf} auf den Faktor, ist anzunehmen, dass der Zusammenhang zwischen der \gls{ssauf} und dem \gls{gfaktor} aber nicht durch \gls{ss}, sondern durch die grundlegende (von den Mustergrössen unabhängige) Geschwindigkeit verursacht wurde, mit der die Bewegungsrichtung der Muster erkannt wurde. 
+Geprüft werden konnte diese Annahme mit diesem berechneten klassischen Strukturgleichungsmodell nicht. Über diese Vermutung Aufschluss geben konnten die Ergebnisse der \glspl{flm}, welche als nächstes diskutiert werden.
+%Aufgrund der bereits diskutierten hohen positiven Faktorladungen der vier Bedingungen der \gls{ssauf} auf den Faktor, ist anzunehmen, dass darin aber nicht \gls{ss} abgebildet wurde, sondern die grundlegende (von den Mustergrössen unabhängige) Geschwindigkeit, mit der die Bewegungsrichtung der Muster erkannt wurde. 
 
 
 
@@ -3279,15 +3300,17 @@ Bei der Zusammenführung der \glspl{flm} der Hick- und der \gls{ssauf} mit dem \
 Zwischen den konstanten und dynamischen latenten Variablen der Hick- und der \gls{ssauf} korrelierten einzig die beiden konstanten latenten Variablen signifikant ($r~=~.21$). Die konstanten und dynamischen latenten Variablen der Hick- und \gls{ssauf} erklärten gemeinsam $16\,\%$ der Varianz im \gls{gfaktor}.
 
 Was für Prozesse wurden in der konstanten latenten Variable der \gls{ha} abgebildet?
-Wie bei der Interpretation der konstanten latenten Variable der \gls{ssauf} kann auch hier nur vermutet werden, welche Prozesse die Varianz erzeugt haben. Klar ist, das es Prozesse sind, die von der experimentellen Manipulation nicht beeinflusst wurden. Es könnte folglich sein, dass es auch hier Prozesse sind, welche die grundlegende (von der Anzahl Antwortalternativen unabhängige) Geschwindigkeit bestimmen, mit der Reize im Kortex wahrgenommen und verarbeitet werden \citep{Jensen1998b}. Aber auch situative Prozesse, wie zum Beispiel Unterschiede zwischen Personen in der allgemeinen Wachsamkeit oder der allgemeinen Motivation, die Aufgabe zu bearbeiten, könnten die Varianz verursacht haben.
+Wie bei der Interpretation der konstanten latenten Variable der \gls{ssauf} kann auch hier nur vermutet werden, welche Prozesse die Varianz erzeugt haben. Klar ist, das es Prozesse sind, die von der experimentellen Manipulation nicht beeinflusst wurden. Es könnte folglich sein, dass es auch hier Prozesse sind, welche die grundlegende (von der Anzahl Antwortalternativen unabhängige) Geschwindigkeit bestimmen, mit der Reize im Kortex wahrgenommen werden \citep{Jensen1998b} und Information verarbeitet wird \citep{Schweizer2007, Stauffer2014}. Aber auch situative Prozesse, wie zum Beispiel Unterschiede zwischen Personen in der allgemeinen Wachsamkeit oder der allgemeinen Motivation, die Aufgabe zu bearbeiten, könnten die Varianz verursacht haben.
 Der schwache bis mittlere positive Zusammenhang zwischen der konstanten latenten Variable der Hick- und der \gls{ssauf} deutet darauf hin, dass zumindest ein Teil der erfassten konstanten Prozesse aufgabenunspezifisch ist, das heisst sowohl in der Hick- als auch der \gls{ssauf} die Leistung beeinflusst hat. Die Vermutung, dass in den beiden konstanten latenten Variablen unter anderem die grundlegende Geschwindigkeit abgebildet wurde, mit der Information verarbeitet wird, muss mit diesem positiven Zusammenhang somit nicht verworfen werden. 
 
 Die dynamische latente Variable der \gls{ha} hat Varianz von Prozessen gebunden, die experimentell manipuliert wurden. Manipuliert wurde die Anzahl Antwortalternativen. Es ist deshalb plausibel anzunehmen, dass in der dynamischen latenten Variable Varianz aufgrund unterschiedlicher Verarbeitungsgeschwindigkeiten von Personen abgebildet wurde \citep[vgl.][]{Jensen1998b, Roth1964}. 
-Der Einfluss der Verarbeitungsgeschwindigkeit auf die Reaktionszeit nahm (aufgrund der gewählten Faktorladungen) mit zunehmender Anzahl Antwortalternativen zu, wobei dieser Einfluss einer logistischen Funktion folgte und somit von der $2$-Bit- zur $2.58$-Bit-Bedingung stark abflachte. Dieser Verlauf darauf hin, dass sich der Einfluss der Verarbeitungsgeschwindigkeit auf die Reaktionszeit bei einer weiteren Hinzunahme einer Antwortalternative (der $3$-Bit-Bedingung) nicht bedeutsam erhöht hätte.
+Der Einfluss der Verarbeitungsgeschwindigkeit auf die Reaktionszeit nahm aufgrund der gewählten Faktorladungen mit zunehmender Anzahl Antwortalternativen zu, wobei der Einfluss einer logistischen Funktion folgte und somit von der $2$-Bit- zur $2.58$-Bit-Bedingung stark abflachte. 
+Der logistisch gewählte Verlauf der Faktorladungen impliziert, dass sich der Einfluss der Verarbeitungsgeschwindigkeit auf die Reaktionszeit bei einer weiteren Hinzunahme einer Antwortalternative (der $3$-Bit-Bedingung) nicht bedeutsam erhöht hätte.
 Eine Erklärung dafür könnte sein, dass mit weiter zunehmender Anzahl Antwortalternativen zusätzlich Varianz entsteht, die durch andere Prozesse verursacht wird als durch die Verarbeitungsgeschwindigkeit. Es könnte beispielsweise sein, dass mit zunehmender Anzahl Antwortalternativen räumliche Aufmerksamkeit \citep[][]{Hoffman1981} eine immer wichtiger werdende Rolle für eine schnelle Reaktion einnimmt. Zusätzliche Varianz in der $3$-Bit-Bedingung wäre dann nicht auf Unterschiede zwischen Personen in der Verarbeitungsgeschwindigkeit sondern in der räumlichen Aufmerksamkeit zurückzuführen.
+%Dieser Verlauf darauf hin, dass sich der Einfluss der Verarbeitungsgeschwindigkeit auf die Reaktionszeit bei einer weiteren Hinzunahme einer Antwortalternative (der $3$-Bit-Bedingung) nicht bedeutsam erhöht hätte.
 
 Die mit der dynamischen latenten Variable der \gls{ha} erfasste Verarbeitungsgeschwindigkeit zeigte einen mittleren negativen Zusammenhang mit dem \gls{gfaktor} ($\upbeta~=~-.26$). Die konstante latente Variable sagte den \gls{gfaktor} hingegen nicht signifikant vorher ($\upbeta~=~-.17$).
-Wenn man die konstante und die dynamische latente Variable der \gls{ha} mit den auf manifester Ebene abgeleiteten Aufgabenparametern, dem y-Achsen\-ab\-schnitt und der Steigung, inhaltlich vergleicht, erkennt man, dass die konstante latente Variable dem y-Achsen\-ab\-schnitt und die dynamische latente Variable der Steigung entspricht. Unter dieser Betrachtungsweise lassen sich die Zusammenhänge der konstanten und dynamischen latenten Variablen mit dem \gls{gfaktor} gut mit bestehenden Resultaten zum Zusammenhang zwischen den Aufgabenparametern und psychometrischer Intelligenz erklären. Bei der Vorhersage von psychometrischer Intelligenz wird der Steigung bekanntermassen grössere Bedeutung zugeschrieben als dem y-Achsen\-ab\-schnitt \citep[z. B.][]{Jensen1987a, Jensen1998b, Roth1964}. In der vorliegenden Arbeit liess sich dieses Muster auf latenter Ebene wiedererkennen.
+Wenn man die konstante und die dynamische latente Variable der \gls{ha} mit den auf manifester Ebene abgeleiteten Aufgabenparametern, dem y-Achsen\-ab\-schnitt und der Steigung, inhaltlich vergleicht, erkennt man, dass die konstante latente Variable dem y-Achsen\-ab\-schnitt und die dynamische latente Variable der Steigung entspricht. Unter dieser Betrachtungsweise lassen sich die Zusammenhänge der konstanten und dynamischen latenten Variablen mit dem \gls{gfaktor} gut mit bestehenden Resultaten zum Zusammenhang zwischen den Aufgabenparametern und psychometrischer Intelligenz erklären. Bei der Vorhersage von psychometrischer Intelligenz wird der Steigung grössere Bedeutung zugeschrieben als dem y-Achsen\-ab\-schnitt \citep[z. B.][]{Jensen1987a, Jensen1998b, Roth1964}. In der vorliegenden Arbeit liess sich dieses Muster auf latenter Ebene wiedererkennen.
 Bekräftigt wird diese Interpretation der höheren Bedeutsamkeit der Verarbeitungsgeschwindigkeit durch die Skalierung der latenten Varianzen der \gls{ha}, welche ergeben hat, dass die in der dynamischen latenten Variable abgebildeten Prozesse stärker für Unterschiede zwischen Personen in der Reaktionszeit verantwortlich waren als die in der konstanten latenten Variable gebundenen Prozessen.
 
 
@@ -3329,7 +3352,7 @@ Das Ausmass an \gls{ss} ist direkt abhängig vom Kontrast der Streifenmuster \ci
 Um wie viel sich die vorgesehene Ortsfrequenz der Streifenmuster ($1^{\circ}$~Sehwinkel pro Periode) durch den nicht optimal abgestimmten Programmcode bei der Darbietung verändert hat, ist ebenfalls nicht klar (D. Tadin, persönl. Mitteilung, 13.09.2016). Im Gegensatz zum Kontrast des Streifenmusters, bei welchem gut untersucht wurde, was für einen Effekt er auf die Wahrnehmungsleistung hat \citep[][]{Tadin2003, Kapadia1999, Levitt1997, Pack2005}, liegen zum Effekt der Ortsfrequenz des Streifenmusters auf die Erkennungsschwelle keine Untersuchungen vor. Es ist deshalb schwierig zu beurteilen, inwiefern die Schlussfolgerungen der vorliegenden Arbeit durch die veränderte Ortsfrequenz der Streifenmuster gefährdet sind.
 
 Wie erwähnt ist bei beiden Einschränkungen (dem reduzierten Kontrast und der veränderten Ortsfrequenz) nicht klar, welchen Einfluss sie auf die Ergebnisse hatten. Trotz dieser Unsicherheit deuten einige Punkte darauf hin, dass die Resultate der \gls{ssauf} interpretierbar sind: Die Wahrnehmungsleistung der \glspl{vp} hat sich mit zunehmender Mustergrösse wie bei \citet{Melnick2013} verschlechtert, die Erkennungsschwellen zeichneten sich durch sehr hohe Split\-half-Reliabilitäten aus und die Erkennungsschwellen liessen sich wie bei \citeauthor{Melnick2013} sehr gut mit einem exponentiellen Modell beschreiben. 
-Für die folgende generelle Diskussion wird deshalb angenommen, dass der reduzierte Kontrast und die veränderte Ortsfrequenz der Streifenmuster keinen so starken Einfluss auf die Ergebnisse ausübten, dass sie eine Interpretation verbieten.
+Für die folgenden Schlussfolgerungen wird deshalb angenommen, dass der reduzierte Kontrast und die veränderte Ortsfrequenz der Streifenmuster keinen so starken Einfluss auf die Ergebnisse ausübten, dass sie eine Interpretation verbieten.
 
 %Auch wenn nicht mit Sicherheit davon ausgegangen werden kann, dass der reduzierte Kontrast und die veränderte Ortsfrequenz der Streifenmuster keinen Einfluss auf die hier berichteten Ergebnisse hatten, wird das in der folgenden generelle Diskussion angenommen. 
 
@@ -3546,7 +3569,7 @@ Trotz sorgfältiger Auswahl der \glspl{vp} hat sich nachträglich bei der Alters
 \subsection*{Spatial-Suppression-Aufgabe}
 Zu Beginn der Datenerhebung wurde die \gls{ssauf} mit einem Kontrast von $74\,\%$ dargeboten. Nach Inspektion der Daten der sieben ersten getesteten \glspl{vp} wurde in Absprache mit D. Tadin (persönl. Mitteilung, 28.09.2015) entschieden, den Kontrast der Aufgabe auf $99\,\%$ zu erhöhen. Mit dieser Erhöhung des Kontrasts wurde sichergestellt, dass die über die vier Mustergrössen hinweg erwartete Verschlechterung der Wahrnehmungsleistung möglichst gross ausfällt \citep[für den Zusammenhang zwischen Kontrast und Wahrnehmungsleistung siehe][]{Tadin2003}. Den restlichen \glspl{vp} wurde die Aufgabe mit einem Kontrast von $99\,\%$ dargeboten und die Daten der ersten sieben \glspl{vp} wurden von der Analyse ausgeschlossen.
 
-Der Code, welcher die Darbietungszeiten generierte, hatte eine programmierte Darbietungszeitlimite von $1000$~ms. Immer wenn der adaptive Alogrithmus des QUEST-Verfahrens \citep{Watson1983} eine Darbietungszeit von $> 1000$~ms ermittelte, wurde den \glspl{vp} deshalb der Stimulus mit einer Darbietungszeit von exakt $1000$~ms präsentiert. 
+Der Programmcode, welcher die Darbietungszeiten generierte, hatte eine programmierte Darbietungszeitlimite von $1000$~ms. Immer wenn der adaptive Alogrithmus des QUEST-Verfahrens \citep{Watson1983} eine Darbietungszeit von $> 1000$~ms ermittelte, wurde den \glspl{vp} deshalb der Stimulus mit einer Darbietungszeit von exakt $1000$~ms präsentiert. 
 Die Daten von $12$~\glspl{vp} mussten vor der Analyse entfernt werden, weil sie bei den sechs Schätzungen der $82\,\%$-Er\-ken\-nungs\-schwel\-le innerhalb einer Mustergrösse mehr als ein Mal eine $82\,\%$-Er\-ken\-nungs\-schwel\-le von $> 1000$~ms erzielt hatten. Dasselbe Ausschlussverfahren verwendeten \citet{Melnick2013}.
 
 Die Daten von zwei \glspl{vp} wurden von der Analyse ausgeschlossen, weil sie verglichen mit den restlichen \glspl{vp} in der $1.8^{\circ}$-Be\-ding\-ung eine  $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-le hatten, die über das dreifache der Standardabweichung der $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-le der Gesamtstichprobe betrug. Diese drei \glspl{vp} wurden nicht zur Grundpopulation gezählt und vor der Analyse entfernt.
@@ -3555,9 +3578,11 @@ Die Daten von zwei \glspl{vp} wurden von der Analyse ausgeschlossen, weil sie ve
 %Bei der \gls{ha} mussten keine \glspl{vp} ausgeschlossen werden.
 
 \subsection*{BIS-Test}
-Bei den Subtests \gls{bd}, \gls{kw}, \gls{oe}, \gls{RZ}, \gls{tg}, \gls{uw} und \gls{xg} ist der Rohwert Null im Manual des \gls{bist}s \citep{Jaeger1997} keinem Punktwert zugeordnet. Vier \glspl{vp} erzielten beim Subtest \gls{xg} einen Rohwert von Null, was den Subtest nicht auswertbar machte. Die Daten dieser vier \glspl{vp} wurden vor der Analyse aufgrund dieses nicht auswertbaren Subtests entfernt. Eine \gls{vp} wurde von der Analyse ausgeschlossen, weil sie bei den \gls{b}-Subtests deutlich schlechter Abschnitt als der Rest der Stichprobe und damit einen Einfluss auf die berechneten Zusammenhänge gehabt hätte.
+Bei den Subtests \gls{bd}, \acrlong{kw} (\gls{kw}), \acrlong{oe} (\gls{oe}), \acrlong{RZ} (\gls{RZ}), \gls{tg}, \acrlong{uw} (\gls{uw}) und \gls{xg} ist der Rohwert Null im Manual des \gls{bist}s \citep{Jaeger1997} keinem Punktwert zugeordnet. Vier \glspl{vp} erzielten beim Subtest \gls{xg} einen Rohwert von Null, was den Subtest nicht auswertbar machte. Die Daten dieser vier \glspl{vp} wurden vor der Analyse aufgrund dieses nicht auswertbaren Subtests entfernt. Eine \gls{vp} wurde von der Analyse ausgeschlossen, weil sie bei den \gls{b}-Subtests deutlich schlechter Abschnitt als der Rest der Stichprobe.
 
-\begin{table}[htbp]
+\vspace{1cm}
+
+\begin{table}[h]
 	\centering
 	\captionsetup{labelsep = none}
 	\caption[Übersicht über die Datenbereinigung]{\newline  \textit{Übersicht über die Datenbereinigung} \vspace{.2cm}}
@@ -3750,7 +3775,7 @@ Die Zusammenhänge der Subtests wurden mit Spearmans Rangkorrelationen bestimmt 
 			\begin{tablenotes}[flushleft]
 				\footnotesize				% font size
 				\setlength\labelsep{0pt}	% no indent on second line
-				\item \textit{Anmerkungen}. SI = \gls{si}; \gls{zwert} = Mittelwert aus allen 18 \textit{z}-standardisierten Subtests.
+				\item \textit{Anmerkungen}. SI = \gls{si}; \gls{zwert} = Mittelwert aller 18 \textit{z}-standardisierten Subtests.
 				\item {$^{*}$}$p<.05$. {$^{**}$}$p<.01$. {$^{***}$}$p<.001$ (zweiseitig).
 			\end{tablenotes}
 		\end{threeparttable}
