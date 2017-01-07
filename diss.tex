@@ -10,7 +10,7 @@
 %\setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}	% https://en.wikibooks.org/wiki/LaTeX/Page_Layout#Widows_and_orphans
 \AtBeginDocument{\setlength{\parindent}{2em}}		% parindent 2 em units for new paragraph
 %\usepackage{indentfirst}							% use if first paragraph should be indented
-\usepackage[pass, showframe]{geometry}							% ’pass’ disregards the package layout, so the original ’book’ layout is memorized here
+\usepackage[pass]{geometry}							% ’pass’ disregards the package layout, so the original ’book’ layout is memorized here
 \usepackage{layout}									% show layout on page 1
 %\usepackage{showframe}								% show frame on pages
 %\usepackage{url}									% loaded internally by hyperref
@@ -253,7 +253,7 @@
 \hypersetup{colorlinks,		% define options
 			citecolor=blue,
 			filecolor=black,
-			linkcolor=black,
+			linkcolor=blue,
 			urlcolor=blue,
 			pdfauthor={Philipp Thomas},
 			pdfsubject={Dissertation},
@@ -631,10 +631,10 @@ longplural={Reaktionszeiten}]
 % Ends the declared geometry for the titlepage
 \restoregeometry
 
-\setlength{\evensidemargin}{85pt}% instead of 70pt (default book class value)
-\setlength{\oddsidemargin}{7pt}% instead of 22pt (default book class value)
 
-
+% Custom margins for printing & binding of the book -----------------------------
+\setlength{\evensidemargin}{85pt}% instead of 70pt (default book class value +15)
+\setlength{\oddsidemargin}{7pt}% instead of 22pt (default book class value -15)
 
 
 % =================================================================
@@ -645,15 +645,15 @@ longplural={Reaktionszeiten}]
 \chapter*{\LARGE Danksagung}
 %\addcontentsline{toc}{chapter}{Danksagung}
 \vspace{-.7cm}
-Diese Arbeit stellt das Produkt meiner dreijährigen Forschungstätigkeit dar. Mein Dank gilt allen Personen, die mit ihrer Unterstützung zum Erfolg dieser Arbeit beigetragen haben.
+Diese Arbeit stellt das Produkt meiner dreijährigen Forschungstätigkeit dar. Mein Dank gilt allen Personen, die mich während dieser Zeit unterstützt haben.
 
 Namentlich möchte ich mich bei Herr \mbox{Prof. Dr. Stefan Troche} bedanken, der mich während der ganzen Arbeit eng betreut hat und mir mit zahlreichen Tipps und Hinweisen das Schreiben dieser Arbeit erleichtert hat.
 
 \mbox{Prof. Dr. Thomas Rammsayer} möchte ich dafür danken, dass er mir jederzeit als Ansprechperson zur Verfügung stand und mit hilfreichen Anregungen und Vorschlägen zum Gelingen dieser Arbeit beigetragen hat.
 
-\mbox{Prof. Dr. Duje Tadin} gilt mein Dank, weil er mich mit grossem Engagement dabei unterstützt hat, die \gls*{ssauf} an der Universität Bern einzurichten und sich immer die Zeit nahm, meine Fragen zur Aufgabe zu beantworten. 
+\mbox{Prof. Dr. Duje Tadin} gilt mein Dank, weil er mich mit grossem Engagement dabei unterstützt hat, die \gls*{ssauf} an der Universität Bern anzuwenden und sich immer die Zeit nahm, meine Fragen  zu beantworten. 
 
-Nicht zuletzt möchte ich mich bei all jenen Personen aus meinem privaten Umfeld bedanken, die mich während dieser Zeit liebevoll unterstützt haben.
+%Nicht zuletzt möchte ich mich bei all jenen Personen aus meinem privaten Umfeld bedanken, die mich während dieser Zeit begleitet haben.
 %\citep{Upper1974} 
 
 
@@ -697,12 +697,15 @@ DGP Richtlinien weisen auf folgende Punkte hin:
 % =================================================================
 % T A B L E   O F   C O N T E N T S
 % =================================================================
+
+
+\begingroup% see http://latex-community.org/forum/viewtopic.php?f=4&t=3458
+\hypersetup{linkcolor=black}					% changes linkcolor for toc
 \renewcommand{\contentsname}{Inhalte}			% define name of toc
 \setcounter{tocdepth}{3}						% set toc depth
 \tableofcontents								% insert toc
 %\addcontentsline{toc}{chapter}{Inhalte}		% add toc to toc? :D
-
-
+\endgroup
 
 \mainmatter				% page numbers in arabic
 % =================================================================
@@ -713,10 +716,10 @@ DGP Richtlinien weisen auf folgende Punkte hin:
 \section{Konzept der allgemeinen Intelligenz}
 
 Die Annahme eines Generalfaktors der Intelligenz, kurz \gls*{gfaktor} genannt, stellt eine der einflussreichsten Ideen in der Psychologie dar. \citet{Spearman1904, Spearman1927} machte mit seinen Untersuchungen zu Beginn des zwanzigsten Jahrhunderts die Entdeckung, dass zwischen Tests zur Erfassung kognitiver Leistung positive Zusammenhänge bestanden. Diesen sogenannten \textit{positive manifold} erklärte \citeauthor{Spearman1927} mit dem \gls*{gfaktor} seiner \gls*{zft}. Gemäss der \gls*{zft} setzt sich eine kognitive Leistung aus zwei unabhängigen Anteilen zusammen: dem \gls{gfaktor}, der alle Bereiche intellektueller Fähigkeit beeinflusst, und einem spezifischen Faktor ($s$), der das Spezifische einer kognitiven Leistung repräsentiert und keiner anderen kognitiven Leistung gemeinsam ist. Weil die verschiedenen spezifischen Faktoren gemäss der \gls{zft} unabhängig voneinander sind, kann der positive manifold zwischen verschiedenen Tests folglich nur aufgrund des \gls{gfaktor}s zustande kommen.
-Individuelle Differenzen in der allgemeinen Fähigkeit, kognitive Leistung zu erbringen, sind somit auf individuelle Unterschiede auf dem \gls{gfaktor} zurückzuführen \citep{Spearman1904, 1927}.
+Individuelle Differenzen in der allgemeinen Fähigkeit, kognitive Leistung zu erbringen, sind somit auf individuelle Unterschiede auf dem \gls{gfaktor} zurückzuführen \citep{Spearman1904, Spearman1927}.
 %Individuelle Unterschiede auf diesem \gls{gfaktor} können somit als Ausdruck individueller Differenzen in der allgemeinen Fähigkeit angesehen werden, kognitive Leistung zu erbringen.
 
-Es folgte eine jahrzehntelange Auseinandersetzung unter Forschern, ob der \gls{gfaktor}, wie ihn \citeauthor{Spearman1927} annahm, existiert oder nicht. So sah zum Beispiel \citet{Thurstone1938} den \gls{gfaktor} vielmehr als die Folge von mehreren, relativ unabhängigen mentalen Fähigkeiten. 
+Es folgte eine jahrzehntelange Auseinandersetzung unter Forschern, ob der \gls{gfaktor}, wie ihn \citet{Spearman1904, Spearman1927} annahm, existiert oder nicht. So sah zum Beispiel \citet{Thurstone1938} den \gls{gfaktor} vielmehr als die Folge von mehreren, relativ unabhängigen mentalen Fähigkeiten. 
 Andere Modelle wie das von \citet{Vernon1950}, das von \citet{Cattell1971} oder das von \citet{Jaeger1984} postulierten eine hierarchische Struktur mit spezifischen Fähigkeiten auf tieferer Ebene und dem \gls{gfaktor} auf höchster Ebene. 
 Die Vielzahl an unterschiedlichen Auffassungen und Modellen von Intelligenz veranlasste \citet{Carroll1993} dazu, eine umfassende, meta\-ana\-ly\-tisch begründete Taxonomie der menschlichen kognitiven Fähigkeiten zu entwickeln. Er reanalysierte dafür nahezu alle Datensätze, die für die Entwicklung früherer Modelle verwendet wurden und versuchte ein Modell zu finden, das den Daten am besten entsprach. Seine Ergebnisse formulierte \citeauthor{Carroll1993} in der \gls{tst}.
 Das faktorenanalytisch bestimmte Modell unterscheidet zwischen drei Ebenen kognitiver Fähigkeiten, die in der \gls{tst} als Schichten bezeichnet werden. Die erste Schicht beinhaltet $69$ spezifische kognitive Fähigkeiten. Diese $69$ spezifischen Fähigkeiten können in der zweiten Schicht acht übergeordneten Faktoren zugewiesen werden: \gls{Gf}, \gls{Gc}, \gls{Gy}, \gls{Gv}, \gls{Gu}, \gls{Gr}, \gls{Gs} und \gls{Gt}.
@@ -726,7 +729,7 @@ Sie vereint viele der bis dahin postulierten Modellstrukturen und Differenzierun
 
 Alternative Theorien, welche die positiven Zusammenhänge zwischen verschiedenen Tests zur Erfassung von kognitiver Leistung nicht mit dem \gls{gfaktor} erklären, sind selten. 
 So geht zum Beispiel das Bond-Modell \citep{Thomson1916} davon aus, dass das Bearbeiten einer kognitiven Aufgabe spezifische Module (kognitive Prozesse, sogenannte \textit{bonds}) benötigt, die unkorreliert sind. Werden die Module während der Erfassung kognitiver Fähigkeiten mit unterschiedlichen Tests aktiviert, kann es vorkommen, dass ein Modul von mehreren Tests beansprucht wird. Ein Modul fliesst folglich in die Leistung mehrerer Tests ein, was schlussendlich zu positiven Korrelationen zwischen verschiedenen Tests führen kann. Unter dieser Betrachtungsweise stellt der \gls{gfaktor} somit ein Artefakt dar, das auf die unzureichende Messgüte von kognitiven Tests zurückzuführen ist \citep[für eine Gegenüberstellung zwischen dem \gls{gfaktor} und dem Bond-Modell siehe][]{Bartholomew2013}.
-Die Mutualism-theory-of-\textit{g} \citep{VanDerMaas2006} erklärt die positiven Zusammenhänge zwischen kognitiven Tests auf eine andere Weise. Die Theorie geht davon aus, dass kognitive Prozesse zu Beginn ihrer Entwicklung unabhängig sind. Mit zunehmender Ausbildung der kognitiven Prozesse entwickeln sich allerdings reziproke vorteilhafte Abhängigkeiten zwischen einzelnen Prozessen, womit sich positive Zusammenhänge zwischen kognitiven Tests ebenso gut erklären lassen wie mit dem \gls{gfaktor}. \citet{Gignac2014, Gignac2016} zeigte mit seinen kürzlich erschienen Untersuchungen jedoch, dass der \gls{gfaktor} zum jetzigen Zeitpunkt die zu bevorzugende Erklärung für das Auftreten des positive manifold ist.
+Die Mutualism-theory-of-\textit{g} \citep{VanDerMaas2006} erklärt die positiven Zusammenhänge zwischen kognitiven Tests auf eine andere Weise. Die Theorie geht davon aus, dass kognitive Prozesse zu Beginn ihrer Entwicklung unabhängig sind. Mit zunehmender Ausbildung der kognitiven Prozesse entwickeln sich allerdings reziproke vorteilhafte Abhängigkeiten zwischen einzelnen Prozessen, womit sich positive Zusammenhänge zwischen kognitiven Tests ebenso gut erklären lassen wie mit dem \gls{gfaktor}. \citet{Gignac2014, Gignac2016} zeigte mit seinen kürzlich erschienenen faktorenanalytischen Untersuchungen jedoch, dass der \gls{gfaktor} zum jetzigen Zeitpunkt die zu bevorzugende Erklärung für das Auftreten des positive manifold ist.
 
 Um den \gls{gfaktor} aus einer Korrelationsmatrix kognitiver Tests zu extrahieren, müssen zwei Bedingungen erfüllt sein \citep[][S. 73]{Jensen1998a}. Zum einen muss die Anzahl kognitiver Tests genügend gross sein, damit der extrahierte Faktor reliabel ist, und zum anderen muss eine genügend grosse Bandbreite unterschiedlicher Tests kognitiver Fähigkeiten verwendet werden. Der \gls{gfaktor} tritt dann unabhängig von der eingesetzten Testbatterie auf \citep{Johnson2004, Johnson2008}. Weiter haben Untersuchungen gezeigt, dass der \gls{gfaktor} von der eingesetzten faktorenanalytischen Methode (Hauptachsen- oder Hauptkomponentenanalyse) so gut wie nicht beeinflusst wird \citep{Jensen1994, Ree1991}.
 Diese Robustheit des \gls{gfaktor}s gegenüber der eingesetzten Testbatterie und der verwendeten Analysemethode lässt sich gut mit der Annahme vereinen, dass der \gls{gfaktor} die allgemeine Fähigkeit widerspiegelt, kognitive Leistung zu erbringen \citep{Spearman1904, Spearman1927}.
@@ -826,7 +829,7 @@ Ein grosser \gls{si} steht somit für eine starke Verschlechterung der Wahrnehmu
 Warum korrelierte der \gls{si} deutlich stärker \citep[Studie 1: $r~=~.64$ und Studie~2: $r~=~.71$;][]{Melnick2013} als herkömmliche \glspl{msm} \citep[$r~=~-.24$;][]{Sheppard2008} mit  psychometrischer Intelligenz? Diesen vergleichsweise starken Zusammenhang erklärten \citet{Melnick2013} mit den zwei Bestandteilen des \gls{si}, ($1$) der Geschwindigkeit der Verarbeitung kleiner Muster und ($2$) der Verschlechterung der Wahrnehmungsleistung bei zunehmender Mustergrösse. Die schnellere Verarbeitung von kleinen Mustern bei intelligenteren Personen lässt sich in Übereinstimmung mit dem \gls{msa} (siehe \autoref{subsec:Der_Mental-Speed-Ansatz}) erklären. Die stärkere Verschlechterung der Wahrnehmungsleistung bei intelligenteren Personen hingegen beherbergt einen Aspekt, der auf den ersten Blick kontraintuitiv erscheint: 
 Warum sollten intelligentere Personen mit zunehmender Mustergrösse eine stärkere Wahrnehmungsverschlechterung erfahren als weniger intelligente Personen, wo sich doch die Wahrnehmungsleistung in der Regel mit zunehmender Stimulusgrösse verbessert \citep{Anderson1987, Henrie2001}? Die Antwort auf diese Frage liefern Untersuchungen, die an Primaten gezeigt haben, dass eine Bewegung, die auf das erregende Zentrum eines Neurons im \gls{mta} fällt, mit der Wahrnehmung von Objekten in Verbindung steht, während eine Bewegung, die auch das hemmende Umfeld des Neurons stimuliert, mit der Bewegung eines Hintergrunds assoziiert wird \citep{Born2000, Churan2008, Regan2000}. 
 Ein stark ausgeprägter \gls{zua} hilft folglich dabei, Bewegung in bestimmte Bereiche oder Objekte zu trennen -- das heisst, sie perzeptuell zu segmentieren \citep{Braddick1993}.
-\citeauthor{Melnick2013} argumentieren, dass die schnelle Verarbeitung relevanter Information und Unterdrückung irrelevanter Information sowohl in der visuellen Wahrnehmung \citep[Trennung zwischen bewegtem Objekt und Hintergrund; siehe][]{Born2000, Churan2008} als auch bei der Erbringung komplexer kognitiver Leistung \citep[Aufmerksamkeitslenkung auf relevante Information und Unterdrückung von Interferenzen; siehe][]{Burgess2011, Engle1999, Zanto2009} vorteilhaft ist. 
+\citeauthor{Melnick2013} argumentieren, dass die schnelle Verarbeitung relevanter Information und Unterdrückung irrelevanter Information sowohl in der visuellen Wahrnehmung \citep[Trennung zwischen bewegtem Objekt und Hintergrund; siehe][]{Born2000, Churan2008} als auch bei der Erbringung komplexer kognitiver Leistung \citep[Aufmerksamkeitslenkung auf relevante Information und Unterdrückung von Interferenzen; siehe][]{Burgess2011, Engle1999, Zanto2009} vorteilhaft ist.
 Die schnelle Verarbeitung relevanter Information bei gleichzeitiger Unterdrückung irrelevanter Information sehen \citeauthor{Melnick2013} als eine für das Funktionieren des Menschen wichtige Fähigkeit an. Weil der \gls{si} genau diese Fähigkeit durch die Erfassung von \gls{ms} und der Ausbildung des \gls{zua} quantifiziert, besteht gemäss \citeauthor{Melnick2013} zwischen dem \gls{si} und psychometrischer Intelligenz ein stärkerer Zusammenhang als zwischen herkömmlichen \glspl{msm}n und psychometrischer Intelligenz.
 
 
@@ -892,7 +895,7 @@ Erreicht wird die Trennung dieser Prozesse in zwei Schritten. Zum einen werden v
 Die unstandardisierten Faktorladungen der manifesten Indikatoren auf die zweite latente Variable folgen einem Verlauf, der sich aus theoretischen Überlegungen zum Einfluss der erfassten, experimentell manipulierten Prozesse auf die Leistung in den Bedingungen ergibt (z. B. $\lambda^{w}$, $\lambda^{x}$, $\lambda^{y}$, $\lambda^{z}$; siehe \autoref{fig:fixed-links_model}). Analysiert man beispielsweise die Reaktionszeiten der \gls{ha} und hat man Grund zur Annahme, dass die Verarbeitungsgeschwindigkeit mit zunehmender Anzahl Antwortalternativen einen immer stärker werdenden (linearen) Einfluss auf die Reaktionszeit hat, fixiert man die Faktorladungen auf $\lambda^{w}=1$, $\lambda^{x}=2$, $\lambda^{y}=3$ und $\lambda^{z}=4$. 
 Zum anderen wird die Korrelation zwischen den beiden latenten Variablen auf $0$ fixiert. Damit werden die Varianzen statistisch vollständig voneinander getrennt.
 Weil durch die Fixierung der unstandardisierten Faktorladungen im Rahmen der Parameterschätzung die Matrix der Faktorladungen nicht mehr geschätzt wird (sie wird a priori bestimmt), müssen die Varianzen der latenten Variablen auf Signifikanz geprüft werden. 
-Damit wird sichergestellt, dass die latenten Variablen einen substanziellen Varianzanteil gebunden haben und sich die Interpretation der latenten Variablen nicht auf ein statistisches Artefakt bezieht. Verfehlt die Varianz einer latenten Variable das Signifikanzniveau, wurden darin keine bedeutsamen Prozesse abgebildet und das gesamte Modell muss verworfen werden \citep[für eine ausführliche Beschreibung der Modellierungstechnik siehe][]{Schweizer2006a}.
+Damit wird sichergestellt, dass die latenten Variablen einen substanziellen Varianzanteil gebunden haben und sich die Interpretation der latenten Variablen nicht auf ein statistisches Artefakt bezieht. Verfehlt die Varianz einer latenten Variable das Signifikanzniveau, wurden darin keine bedeutsamen Prozesse abgebildet und das gesamte Modell muss verworfen werden \citep[für eine ausführliche Beschreibung der Modellierungstechnik siehe z. B.][]{Schweizer2006a}.
 
 \begin{figure}[t]
 	\centering
@@ -943,7 +946,7 @@ Der eine Faktor bindet Varianz von Prozessen, die einen gleichbleibenden Einflus
 Darin unterscheiden sich \glspl{flm} von bifaktoriellen Modellen \citep[z. B.][]{Moosbrugger2006, Schweizer2010}. Bifaktorielle Modelle trennen wie \glspl{flm} gemeinsame Varianz von manifesten Indikatoren in zwei latente Variablen, die Faktorladungen werden jedoch nicht a priori aufgrund theoretischer Überlegungen zum Einfluss der Prozesse auf die manifesten Indikatoren fixiert, sondern frei geschätzt. Mit bifaktoriellen Modellen lässt sich folglich die von der experimentellen Manipulation verursachte Varianz in den manifesten Indikatoren nicht von der Varianz der Prozesse trennen, welche unabhängig von der experimentellen Manipulation sind.
 
 Untersuchungen, die \glspl{flm} benützt haben, um die Verunreinigung von kognitiven Korrelaten psychometrischer Intelligenz auf statistischer Ebene rückgängig zu machen, gibt es einige \citep[z. B.][]{Ren2013, Schweizer2007, Stankov2007, Wang2015}. Die formulierten theoretischen Modelle beschrieben dabei die empirischen Daten jeweils gut und erlaubten im Vergleich zu klassischen Faktorenanalysen einen differenziertere Betrachtung der Zusammenhänge. Diese Ergebnisse deuten darauf hin, dass \glspl{flm} bei der Bestimmung der kognitiven Grundlagen individueller Intelligenzunterschiede nicht nur aus theoretischer, sondern auch aus praktischer Sichtweise vorteilhaft sind.
-Wenn ein Konstrukt mit einer experimentell manipulierte Aufgabe mit Messwiederholung erfasst wird, bieten sich \glspl{flm} somit als eine elegante Modellierungstechnik an, die Verunreinigung des abgeleiteten Leistungsmasses auf statistischer Ebene rückgängig zu machen.
+Wenn ein Konstrukt mit einer experimentell manipulierte Aufgabe mit Messwiederholung erfasst wird, bieten sich \glspl{flm} \citep[z. B.][]{Schweizer2006a, Schweizer2006b, Schweizer2007, Schweizer2008, Schweizer2009a} somit als eine elegante Modellierungstechnik an, die Verunreinigung des abgeleiteten Leistungsmasses auf statistischer Ebene rückgängig zu machen.
 
 
 
@@ -1023,8 +1026,8 @@ Der verwendete Ton wies bei einer Frequenz von $2900$~Hz und einer Lautstärke v
 
 Ein Durchgang sah folgendermassen aus: Nach einer Zeitspanne von $440$~ms erschien in der Mitte des Monitors für $560$~ms ein Kreis, der sich über die ersten $200$~ms von einer Grösse von $1.6^{\circ}$ auf eine Grösse von $0.26^{\circ}$ zusammenzog, für $360$~ms diese Grösse beibehielt und anschliessend ausgeblendet wurde. Dieses Vorgehen diente dazu, den Blick der \glspl{vp} in die Bildschirmmitte zu lenken. Nach einem  Intervall von $300$~ms erschien in der Mitte des Monitors ein sich nach links oder rechts bewegendes vertikal schwarz-grau gestreiftes Musters. Die Stelle, an welcher die \glspl{vp} das Muster auf dem Monitor sahen, war stationär. Hinter dieser stationären Stelle bewegte sich das Muster mit einer Geschwindigkeit von $4^\circ / \textnormal{s} $  nach links oder nach rechts. Nach der Darbietungszeit mussten die \glspl{vp} mit einem Tastendruck entscheiden, in welche Richtung sich das Muster bewegt hat. Die \glspl{vp} erhielten die Instruktion, bei einer wahrgenommenen Bewegung nach links mit ihrem linken Zeigefinger die linke Pfeiltaste  und bei einer wahrgenommen Bewegung nach Rechts mit ihrem rechten Zeigefinger die rechte Pfeiltaste zu drücken. 
 Bei einer korrekten Antwort wurde ein Ton abgegeben und die Darbietungszeit des nächsten Musters verringert, bei einer falschen Antwort wurde kein Ton abgegeben und die Darbietungszeit des nächsten Musters erhöht. 
-Die Darbietungszeit des Musters wurde entsprechend dem QUEST-Verfahren \citep{Watson1983} angepasst.
-Das QUEST-Verfahren ist adaptiv und arbeitet mit logarithmierten Werten, das heisst alle Berechnungen des Verfahrens finden im logarithmierten Raum statt. Der Algorithmus schätzt dabei mit Hilfe von Grundprinzipien der Bayes-Statistik nach jeder Antwort eine $\log_{10}$-Erkennungsschwelle für einen im Voraus bestimmten Prozentsatz an korrekten Antworten (in der hier vorliegenden Aufgabe betrug der Prozentsatz $82\,\%$).
+Die Darbietungszeit des Musters wurde entsprechend dem Quest-Verfahren \citep{Watson1983} angepasst.
+Das Quest-Verfahren ist adaptiv und arbeitet mit logarithmierten Werten, das heisst alle Berechnungen des Verfahrens finden im logarithmierten Raum statt. Der Algorithmus schätzt dabei mit Hilfe von Grundprinzipien der Bayes-Statistik nach jeder Antwort eine $\log_{10}$-Erkennungsschwelle für einen im Voraus bestimmten Prozentsatz an korrekten Antworten (in der hier vorliegenden Aufgabe betrug der Prozentsatz $82\,\%$).
 Die geschätzte $\log_{10}$-Erkennungsschwelle wird dann vom Algorithmus benutzt, um die Darbietungszeit des nächsten Stimulus zu bestimmen. 
 Die \glspl{vp} wurden instruiert, sich bei der Antwortabgabe genügend Zeit zu lassen und möglichst fehlerfrei zu arbeiten. Nach Antwortabgabe startete der nächste Durchgang.
 
@@ -1302,7 +1305,7 @@ Innerhalb der Modalität Inhalte lässt sich nach \citet{Jaeger1984} sprachgebun
 Auf höchster Hierarchiestufe des \gls{bism} steht als Integral aller sieben Fähigkeiten (\gls{k}, \gls{b}, \gls{M}, \gls{e}, \gls{v}, \gls{n} und \gls{f}) die \gls{ai}. Die \gls{ai} und die Fähigkeiten unterscheiden sich aber lediglich im Differenzierungsgrad. \gls{ai} bildet Intelligenzleistungen gemäss \citet{Jaeger1984} aus grosser Distanz ab, während die sieben Fähigkeiten auf der Ebene darunter Intelligenzleistungen aus geringerer Distanz mit feinerem Auflösungsgrad abbilden. Untersuchungen zum \gls{bism} konnten die postulierte Struktur des \gls{bist}s replizieren  und Zusammenhänge mit anderen Intelligenzmodellen wie denjenigen von \citet{Cattell1971}  oder von \citet{Carroll1993} herstellen \citep{Bucik1996, Beauducel2002, Suess2002}.
 
 Die von \citet{Jaeger1997} vorgeschlagene Kurzversion des \gls{bist}s enthält $15$ Subtests. Die Operationen \gls{b}, \gls{M} und \gls{e} werden darin mit je einem Subtest pro Inhalt erfasst, wobei \gls{k} mit zwei Subtests pro Inhalt erfasst wird. Bei der Modellierung der Daten mittels Strukturgleichungsmodellen hätte dies bei der vorliegenden Arbeit zu einer Überrepräsentation von \gls{k} im \gls{gfaktor} geführt. Um dies zu vermeiden, wurden die Operationen \gls{b} und \gls{M} um je einen Subtest pro Inhalt angereichert. Grundlage für die Auswahl der Subtests bildeten die Erkenntnisse von \citet{Wicki2014}, wobei bei der Entscheidung über die Aufnahme der Subtests ökonomische (Bearbeitungszeit der Subtests) und teststatistische (Trennschärfe und Reliabilität der Subtests)  Gesichtspunkte berücksichtigt wurden. Die Kurzversion von \citet{Jaeger1997} wurde mit folgenden Subtests ergänzt: \gls{kw}, \gls{oe}, \gls{RZ}, \gls{we}, \gls{wm} und \gls{zz}. 
-\citet{Wicki2014} berichtet für diese modifizierte Kurzversion für die Operationen \gls{k}, \gls{b} und \gls{M} interne Konsistenzen von Cronbachs $\alpha=.61-.73$ und Konstruktreliabilitäten, gemessen mit \citeauthor{McDonald1999}\textcolor{blue}{s} \citeyearpar{McDonald1999} Omegakoeffizienten, von $\Omega = .58-.64$.
+\citet{Wicki2014} berichtete für diese modifizierte Kurzversion für die Operationen \gls{k}, \gls{b} und \gls{M} interne Konsistenzen von Cronbachs $\alpha=.61-.73$ und Konstruktreliabilitäten, gemessen mit \citeauthor{McDonald1999}\textcolor{blue}{s} \citeyearpar{McDonald1999} Omegakoeffizienten, von $\Omega = .58-.64$.
 Auf Subtests der Operation \gls{e} wurde gänzlich verzichtet, weil zum einen unklar ist, wie Einfallsreichtum und Intelligenz zusammenhängen \citep{Kim2005} und zum anderen weil \citet{Jaeger1997} unbefriedigende Objektivitätswerte berichten. 
 Alle eingesetzten Subtests, deren Beschreibung sowie deren Zuordnung zu den jeweiligen Operationen und Inhalten sind \autoref{tab:bis_subtest_description} zu entnehmen.
 
@@ -1970,7 +1973,7 @@ Dabei hat sich ergeben, dass sich der in der vorliegenden Arbeit ermittelte Korr
 	\begin{adjustbox}{width=1\textwidth}
 		\input{tikzDevice/si_intelligence_scatterplot.tex}
 	\end{adjustbox}
-	\caption[Zusammenhang zwischen dem \gls{si} und \gls{zwert} des \gls{bist}s]{Streudiagramm des Zusammenhangs zwischen dem \gls{si} und dem \gls{zwert} aus dem \gls{bist} ($r=.00$, $p=.98$).}
+	\caption[Zusammenhang zwischen dem \gls{si} und \gls{zwert} des \gls{bist}s]{Streudiagramm des Zusammenhangs zwischen dem \gls{si} und dem \gls{zwert} des \gls{bist}s ($r=.00$, $p=.98$).}
 	\label{fig:suppression_index_zscore_scatterplot}
 \end{figure}
 
@@ -2328,7 +2331,7 @@ Die unstandardisierten Faktorladungen der dynamischen latenten Variable in Model
 			\begin{tablenotes}[flushleft]
 				\footnotesize				% font size
 				\setlength\labelsep{0pt}	% no indent on second line
-				\item \textit{Anmerkungen.} Der Ladungsverlauf bezieht sich auf die unstandardisierten Faktorladungen der dynamischen latenten Variable. Die unstandardisierten Faktorladungen der konstanten latenten Variable betrugen immer 1. Es gilt für alle Funktionen $x\in\{1,2,3,4\}$ (ausgenommen Modell 8, in welchem $x\in\{0,1,2,3\}$). $\upchi^2 =$ Satorra-Bentler \citeyearpar{Satorra1994} korrigierter $\upchi^2$-Wert; \textit{df} = Freiheitsgrade; \gls{cfi} = \acrlong{cfi}; \gls{rmsea} = \acrlong{rmsea}; \gls{srmr} = \acrlong{srmr}.
+				\item \textit{Anmerkungen.} Der Ladungsverlauf bezieht sich auf die unstandardisierten Faktorladungen der dynamischen latenten Variable. Die unstandardisierten Faktorladungen der konstanten latenten Variable betrugen immer 1. Es gilt für alle Funktionen $x\in\{1,2,3,4\}$ (ausgenommen Modell 8, in welchem $x\in\{0,1,2,3\}$). $\upchi^2 =$ Satorra-Bentler (\citeyear{Satorra1994}) korrigierter $\upchi^2$-Wert; \textit{df} = Freiheitsgrade; \gls{cfi} = \acrlong{cfi}; \gls{rmsea} = \acrlong{rmsea}; \gls{srmr} = \acrlong{srmr}.
 				\item {$^*$}Das Modell konnte nicht interpretiert werden, weil die Fehlervarianz der $7.2^{\circ}$-Bedingung negativ geschätzt wurde.
 			\end{tablenotes}
 		\end{threeparttable}
@@ -3569,7 +3572,7 @@ Trotz sorgfältiger Auswahl der \glspl{vp} hat sich nachträglich bei der Alters
 \subsection*{Spatial-Suppression-Aufgabe}
 Zu Beginn der Datenerhebung wurde die \gls{ssauf} mit einem Kontrast von $74\,\%$ dargeboten. Nach Inspektion der Daten der sieben ersten getesteten \glspl{vp} wurde in Absprache mit D. Tadin (persönl. Mitteilung, 28.09.2015) entschieden, den Kontrast der Aufgabe auf $99\,\%$ zu erhöhen. Mit dieser Erhöhung des Kontrasts wurde sichergestellt, dass die über die vier Mustergrössen hinweg erwartete Verschlechterung der Wahrnehmungsleistung möglichst gross ausfällt \citep[für den Zusammenhang zwischen Kontrast und Wahrnehmungsleistung siehe][]{Tadin2003}. Den restlichen \glspl{vp} wurde die Aufgabe mit einem Kontrast von $99\,\%$ dargeboten und die Daten der ersten sieben \glspl{vp} wurden von der Analyse ausgeschlossen.
 
-Der Programmcode, welcher die Darbietungszeiten generierte, hatte eine programmierte Darbietungszeitlimite von $1000$~ms. Immer wenn der adaptive Alogrithmus des QUEST-Verfahrens \citep{Watson1983} eine Darbietungszeit von $> 1000$~ms ermittelte, wurde den \glspl{vp} deshalb der Stimulus mit einer Darbietungszeit von exakt $1000$~ms präsentiert. 
+Der Programmcode, welcher die Darbietungszeiten generierte, hatte eine programmierte Darbietungszeitlimite von $1000$~ms. Immer wenn der adaptive Alogrithmus des Quest-Verfahrens \citep{Watson1983} eine Darbietungszeit von $> 1000$~ms ermittelte, wurde den \glspl{vp} deshalb der Stimulus mit einer Darbietungszeit von exakt $1000$~ms präsentiert. 
 Die Daten von $12$~\glspl{vp} mussten vor der Analyse entfernt werden, weil sie bei den sechs Schätzungen der $82\,\%$-Er\-ken\-nungs\-schwel\-le innerhalb einer Mustergrösse mehr als ein Mal eine $82\,\%$-Er\-ken\-nungs\-schwel\-le von $> 1000$~ms erzielt hatten. Dasselbe Ausschlussverfahren verwendeten \citet{Melnick2013}.
 
 Die Daten von zwei \glspl{vp} wurden von der Analyse ausgeschlossen, weil sie verglichen mit den restlichen \glspl{vp} in der $1.8^{\circ}$-Be\-ding\-ung eine  $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-le hatten, die über das dreifache der Standardabweichung der $82\,\%$-$\log_{10}$-Er\-ken\-nungs\-schwel\-le der Gesamtstichprobe betrug. Diese drei \glspl{vp} wurden nicht zur Grundpopulation gezählt und vor der Analyse entfernt.
