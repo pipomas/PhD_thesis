@@ -4,39 +4,37 @@
 % ===================================================================================
 % Basic document settings -----------------------------------------------------------
 \documentclass[11pt, twoside, a4paper]{book}		% option draft for no images and overfull hbox markers
-\linespread{1.3}\selectfont							% use one and a half line spaces
-\AtBeginDocument{\setlength{\parindent}{2em}}		% parindent 2 em units for new paragraph
-\usepackage[pass]{geometry}							% ’pass’ disregards the package layout, so the original ’book’ layout is memorized here
-\usepackage{layout}									% show layout on page 1
+\usepackage[ngerman, showlanguages]{babel}			% set document language to new german
 \usepackage[utf8]{inputenc}							% this is needed for umlauts
 \usepackage[T1]{fontenc}							% this is needed for correct output of umlauts in pdf
-\usepackage[ngerman, showlanguages]{babel}			% set document language to new german
 \usepackage[german=swiss]{csquotes}					% enquote{} makes quoting in swiss german easy
-\usepackage{pdflscape}								% https://en.wikibooks.org/wiki/LaTeX/Page_Layout#cite_ref-4
-\usepackage{longtable}								% a multi-page environment for tabular
-\usepackage{listings}								% for R code snippets
-\usepackage{graphicx}								% needed for graphics
+
+% Layout settings -------------------------------------------------------------------
+\usepackage[pass]{geometry}							% ’pass’ disregards the package layout, so the original ’book’ layout is memorized here
+\usepackage{layout}									% show layout on page 1 with \layout aftet begin document
+
+% Typographic adjustments -----------------------------------------------------------
+\AtBeginDocument{\setlength{\parindent}{2em}}		% parindent 2 em units for new paragraph
+\linespread{1.3}\selectfont							% use one and a half line spaces
 \renewcommand{\textfraction}	{.001}				% minimum fraction text per side
 \renewcommand{\topfraction}		{.999}				% fraction of float on top page
 \renewcommand{\bottomfraction}	{.999}				% fraction of float on bottum page
+\raggedbottom										% http://tex.stackexchange.com/questions/36423/random-unwanted-space-between-paragraphs ?
+
+% Miscellaneous settings ------------------------------------------------------------
+\usepackage{graphicx}								% needed for graphics
 \usepackage[hang, bottom]{footmisc}					% footnotes are indented and always on bottom of the page
 \setlength{\footnotesep}{.9\baselineskip}			% controls spacing between multiple footnotes
 \usepackage{cancel}									% for \cancel{expression} 
 \usepackage{pifont}									% for "itemize" symbols (dinglist environment)
 \usepackage{color}									% \textcolor{color}{text} for coloring text
 \usepackage{todonotes}								% for todo notes
-\usepackage{pdfpages}								% simplifies the insertion of external multi-page PDF
-
-% Mathpackages ---------------------------------------------------------------------
-\usepackage{mathtools}								% handy tools for mathematical typesetting
-\usepackage{amsmath}								% miscellaneous enhancements for mathematical formulas
-\usepackage{amsfonts}								% - for certain mathematical fonts
-\usepackage{amssymb}								% - for certain mathematical symbols
-\usepackage{fixltx2e} 								% needed when $ and $ are used in section titles
+\usepackage[pagewise]{lineno}						% line numbering for reviewing with \linenumbers
+\usepackage{amssymb}								% for \checkmark symbol
 \usepackage{array}    								% für >{}, d.h. fügt den Inhalt vor jeder Zelle ein. oder >{$}c{$}< 
 \usepackage[Euler]{upgreek}							% for non-italic greek letters
 
-% Setup for fancyhdr package -------------------------------------------------------
+% Setup for fancyhdr package --------------------------------------------------------
 \usepackage{fancyhdr}								% customize the page layout of  LaTeX documents
 \pagestyle{fancy}									% select pagestyle
 \renewcommand{\chaptermark}[1]{\markboth{\small\textsc{#1}}{}}
@@ -49,21 +47,32 @@
 \renewcommand{\footrulewidth}{0pt}					% set foot rule width
 \addtolength{\headheight}{0.5pt} 					% space between header and page
 
-% pagestyle for plain pages (chapters, titles etc.) ---------------------------------
+% pagestyle for chapter pages (chapters, titles etc.) ---------------------------------
 \fancypagestyle{plain}{%							
    \fancyfoot[C]{\thepage}							% show page number centered
-   \fancyhead{}										% get rid of headers on plain pages
+   \fancyhead{}										% get rid of headers
    \renewcommand{\headrulewidth}{0pt}				% and the line
 }
 \usepackage{emptypage}								% removes headers from plain pages
 
-% setup for tables--------------------------------------------------------------
+% Removes "Chapter X" string in chapters ----------------------------------------------
+\makeatletter
+\def\@makechapterhead#1{%
+	\vspace*{50\p@}%
+	{\parindent \z@ \raggedright \normalfont
+		\interlinepenalty\@M
+		\Huge\bfseries  \thechapter\quad #1\par\nobreak
+		\vskip 40\p@
+}}
+\makeatother
+
+% setup for tables-------------------------------------------------------------------
 \usepackage{rotating}								% performs most sorts of rotation floating figures and tables
 \usepackage{threeparttable}							% this package facilitates tables with titles (captions) and notes.
 \usepackage{adjustbox}								% this package allows to adjust general (LA)TEX material
 \usepackage{multirow}								% for \multirow command in tabular environment
 
-% Make landscape mode rotate properly in a twosided book -----------------------
+% Make landscape mode rotate properly in a twosided book ----------------------------
 % see http://stackoverflow.com/questions/4982219/how-to-make-landscape-mode-rotate-properly-in-a-twoside-book/5320962
 \makeatletter	
 \global\let\orig@begin@landscape=\landscape%
@@ -127,22 +136,9 @@
 \counterwithout{figure}{chapter}				% -> does it for figures
 \counterwithout{table}{chapter}					% -> does it for tables
 \counterwithout{footnote}{chapter}				% -> does it for tables
-%\numberwithin{equation}{section}				% equations start with 1.1 1.2, 2.1 2.2 etc.
-%\numberwithin{figure}{section} 				% the same with figures
 \usepackage{siunitx}							% for decimal aligned columns in tables
 \setlength{\abovecaptionskip}{3pt plus 3pt minus 2pt}	% modifiy vertical space between figure and caption
 \setcounter{lofdepth}{2}			% include minicaptions in LOF (list of figures)
-
-% Removes "Chapter X" string in chapters ---------------------------------------
-\makeatletter
-\def\@makechapterhead#1{%
-  \vspace*{50\p@}%
-  {\parindent \z@ \raggedright \normalfont
-    \interlinepenalty\@M
-    \Huge\bfseries  \thechapter\quad #1\par\nobreak
-    \vskip 40\p@
-  }}
-\makeatother
 
 % Removes spacing in list of figures and tables -------------------------------
 % see http://tex.stackexchange.com/questions/69321/spacing-between-chapters-in-list-of-tables
@@ -178,7 +174,7 @@
 \usepackage{doi}										% turns doi's into hyperlinks
 \renewcommand\doiprefix{\ignorespaces}					% removes white space in front of doi
 \AtBeginDocument{\urlstyle{APACsame}}					% removes monospaced font in url's
-\AtBeginDocument{\renewcommand{\BRetrievedFrom}{Verfügbar unter\ }} % replaces  "Zugriff auf" with "Verfügbar unter
+\AtBeginDocument{\renewcommand{\BRetrievedFrom}{Verfügbar unter\ }} % replaces  "Zugriff auf" with "Verfügbar unter"
 
 % Allow URL breaks after all letters
 \AtBeginDocument{\renewcommand{\UrlBreaks}{\do\/\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z}}
@@ -217,13 +213,13 @@
 			pdfkeywords={Psychometrische Intelligenz, Spatial-Suppression, Mental-Speed, R, LaTeX}
 			}
 
-% Setup for glossaries (must be placed AFTER the hyperref setup) ---------------------------
+% Setup for glossaries (must be placed AFTER the hyperref setup) ----------------
 \usepackage[xindy, toc, automake, acronym, shortcuts]{glossaries}	% load options (what is 'xindy' for?)
 %\makeglossary							% to generate the glossary? O_o 
 \makeglossaries							% command to generate the glossary
 \glsdisablehyper						% disables hyperlinks for glossaries
 
-% Glossary entries --------------------------------------------------------
+% Glossary entries --------------------------------------------------------------
 % Glossaries -------------------------------
 \newglossaryentry{zft}
 {	name=Zwei-Fak\-to\-ren-Theo\-rie,
@@ -348,18 +344,7 @@ plural=RZn,
 longplural={Reaktionszeiten}]
 {rz}{RZ}{Reaktionszeit}
 
-\renewcommand*{\glslinkcheckfirsthyperhook}{%
-	\ifdefstring\glslabel{gfaktor}%
-	{\setkeys{glslink}{hyper=false}}%
-	{}%
-}
 
-% display line number for easy reviewing -----------------------------------
-%\usepackage[pagewise]{lineno}		% line numbering for reviewing
-%\linenumbers						% do it :)
-
-% remove uneven spacing between paragraphs ---------------------------------
-\raggedbottom			% o_o http://tex.stackexchange.com/questions/36423/random-unwanted-space-between-paragraphs ?
 
 % Hyphenation patterns for custom words ------------------------------------
 \hyphenation{%
@@ -609,7 +594,9 @@ longplural={Reaktionszeiten}]
 % =================================================================
 \chapter*{\LARGE Danksagung}
 \addcontentsline{toc}{chapter}{Danksagung}
+
 \vspace{-.7cm}
+
 Diese Arbeit stellt das Produkt meiner dreijährigen Forschungstätigkeit an der Universität Bern dar. Mein Dank gilt allen Personen, die mich während dieser Zeit unterstützt haben.
 
 Namentlich möchte ich mich bei \mbox{Prof. Dr. Stefan Troche} bedanken, der mich während der ganzen Arbeit eng betreut hat und mir mit zahlreichen Tipps und Hinweisen das Schreiben dieser Arbeit erleichtert hat.
@@ -681,14 +668,11 @@ Bis hierhin wurde ausschliesslich von der allgemeinen Intelligenz und deren Erfa
 \textit{Intelligenz} oder \textit{allgemeine Intelligenz} bezieht sich in der vorliegenden Arbeit auf die globale Fähigkeit einer einzelnen Person, kognitive Leistung zu erbringen. Sie beschreibt ein hypothetisches Konstrukt, welches nicht direkt erfasst werden kann.
 Der Begriff \textit{psychometrische Intelligenz} hingegen wird immer dann verwendet, wenn damit ein aus einem Intelligenztest abgeleiteter Testwert gemeint ist. Er kann sich sowohl auf einen (manifesten) IQ- beziehungsweise Summenwert als auch auf den (latenten) \gls{gfaktor} beziehen \citep[die beiden Werte sind stark korreliert, siehe][S. 90]{Jensen1998a}.
 
-
-
 \section{Kognitive Korrelate von Intelligenz \label{sec:Kognitive_Korrelate_von_Intelligenz}}
 
 Auf kognitiver Ebene können Intelligenzunterschiede mit unterschiedlichen Ansätzen erklärt werden. Konstrukte wie sensorische Diskriminationsfähigkeit \citep[z.~B.][]{Galton1883, Spearman1904, Deary2004, Meyer2010}, Zeitverarbeitung \citep[z.~B.][]{Rammsayer2002}, Aufmerksamkeit \citep[z.~B.][]{Schweizer2004} oder Arbeitsgedächtniskapazität \citep[für eine Metaanalyse siehe][]{Ackerman2005} hängen alle mit Intelligenz zusammen und können als kognitive Grundlagen für individuelle Unterschiede in kognitiver Leistung angesehen werden. 
 
 Einer der ältesten Ansätze zur Erklärung individueller Intelligenzunterschiede stellt \gls{ms} dar, während \gls{ss} als einer der neusten Ansätze gilt. Diese zwei Ansätze stehen im Zentrum der vorliegenden Arbeit und werden in den folgenden Abschnitten besprochen.
-
 
 \subsection{Der Mental-Speed-Ansatz \label{subsec:Der_Mental-Speed-Ansatz}}
 
@@ -715,8 +699,6 @@ Die Kapazität dieser beiden Speicher ist begrenzt und aufgenommene respektive z
 Eine Person mit tiefem \gls{ms} stösst folglich bei einer komplexen kognitiven Aufgabe (wie sie im Rahmen eines Intelligenztests vorgelegt wird) schneller an den Punkt, an welchem Information im Arbeitsgedächtnis verloren geht und neu aufgenommen werden muss \citep{Lehrl1988, Lehrl1990}. Umgekehrt hilft hoher \gls{ms} dabei, eine Aktion abzuleiten, bevor die Menge an Information die Kapazitätsgrenze erreicht respektive der Zerfall von Information einsetzt.
 
 Andere Autoren erklären den Zusammenhang zwischen \gls{ms} und Intelligenz mit biologischen Bot\-tom-Up-Mech\-an\-is\-men. So gehen \citet{Bates1995}, \citet{Hendrickson1980} oder \citet{Reed1992} davon aus, dass intelligentere Personen Informationen neuronal effizienter verarbeiten. \citet{Miller1994} vermutet, dass die Myelinisierung der Neuronen die Ursache für den Zusammenhang ist, während \citet{Garlick2002} die höhere neuronale Plastizität von intelligenteren Personen für die Beziehung verantwortlich sieht. Ungeachtet dieser verschiedenen Erklärungsmöglichkeiten für den Zusammenhang zwischen \gls{ms} und Intelligenz kann festgehalten werden, dass zwischen der Geschwindigkeit, mit der Information verarbeitet wird, und komplexer kognitiver Leistung eine bedeutsame Verbindung besteht  \citep[sowohl auf manifester als auch auf latenter Ebene, siehe][]{Neubauer1996, Sheppard2008}.
-
-
 
 \subsection{Der Spatial-Suppression-Ansatz \label{subsec:Der_Spatial-Suppression-Ansatz}}
 
@@ -752,9 +734,6 @@ und psychometrischer Intelligenz im Sinne eines nomologischen Netzwerks \citep{C
 Die unter Punkt vier angesprochenen \glspl{flm} \sloppy{\citep[z.~B.][]{Schweizer2006a, Schweizer2006b, Schweizer2007, Schweizer2008, Schweizer2009a}} nehmen in der vorliegenden Arbeit eine wichtige Rolle ein.
 Die Modellierungstechnik, deren Zweck und deren zugrundeliegende Logik werden deshalb im nächsten Abschnitt ausführlich erklärt.
 
-
-
-
 \section{Messung kognitiver Prozesse \label{sec:Messung_kognitiver_Prozesse}}
 
 \subsection{Ausgangslage}
@@ -763,7 +742,6 @@ Die Messung kognitiver Prozesse ist anspruchsvoller, als sie auf den ersten Blic
 Wenn man beispielsweise annimmt, dass die Wachsamkeit, die Motivation oder die Motorik jeder einzelnen Person einen Einfluss auf die Reaktionszeiten in der \gls{ha} haben, ist bei der Analyse bivariater Zusammenhänge zwischen den Reaktionszeiten und psychometrischer Intelligenz auf Gruppenebene nicht klar, was die Ursache für den mit zunehmender Anzahl Antwortalternativen stärker werdenden negativen Zusammenhang zwischen den Bedingungen der \gls{ha} und psychometrischer Intelligenz ist \citep{Sheppard2008, Vernon1984}. Waren intelligentere Personen wacher, motivierter oder einfach motorisch schneller als weniger intelligente Personen? Oder weisen intelligentere Personen tatsächlich (wie theoretisch vermutet) einen höheren \gls{ms} auf?
 
 Mit diesem Beispiel sollte verdeutlicht werden, dass abhängige Variablen, die aus experimentell manipulierten Aufgaben abgeleitet werden, keine reinen Masse sind. Vielmehr bilden sie ein Gemisch von Prozessen ab, die an der Antwortabgabe beteiligt waren. Diese Verunreinigung von Massen zur Erfassung kognitiver Prozesse bezeichnete \citet{Schweizer2007} als \gls{ip}.
-
 
 \subsection{Lösungsansätze \label{subsec:Loesungsansaetze}}
 
@@ -844,8 +822,6 @@ Darin unterscheiden sich \glspl{flm} von bifaktoriellen Modellen \citep[z.~B.][]
 Untersuchungen, die \glspl{flm} benützt haben, um die Verunreinigung von kognitiven Korrelaten psychometrischer Intelligenz auf statistischer Ebene rückgängig zu machen, gibt es einige \citep[z.~B.][]{Ren2013, Schweizer2007, Stankov2007, Wang2015}. Die formulierten theoretischen Modelle beschrieben dabei die empirischen Daten jeweils gut und erlaubten im Vergleich zu klassischen Faktorenanalysen einen differenziertere Betrachtung der Zusammenhänge. Diese Ergebnisse deuten darauf hin, dass \glspl{flm} bei der Bestimmung der kognitiven Grundlagen individueller Intelligenzunterschiede nicht nur aus theoretischer, sondern auch aus praktischer Sichtweise vorteilhaft sind.
 Wenn ein Konstrukt mit einer experimentell manipulierte Aufgabe mit Messwiederholung erfasst wird, bieten sich \glspl{flm} \citep[z.~B.][]{Schweizer2006a, Schweizer2006b, Schweizer2007, Schweizer2008, Schweizer2009a} somit als eine elegante Modellierungstechnik an, die Verunreinigung des abgeleiteten Leistungsmasses auf statistischer Ebene rückgängig zu machen.
 
-
-
 \section{Fragestellungen \label{sec:Fragestellungen}}
 
 Der \gls{ssans} zur Erklärung individueller Intelligenzunterschiede \citep{Melnick2013} bietet eine interessante Erweiterungsmöglichkeit, wenn es um die Bestimmung der kognitiven Grundlagen für Intelligenzunterschiede geht. Das übergeordnete Ziel dieser Arbeit besteht darin, zu überprüfen, ob sich die \gls{ssauf} als Prädiktor psychometrischer Intelligenz bewährt und inwiefern der \gls{ssans} zur Aufklärung individueller Intelligenzunterschiede neuartige Erklärungsmöglichkeiten liefert, welche nicht bereits der \gls{msa} \citep[z.~B.][]{Deary2000a, Jensen1982a, Jensen1982b, Jensen2006, Vernon1983} bietet. Dieses Ziel soll durch die Erarbeitung von fünf Punkten erreicht werden:
@@ -862,16 +838,6 @@ Der \gls{ssans} zur Erklärung individueller Intelligenzunterschiede \citep{Meln
 	\item Nach dieser ausführlichen, aber auch isolierten Aufarbeitung des Zusammenhangs zwischen der \gls{ssauf} und psychometrischer Intelligenz wird der Zusammenhang im Sinne eines nomologischen Netzwerks \citep{Cronbach1955} um \gls{ms} erweitert. Dafür wird die \gls{ha} als ein etabliertes \gls{msm} hinzugezogen. Mit diesem Schritt kann auf manifester wie auch auf latenter Ebene geprüft werden, ob die \gls{ssauf} im Zusammenhang mit psychometrischer Intelligenz einen Aspekt der menschlichen Informationsverarbeitung abbildet, der neuartig ist und nicht bereits von der \gls{ha} erfasst beziehungsweise erklärt wird. Schlussendlich soll dadurch die Frage beantwortet werden, ob der \gls{ssans} zur Aufklärung individueller Intelligenzunterschiede \citep{Melnick2013} neuartige Erklärungsmöglichkeiten bietet oder ob der \gls{msa} \citep[z.~B.][]{Deary2000a, Jensen1982a, Jensen1982b, Jensen2006, Vernon1983} den Zusammenhang zwischen der \gls{ssauf} und psychometrischer Intelligenz vollständig zu erklären vermag.
 
 \end{enumerate}
-
-
-
-
-
-
-
-
-
-
 
 % =================================================================
 % M E T H O D
@@ -893,7 +859,6 @@ drei~\glspl{vp} ein Master-Studium und
 $11$~\glspl{vp} eine andere Ausbildung.
 $160$ der $177$ \glspl{vp} waren deutscher Muttersprache. Die anderen $17$~\glspl{vp} sprachen akzentfrei deutsch. Alle \glspl{vp} berichteten über eine normale Sehschärfe, eine normale Hörfähigkeit, waren Nichtraucher, konsumierten keine Medikamente und waren nicht chronisch krank. Um Einflüsse von Koffein auf die Wahrnehmungsleistung \citep[][]{Stough1995} der \glspl{vp} zu minimieren, wurden die \glspl{vp} gebeten, bis zwei Stunden vor der Teilnahme keine koffeinhaltigen Getränke zu konsumieren. Die \glspl{vp} hatten keine Erfahrung mit den Testverfahren. 
 Für die Teilname an der Untersuchung erhielten Berner Studierende des Fachs Psychologie vier Ver\-suchs\-per\-sonen-Stun\-den, die sie an ihr Studium anrechnen lassen konnten. Alle anderen \glspl{vp} wurden für die Teilnahme mit CHF~$50.-$ entlöhnt.
-
 
 \section{Die Spatial-Suppression-Aufgabe \label{sec:Die_Spatial-Suppression-Aufgabe}}
 
@@ -941,7 +906,6 @@ Alle Berechnungen wurden mit diesen $82\,\%$-$\log_{10}$-Erkennungsschwellen get
 Ausnahme bildete die exponentielle Regression (siehe \autoref{sec:2Fragestellung}), bei welcher die vier $82\,\%$-$\log_{10}$-Erkennungsschwellen auf Anraten von D. Tadin (persönl. Mitteilung, 11.02.2016) als Exponenten zur Basis 10 verrechnet und in dieser invertierten Form analysiert wurden.
 Um die Interpretation der logarithmierten Werte zu erleichtern, wurden sie für die Ergebnisdarstellung (in Tabellen und Abbildungen) invertiert.
 Der \gls{si} wurde gemäss der Vorgehensweise von \citet{Melnick2013} als Differenz zwischen der $82\,\%$-$\log_{10}$-Erkennungsschwelle für die Mustergrösse $7.2^{\circ}$ und der $82\,\%$-$\log_{10}$-Erkennungsschwelle für die Mustergrösse $1.8^{\circ}$ gebildet. 
-
 
 \section{Die Hick-Aufgabe \label{sec:Hick}}
 
@@ -1071,9 +1035,6 @@ Die Stimuli wurden mit E-Prime\textsuperscript{\textregistered} \citep{eprime} g
 			\label{fig:hick_stimuli}
 \end{figure}
 
-
-
-
 \subsection{Versuchsablauf \label{subsec:hick_Versuchsablauf}}
 
 In der $0$-Bit-Bedingung bearbeiteten die \glspl{vp} $32$ Durchgänge. Jeder Durchgang startete nach $1100$ ms mit der Präsentation eines Rechtecks. Nach einer variablen Zeitdauer, \gls{soa} genannt, welche $1000$, $1333$, $1666$ oder $2000$ ms betrug, wurde der imperative Reiz, ein \enquote{+}, eingeblendet. Die \glspl{vp} wurden angewiesen, mit dem Zeigefinger ihrer dominanten Hand so rasch als möglich auf die vorgesehene Antworttaste zu drücken. Bei einer Antwortabgabe nach Einblenden des imperativen Reizes folgte ein Ton. Bei einer Antwortabgabe vor Einblenden des imperativen Reizes folgte kein Ton. In beiden Fällen führte eine Antwortabgabe zur Ausblendung der Stimuli und zum Start des nächsten Durchganges.
@@ -1088,7 +1049,6 @@ Die Bedingungen wurden von allen \glspl{vp} in aufsteigender Reihenfolge ($0$-, 
 Der imperative Reiz trat in der $1$-, $2$- und $2.58$-Bit-Bedingung für alle \glspl{vp} in einer pseudorandomisierten Abfolge mit der identischen, ausbalancierten \gls{soa} am identischen, über die $32$~Durchgänge der Bedingungen ausbalancierten Ort auf. Insgesamt dauerte die Aufgabe etwa $15$~Minuten. 
 
 Pro Bedingung wurde für jede \gls{vp} der \gls{m} und die \gls{sd} aller korrekten Antworten bestimmt, die zwischen $100$ und $2500$~ms lagen. Basierend auf diesen Berechnungen wurden in Anlehnung an \citet{Moosbrugger2006} für jede \gls{vp} in jeder Bedingung diejenigen Durchgänge entfernt, welche eine \mbox{\gls{rz} $\geq$ \gls{m}$+\,3\,\times$\gls{sd}} aufwiesen. Nach dieser intraindividuellen Ausreisserkontrolle wurden die verbliebenen Durchgänge innerhalb einer Bedingung gemittelt und für jede \gls{vp} als Leistungsmass der Bedingung der \gls{ha} verwendet.
-
 
 \section{Erfassung der psychometrischen Intelligenz \label{sec:Erfassung_der_psychometrischen_Intelligenz}}
 
@@ -1195,12 +1155,9 @@ Innerhalb der Modalität Inhalte lässt sich nach \citet{Jaeger1984} sprachgebun
 Auf höchster Hierarchiestufe des \gls{bism} steht als Integral aller sieben Fähigkeiten (\gls{k}, \gls{b}, \gls{M}, \gls{e}, \gls{v}, \gls{n} und \gls{f}) die \gls{ai}. Die \gls{ai} und die Fähigkeiten unterscheiden sich aber lediglich im Differenzierungsgrad. \gls{ai} bildet Intelligenzleistungen gemäss \citet{Jaeger1984} aus grosser Distanz ab, während die sieben Fähigkeiten auf der Ebene darunter Intelligenzleistungen aus geringerer Distanz mit feinerem Auflösungsgrad abbilden. Untersuchungen zum \gls{bism} konnten die postulierte Struktur des \gls{bist}s replizieren  und Zusammenhänge mit anderen Intelligenzmodellen wie denjenigen von \citet{Cattell1971}  oder von \citet{Carroll1993} herstellen \citep{Bucik1996, Beauducel2002, Suess2002}.
 
 Die von \citet{Jaeger1997} vorgeschlagene Kurzversion des \gls{bist}s enthält $15$ Subtests. Die Operationen \gls{b}, \gls{M} und \gls{e} werden darin mit je einem Subtest pro Inhalt erfasst, wobei \gls{k} mit zwei Subtests pro Inhalt erfasst wird. Bei der Modellierung der Daten mittels Strukturgleichungsmodellen hätte dies bei der vorliegenden Arbeit zu einer Überrepräsentation von \gls{k} im \gls{gfaktor} geführt. Um dies zu vermeiden, wurden die Operationen \gls{b} und \gls{M} um je einen Subtest pro Inhalt angereichert. Grundlage für die Auswahl der Subtests bildeten die Erkenntnisse von \citet{Wicki2014}, wobei bei der Entscheidung über die Aufnahme der Subtests ökonomische (Bearbeitungszeit der Subtests) und teststatistische (Trennschärfe und Reliabilität der Subtests)  Gesichtspunkte berücksichtigt wurden. Die Kurzversion von \citet{Jaeger1997} wurde mit folgenden Subtests ergänzt: \gls{kw}, \gls{oe}, \gls{RZ}, \gls{we}, \gls{wm} und \gls{zz}. 
-\citet{Wicki2014} berichtete für diese modifizierte Kurzversion für die Operationen \gls{k}, \gls{b} und \gls{M} interne Konsistenzen von Cronbachs $\alpha=.61-.73$ und Konstruktreliabilitäten, gemessen mit \citeauthor{McDonald1999}s \citeyearpar{McDonald1999} Omegakoeffizienten, von $\Omega = .58-.64$.
+\citet{Wicki2014} berichtete für diese modifizierte Kurzversion für die Operationen \gls{k}, \gls{b} und \gls{M} interne Konsistenzen von Cronbachs $\alpha=.61-.73$ und Konstruktreliabilitäten, gemessen mit \citeauthor{McDonald1999}\textcolor{blue}{s} \citeyearpar{McDonald1999} Omegakoeffizienten, von $\Omega = .58-.64$.
 Auf Subtests der Operation \gls{e} wurde gänzlich verzichtet, weil zum einen unklar ist, wie Einfallsreichtum und Intelligenz zusammenhängen \citep{Kim2005} und zum anderen weil \citet{Jaeger1997} unbefriedigende Objektivitätswerte berichten. 
 Alle eingesetzten Subtests, deren Beschreibung sowie deren Zuordnung zu den jeweiligen Operationen und Inhalten sind \autoref{tab:bis_subtest_description} zu entnehmen.
-
-
-
 
 \begin{sidewaystable}
 	\captionsetup{labelsep = none}
@@ -1255,17 +1212,14 @@ Die Aufwärmaufgabe \gls{uw} wurde nicht ausgewertet. Die Rohwerte der restliche
 Für die Beantwortung der Fragestellungen 1 und 2 wurden alle $18$~\textit{z}-standardisierten Subtests gemittelt. Dadurch resultierte für jede \glspl{vp} ein \textit{z}-standardisiertes Mittel ihrer Leistung. 
 Um für die Beantwortung der Fragestellungen 3, 4 und 5 einen \gls{gfaktor} zu bilden, wurden die $18$~\textit{z}-standardisierten Subtests innerhalb ihrer zugehörigen Operation gemittelt. Damit flossen in jede Operation (\gls{k}, \gls{b} und \gls{M}) zwei Subtests aus dem Bereich \gls{v}, zwei Subtests aus dem Bereich \gls{n} und zwei Subtests aus dem Bereich \gls{f} (insgesamt sechs Subtests) ein. Der \gls{gfaktor} wurde anschliessend aus den drei gemittelten \textit{z}-Werten der Operationen \gls{k}, \gls{b} und \gls{M} abgeleitet.
 
-
 \section{Weitere Instrumente}
 
 Im Rahmen der vorliegenden Untersuchung wurden den \glspl{vp} Fragebögen und weitere Com\-put\-er-Auf\-gaben zur Bearbeitung vorgelegt. Sie sind für die Fragestellungen dieser Arbeit nicht relevant und werden deshalb im folgenden Unterabschnitt nur kurz beschrieben.
-
 
 \subsection{Fragebögen}
 
 \subsubsection*{Persönliche Angaben}
 Die Erfassung persönlicher Angaben fand in zwei Teilen statt. In einem ersten Teil machten die \glspl{vp} schriftlich Angaben zu ihrer Muttersprache, Seh- und Hörfähigkeit, ihren chronischen Krankheiten und ihrem Medikamenten- sowie Nikotinkonsum. In einem zweiten Teil machten sie computergestützt Angaben zu ihrem Alter, Geschlecht, Bildungsniveau, Koffeinkonsum,  Videospielhäufigkeit, Musikinstrumenterfahrung und Vertrautheit mit dem Zehnfingersystem beim Computerschreiben.
-
 
 \subsubsection*{Kurzform der deutschen Übersetzung des revidierten \gls{epq-rk}}
 Die \glspl{vp} haben  computergestützt die Kurzform der deutschen Übersetzung des \gls{epq-rk} von \citet{Ruch1999} bearbeitet. Der Fragebogen enthält insgesamt $50$~Fragen, darunter $14$~Items zur Erfassung von Psychotizismus, $12$~Items zur Erfassung von Extraversion, $12$~Items zur Erfassung von Neurotizismus und $12$~Items zur Erfassung der individuellen Neigung, sozial erwünschte Antworten abzugeben.
@@ -1273,20 +1227,15 @@ Die \glspl{vp} haben  computergestützt die Kurzform der deutschen Übersetzung 
 \subsubsection*{Deutsche Übersetzung des \gls{dii}}
 Die deutsche Übersetzung des \gls{dii} stammt von \citet{Kuhmann1996} und beinhaltet insgesamt $23$~Items, darunter $11$~Items zur Erfassung der funktionalen Impulsivität und  $12$~Items zur Erfassung der dysfunktionalen Impulsivität. Der Fragebogen wurde von den \glspl{vp} computergestützt bearbeitet.
 
-
-
 \subsection{Zeitverarbeitungsaufgaben}
 
 \subsubsection*{Zeitdauerdiskrimination im Millisekundenbereich mit gefüllten und leeren Intervallen}
-
 Angelehnt an die Versuchsanordnung von \citet{Stauffer2011} bekamen die \glspl{vp} über Lautsprecher hintereinander eine Standardtondauer und eine variable Vergleichstondauer dargeboten. Danach mussten die \glspl{vp} jeweils mit einem Tastendruck entscheiden, ob die erste oder die zweite Tondauer länger war. Bei einer korrekten Antwort verringerte sich die Differenz zwischen der Standard- und der Vergleichstondauer und bei einer falschen Antwort erhöhte sich diese Differenz. Die Aufgabe wurde einmal mit gefüllten Zeitintervallen (das heisst mit jeweils zwei kontinuierlichen Tönen) und einmal mit leeren Zeitintervallen (das heisst die Töne waren durch einen Klick am Anfang und einen Klick am Schluss des Intervalls gekennzeichnet) durchgeführt. Diese Aufgaben dauerte insgesamt etwa $15$ Minuten.
 
 \subsubsection*{Zeitgeneralisation im Millisekundenbereich}
-
 Die Aufgabe der \glspl{vp} war es, in einer Lernphase die über Lautsprecher fünf Mal präsentierte Standardtonlänge einzuprägen. Danach folgte die eigentliche Aufgabe: Es wurden in zufälliger Reihenfolge die Standardtonlänge und sechs Vergleichstonlängen präsentiert. Die \glspl{vp} mussten nach jeder Tonlänge mit einem Tastendruck entscheiden, ob die präsentierte Tonlänge von gleicher Länge war wie die Standardtonlänge oder nicht. Diese Aufgabe dauerte insgesamt etwa $5$ Minuten \citep[in Anlehnung an][]{Stauffer2011}.
 
 \subsubsection*{Rhythmuswahrnehmung}
-
 Die \glspl{vp} hatten die Aufgabe, sechs über Lautsprecher in unregelmässigen Abständen präsentierte Töne von jeweils $3$~ms Dauer auf rhythmische Darbietung hin zu beurteilen. 
 Gaben die \glspl{vp} an, den Rhythmus als regelmässig wahrgenommen zu haben, wurde die Abweichung des Interstimulusintervalls beim nächsten Durchgang erhöht. Gaben die \glspl{vp} an, den Rhythmus als unregelmässig wahrgenommen zu haben, wurde die Abweichung des Interstimulusintervalls beim nächsten Durchgang verringert.
 Die Aufgabe dauerte insgesamt etwa $5$ Minuten \citep[siehe][]{Stauffer2011}.
@@ -1294,8 +1243,6 @@ Die Aufgabe dauerte insgesamt etwa $5$ Minuten \citep[siehe][]{Stauffer2011}.
 \subsection{Inspection-Time-Aufgabe}
 
 Die auf einem Computermonitor präsentierten Stimuli der \gls{ita} \citep{Vickers1972} bestanden aus zwei ungleich langen vertikalen Linien, die an ihren oberen Enden mit einer horizontalen Linie verbunden waren. Bei jedem Durchgang wurde die kürzere vertikale Linie zufällig links oder rechts präsentiert und nach der Darbietungszeit mit einer Pi-förmigen Abbildung, die gleich lange vertikale Linien aufwies, maskiert. Die Aufgabe der \glspl{vp} bestand darin anzugeben, ob die linke oder die rechte vertikale Linie länger war. Eine korrekte Antwort verringerte und eine falsche Antwort erhöhte die Darbietungszeit des nächsten Stimulus. Die Aufgabe dauerte insgesamt etwa $5$ Minuten.
-
-
 
 \section{Untersuchungsablauf \label{sec:Versuchsablauf}}
 
@@ -1335,9 +1282,6 @@ Der Versuchsleiter informierte die \glspl{vp} über den Ablauf der bevorstehende
 \end{enumerate}
 
 \noindent Nach der letzten Aufgabe wurden die \glspl{vp} vollständig über das Ziel der Untersuchung aufgeklärt und entlöhnt. Diese zweite Sitzung dauerte inklusive einer fünfminütigen Pause nach $50$ Minuten insgesamt etwa $120$ Minuten.
-
-
-
 
 \section{Statistische Analyse \label{sec:StatistischeAnalyse}}
 
@@ -1394,16 +1338,6 @@ $$ \textnormal{RMSEA} = \sqrt{ \frac{\upchi^2_{m}-df_{m}}{df_{m}(N-1)} } $$
 
 \subsubsection*{\gls{srmr}}
 Das \gls{srmr} ist ein Mass dafür, wie hoch die durchschnittlichen Korrelationsresiduen der manifesten Variablen sind \citep{Kline2011}. Anders formuliert gibt das \gls{srmr} den durchschnittlichen Zusammenhang der manifesten Variablen wieder, welcher nicht durch das Modell erklärt werden kann. Das \gls{srmr} sollte möglichst nahe bei $0$ zu liegen kommen, was bedeutet, dass das theoretische Modell die empirische Var\-ianz-Ko\-var\-ianz\-ma\-trix angemessen abbildet. Gemäss \citet{Hu1999} kann ein \gls{srmr} $\leq.08$ als guter Modell-Fit interpretiert werden.
-
-
-
-
-
-
-
-
-
-
 
 % =================================================================
 % R E S U L T S
@@ -1867,9 +1801,6 @@ Ein Vergleich dieser unabhängigen Semipartialkorrelationskoeffizienten hat erge
 
 Abschliessend zur Beantwortung der ersten Fragestellung kann festgehalten werden, dass sowohl die von \citet{Melnick2013} berichteten Zusammenhänge zwischen dem \gls{si} und psychometrischer Intelligenz als auch die Zusammenhänge der einzelnen Bedingungen der \gls{ssauf} mit psychometrischer Intelligenz nicht bestätigt werden konnten.
 
-
-
-
 \section{2. Fragestellung \label{sec:2Fragestellung}}
 
 Mit der zweiten Fragestellung sollte geprüft werden, ob die aus der \gls{ssauf} mit einer exponentiellen Regression abgeleiteten Aufgabenparameter benutzt werden können, um psychometrische Intelligenz vorherzusagen.
@@ -1976,14 +1907,6 @@ Die Asymptote, der erste aus der \gls{ssauf} abgeleitete Aufgabenparameter, korr
 	\caption[Einfluss des \gls{rmse}-Grenzwerts der \gls{ssauf} auf den Zusammenhang zwischen der Asymptote, der Steigung und dem \gls{zwert} des \gls{bist}s]{Einfluss des \gls{rmse}-Grenzwerts auf die Zusammenhänge der aus der \gls{ssauf} mit einer exponentiellen Regression abgeleiteten Aufgabenparameter ($a$) Asymptote  und ($b$)Steigung  mit dem \gls{zwert} des \gls{bist}s. Die durchgezogene Linie kennzeichnet den Verlauf des Zusammenhangs. Der graue Bereich beschreibt das $95\,\%$-Konfidenzintervall.}
 	\label{fig:spatial_suppression_asymtote_slope_zscore}
 \end{figure}
-
-
-
-
-
-
-
-
 
 \section{3. Fragestellung \label{sec:3Fragestellung}}
 
@@ -2107,10 +2030,6 @@ Die aus der \gls{ssauf} extrahierte latente Variable erklärte damit $5\,\%$ der
 
 Abschliessend zur dritten Fragestellung kann festgehalten werden, dass sich zwischen der \gls{ssauf} und psychometrischer Intelligenz auf latenter Ebene ein schwacher bis mittlerer negativer Zusammenhang zeigte.
 Tiefe Faktorwerte auf der aus den vier Bedingungen der \gls{ssauf} extrahierten latenten Variable waren somit tendenziell mit hohen Faktorwerten im \gls{gfaktor} verbunden. Dieser Zusammenhang muss jedoch aufgrund des schlechten theoretischen Modells  mit Vorsicht interpretiert werden.
-
-
-
-
 
 \section{4. Fragestellung \label{sec:4Fragestellung}}
 
@@ -2238,8 +2157,6 @@ Der relative Anteil dieser beiden Varianzen an der in den manifesten Variablen e
 
 Im Vergleich zum kongenerischen Messmodell (Modell 1) vermochte das Fixed-Links-Messmodell (Modell 8) die empirischen Daten deutlich besser abzubilden. Die bessere Passung von Modell 8 äusserte sich im Vergleich zu Modell 1 in einem nicht-signifikanten $\upchi^2$-Wert, im akzeptablen \gls{cfi} und \gls{rmsea} sowie in zwei zusätzlichen Freiheitsgraden. Modell 8 war Modell 1 somit aufgrund adäquaterer Abbildung der empirischen Daten und höherer Sparsamkeit vorzuziehen.
 
-
-
 \subsection{Fixed-Links-Struk\-tur\-glei\-chungs\-mo\-dell}
 
 Als Nächstes wurde Modell 8 mit dem \gls{gfaktor} aus dem \gls{bist} in Verbindung gebracht (Modell 9; siehe \autoref{fig:spatial_suppression_fixedlinks_sem}).
@@ -2267,7 +2184,6 @@ Gemeinsam erklärten die konstante und die dynamische latente Variable der \gls{
 		\node at (-1.5, -.4)	[manifest]	(s3)	{5.4$^{\circ}$};
 		\node at (-1.5, -1.2)	[manifest]	(s4)	{7.2$^{\circ}$};
 		
-		
 		\node at (4, .8)		[manifest]	(k)		{K};
 		\node at (4, 0)			[manifest]	(b)		{B};
 		\node at (4, -.8)		[manifest]	(m)		{M};
@@ -2276,8 +2192,6 @@ Gemeinsam erklärten die konstante und die dynamische latente Variable der \gls{
 		\node at (-2.3, 0.4)	[error]		(e2)	{\footnotesize .10};
 		\node at (-2.3, -.4)	[error]		(e3)	{\footnotesize .05};
 		\node at (-2.3, -1.2)	[error]		(e4)	{\footnotesize .12};
-		
-		
 		
 		\node at (4.8, .8)		[error]		(e9)	{\footnotesize .29};
 		\node at (4.8, 0)		[error]		(e10)	{\footnotesize .47};
@@ -2311,7 +2225,6 @@ Gemeinsam erklärten die konstante und die dynamische latente Variable der \gls{
 		\draw [paths] (e11) -- (m.east);
 		
 		\draw [paths] (e12) -- (g.north);
-		
 		
 		\draw [paths] (sk)  -- (g.west) node[minimum size = 4mm, draw=none, fill=white, midway] {\footnotesize --.25{$^{*}$}};
 		\draw [paths] (sd)  -- (g.west) node[minimum size = 4mm, draw=none, fill=white, midway] {\footnotesize --.08\hphantom{$^{*}$}};
@@ -2415,10 +2328,6 @@ Dabei hat sich ergeben, dass $\Delta R^2=.02$ kein signifikanter Zuwachs an erkl
 Die Bedingungen der \gls{ssauf} haben somit auf Ebene der Aufgabenbedingungen keinen inkrementellen Beitrag zur Aufklärung individueller Intelligenzunterschiede geleistet.
 
 %Auf eine schrittweise Aufnahme in die Regressionsanalyse wurde bewusst verzichtet, weil sie zu Verzerrungen führt \citep[S. 68]{Harrell2015}.
-
-
-
-
 
 \subsubsection*{Die Vorhersage psychometrischer Intelligenz durch die Aufgabenparameter der Hick- und \gls{ssauf} \label{subsec:Aufgabenparameter_Hick}}
 
@@ -2616,7 +2525,6 @@ Um zu prüfen, ob die Aufgabenparameter der \gls{ssauf} gegenüber denjenigen de
 Dabei hat sich ergeben, dass $\Delta R^2=.03$ kein signifikanter Zuwachs an erklärter Varianz darstellte, $F(2,\,172)=2.49$, $p=.09$.
 Die Asymptote und die Steigung der \gls{ssauf} haben folglich auf Ebene der Aufgabenparameter keinen inkrementellen Beitrag zur Aufklärung individueller Intelligenzunterschiede geleistet.
 
-
 \subsection{Analyse auf latenter Ebene}
 
 \subsubsection*{Mess- und Strukturgleichungsmodelle}
@@ -2754,8 +2662,6 @@ Trotz des schlechten kongenerischen Modell-Fits der \gls{ha} wurde Modell 14 in 
 \end{figure}
 Der \gls{cst} zeigte eine überzufällig hohe Abweichung zwischen der theoretischen und der empirischen Var\-ianz-Ko\-var\-ianz\-ma\-trix an und der \gls{cfi} und der \gls{rmsea} lagen nicht im akzeptablen Bereich, $\upchi^2(41)=205.68$, $p<.001$, $\textnormal{CFI}=.86$, $\textnormal{RMSEA}=.15$, $\textnormal{SRMR}=.06$. 
 Der standardisierte Regressionskoeffizient zwischen der aus den vier Bedingungen der \gls{ssauf} extrahierten latenten Variable und dem \gls{gfaktor} betrug $\upbeta~=~-.19$ ($p~=~.03$). Der standardisierte Regressionskoeffizient zwischen der aus den vier Bedingungen der \gls{ha} extrahierten latenten Variable und dem \gls{gfaktor} betrug $\upbeta~=~-.33$ ($p~<~.001$). Der Korrelationskoeffizient zwischen den aus den vier Bedingungen der Spatial-Suppression- und der \gls{ha} extrahierten latenten Variablen betrug $r~=~.14$ ($p~=~.16$). Gemeinsam erklärten diese beiden latenten Variablen $16\,\%$ der Varianz im \gls{gfaktor}.
-
-
 
 \subsubsection*{Fixed-Links-Mess- und Strukturgleichungsmodelle}
 
@@ -2918,16 +2824,6 @@ Auf latenter Ebene zeigte sich in einem klassischen Strukturgleichungsmodell (Mo
 Dieser latente Zusammenhang erklärte knapp $4\,\%$ der Varianz im \gls{gfaktor} und leistete damit bei Berücksichtigung des Zusammenhangs zwischen der \gls{ha} und dem \gls{gfaktor} einen inkrementellen Beitrag zur Aufklärung individueller Intelligenzunterschiede. Diese Resultate müssen jedoch aufgrund des schlechten Modell-Fits mit Vorsicht interpretiert werden.
 Bei der Analyse der Zusammenhänge mittels Fixed-Links-Struk\-tur\-glei\-chungs\-mo\-dell zeigte sich zwischen der konstanten latenten Variable der \gls{ssauf} und der konstanten latenten Variable der \gls{ha} ein schwacher bis mittlerer positiver Zusammenhang. Hohe Faktorwerte auf der einen latenten Variable waren somit tendenziell mit hohen Faktorwerten auf der anderen latenten Variable verbunden. Ein signifikanter Prädiktor des \gls{gfaktor}s war bei dem gewählten $\upalpha$-Fehler von $5\,\%$ einzig die dynamische latente Variable der \gls{ha}, welche einen mittleren negativen Zusammenhang mit dem \gls{gfaktor} aufwies. Tiefe Faktorwerte auf der dynamischen latenten Variable der \gls{ha} waren folglich tendenziell mit hohen Faktorwerten im \gls{gfaktor} verbunden.
 
-
-
-
-
-
-
-
-
-
-
 % =================================================================
 % D I S C U S S I O N
 % =================================================================
@@ -2938,8 +2834,6 @@ Der \gls{ssans} zur Erklärung individueller Intelligenzunterschiede \citep{Meln
 Das übergeordnete Ziel der vorliegenden Arbeit war es, zu prüfen, ob sich die \gls{ssauf} als Prädiktor psychometrischer Intelligenz bewährt und inwiefern der \gls{ssans} \citep{Melnick2013} neuartige Erklärungsmöglichkeiten liefert, welche nicht bereits der \gls{msa} \citep[z.~B.][]{Deary2000a, Jensen1982a, Jensen1982b, Jensen2006, Vernon1983} bietet. 
 
 Im folgenden Abschnitt werden die wichtigsten Resultate der fünf Fragestellungen diskutiert. Danach folgt ein Abschnitt, der sich mit Limitationen der vorliegenden Arbeit befasst, bevor in einem letzten Abschnitt generelle Schlussfolgerungen gezogen werden.
-
-
 
 \section{Fragestellungen}
 
@@ -2959,8 +2853,6 @@ Weil bei der Berechnung einer Produkt-Moment-Korrelation die Streuungen der Vari
 Bezüglich der erfassten psychometrischen Intelligenz lassen sich die vorliegenden Daten nicht direkt mit den Daten von \citet{Melnick2013} vergleichen. In der Untersuchung von \citeauthor{Melnick2013} wurde psychometrische Intelligenz mit der Kurzform der Wechsler-Adult-Intelligence-Scale III (\citealp{Axelrod2002}; Studie 1) und mit der Wechsler-Adult-In\-tell\-igence-Scale IV (\citealp{Wechsler2008}; Studie 2) erfasst. Diese beiden Instrumente sind genormt und ermöglichen eine Bestimmung von IQ-Punkten. In der vorliegenden Arbeit wurde zur Erfassung der psychometrischen Intelligenz eine modifizierte Kurzversion des \gls{bist}s eingesetzt (siehe \autoref{sec:Erfassung_der_psychometrischen_Intelligenz}). Weil für diese modifizierte Kurzversion keine Normen bestehen, konnten keine IQ-Punkte bestimmt werden. Als Alternative zu IQ-Punkten wurden deshalb als Mass für psychometrische Intelligenz alle vorgelegten \textit{z}-standardisierten Subtests gemittelt. Damit liess sich für jede \gls{vp} ein \textit{z}-standardisiertes Mittel (ein \gls{zwert}) ihrer Leistung bestimmen. Dieser \gls{zwert} lieferte jedoch keine Informationen darüber, ob die vorliegende Stichprobe im Durchschnitt eher niedrig-, mittel- oder hochintelligent war. Diese Ungewissheit lässt sich allerdings mit der Tatsache entkräften, dass an der Untersuchung nicht nur \glspl{vp} mit höherem Bildungsabschluss, sondern auch viele \glspl{vp} mit niedrigerem Bildungsniveau teilnahmen (siehe \autoref{sec:Stichprobe}). 
 Zudem wich die Verteilung des \gls{zwert}s nicht von der Normalverteilung ab (siehe \autoref{subsec:BIS-Test}), was als Hinweis dafür gesehen werden kann, dass die Stichprobe bezüglich der psychometrischen Intelligenz heterogen zusammengesetzt war und sie die in der Population vorliegende Merkmalsverteilung angemessen reproduzierte. Diese Anhaltspunkte lassen die Schlussfolgerung zu, dass die Befunde von \citeauthor{Melnick2013} nicht alleine deshalb nicht bestätigt werden konnten, weil ein anderer Intelligenztest eingesetzt wurde.
 
-
-
 \subsection{Ein alternatives Mass für Spatial-Suppression? \label{subsec:Ein_alternatives_Mass_für_SS?}}
 
 In bisherigen Untersuchungen wurde das Ausmass an \gls{ss} mit dem \gls{si} quantifiziert \citep{Lappin2009, Melnick2013, Tadin2006, Tadin2011}. Gebildet wurde der \gls{si} dabei (wie auch in der vorliegenden Arbeit) als Differenz zwischen der Erkennungsschwelle für grosse Muster und der Erkennungsschwelle für kleine Muster. Diese Differenzbildung wirkt sich in Situationen, in welchen der Minuend sowie der Subtrahend korreliert sind und die Reliabilität der beiden nicht perfekt ist, negativ auf die Reliabilität des Differenzmasses aus (siehe \autoref{subsec:Der_Spatial-Suppression-Ansatz}).
@@ -2975,8 +2867,6 @@ Grundsätzlich festzuhalten ist, dass sich ein exponentielles Modell zur Beschre
 Dieser Befund lässt sich gut mit der Erklärung von \citeauthor{Melnick2013} für den von ihnen beobachteten positiven Zusammenhang zwischen dem \gls{si} und psychometrischer Intelligenz vereinen. Wenn intelligentere Personen tatsächlich kleine Muster schneller verarbeiten und gleichzeitig mit zunehmender Mustergrösse eine stärkere Verschlechterung der Wahrnehmungsleistung erfahren als weniger intelligente Personen, dann sollten bei der Analyse der Bedingungen mit einem exponentiellen Modell die Asymptote und die Steigung negativ zusammenhängen. 
 Konsistent mit dieser Annahme von \citeauthor{Melnick2013} hing in der vorliegenden Arbeit die Asymptote schwach negativ mit psychometrischer Intelligenz zusammen ($r=-.16$). Ein tiefer Ursprung des exponentiellen Verlaufs der Wahrnehmungsverschlechterung hing somit tendenziell mit hoher psychometrischer Intelligenz zusammen. Auch wenn die Asymptote inhaltlich schwierig zu interpretieren ist, liefert dieser negative Zusammenhang einen weiteren Hinweis dafür, dass intelligentere Personen ganz generell betrachtet tendenziell schneller arbeitende Prozesse besitzen als weniger intelligente Personen \citep{Jensen1987a, Jensen1998b, Neubauer1997a, Neubauer1997b}.
 
-
-
 \subsection{Der latente Zusammenhang zwischen der Spa\-tial-Sup\-pres\-sion-Auf\-gabe und dem \textit{g}-Faktor}
 
 Um den Umstand zu berücksichtigen, dass sich ein beobachteter Messwert immer aus einem wahren Anteil der Merkmalsausprägung und einem zufällig zustande gekommenen Fehleranteil zusammensetzt \citep{Moosbrugger2007}, wurde der Zusammenhang zwischen der \gls{ssauf} und psychometrischer Intelligenz auf latenter Ebene untersucht. Damit konnte der Messfehler identifiziert und von der Analyse ausgeschlossen werden \citep[S. 9]{Kline2011}, was eine validere Schlussfolgerung über den Zusammenhang zwischen der \gls{ssauf} und psychometrischer Intelligenz zuliess.
@@ -2988,8 +2878,6 @@ Gestützt wird diese Vermutung durch die auf manifester Ebene beobachteten bivar
 
 Die Annahme, dass die latente Variable \gls{ss} abbildete, ist aus zwei Gründen unwahrscheinlich: Zum einen hätten sich negative oder zumindest sehr schwache Faktorladungen auf der $1.8^{\circ}$- und der $3.6^{\circ}$-Bedingung zeigen müssen, da \gls{ss} als die mit zunehmender Mustergrösse relative  Wahrnehmungsverschlechterung definiert ist \citep{Melnick2013, Tadin2003, Tadin2006, Tadin2011}. Zum anderen hätte sich zwischen der latenten Variable und dem \gls{gfaktor} ein positiver Zusammenhang zeigen müssen, weil \gls{ss} (operationalisiert mit dem \gls{si}) bei \citet{Melnick2013} stark positiv mit psychometrischer Intelligenz zusammenhing.
 Weil weder das Eine noch das Andere beobachtet wurde, scheint es nicht plausibel, dass die latente Variable \gls{ss} abbildete.
-
-
 
 \subsection{Kann die Spa\-tial-Sup\-pres\-sion-Auf\-gabe mit einem\break Fixed-Links-Mo\-dell beschrieben werden und wie hängen die getrennten Prozesse mit dem \textit{g}-Faktor zusammen?}
 
@@ -3010,9 +2898,6 @@ Bei der Asymptote kann ebenfalls davon ausgegangen werden, dass sie die von der 
 
 Die dynamische latente Variable hat Varianz von aufgabenrelevanten Prozessen gebunden, die durch die Mustergrössen experimentell manipuliert wurden. Der Einfluss dieser erfassten Prozesse nahm aufgrund der gewählten Faktorladungen mit zunehmender Mustergrösse exponentiell zu. Weil \citet{Melnick2013} \gls{ss} mit einem exponentiellen Modell beschrieben haben, kann angenommen werden, dass sich hinter der dynamischen latenten Variable  \gls{ss} verbirgt. Der nicht-signifikante Zusammenhang zwischen der dynamischen latenten Variable und dem \gls{gfaktor} ($\upbeta~=~-.08$) steht dabei in der vorliegenden Arbeit in Übereinstimmung mit den Zusammenhängen zwischen anderen Massen für \gls{ss} und psychometrischer Intelligenz: Der \gls{si} sowie die exponentielle Steigung korrelierten ebenfalls nicht mit psychometrischer Intelligenz ($r~=~.00$ respektive $r~=~.00$).
 
-
-
-
 \subsection{Der Zusammenhang zwischen der Spatial-Sup\-pres\-sion-Aufgabe, der Hick-Aufgabe und psy\-cho\-me\-trischer In\-tel\-li\-genz}
 
 In einem letzten Schritt wurde der Zusammenhang zwischen der \gls{ssauf} und psychometrischer Intelligenz um die \gls{ha} erweitert. Damit wurde geprüft, ob die \gls{ssauf} im Zusammenhang mit psychometrischer Intelligenz einen Aspekt der menschlichen Informationsverarbeitung abbildet, der neuartig ist und nicht bereits von der \gls{ha} erfasst beziehungsweise erklärt wird. Die Analysen wurden auf manifester und auf latenter Ebene durchgeführt.
@@ -3026,10 +2911,6 @@ Bei der Vorhersage der Reaktionszeiten der \gls{ha} mit einem linearen Modell ze
 
 Bei der Vorhersage psychometrischer Intelligenz hat sich sowohl auf Ebene der Aufgabenbedingungen als auch auf Ebene der Aufgabenparameter gezeigt, dass die \gls{ssauf} bei einer Kontrolle des Zusammenhangs zwischen der \gls{ha} und psychometrischer Intelligenz keine zusätzliche Varianz erklären konnte.
 Diese Analysen auf manifester Ebene deuteten darauf hin, dass die \gls{ssauf} im Zusammenhang mit psychometrischer Intelligenz keinen Aspekt der menschlichen Informationsverarbeitung erfasst, der neu ist und nicht schon von der \gls{ha} erklärt wird.
-
-
-
-
 
 \subsubsection*{Auf latenter Ebene}
 
@@ -3069,15 +2950,6 @@ Die mit der dynamischen latenten Variable der \gls{ssauf} erfasste \gls{ss} zeig
 Die konstante latente Variable der \gls{ssauf} zeigte inferenzstatistisch betrachtet keinen bedeutsamen Zusammenhang mit dem \gls{gfaktor} ($\upbeta~=~-.21$). Bei rein deskriptiver Betrachtung dieses schwachen bis mittleren negativen Zusammenhangs lässt sich vermuten, dass die in der konstanten latenten Variable gebundenen Prozesse, welche die  (von den Mustergrössen unabhängige) grundlegende Geschwindigkeit bestimmen, mit der Information verarbeitet wird, auch die Qualität höherer kognitiver Leistung beeinflussten.
 Rein deskriptiv stand der im Vergleich zur dynamischen latenten Variable höhere Zusammenhang der konstanten latenten Variable mit dem \gls{gfaktor} auch in Übereinstimmung mit dem Ergebnis zu den im \gls{flm} skalierten Varianzen, welche ergeben haben, dass die in der konstanten latenten Variable abgebildeten Prozesse stärker für Unterschiede zwischen Personen in der Erkennungsschwelle verantwortlich waren als die in der dynamischen latenten Variable gebundenen Prozesse. Wie erwähnt gelten diese Interpretationen aber nur als Vermutungen, weil der Zusammenhang inferenzstatistisch betrachtet nicht vom Zufall unterschieden werden konnte \citep[für eine statistische Rechtfertigung dieser Vorgehensweise siehe][]{Gelman2006, Wasserstein2016}.
 
-
-
-
-
-
-
-
-
-
 \section{Limitationen}
 
 Bevor die bis hierhin diskutierten Ergebnisse ganzheitlich betrachtet werden können, müssen zwei wichtige Limitationen der vorliegenden Arbeit diskutiert werden. Zum einen geht es um die Interpretation der in den latenten Variablen gebundenen Prozesse und zum anderen um die technische Darbietung der \gls{ssauf}.
@@ -3088,9 +2960,6 @@ Latente Variablen erfassen Varianz von Prozessen, die nicht direkt beobachtbar s
 
 Weiter besteht bei der Auswahl eines \gls{flm}s anhand des Kriteriums der besten Modellpassung das Problem, dass der ermittelte Ladungsverlauf der dynamischen latenten Variable stichprobenabhängig ist. 
 Andere Untersuchungen zur \gls{ha} haben beispielsweise ebenfalls einen monoton steigenden Ladungsverlauf für die dynamische latente Variable ermittelt, der exakte Verlauf folgte aber keiner logistischen Funktion \citep{Borter2013, Pahud2017, Schweizer2006b}. Bei der Interpretation des Verlaufs eines Prozesses darf deshalb nicht vergessen gehen, dass in einer neuen Stichprobe der Verlauf anders aussehen könnte. Sobald genügend Untersuchungen vorliegen, welche dieselbe Aufgabe mit einem \gls{flm} beschrieben haben, könnten die ermittelten Ladungsverläufe verglichen und bewertet werden. Damit würde man sich dem wahren Ladungsverlauf im Sinne einer Metaanalyse nähern.
-
-
-
 
 \subsection{Darbietung der Spatial-Suppression-Aufgabe}
 
@@ -3103,8 +2972,6 @@ Um wie viel sich die vorgesehene Ortsfrequenz der Streifenmuster ($1^{\circ}$~Se
 
 Wie erwähnt ist bei beiden Einschränkungen (dem reduzierten Kontrast und der veränderten Ortsfrequenz) nicht klar, welchen Einfluss sie auf die Ergebnisse hatten. Trotz dieser Unsicherheit deuten einige Punkte darauf hin, dass die Resultate der \gls{ssauf} interpretierbar sind: Die Wahrnehmungsleistung der \glspl{vp} hat sich mit zunehmender Mustergrösse wie bei \citet{Melnick2013} verschlechtert, die Erkennungsschwellen zeichneten sich durch sehr hohe Split\-half-Reliabilitäten aus und liessen sich wie bei \citeauthor{Melnick2013} sehr gut mit einem exponentiellen Modell beschreiben. 
 Es kann deshalb angenommen werden, dass der reduzierte Kontrast und die veränderte Ortsfrequenz der Streifenmuster keinen so starken Einfluss auf die Ergebnisse ausübten, dass sie eine Interpretation verbieten.
-
-
 
 \section{Schlussfolgerungen}
 
@@ -3124,7 +2991,6 @@ Um abschliessend beurteilen zu können, ob der \gls{ssans} \citep{Melnick2013} f
 Aus messtechnischer Hinsicht sollten zukünftige Untersuchungen zwei Sachen beachten. Zum einen sollte als Mass für \gls{ss} aus Gründen der besseren Vergleichbarkeit zwischen Untersuchungen und der höheren Reliabilität nicht der \gls{si}, sondern die exponentielle Steigung verwendet werden. 
 Zum anderen sollten bei der Bestimmung der kognitiven Grundlagen für Intelligenzunterschiede auf latenter Ebene \glspl{flm} \citep[z.~B.][]{Schweizer2006a, Schweizer2006b, Schweizer2007, Schweizer2008, Schweizer2009a} verwendet werden, weil sie im Vergleich zu anderen Analysemethoden ein differenzierteres Bild der Zusammenhänge zwischen den beteiligten kognitiven Prozessen und psychometrischer Intelligenz ermöglichen \citep[siehe][]{Ren2013, Schweizer2007, Stankov2007, Wang2015}.
 
-
 % =================================================================
 % G L O S S A R Y   &   A C R O N Y M S
 % =================================================================
@@ -3135,7 +3001,6 @@ Zum anderen sollten bei der Bestimmung der kognitiven Grundlagen für Intelligen
 % 3. compile document with pdfLateX
 % 4. -> glossaries should appear in pdf
 
-
 % =================================================================
 % R E F E R E N C E S 
 % =================================================================
@@ -3144,7 +3009,6 @@ Zum anderen sollten bei der Bestimmung der kognitiven Grundlagen für Intelligen
 \renewcommand\bibname{Literatur}				% rename bibliography
 \addcontentsline{toc}{chapter}{Literatur}		% for a toc entry
 \bibliography{bibliography.bib}					% provide .bib file
-
 
 % =================================================================
 % L I S T   O F   F I G U R E S
@@ -3175,7 +3039,6 @@ Zum anderen sollten bei der Bestimmung der kognitiven Grundlagen für Intelligen
 %\addtocontents{lof}{\protect\setcounter{tocdepth}{0}}
 
 \chapter[Anhang: Datenaufbereitung]{Anhang \label{cha:Anhang_A}}
-
 % works --------------------------
 \setcounter{table}{0}
 \renewcommand{\thetable}{A\arabic{table}}
@@ -3239,7 +3102,6 @@ Bei den Subtests \gls{bd}, \acrlong{kw} (\gls{kw}), \acrlong{oe} (\gls{oe}), \ac
 		\end{threeparttable}
 	\end{adjustbox}
 \end{table}
-
 
 % =================================================================
 % A P P E N D I X   B
@@ -3398,7 +3260,6 @@ Die Zusammenhänge der Subtests wurden mit Spearmans Rangkorrelationen bestimmt 
 %	\end{adjustbox}
 \end{sidewaystable}
 
-
 % =================================================================
 % A P P E N D I X   C
 % =================================================================
@@ -3407,8 +3268,4 @@ Die Zusammenhänge der Subtests wurden mit Spearmans Rangkorrelationen bestimmt 
 Der R-Code für die Reproduktion der berichteten Ergebnisse ist verfügbar unter \url{https://github.com/pipomas/PhD_data}.
 Der \LaTeX-Code für die Reproduktion dieses Dokuments ist verfügbar unter \url{https://github.com/pipomas/PhD_thesis}.
 
-
-
 \end{document}
-
-

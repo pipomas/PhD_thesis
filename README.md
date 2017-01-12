@@ -3,7 +3,7 @@ Der Zusammenhang zwischen Spatial-Suppression, Mental-Speed und psychometrischer
 
 English title: **The relationship between spatial suppression, mental speed and psychometric intelligence**
 
-last updated on January 12, 2017 :balloon:
+Last updated on: January 12, 2017 :balloon:
 
 This repository, PhD\_thesis, is a digital directory where you can access my thesis, and all its files. To view them, click on **Download ZIP File** and open the downloaded repository.
 
@@ -22,16 +22,3 @@ If you would like to reproduce my thesis using <a href="https://www.latex-projec
 -   `diss.tex`: .tex file of my PhD thesis.
 -   `png`: This folder stores portable network graphics (png's).
 -   `tikzDevice`: .tex code blocks which can be interpreted with the help of the TikZ package. Used to draw visually pleasing figures. All files in this folder get sourced from `diss.tex`.
-
-<!-- ### Files to ignore -->
-<!-- Some files in this repository are only used for the displaying of this website or to tell [git](https://en.wikipedia.org/wiki/Git) which files not to track. You can ignore these files and folders: -->
-<!-- * `javascripts`  -->
-<!-- * `stylesheets`  -->
-<!-- * `.gitignore`  -->
-<!-- * `index.html`  -->
-<!-- * `params.json` -->
-<!-- ### Prerequisites for reproducing `diss.pdf` -->
-<!-- * You need [LaTeX](https://www.latex-project.org) installed on your system. -->
-<!-- * I recommend using [TeXStudio](https://sourceforge.net/projects/texstudio/) as editor, as it comes with an integrated pdf viewer, live inline preview, advanced syntax-highlighting, live checking of references, citations, latex commands, spelling and grammar. -->
-<!-- * Download this repository (**not only `diss.tex`**) by clicking on the green «*Clone or download*» button in the top right corner, and open `diss.tex` from within the downloaded folder. Do not move it out of the downloaded folder, it will not compile correctly. -->
-<!-- * Compile `diss.tex` multiple times. -->
