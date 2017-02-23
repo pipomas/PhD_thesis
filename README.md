@@ -3,7 +3,7 @@ Der Zusammenhang zwischen Spatial-Suppression, Mental-Speed und psychometrischer
 
 English title: **The relationship between spatial suppression, mental speed and psychometric intelligence**
 
-Last updated on: January 12, 2017 :balloon:
+Last updated on: February 23, 2017 :balloon:
 
 This repository, PhD\_thesis, is a digital directory where you can access my thesis, and all its files. To view them, click on **Download ZIP File** and open the downloaded repository.
 
@@ -12,7 +12,7 @@ To reproduce the reported results see repository <a href="https://github.com/pip
 Repository content
 ------------------
 
--   `diss.pdf`: Pdf of my PhD thesis.
+-   `diss.pdf`: Pdf of my PhD thesis (available by the end of March).
 -   `LICENCE`: Content with scientific value (i.e. everything but simple LaTeX code) is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/2.5/ch" target="_blank">*Creative Commons Attribution - NonCommercial - NoDerivatives 2.5 Switzerland License*</a>. Read the licence carefully to see what you are allowed to do.
 
 If you would like to reproduce my thesis using <a href="https://www.latex-project.org" target="_blank">LaTeX</a>, you will also be interested in these files
