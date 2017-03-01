@@ -3,7 +3,7 @@ Der Zusammenhang zwischen Spatial-Suppression, Mental-Speed und psychometrischer
 
 English title: **The relationship between spatial suppression, mental speed and psychometric intelligence**
 
-Last updated on: February 23, 2017 :balloon:
+Last updated on: March 01, 2017 :balloon:
 
 This repository, PhD\_thesis, is a digital directory where you can access my thesis, and all its files. To view them, click on **Download ZIP File** and open the downloaded repository.
 
@@ -18,7 +18,6 @@ Repository content
 If you would like to reproduce my thesis using <a href="https://www.latex-project.org" target="_blank">LaTeX</a>, you will also be interested in these files
 
 -   `apacite-mod.bst`: A <a href="http://tex.stackexchange.com/questions/304217/reference-list-suppressing-dots-after-company-names-apacite" target="_blank">modified</a> apacite.bst file. Needed for a customised compilation of the reference section.
--   `bibliography.bib`: A text file with references.
--   `diss.tex`: .tex file of my PhD thesis.
+-   `bibliography.bib`: A text file with references. <!-- * `diss.tex`: .tex file of my PhD thesis. -->
 -   `png`: This folder stores portable network graphics (png's).
 -   `tikzDevice`: .tex code blocks which can be interpreted with the help of the TikZ package. Used to draw visually pleasing figures. All files in this folder get sourced from `diss.tex`.
