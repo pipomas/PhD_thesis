@@ -140,6 +140,9 @@
 \setlength{\abovecaptionskip}{3pt plus 3pt minus 2pt}	% modifiy vertical space between figure and caption
 \setcounter{lofdepth}{2}			% include minicaptions in LOF (list of figures)
 
+% Load package for inclusion of pdfs (the corrigendum)
+\usepackage{pdfpages}
+
 % Removes spacing in list of figures and tables -------------------------------
 % see http://tex.stackexchange.com/questions/69321/spacing-between-chapters-in-list-of-tables
 \makeatletter
@@ -3280,5 +3283,7 @@ Die Zusammenhänge der Subtests wurden mit Spearmans Rangkorrelationen bestimmt 
 
 Der R-Code für die Reproduktion der berichteten Ergebnisse ist verfügbar unter \url{https://github.com/pipomas/PhD_data}.
 Der \LaTeX-Code für die Reproduktion dieses Dokuments ist verfügbar unter \url{https://github.com/pipomas/PhD_thesis}.
+
+\includepdf[pages={1}]{corrigendum/corrigendum}
 
 \end{document}

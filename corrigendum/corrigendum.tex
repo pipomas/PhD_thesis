@@ -1,0 +1,38 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}							% this is needed for umlauts
+\usepackage[T1]{fontenc}							% this is needed for correct output of umlauts
+\usepackage[ngerman]{babel}							% set document language to new german
+\usepackage{amsfonts}								% for infinity sign
+\usepackage{adjustbox}								% for adjustbox environment
+
+\usepackage{tikz}									% for drawings
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri} % load options
+\tikzstyle{every picture}+=[font=\sffamily]			% use sans serif font for tikz pictures -> http://tex.stackexchange.com/questions/4887/pgf-tikz-and-sans-serif-fonts
+
+\usepackage[singlelinecheck = off,labelsep = period]{caption} 							% -> caption is aligned with table
+\captionsetup[subfigure]{labelformat=simple, labelsep = period, listofformat=subsimple} % (a) -> a.
+\captionsetup[figure]{labelfont=it, labelsep = period}									% italic 
+
+\usepackage[left=118pt,right=118pt, top=50pt, bottom = 40pt]{geometry}		% for custom margins
+
+\date{}
+\title{\textbf{Corrigendum}:\\Der Zusammenhang zwischen Spatial-Suppression, Mental-Speed und psychometrischer Intelligenz}
+
+\begin{document}
+	\maketitle
+	\thispagestyle{empty}
+
+	\noindent Bei der Analyse der Spatial-Suppression-Aufgabe wurden die Erkennungsschwellen jeder Person mit einem exponentiellen Modell der Form $y=a \times e^{bx}$ vorhergesagt. Der Parameter $a$ wurde in der vorliegenden Arbeit Asymptote genannt (cf. Melnick et al., 2013).
+	Diese Bezeichnung ist falsch, weil die horizontale Asymptote einer Funktion der Form $y=a \times e^{bx}$ im minus-Unendlichen immer Null beträgt ($e^{-\infty}=0$). Die korrekte Bezeichnung für den Parameter $a$ lautet Skalierungsparameter, weil er den gesamten Kurvenverlauf, unter Einhaltung der Verhältnisse der Datenpunkte zueinander, skaliert (siehe Abbildung 1).
+	
+	\begin{figure}[h]
+		\centering
+		%	\captionsetup{font = small}
+		\begin{adjustbox}{width=.91\textwidth}
+			\input{../tikzDevice/spatial_suppression_scale_figure.tex}
+		\end{adjustbox}
+		\caption[]{Auswirkung des Skalierungsparameters $a$ auf den exponentiellen Zusammenhang zwischen der Mustergrösse und der $82\,\%$-Er\-ken\-nungs\-schwel\-le für horizontale Bewegung in der Spatial-Suppression-Aufgabe. Die durchgezogene Linie (---) beschreibt die Funktion $y=70 \times e^{.103x}$. Die gestrichelte Linie (- - -) beschreibt die Funktion $y=50 \times e^{.103x}$. Die beiden abgebildeten Funktionen unterscheiden sich folglich lediglich durch den Skalierungsparameter $a$. Mit dieser Abbildung wird deutlich, dass der Parameter $a$ den gesamten Kurvenverlauf skaliert. Die x- und die y-Achse sind beide logarithmiert.}
+		\label{fig:scale}
+	\end{figure}
+
+\end{document}
