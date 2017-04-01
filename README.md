@@ -5,9 +5,7 @@ English title: **The relationship between spatial suppression, mental speed and 
 
 Last updated on: April 01, 2017 :balloon:
 
-This repository, PhD\_thesis, is a digital directory where you can access my thesis, and all its files. To view them, click on **Download ZIP** and open the downloaded repository.
-
-To reproduce the reported results see repository <a href="https://github.com/pipomas/PhD_data" target="_blank">PhD\_data</a>.
+This repository, PhD\_thesis, is a digital directory where you can access my thesis, and all its files. To reproduce the reported results see repository <a href="https://github.com/pipomas/PhD_data" target="_blank">PhD\_data</a>.
 
 Repository content
 ------------------
