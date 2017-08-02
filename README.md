@@ -3,7 +3,7 @@ Der Zusammenhang zwischen Spatial-Suppression, Mental-Speed und psychometrischer
 
 English title: **The relationship between spatial suppression, mental speed and psychometric intelligence**
 
-Last updated on: April 01, 2017 :balloon:
+Last updated on: August 02, 2017 :balloon:
 
 This repository, PhD\_thesis, is a digital directory where you can access my thesis, and all its files. To reproduce the reported results see repository <a href="https://github.com/pipomas/PhD_data" target="_blank">PhD\_data</a>.
 
